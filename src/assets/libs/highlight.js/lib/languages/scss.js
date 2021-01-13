@@ -63,7 +63,8 @@ module.exports = function (hljs) {
           ':(visited|valid|root|right|required|read-write|read-only|out-range|optional|only-of-type|only-child|nth-of-type|nth-last-of-type|nth-last-child|nth-child|not|link|left|last-of-type|last-child|lang|invalid|indeterminate|in-range|hover|focus|first-of-type|first-line|first-letter|first-child|first|enabled|empty|disabled|default|checked|before|after|active)',
       },
       {
-        begin: '::(after|before|choices|first-letter|first-line|repeat-index|repeat-item|selection|value)',
+        begin:
+          '::(after|before|choices|first-letter|first-line|repeat-index|repeat-item|selection|value)',
       },
       VARIABLE,
       {

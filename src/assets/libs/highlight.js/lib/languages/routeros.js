@@ -5,14 +5,16 @@ module.exports = // Colors from RouterOS terminal:
   //   light-brown  - #9A9900
 
   function (hljs) {
-    var STATEMENTS = 'foreach do while for if from to step else on-error and or not in';
+    var STATEMENTS =
+      'foreach do while for if from to step else on-error and or not in';
 
     // Global commands: Every global command should start with ":" token, otherwise it will be treated as variable.
     var GLOBAL_COMMANDS =
       'global local beep delay put len typeof pick log time set find environment terminal error execute parse resolve toarray tobool toid toip toip6 tonum tostr totime';
 
     // Common commands: Following commands available from most sub-menus:
-    var COMMON_COMMANDS = 'add remove enable disable set get print export edit find run debug error info warning';
+    var COMMON_COMMANDS =
+      'add remove enable disable set get print export edit find run debug error info warning';
 
     var LITERALS = 'true false yes no nothing nil null';
 
@@ -55,7 +57,8 @@ module.exports = // Colors from RouterOS terminal:
       end: /'/,
     };
 
-    var IPADDR = '((25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9]).){3}(25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])\\b';
+    var IPADDR =
+      '((25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9]).){3}(25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])\\b';
     var IPADDR_wBITMASK = IPADDR + '/(3[0-2]|[1-2][0-9]|\\d)';
     //////////////////////////////////////////////////////////////////////
     return {
@@ -64,7 +67,12 @@ module.exports = // Colors from RouterOS terminal:
       lexemes: /:?[\w-]+/,
       keywords: {
         literal: LITERALS,
-        keyword: STATEMENTS + ' :' + STATEMENTS.split(' ').join(' :') + ' :' + GLOBAL_COMMANDS.split(' ').join(' :'),
+        keyword:
+          STATEMENTS +
+          ' :' +
+          STATEMENTS.split(' ').join(' :') +
+          ' :' +
+          GLOBAL_COMMANDS.split(' ').join(' :'),
       },
       contains: [
         {
@@ -152,7 +160,11 @@ module.exports = // Colors from RouterOS terminal:
         {
           className: 'built_in',
           variants: [
-            { begin: '(\\.\\./|/|\\s)((' + OBJECTS.split(' ').join('|') + ');?\\s)+', relevance: 10 },
+            {
+              begin:
+                '(\\.\\./|/|\\s)((' + OBJECTS.split(' ').join('|') + ');?\\s)+',
+              relevance: 10,
+            },
             { begin: /\.\./ },
           ],
         }, //*/

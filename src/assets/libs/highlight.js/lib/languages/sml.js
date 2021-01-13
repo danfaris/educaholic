@@ -39,9 +39,13 @@ module.exports = function (hljs) {
         relevance: 0,
       },
       {
-        /* don't color identifiers, but safely catch all identifiers with '*/ begin: "[a-z_]\\w*'[\\w']*",
+        /* don't color identifiers, but safely catch all identifiers with '*/ begin:
+          "[a-z_]\\w*'[\\w']*",
       },
-      hljs.inherit(hljs.APOS_STRING_MODE, { className: 'string', relevance: 0 }),
+      hljs.inherit(hljs.APOS_STRING_MODE, {
+        className: 'string',
+        relevance: 0,
+      }),
       hljs.inherit(hljs.QUOTE_STRING_MODE, { illegal: null }),
       {
         className: 'number',

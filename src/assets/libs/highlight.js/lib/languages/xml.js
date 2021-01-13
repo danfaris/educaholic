@@ -17,7 +17,11 @@ module.exports = function (hljs) {
           {
             className: 'string',
             endsParent: true,
-            variants: [{ begin: /"/, end: /"/ }, { begin: /'/, end: /'/ }, { begin: /[^\s"'=<>`]+/ }],
+            variants: [
+              { begin: /"/, end: /"/ },
+              { begin: /'/, end: /'/ },
+              { begin: /[^\s"'=<>`]+/ },
+            ],
           },
         ],
       },
@@ -58,8 +62,18 @@ module.exports = function (hljs) {
           { begin: '/\\*', end: '\\*/', skip: true },
           { begin: 'b"', end: '"', skip: true },
           { begin: "b'", end: "'", skip: true },
-          hljs.inherit(hljs.APOS_STRING_MODE, { illegal: null, className: null, contains: null, skip: true }),
-          hljs.inherit(hljs.QUOTE_STRING_MODE, { illegal: null, className: null, contains: null, skip: true }),
+          hljs.inherit(hljs.APOS_STRING_MODE, {
+            illegal: null,
+            className: null,
+            contains: null,
+            skip: true,
+          }),
+          hljs.inherit(hljs.QUOTE_STRING_MODE, {
+            illegal: null,
+            className: null,
+            contains: null,
+            skip: true,
+          }),
         ],
       },
       {

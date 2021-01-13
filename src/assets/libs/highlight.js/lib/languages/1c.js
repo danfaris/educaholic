@@ -26,7 +26,8 @@ module.exports = function (hljs) {
   var METAKEYWORD = v7_meta_keywords + v8_meta_keywords;
 
   // v7 системные константы ==> built_in
-  var v7_system_constants = 'разделительстраниц разделительстрок символтабуляции ';
+  var v7_system_constants =
+    'разделительстраниц разделительстрок символтабуляции ';
 
   // v7 уникальные методы глобального контекста, отсутствующие в v8 ==> built_in
   var v7_global_context_methods =
@@ -133,7 +134,10 @@ module.exports = function (hljs) {
 
   // built_in : встроенные или библиотечные объекты (константы, классы, функции)
   var BUILTIN =
-    v7_system_constants + v7_global_context_methods + v8_global_context_methods + v8_global_context_property;
+    v7_system_constants +
+    v7_global_context_methods +
+    v8_global_context_methods +
+    v8_global_context_property;
 
   // v8 системные наборы значений ==> class
   var v8_system_sets_of_values =
@@ -222,7 +226,8 @@ module.exports = function (hljs) {
     'видзаполнениярасшифровкипостроителяотчета типдобавленияпредставлений типизмеренияпостроителяотчета типразмещенияитогов ';
 
   // v8 системные перечисления - работа с файлами ==> class
-  var v8_system_enums_files = 'доступкфайлу режимдиалогавыборафайла режимоткрытияфайла ';
+  var v8_system_enums_files =
+    'доступкфайлу режимдиалогавыборафайла режимоткрытияфайла ';
 
   // v8 системные перечисления - построитель запроса ==> class
   var v8_system_enums_query_builder = 'типизмеренияпостроителязапроса ';
@@ -451,7 +456,10 @@ module.exports = function (hljs) {
     lexemes: UNDERSCORE_IDENT_RE,
     variants: [
       { begin: 'процедура|функция', end: '\\)', keywords: 'процедура функция' },
-      { begin: 'конецпроцедуры|конецфункции', keywords: 'конецпроцедуры конецфункции' },
+      {
+        begin: 'конецпроцедуры|конецфункции',
+        keywords: 'конецпроцедуры конецфункции',
+      },
     ],
     contains: [
       {

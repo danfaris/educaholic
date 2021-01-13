@@ -32,7 +32,10 @@ module.exports = function (hljs) {
       {
         className: 'section',
         relevance: 10,
-        variants: [{ begin: '^(={1,5}) .+?( \\1)?$' }, { begin: '^[^\\[\\]\\n]+?\\n[=\\-~\\^\\+]{2,}$' }],
+        variants: [
+          { begin: '^(={1,5}) .+?( \\1)?$' },
+          { begin: '^[^\\[\\]\\n]+?\\n[=\\-~\\^\\+]{2,}$' },
+        ],
       },
       // document attributes
       {

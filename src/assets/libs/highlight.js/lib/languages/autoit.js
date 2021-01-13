@@ -51,7 +51,8 @@ module.exports = function (hljs) {
       begin: '#',
       end: '$',
       keywords: {
-        'meta-keyword': 'comments include include-once NoTrayIcon OnAutoItStartRegister pragma compile RequireAdmin',
+        'meta-keyword':
+          'comments include include-once NoTrayIcon OnAutoItStartRegister pragma compile RequireAdmin',
       },
       contains: [
         {
@@ -131,6 +132,14 @@ module.exports = function (hljs) {
       built_in: BUILT_IN,
       literal: LITERAL,
     },
-    contains: [COMMENT, VARIABLE, STRING, NUMBER, PREPROCESSOR, CONSTANT, FUNCTION],
+    contains: [
+      COMMENT,
+      VARIABLE,
+      STRING,
+      NUMBER,
+      PREPROCESSOR,
+      CONSTANT,
+      FUNCTION,
+    ],
   };
 };

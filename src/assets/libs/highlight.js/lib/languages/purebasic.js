@@ -1,4 +1,5 @@
-module.exports = function (hljs) { // Base deafult colors in PB IDE: background: #FFFFDF; foreground: #000000;
+module.exports = function (hljs) {
+  // Base deafult colors in PB IDE: background: #FFFFDF; foreground: #000000;
   var STRINGS = {
     // PB IDE color: #0080FF (Azure Radiance)
     className: 'string',

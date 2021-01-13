@@ -180,7 +180,13 @@
 
 .ql-tooltip .ql-preview {
   width: 100%;
-  @include button-size($btn-padding-y-sm, $btn-padding-x-sm, $font-size-sm, $btn-line-height-sm, $btn-border-radius-sm);
+  @include button-size(
+    $btn-padding-y-sm,
+    $btn-padding-x-sm,
+    $font-size-sm,
+    $btn-line-height-sm,
+    $btn-border-radius-sm
+  );
   @include transition($btn-transition);
 }
 
@@ -223,7 +229,13 @@
   user-select: none;
   border: $btn-border-width solid transparent;
   cursor: pointer;
-  @include button-size($btn-padding-y-sm, $btn-padding-x-sm, $font-size-sm, $btn-line-height-sm, $btn-border-radius-sm);
+  @include button-size(
+    $btn-padding-y-sm,
+    $btn-padding-x-sm,
+    $font-size-sm,
+    $btn-line-height-sm,
+    $btn-border-radius-sm
+  );
   @include transition($btn-transition);
 
   // Share hover and focus styles

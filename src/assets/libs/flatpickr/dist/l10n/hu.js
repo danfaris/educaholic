@@ -17,10 +17,31 @@
     firstDayOfWeek: 1,
     weekdays: {
       shorthand: ['V', 'H', 'K', 'Sz', 'Cs', 'P', 'Szo'],
-      longhand: ['Vasárnap', 'Hétfő', 'Kedd', 'Szerda', 'Csütörtök', 'Péntek', 'Szombat'],
+      longhand: [
+        'Vasárnap',
+        'Hétfő',
+        'Kedd',
+        'Szerda',
+        'Csütörtök',
+        'Péntek',
+        'Szombat',
+      ],
     },
     months: {
-      shorthand: ['Jan', 'Feb', 'Már', 'Ápr', 'Máj', 'Jún', 'Júl', 'Aug', 'Szep', 'Okt', 'Nov', 'Dec'],
+      shorthand: [
+        'Jan',
+        'Feb',
+        'Már',
+        'Ápr',
+        'Máj',
+        'Jún',
+        'Júl',
+        'Aug',
+        'Szep',
+        'Okt',
+        'Nov',
+        'Dec',
+      ],
       longhand: [
         'Január',
         'Február',

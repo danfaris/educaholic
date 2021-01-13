@@ -27,7 +27,12 @@ module.exports = function (hljs) {
     begin: '\\(',
     end: /\)/,
     keywords: KEYWORDS,
-    contains: ['self', hljs.QUOTE_STRING_MODE, hljs.APOS_STRING_MODE, hljs.NUMBER_MODE],
+    contains: [
+      'self',
+      hljs.QUOTE_STRING_MODE,
+      hljs.APOS_STRING_MODE,
+      hljs.NUMBER_MODE,
+    ],
   };
 
   var PARAMS = {
@@ -37,7 +42,12 @@ module.exports = function (hljs) {
     excludeBegin: true,
     excludeEnd: true,
     keywords: KEYWORDS,
-    contains: [hljs.C_LINE_COMMENT_MODE, hljs.C_BLOCK_COMMENT_MODE, DECORATOR, ARGS],
+    contains: [
+      hljs.C_LINE_COMMENT_MODE,
+      hljs.C_BLOCK_COMMENT_MODE,
+      DECORATOR,
+      ARGS,
+    ],
   };
 
   return {
@@ -68,7 +78,11 @@ module.exports = function (hljs) {
       hljs.C_BLOCK_COMMENT_MODE,
       {
         className: 'number',
-        variants: [{ begin: '\\b(0[bB][01]+)' }, { begin: '\\b(0[oO][0-7]+)' }, { begin: hljs.C_NUMBER_RE }],
+        variants: [
+          { begin: '\\b(0[bB][01]+)' },
+          { begin: '\\b(0[oO][0-7]+)' },
+          { begin: hljs.C_NUMBER_RE },
+        ],
         relevance: 0,
       },
       {
@@ -100,7 +114,11 @@ module.exports = function (hljs) {
                     excludeBegin: true,
                     excludeEnd: true,
                     keywords: KEYWORDS,
-                    contains: ['self', hljs.C_LINE_COMMENT_MODE, hljs.C_BLOCK_COMMENT_MODE],
+                    contains: [
+                      'self',
+                      hljs.C_LINE_COMMENT_MODE,
+                      hljs.C_BLOCK_COMMENT_MODE,
+                    ],
                   },
                 ],
               },
@@ -115,7 +133,11 @@ module.exports = function (hljs) {
         end: /[\{;]/,
         excludeEnd: true,
         keywords: KEYWORDS,
-        contains: ['self', hljs.inherit(hljs.TITLE_MODE, { begin: JS_IDENT_RE }), PARAMS],
+        contains: [
+          'self',
+          hljs.inherit(hljs.TITLE_MODE, { begin: JS_IDENT_RE }),
+          PARAMS,
+        ],
         illegal: /%/,
         relevance: 0, // () => {} is more typical in TypeScript
       },

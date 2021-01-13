@@ -1,4 +1,5 @@
-module.exports = function (hljs) { // TODO support filter tags like :javascript, support inline HTML
+module.exports = function (hljs) {
+  // TODO support filter tags like :javascript, support inline HTML
   return {
     case_insensitive: true,
     contains: [

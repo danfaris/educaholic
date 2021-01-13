@@ -93,7 +93,11 @@ module.exports = function (hljs) {
             endsWithParent: true,
             excludeEnd: true,
             relevance: 0,
-            contains: [hljs.APOS_STRING_MODE, hljs.QUOTE_STRING_MODE, hljs.CSS_NUMBER_MODE],
+            contains: [
+              hljs.APOS_STRING_MODE,
+              hljs.QUOTE_STRING_MODE,
+              hljs.CSS_NUMBER_MODE,
+            ],
           },
         ],
       },

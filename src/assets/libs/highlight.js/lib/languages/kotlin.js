@@ -68,7 +68,9 @@ module.exports = function (hljs) {
   var ANNOTATION_USE_SITE = {
     className: 'meta',
     begin:
-      '@(?:file|property|field|get|set|receiver|param|setparam|delegate)\\s*:(?:\\s*' + hljs.UNDERSCORE_IDENT_RE + ')?',
+      '@(?:file|property|field|get|set|receiver|param|setparam|delegate)\\s*:(?:\\s*' +
+      hljs.UNDERSCORE_IDENT_RE +
+      ')?',
   };
   var ANNOTATION = {
     className: 'meta',

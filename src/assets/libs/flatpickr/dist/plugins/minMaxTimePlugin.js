@@ -40,7 +40,9 @@
     },
     // day (1-30) with ordinal suffix e.g. 1st, 2nd
     J: function (date, locale) {
-      return locale.ordinal !== undefined ? date.getDate() + locale.ordinal(date.getDate()) : date.getDate();
+      return locale.ordinal !== undefined
+        ? date.getDate() + locale.ordinal(date.getDate())
+        : date.getDate();
     },
     // AM/PM
     K: function (date, locale) {
@@ -118,7 +120,9 @@
     altFormat: 'F j, Y',
     altInput: false,
     altInputClass: 'form-control input',
-    animate: typeof window === 'object' && window.navigator.userAgent.indexOf('MSIE') === -1,
+    animate:
+      typeof window === 'object' &&
+      window.navigator.userAgent.indexOf('MSIE') === -1,
     ariaDateFormat: 'F j, Y',
     clickOpens: true,
     closeOnSelect: true,
@@ -143,7 +147,15 @@
       // January 4 is always in week 1.
       var week1 = new Date(date.getFullYear(), 0, 4);
       // Adjust to Thursday in week 1 and count number of weeks from date to week1.
-      return 1 + Math.round(((date.getTime() - week1.getTime()) / 86400000 - 3 + ((week1.getDay() + 6) % 7)) / 7);
+      return (
+        1 +
+        Math.round(
+          ((date.getTime() - week1.getTime()) / 86400000 -
+            3 +
+            ((week1.getDay() + 6) % 7)) /
+            7
+        )
+      );
     },
     hourIncrement: 1,
     ignoredFocusElements: [],
@@ -183,10 +195,31 @@
   var english = {
     weekdays: {
       shorthand: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
-      longhand: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+      longhand: [
+        'Sunday',
+        'Monday',
+        'Tuesday',
+        'Wednesday',
+        'Thursday',
+        'Friday',
+        'Saturday',
+      ],
     },
     months: {
-      shorthand: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+      shorthand: [
+        'Jan',
+        'Feb',
+        'Mar',
+        'Apr',
+        'May',
+        'Jun',
+        'Jul',
+        'Aug',
+        'Sep',
+        'Oct',
+        'Nov',
+        'Dec',
+      ],
       longhand: [
         'January',
         'February',
@@ -239,7 +272,11 @@
       return frmt
         .split('')
         .map(function (c, i, arr) {
-          return formats[c] && arr[i - 1] !== '\\' ? formats[c](dateObj, locale, config) : c !== '\\' ? c : '';
+          return formats[c] && arr[i - 1] !== '\\'
+            ? formats[c](dateObj, locale, config)
+            : c !== '\\'
+            ? c
+            : '';
         })
         .join('');
     };
@@ -252,7 +289,10 @@
       timeless = true;
     }
     if (timeless !== false) {
-      return new Date(date1.getTime()).setHours(0, 0, 0, 0) - new Date(date2.getTime()).setHours(0, 0, 0, 0);
+      return (
+        new Date(date1.getTime()).setHours(0, 0, 0, 0) -
+        new Date(date2.getTime()).setHours(0, 0, 0, 0)
+      );
     }
     return date1.getTime() - date2.getTime();
   }
@@ -291,8 +331,12 @@
         onReady: function () {
           state.formatDate = this.formatDate;
           state.defaults = {
-            minTime: this.config.minTime && state.formatDate(this.config.minTime, 'H:i'),
-            maxTime: this.config.maxTime && state.formatDate(this.config.maxTime, 'H:i'),
+            minTime:
+              this.config.minTime &&
+              state.formatDate(this.config.minTime, 'H:i'),
+            maxTime:
+              this.config.maxTime &&
+              state.formatDate(this.config.maxTime, 'H:i'),
           };
         },
         onChange: function () {

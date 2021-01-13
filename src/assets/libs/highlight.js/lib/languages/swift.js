@@ -60,7 +60,8 @@ module.exports = function (hljs) {
   };
   var NUMBERS = {
     className: 'number',
-    begin: '\\b([\\d_]+(\\.[\\deE_]+)?|0x[a-fA-F0-9_]+(\\.[a-fA-F0-9p_]+)?|0b[01_]+|0o[0-7_]+)\\b',
+    begin:
+      '\\b([\\d_]+(\\.[\\deE_]+)?|0x[a-fA-F0-9_]+(\\.[a-fA-F0-9p_]+)?|0b[01_]+|0o[0-7_]+)\\b',
     relevance: 0,
   };
   SUBST.contains = [NUMBERS];
@@ -111,7 +112,11 @@ module.exports = function (hljs) {
         keywords: SWIFT_KEYWORDS,
         end: '\\{',
         excludeEnd: true,
-        contains: [hljs.inherit(hljs.TITLE_MODE, { begin: /[A-Za-z$_][\u00C0-\u02B80-9A-Za-z$_]*/ })],
+        contains: [
+          hljs.inherit(hljs.TITLE_MODE, {
+            begin: /[A-Za-z$_][\u00C0-\u02B80-9A-Za-z$_]*/,
+          }),
+        ],
       },
       {
         className: 'meta', // @attributes

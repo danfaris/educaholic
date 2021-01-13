@@ -67,6 +67,14 @@ module.exports = function (hljs) {
       'define endef undefine ifdef ifndef ifeq ifneq else endif ' +
       'include -include sinclude override export unexport private vpath',
     lexemes: /[\w-]+/,
-    contains: [hljs.HASH_COMMENT_MODE, VARIABLE, QUOTE_STRING, FUNC, VAR_ASSIG, META, TARGET],
+    contains: [
+      hljs.HASH_COMMENT_MODE,
+      VARIABLE,
+      QUOTE_STRING,
+      FUNC,
+      VAR_ASSIG,
+      META,
+      TARGET,
+    ],
   };
 };

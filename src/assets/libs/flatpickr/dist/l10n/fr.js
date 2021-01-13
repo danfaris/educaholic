@@ -17,10 +17,31 @@
     firstDayOfWeek: 1,
     weekdays: {
       shorthand: ['dim', 'lun', 'mar', 'mer', 'jeu', 'ven', 'sam'],
-      longhand: ['dimanche', 'lundi', 'mardi', 'mercredi', 'jeudi', 'vendredi', 'samedi'],
+      longhand: [
+        'dimanche',
+        'lundi',
+        'mardi',
+        'mercredi',
+        'jeudi',
+        'vendredi',
+        'samedi',
+      ],
     },
     months: {
-      shorthand: ['janv', 'févr', 'mars', 'avr', 'mai', 'juin', 'juil', 'août', 'sept', 'oct', 'nov', 'déc'],
+      shorthand: [
+        'janv',
+        'févr',
+        'mars',
+        'avr',
+        'mai',
+        'juin',
+        'juil',
+        'août',
+        'sept',
+        'oct',
+        'nov',
+        'déc',
+      ],
       longhand: [
         'janvier',
         'février',

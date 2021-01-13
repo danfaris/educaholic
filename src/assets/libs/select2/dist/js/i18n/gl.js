@@ -1,7 +1,8 @@
 /*! Select2 4.0.6-rc.1 | https://github.com/select2/select2/blob/master/LICENSE.md */
 
 (function () {
-  if (jQuery && jQuery.fn && jQuery.fn.select2 && jQuery.fn.select2.amd) var e = jQuery.fn.select2.amd;
+  if (jQuery && jQuery.fn && jQuery.fn.select2 && jQuery.fn.select2.amd)
+    var e = jQuery.fn.select2.amd;
   return (
     e.define('select2/i18n/gl', [], function () {
       return {
@@ -10,7 +11,9 @@
         },
         inputTooLong: function (e) {
           var t = e.input.length - e.maximum;
-          return t === 1 ? 'Elimine un carácter' : 'Elimine ' + t + ' caracteres';
+          return t === 1
+            ? 'Elimine un carácter'
+            : 'Elimine ' + t + ' caracteres';
         },
         inputTooShort: function (e) {
           var t = e.minimum - e.input.length;

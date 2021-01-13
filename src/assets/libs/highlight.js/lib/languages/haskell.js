@@ -97,7 +97,9 @@ module.exports = function (hljs) {
       {
         begin: '\\bforeign\\b',
         end: '$',
-        keywords: 'foreign import export ccall stdcall cplusplus jvm ' + 'dotnet safe unsafe',
+        keywords:
+          'foreign import export ccall stdcall cplusplus jvm ' +
+          'dotnet safe unsafe',
         contains: [CONSTRUCTOR, hljs.QUOTE_STRING_MODE, COMMENT],
       },
       {

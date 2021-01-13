@@ -114,7 +114,8 @@ module.exports = function (hljs) {
       {
         // numbers
         className: 'number',
-        begin: '(-?)(\\b0[xX][a-fA-F0-9]+|(\\b\\d+(\\.\\d*)?f?|\\.\\d+f?)([eE][-+]?\\d+f?)?)',
+        begin:
+          '(-?)(\\b0[xX][a-fA-F0-9]+|(\\b\\d+(\\.\\d*)?f?|\\.\\d+f?)([eE][-+]?\\d+f?)?)',
       },
     ],
   };

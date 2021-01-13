@@ -1,7 +1,9 @@
 module.exports = function (hljs) {
   var GCODE_IDENT_RE = '[A-Z_][A-Z0-9_.]*';
   var GCODE_CLOSE_RE = '\\%';
-  var GCODE_KEYWORDS = 'IF DO WHILE ENDWHILE CALL ENDIF SUB ENDSUB GOTO REPEAT ENDREPEAT ' + 'EQ LT GT NE GE LE OR XOR';
+  var GCODE_KEYWORDS =
+    'IF DO WHILE ENDWHILE CALL ENDIF SUB ENDSUB GOTO REPEAT ENDREPEAT ' +
+    'EQ LT GT NE GE LE OR XOR';
   var GCODE_START = {
     className: 'meta',
     begin: '([O])([0-9]+)',
@@ -10,7 +12,9 @@ module.exports = function (hljs) {
     hljs.C_LINE_COMMENT_MODE,
     hljs.C_BLOCK_COMMENT_MODE,
     hljs.COMMENT(/\(/, /\)/),
-    hljs.inherit(hljs.C_NUMBER_MODE, { begin: '([-+]?([0-9]*\\.?[0-9]+\\.?))|' + hljs.C_NUMBER_RE }),
+    hljs.inherit(hljs.C_NUMBER_MODE, {
+      begin: '([-+]?([0-9]*\\.?[0-9]+\\.?))|' + hljs.C_NUMBER_RE,
+    }),
     hljs.inherit(hljs.APOS_STRING_MODE, { illegal: null }),
     hljs.inherit(hljs.QUOTE_STRING_MODE, { illegal: null }),
     {

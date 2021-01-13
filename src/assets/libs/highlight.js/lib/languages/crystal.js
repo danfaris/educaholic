@@ -40,8 +40,16 @@ module.exports = function (hljs) {
       { begin: /'/, end: /'/ },
       { begin: /"/, end: /"/ },
       { begin: /`/, end: /`/ },
-      { begin: '%[Qwi]?\\(', end: '\\)', contains: recursiveParen('\\(', '\\)') },
-      { begin: '%[Qwi]?\\[', end: '\\]', contains: recursiveParen('\\[', '\\]') },
+      {
+        begin: '%[Qwi]?\\(',
+        end: '\\)',
+        contains: recursiveParen('\\(', '\\)'),
+      },
+      {
+        begin: '%[Qwi]?\\[',
+        end: '\\]',
+        contains: recursiveParen('\\[', '\\]'),
+      },
       { begin: '%[Qwi]?{', end: '}', contains: recursiveParen('{', '}') },
       { begin: '%[Qwi]?<', end: '>', contains: recursiveParen('<', '>') },
       { begin: '%[Qwi]?\\|', end: '\\|' },
@@ -62,7 +70,10 @@ module.exports = function (hljs) {
     relevance: 0,
   };
   var REGEXP = {
-    begin: '(?!%})(' + hljs.RE_STARTERS_RE + '|\\n|\\b(case|if|select|unless|until|when|while)\\b)\\s*',
+    begin:
+      '(?!%})(' +
+      hljs.RE_STARTERS_RE +
+      '|\\n|\\b(case|if|select|unless|until|when|while)\\b)\\s*',
     keywords: 'case if select unless until when while',
     contains: [
       {
@@ -92,7 +103,9 @@ module.exports = function (hljs) {
     className: 'meta',
     begin: '@\\[',
     end: '\\]',
-    contains: [hljs.inherit(hljs.QUOTE_STRING_MODE, { className: 'meta-string' })],
+    contains: [
+      hljs.inherit(hljs.QUOTE_STRING_MODE, { className: 'meta-string' }),
+    ],
   };
   var CRYSTAL_DEFAULT_CONTAINS = [
     EXPANSION,
@@ -118,14 +131,20 @@ module.exports = function (hljs) {
       beginKeywords: 'lib enum union',
       end: '$|;',
       illegal: /=/,
-      contains: [hljs.HASH_COMMENT_MODE, hljs.inherit(hljs.TITLE_MODE, { begin: CRYSTAL_PATH_RE })],
+      contains: [
+        hljs.HASH_COMMENT_MODE,
+        hljs.inherit(hljs.TITLE_MODE, { begin: CRYSTAL_PATH_RE }),
+      ],
       relevance: 10,
     },
     {
       beginKeywords: 'annotation',
       end: '$|;',
       illegal: /=/,
-      contains: [hljs.HASH_COMMENT_MODE, hljs.inherit(hljs.TITLE_MODE, { begin: CRYSTAL_PATH_RE })],
+      contains: [
+        hljs.HASH_COMMENT_MODE,
+        hljs.inherit(hljs.TITLE_MODE, { begin: CRYSTAL_PATH_RE }),
+      ],
       relevance: 10,
     },
     {
@@ -168,7 +187,12 @@ module.exports = function (hljs) {
         { begin: '\\b0b([01_]+)' + INT_SUFFIX },
         { begin: '\\b0o([0-7_]+)' + INT_SUFFIX },
         { begin: '\\b0x([A-Fa-f0-9_]+)' + INT_SUFFIX },
-        { begin: '\\b([1-9][0-9_]*[0-9]|[0-9])(\\.[0-9][0-9_]*)?([eE]_*[-+]?[0-9_]*)?' + FLOAT_SUFFIX + '(?!_)' },
+        {
+          begin:
+            '\\b([1-9][0-9_]*[0-9]|[0-9])(\\.[0-9][0-9_]*)?([eE]_*[-+]?[0-9_]*)?' +
+            FLOAT_SUFFIX +
+            '(?!_)',
+        },
         { begin: '\\b([1-9][0-9_]*|0)' + INT_SUFFIX },
       ],
       relevance: 0,

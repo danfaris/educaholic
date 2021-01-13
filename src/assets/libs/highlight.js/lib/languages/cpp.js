@@ -26,8 +26,14 @@ module.exports = function (hljs) {
     className: 'number',
     variants: [
       { begin: "\\b(0b[01']+)" },
-      { begin: "(-?)\\b([\\d']+(\\.[\\d']*)?|\\.[\\d']+)(u|U|l|L|ul|UL|f|F|b|B)" },
-      { begin: "(-?)(\\b0[xX][a-fA-F0-9']+|(\\b[\\d']+(\\.[\\d']*)?|\\.[\\d']+)([eE][-+]?[\\d']+)?)" },
+      {
+        begin:
+          "(-?)\\b([\\d']+(\\.[\\d']*)?|\\.[\\d']+)(u|U|l|L|ul|UL|f|F|b|B)",
+      },
+      {
+        begin:
+          "(-?)(\\b0[xX][a-fA-F0-9']+|(\\b[\\d']+(\\.[\\d']*)?|\\.[\\d']+)([eE][-+]?[\\d']+)?)",
+      },
     ],
     relevance: 0,
   };
@@ -37,7 +43,9 @@ module.exports = function (hljs) {
     begin: /#\s*[a-z]+\b/,
     end: /$/,
     keywords: {
-      'meta-keyword': 'if else elif endif define undef warning error line ' + 'pragma ifdef ifndef include',
+      'meta-keyword':
+        'if else elif endif define undef warning error line ' +
+        'pragma ifdef ifndef include',
     },
     contains: [
       {

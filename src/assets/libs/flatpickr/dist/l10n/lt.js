@@ -27,7 +27,20 @@
       ],
     },
     months: {
-      shorthand: ['Sau', 'Vas', 'Kov', 'Bal', 'Geg', 'Bir', 'Lie', 'Rgp', 'Rgs', 'Spl', 'Lap', 'Grd'],
+      shorthand: [
+        'Sau',
+        'Vas',
+        'Kov',
+        'Bal',
+        'Geg',
+        'Bir',
+        'Lie',
+        'Rgp',
+        'Rgs',
+        'Spl',
+        'Lap',
+        'Grd',
+      ],
       longhand: [
         'Sausis',
         'Vasaris',

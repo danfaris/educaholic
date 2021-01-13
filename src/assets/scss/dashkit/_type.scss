@@ -96,7 +96,8 @@ button {
 @font-face {
   font-family: "Cerebri Sans";
   src: url("/assets/fonts/cerebrisans/cerebrisans-regular.eot");
-  src: url("/assets/fonts/cerebrisans/cerebrisans-regular.eot?#iefix") format("embedded-opentype"),
+  src: url("/assets/fonts/cerebrisans/cerebrisans-regular.eot?#iefix")
+      format("embedded-opentype"),
     url("/assets/fonts/cerebrisans/cerebrisans-regular.woff") format("woff"),
     url("#/assets/fonts/cerebrisans/cerebrisans-regular.ttf") format("truetype");
   font-weight: 400;
@@ -106,7 +107,8 @@ button {
 @font-face {
   font-family: "Cerebri Sans";
   src: url("/assets/fonts/cerebrisans/cerebrisans-medium.eot");
-  src: url("#{$font-path}/cerebrisans-medium.eot?#iefix") format("embedded-opentype"),
+  src: url("#{$font-path}/cerebrisans-medium.eot?#iefix")
+      format("embedded-opentype"),
     url("assets/fonts/cerebrisans/cerebrisans-medium.woff") format("woff"),
     url("#{$font-path}/cerebrisans-medium.ttf") format("truetype");
   font-weight: 500;
@@ -116,7 +118,8 @@ button {
 @font-face {
   font-family: "Cerebri Sans";
   src: url("#{$font-path}/cerebrisans-semibold.eot");
-  src: url("#{$font-path}/cerebrisans-semibold.eot?#iefix") format("embedded-opentype"),
+  src: url("#{$font-path}/cerebrisans-semibold.eot?#iefix")
+      format("embedded-opentype"),
     url("#{$font-path}/cerebrisans-semibold.woff") format("woff"),
     url("#{$font-path}/cerebrisans-semibold.ttf") format("truetype");
   font-weight: 600;

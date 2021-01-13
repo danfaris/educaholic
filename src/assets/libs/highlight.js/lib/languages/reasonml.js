@@ -16,9 +16,29 @@ module.exports = function (hljs) {
   var RE_MODULE_IDENT = '`?[A-Z$_][0-9a-zA-Z$_]*';
 
   var RE_PARAM_TYPEPARAM = "'?[a-z$_][0-9a-z$_]*";
-  var RE_PARAM_TYPE = 's*:s*[a-z$_][0-9a-z$_]*((s*(' + RE_PARAM_TYPEPARAM + 's*(,' + RE_PARAM_TYPEPARAM + ')*)?s*))?';
+  var RE_PARAM_TYPE =
+    's*:s*[a-z$_][0-9a-z$_]*((s*(' +
+    RE_PARAM_TYPEPARAM +
+    's*(,' +
+    RE_PARAM_TYPEPARAM +
+    ')*)?s*))?';
   var RE_PARAM = RE_IDENT + '(' + RE_PARAM_TYPE + ')?(' + RE_PARAM_TYPE + ')?';
-  var RE_OPERATOR = '(' + orReValues(['||', '&&', '++', '**', '+.', '*', '/', '*.', '/.', '...', '|>']) + '|==|===)';
+  var RE_OPERATOR =
+    '(' +
+    orReValues([
+      '||',
+      '&&',
+      '++',
+      '**',
+      '+.',
+      '*',
+      '/',
+      '*.',
+      '/.',
+      '...',
+      '|>',
+    ]) +
+    '|==|===)';
   var RE_OPERATOR_SPACED = '\\s+' + RE_OPERATOR + '\\s+';
 
   var KEYWORDS = {
@@ -27,7 +47,8 @@ module.exports = function (hljs) {
       'for fun function functor if in include inherit initializer' +
       'land lazy let lor lsl lsr lxor match method mod module mutable new nonrec' +
       'object of open or private rec sig struct then to try type val virtual when while with',
-    built_in: 'array bool bytes char exn|5 float int int32 int64 list lazy_t|5 nativeint|5 ref string unit ',
+    built_in:
+      'array bool bytes char exn|5 float int int32 int64 list lazy_t|5 nativeint|5 ref string unit ',
     literal: 'true false',
   };
 
@@ -274,7 +295,8 @@ module.exports = function (hljs) {
       FUNCTION_BLOCK_MODE,
       {
         className: 'module-def',
-        begin: '\\bmodule\\s+' + RE_IDENT + '\\s+' + RE_MODULE_IDENT + '\\s+=\\s+{',
+        begin:
+          '\\bmodule\\s+' + RE_IDENT + '\\s+' + RE_MODULE_IDENT + '\\s+=\\s+{',
         end: '}',
         returnBegin: true,
         keywords: KEYWORDS,

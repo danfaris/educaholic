@@ -21,7 +21,8 @@ module.exports = function (hljs) {
         'sbyte short single string trycast typeof uinteger ulong ushort' /* s-u */,
       literal: 'true false nothing',
     },
-    illegal: '//|{|}|endif|gosub|variant|wend|^\\$ ' /* reserved deprecated keywords */,
+    illegal:
+      '//|{|}|endif|gosub|variant|wend|^\\$ ' /* reserved deprecated keywords */,
     contains: [
       hljs.inherit(hljs.QUOTE_STRING_MODE, { contains: [{ begin: '""' }] }),
       hljs.COMMENT("'", '$', {
@@ -45,7 +46,9 @@ module.exports = function (hljs) {
         className: 'meta',
         begin: '#',
         end: '$',
-        keywords: { 'meta-keyword': 'if else elseif end region externalsource' },
+        keywords: {
+          'meta-keyword': 'if else elseif end region externalsource',
+        },
       },
     ],
   };

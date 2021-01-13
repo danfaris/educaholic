@@ -31,20 +31,34 @@
 
   function _possibleConstructorReturn(self, call) {
     if (!self) {
-      throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+      throw new ReferenceError(
+        "this hasn't been initialised - super() hasn't been called"
+      );
     }
-    return call && (typeof call === 'object' || typeof call === 'function') ? call : self;
+    return call && (typeof call === 'object' || typeof call === 'function')
+      ? call
+      : self;
   }
 
   function _inherits(subClass, superClass) {
     if (typeof superClass !== 'function' && superClass !== null) {
-      throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass);
+      throw new TypeError(
+        'Super expression must either be null or a function, not ' +
+          typeof superClass
+      );
     }
     subClass.prototype = Object.create(superClass && superClass.prototype, {
-      constructor: { value: subClass, enumerable: false, writable: true, configurable: true },
+      constructor: {
+        value: subClass,
+        enumerable: false,
+        writable: true,
+        configurable: true,
+      },
     });
     if (superClass)
-      Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : (subClass.__proto__ = superClass);
+      Object.setPrototypeOf
+        ? Object.setPrototypeOf(subClass, superClass)
+        : (subClass.__proto__ = superClass);
   }
 
   function _classCallCheck(instance, Constructor) {
@@ -110,7 +124,13 @@
           var callbacks = this._callbacks[event];
 
           if (callbacks) {
-            for (var _len = arguments.length, args = Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
+            for (
+              var _len = arguments.length,
+                args = Array(_len > 1 ? _len - 1 : 0),
+                _key = 1;
+              _key < _len;
+              _key++
+            ) {
               args[_key - 1] = arguments[_key];
             }
 
@@ -510,20 +530,23 @@
             /**
              * The text that replaces the default message text it the browser is not supported.
              */
-            dictFallbackMessage: "Your browser does not support drag'n'drop file uploads.",
+            dictFallbackMessage:
+              "Your browser does not support drag'n'drop file uploads.",
 
             /**
              * The text that will be added before the fallback form.
              * If you provide a  fallback element yourself, or if this option is `null` this will
              * be ignored.
              */
-            dictFallbackText: 'Please use the fallback form below to upload your files like in the olden days.',
+            dictFallbackText:
+              'Please use the fallback form below to upload your files like in the olden days.',
 
             /**
              * If the filesize is too big.
              * `{{filesize}}` and `{{maxFilesize}}` will be replaced with the respective configuration values.
              */
-            dictFileTooBig: 'File is too big ({{filesize}}MiB). Max filesize: {{maxFilesize}}MiB.',
+            dictFileTooBig:
+              'File is too big ({{filesize}}MiB). Max filesize: {{maxFilesize}}MiB.',
 
             /**
              * If the file doesn't match the file type.
@@ -549,7 +572,8 @@
             /**
              * If `addRemoveLinks` is true, the text to be used for confirmation when cancelling upload.
              */
-            dictCancelUploadConfirmation: 'Are you sure you want to cancel this upload?',
+            dictCancelUploadConfirmation:
+              'Are you sure you want to cancel this upload?',
 
             /**
              * If `addRemoveLinks` is true, the text to be used to remove a file.
@@ -571,7 +595,13 @@
              * Allows you to translate the different units. Starting with `tb` for terabytes and going down to
              * `b` for bytes.
              */
-            dictFileSizeUnits: { tb: 'TB', gb: 'GB', mb: 'MB', kb: 'KB', b: 'b' },
+            dictFileSizeUnits: {
+              tb: 'TB',
+              gb: 'GB',
+              mb: 'MB',
+              kb: 'KB',
+              b: 'b',
+            },
             /**
              * Called when dropzone initialized
              * You can add event listeners here
@@ -632,13 +662,16 @@
             fallback: function fallback() {
               // This code should pass in IE7... :(
               var messageElement = void 0;
-              this.element.className = this.element.className + ' dz-browser-not-supported';
+              this.element.className =
+                this.element.className + ' dz-browser-not-supported';
 
               for (
                 var _iterator2 = this.element.getElementsByTagName('div'),
                   _isArray2 = Array.isArray(_iterator2),
                   _i2 = 0,
-                  _iterator2 = _isArray2 ? _iterator2 : _iterator2[Symbol.iterator]();
+                  _iterator2 = _isArray2
+                    ? _iterator2
+                    : _iterator2[Symbol.iterator]();
                 ;
 
               ) {
@@ -662,7 +695,9 @@
                 }
               }
               if (!messageElement) {
-                messageElement = Dropzone.createElement('<div class="dz-message"><span></span></div>');
+                messageElement = Dropzone.createElement(
+                  '<div class="dz-message"><span></span></div>'
+                );
                 this.element.appendChild(messageElement);
               }
 
@@ -734,7 +769,9 @@
                     width = height * srcRatio;
                   }
                 } else {
-                  throw new Error("Unknown resizeMethod '" + resizeMethod + "'");
+                  throw new Error(
+                    "Unknown resizeMethod '" + resizeMethod + "'"
+                  );
                 }
               }
 
@@ -757,7 +794,10 @@
              * to be invoked with the file when the transformation is done.
              */
             transformFile: function transformFile(file, done) {
-              if ((this.options.resizeWidth || this.options.resizeHeight) && file.type.match(/image.*/)) {
+              if (
+                (this.options.resizeWidth || this.options.resizeHeight) &&
+                file.type.match(/image.*/)
+              ) {
                 return this.resizeImage(
                   file,
                   this.options.resizeWidth,
@@ -834,15 +874,21 @@
               }
 
               if (this.previewsContainer) {
-                file.previewElement = Dropzone.createElement(this.options.previewTemplate.trim());
+                file.previewElement = Dropzone.createElement(
+                  this.options.previewTemplate.trim()
+                );
                 file.previewTemplate = file.previewElement; // Backwards compatibility
 
                 this.previewsContainer.appendChild(file.previewElement);
                 for (
-                  var _iterator3 = file.previewElement.querySelectorAll('[data-dz-name]'),
+                  var _iterator3 = file.previewElement.querySelectorAll(
+                      '[data-dz-name]'
+                    ),
                     _isArray3 = Array.isArray(_iterator3),
                     _i3 = 0,
-                    _iterator3 = _isArray3 ? _iterator3 : _iterator3[Symbol.iterator]();
+                    _iterator3 = _isArray3
+                      ? _iterator3
+                      : _iterator3[Symbol.iterator]();
                   ;
 
                 ) {
@@ -862,10 +908,14 @@
                   node.textContent = file.name;
                 }
                 for (
-                  var _iterator4 = file.previewElement.querySelectorAll('[data-dz-size]'),
+                  var _iterator4 = file.previewElement.querySelectorAll(
+                      '[data-dz-size]'
+                    ),
                     _isArray4 = Array.isArray(_iterator4),
                     _i4 = 0,
-                    _iterator4 = _isArray4 ? _iterator4 : _iterator4[Symbol.iterator]();
+                    _iterator4 = _isArray4
+                      ? _iterator4
+                      : _iterator4[Symbol.iterator]();
                   ;
 
                 ) {
@@ -894,14 +944,20 @@
                   e.preventDefault();
                   e.stopPropagation();
                   if (file.status === Dropzone.UPLOADING) {
-                    return Dropzone.confirm(_this2.options.dictCancelUploadConfirmation, function () {
-                      return _this2.removeFile(file);
-                    });
+                    return Dropzone.confirm(
+                      _this2.options.dictCancelUploadConfirmation,
+                      function () {
+                        return _this2.removeFile(file);
+                      }
+                    );
                   } else {
                     if (_this2.options.dictRemoveFileConfirmation) {
-                      return Dropzone.confirm(_this2.options.dictRemoveFileConfirmation, function () {
-                        return _this2.removeFile(file);
-                      });
+                      return Dropzone.confirm(
+                        _this2.options.dictRemoveFileConfirmation,
+                        function () {
+                          return _this2.removeFile(file);
+                        }
+                      );
                     } else {
                       return _this2.removeFile(file);
                     }
@@ -909,10 +965,14 @@
                 };
 
                 for (
-                  var _iterator5 = file.previewElement.querySelectorAll('[data-dz-remove]'),
+                  var _iterator5 = file.previewElement.querySelectorAll(
+                      '[data-dz-remove]'
+                    ),
                     _isArray5 = Array.isArray(_iterator5),
                     _i5 = 0,
-                    _iterator5 = _isArray5 ? _iterator5 : _iterator5[Symbol.iterator]();
+                    _iterator5 = _isArray5
+                      ? _iterator5
+                      : _iterator5[Symbol.iterator]();
                   ;
 
                 ) {
@@ -936,7 +996,10 @@
 
             // Called whenever a file is removed.
             removedfile: function removedfile(file) {
-              if (file.previewElement != null && file.previewElement.parentNode != null) {
+              if (
+                file.previewElement != null &&
+                file.previewElement.parentNode != null
+              ) {
                 file.previewElement.parentNode.removeChild(file.previewElement);
               }
               return this._updateMaxFilesReachedClass();
@@ -948,10 +1011,14 @@
               if (file.previewElement) {
                 file.previewElement.classList.remove('dz-file-preview');
                 for (
-                  var _iterator6 = file.previewElement.querySelectorAll('[data-dz-thumbnail]'),
+                  var _iterator6 = file.previewElement.querySelectorAll(
+                      '[data-dz-thumbnail]'
+                    ),
                     _isArray6 = Array.isArray(_iterator6),
                     _i6 = 0,
-                    _iterator6 = _isArray6 ? _iterator6 : _iterator6[Symbol.iterator]();
+                    _iterator6 = _isArray6
+                      ? _iterator6
+                      : _iterator6[Symbol.iterator]();
                   ;
 
                 ) {
@@ -987,10 +1054,14 @@
                   message = message.error;
                 }
                 for (
-                  var _iterator7 = file.previewElement.querySelectorAll('[data-dz-errormessage]'),
+                  var _iterator7 = file.previewElement.querySelectorAll(
+                      '[data-dz-errormessage]'
+                    ),
                     _isArray7 = Array.isArray(_iterator7),
                     _i7 = 0,
-                    _iterator7 = _isArray7 ? _iterator7 : _iterator7[Symbol.iterator]();
+                    _iterator7 = _isArray7
+                      ? _iterator7
+                      : _iterator7[Symbol.iterator]();
                   ;
 
                 ) {
@@ -1032,10 +1103,14 @@
             uploadprogress: function uploadprogress(file, progress, bytesSent) {
               if (file.previewElement) {
                 for (
-                  var _iterator8 = file.previewElement.querySelectorAll('[data-dz-uploadprogress]'),
+                  var _iterator8 = file.previewElement.querySelectorAll(
+                      '[data-dz-uploadprogress]'
+                    ),
                     _isArray8 = Array.isArray(_iterator8),
                     _i8 = 0,
-                    _iterator8 = _isArray8 ? _iterator8 : _iterator8[Symbol.iterator]();
+                    _iterator8 = _isArray8
+                      ? _iterator8
+                      : _iterator8[Symbol.iterator]();
                   ;
 
                 ) {
@@ -1052,7 +1127,9 @@
 
                   var node = _ref7;
 
-                  node.nodeName === 'PROGRESS' ? (node.value = progress) : (node.style.width = progress + '%');
+                  node.nodeName === 'PROGRESS'
+                    ? (node.value = progress)
+                    : (node.style.width = progress + '%');
                 }
               }
             },
@@ -1109,7 +1186,9 @@
         key: 'extend',
         value: function extend(target) {
           for (
-            var _len2 = arguments.length, objects = Array(_len2 > 1 ? _len2 - 1 : 0), _key2 = 1;
+            var _len2 = arguments.length,
+              objects = Array(_len2 > 1 ? _len2 - 1 : 0),
+              _key2 = 1;
             _key2 < _len2;
             _key2++
           ) {
@@ -1120,7 +1199,9 @@
             var _iterator9 = objects,
               _isArray9 = Array.isArray(_iterator9),
               _i9 = 0,
-              _iterator9 = _isArray9 ? _iterator9 : _iterator9[Symbol.iterator]();
+              _iterator9 = _isArray9
+                ? _iterator9
+                : _iterator9[Symbol.iterator]();
             ;
 
           ) {
@@ -1150,7 +1231,10 @@
     function Dropzone(el, options) {
       _classCallCheck(this, Dropzone);
 
-      var _this = _possibleConstructorReturn(this, (Dropzone.__proto__ || Object.getPrototypeOf(Dropzone)).call(this));
+      var _this = _possibleConstructorReturn(
+        this,
+        (Dropzone.__proto__ || Object.getPrototypeOf(Dropzone)).call(this)
+      );
 
       var fallback = void 0,
         left = void 0;
@@ -1158,7 +1242,10 @@
       // For backwards compatibility since the version was in the prototype previously
       _this.version = Dropzone.version;
 
-      _this.defaultOptions.previewTemplate = _this.defaultOptions.previewTemplate.replace(/\n*/g, '');
+      _this.defaultOptions.previewTemplate = _this.defaultOptions.previewTemplate.replace(
+        /\n*/g,
+        ''
+      );
 
       _this.clickableElements = [];
       _this.listeners = [];
@@ -1183,15 +1270,24 @@
       // Put the dropzone inside the element itself.
       _this.element.dropzone = _this;
 
-      var elementOptions = (left = Dropzone.optionsForElement(_this.element)) != null ? left : {};
+      var elementOptions =
+        (left = Dropzone.optionsForElement(_this.element)) != null ? left : {};
 
-      _this.options = Dropzone.extend({}, _this.defaultOptions, elementOptions, options != null ? options : {});
+      _this.options = Dropzone.extend(
+        {},
+        _this.defaultOptions,
+        elementOptions,
+        options != null ? options : {}
+      );
 
       // If the browser failed, just call the fallback and leave
       if (_this.options.forceFallback || !Dropzone.isBrowserSupported()) {
         var _ret;
 
-        return (_ret = _this.options.fallback.call(_this)), _possibleConstructorReturn(_this, _ret);
+        return (
+          (_ret = _this.options.fallback.call(_this)),
+          _possibleConstructorReturn(_this, _ret)
+        );
       }
 
       // @options.url = @element.getAttribute "action" unless @options.url?
@@ -1236,7 +1332,10 @@
       // Display previews in the previewsContainer element or the Dropzone element unless explicitly set to false
       if (_this.options.previewsContainer !== false) {
         if (_this.options.previewsContainer) {
-          _this.previewsContainer = Dropzone.getElement(_this.options.previewsContainer, 'previewsContainer');
+          _this.previewsContainer = Dropzone.getElement(
+            _this.options.previewsContainer,
+            'previewsContainer'
+          );
         } else {
           _this.previewsContainer = _this.element;
         }
@@ -1246,7 +1345,10 @@
         if (_this.options.clickable === true) {
           _this.clickableElements = [_this.element];
         } else {
-          _this.clickableElements = Dropzone.getElements(_this.options.clickable, 'clickable');
+          _this.clickableElements = Dropzone.getElements(
+            _this.options.clickable,
+            'clickable'
+          );
         }
       }
 
@@ -1325,7 +1427,10 @@
           value: function getActiveFiles() {
             return this.files
               .filter(function (file) {
-                return file.status === Dropzone.UPLOADING || file.status === Dropzone.QUEUED;
+                return (
+                  file.status === Dropzone.UPLOADING ||
+                  file.status === Dropzone.QUEUED
+                );
               })
               .map(function (file) {
                 return file;
@@ -1345,10 +1450,15 @@
               this.element.setAttribute('enctype', 'multipart/form-data');
             }
 
-            if (this.element.classList.contains('dropzone') && !this.element.querySelector('.dz-message')) {
+            if (
+              this.element.classList.contains('dropzone') &&
+              !this.element.querySelector('.dz-message')
+            ) {
               this.element.appendChild(
                 Dropzone.createElement(
-                  '<div class="dz-default dz-message"><span>' + this.options.dictDefaultMessage + '</span></div>'
+                  '<div class="dz-default dz-message"><span>' +
+                    this.options.dictDefaultMessage +
+                    '</span></div>'
                 )
               );
             }
@@ -1356,20 +1466,31 @@
             if (this.clickableElements.length) {
               var setupHiddenFileInput = function setupHiddenFileInput() {
                 if (_this3.hiddenFileInput) {
-                  _this3.hiddenFileInput.parentNode.removeChild(_this3.hiddenFileInput);
+                  _this3.hiddenFileInput.parentNode.removeChild(
+                    _this3.hiddenFileInput
+                  );
                 }
                 _this3.hiddenFileInput = document.createElement('input');
                 _this3.hiddenFileInput.setAttribute('type', 'file');
-                if (_this3.options.maxFiles === null || _this3.options.maxFiles > 1) {
+                if (
+                  _this3.options.maxFiles === null ||
+                  _this3.options.maxFiles > 1
+                ) {
                   _this3.hiddenFileInput.setAttribute('multiple', 'multiple');
                 }
                 _this3.hiddenFileInput.className = 'dz-hidden-input';
 
                 if (_this3.options.acceptedFiles !== null) {
-                  _this3.hiddenFileInput.setAttribute('accept', _this3.options.acceptedFiles);
+                  _this3.hiddenFileInput.setAttribute(
+                    'accept',
+                    _this3.options.acceptedFiles
+                  );
                 }
                 if (_this3.options.capture !== null) {
-                  _this3.hiddenFileInput.setAttribute('capture', _this3.options.capture);
+                  _this3.hiddenFileInput.setAttribute(
+                    'capture',
+                    _this3.options.capture
+                  );
                 }
 
                 // Not setting `display="none"` because some browsers don't accept clicks
@@ -1380,40 +1501,46 @@
                 _this3.hiddenFileInput.style.left = '0';
                 _this3.hiddenFileInput.style.height = '0';
                 _this3.hiddenFileInput.style.width = '0';
-                Dropzone.getElement(_this3.options.hiddenInputContainer, 'hiddenInputContainer').appendChild(
-                  _this3.hiddenFileInput
-                );
-                return _this3.hiddenFileInput.addEventListener('change', function () {
-                  var files = _this3.hiddenFileInput.files;
+                Dropzone.getElement(
+                  _this3.options.hiddenInputContainer,
+                  'hiddenInputContainer'
+                ).appendChild(_this3.hiddenFileInput);
+                return _this3.hiddenFileInput.addEventListener(
+                  'change',
+                  function () {
+                    var files = _this3.hiddenFileInput.files;
 
-                  if (files.length) {
-                    for (
-                      var _iterator10 = files,
-                        _isArray10 = Array.isArray(_iterator10),
-                        _i10 = 0,
-                        _iterator10 = _isArray10 ? _iterator10 : _iterator10[Symbol.iterator]();
-                      ;
+                    if (files.length) {
+                      for (
+                        var _iterator10 = files,
+                          _isArray10 = Array.isArray(_iterator10),
+                          _i10 = 0,
+                          _iterator10 = _isArray10
+                            ? _iterator10
+                            : _iterator10[Symbol.iterator]();
+                        ;
 
-                    ) {
-                      var _ref9;
+                      ) {
+                        var _ref9;
 
-                      if (_isArray10) {
-                        if (_i10 >= _iterator10.length) break;
-                        _ref9 = _iterator10[_i10++];
-                      } else {
-                        _i10 = _iterator10.next();
-                        if (_i10.done) break;
-                        _ref9 = _i10.value;
+                        if (_isArray10) {
+                          if (_i10 >= _iterator10.length) break;
+                          _ref9 = _iterator10[_i10++];
+                        } else {
+                          _i10 = _iterator10.next();
+                          if (_i10.done) break;
+                          _ref9 = _i10.value;
+                        }
+
+                        var file = _ref9;
+
+                        _this3.addFile(file);
                       }
-
-                      var file = _ref9;
-
-                      _this3.addFile(file);
                     }
+                    _this3.emit('addedfiles', files);
+                    return setupHiddenFileInput();
                   }
-                  _this3.emit('addedfiles', files);
-                  return setupHiddenFileInput();
-                });
+                );
               };
               setupHiddenFileInput();
             }
@@ -1427,7 +1554,9 @@
               var _iterator11 = this.events,
                 _isArray11 = Array.isArray(_iterator11),
                 _i11 = 0,
-                _iterator11 = _isArray11 ? _iterator11 : _iterator11[Symbol.iterator]();
+                _iterator11 = _isArray11
+                  ? _iterator11
+                  : _iterator11[Symbol.iterator]();
               ;
 
             ) {
@@ -1502,7 +1631,8 @@
                     try {
                       efct = e.dataTransfer.effectAllowed;
                     } catch (error) {}
-                    e.dataTransfer.dropEffect = 'move' === efct || 'linkMove' === efct ? 'move' : 'copy';
+                    e.dataTransfer.dropEffect =
+                      'move' === efct || 'linkMove' === efct ? 'move' : 'copy';
 
                     noPropagation(e);
                     return _this3.emit('dragover', e);
@@ -1535,7 +1665,10 @@
                     if (
                       clickableElement !== _this3.element ||
                       evt.target === _this3.element ||
-                      Dropzone.elementInside(evt.target, _this3.element.querySelector('.dz-message'))
+                      Dropzone.elementInside(
+                        evt.target,
+                        _this3.element.querySelector('.dz-message')
+                      )
                     ) {
                       _this3.hiddenFileInput.click(); // Forward the click
                     }
@@ -1557,12 +1690,19 @@
           value: function destroy() {
             this.disable();
             this.removeAllFiles(true);
-            if (this.hiddenFileInput != null ? this.hiddenFileInput.parentNode : undefined) {
+            if (
+              this.hiddenFileInput != null
+                ? this.hiddenFileInput.parentNode
+                : undefined
+            ) {
               this.hiddenFileInput.parentNode.removeChild(this.hiddenFileInput);
               this.hiddenFileInput = null;
             }
             delete this.element.dropzone;
-            return Dropzone.instances.splice(Dropzone.instances.indexOf(this), 1);
+            return Dropzone.instances.splice(
+              Dropzone.instances.indexOf(this),
+              1
+            );
           },
         },
         {
@@ -1579,7 +1719,9 @@
                 var _iterator12 = this.getActiveFiles(),
                   _isArray12 = Array.isArray(_iterator12),
                   _i12 = 0,
-                  _iterator12 = _isArray12 ? _iterator12 : _iterator12[Symbol.iterator]();
+                  _iterator12 = _isArray12
+                    ? _iterator12
+                    : _iterator12[Symbol.iterator]();
                 ;
 
               ) {
@@ -1604,7 +1746,12 @@
               totalUploadProgress = 100;
             }
 
-            return this.emit('totaluploadprogress', totalUploadProgress, totalBytes, totalBytesSent);
+            return this.emit(
+              'totaluploadprogress',
+              totalUploadProgress,
+              totalBytes,
+              totalBytesSent
+            );
           },
 
           // @options.paramName can be a function taking one parameter rather than a string.
@@ -1616,7 +1763,11 @@
             if (typeof this.options.paramName === 'function') {
               return this.options.paramName(n);
             } else {
-              return '' + this.options.paramName + (this.options.uploadMultiple ? '[' + n + ']' : '');
+              return (
+                '' +
+                this.options.paramName +
+                (this.options.uploadMultiple ? '[' + n + ']' : '')
+              );
             }
           },
 
@@ -1654,7 +1805,9 @@
               '<input type="file" name="' +
               this._getParamName(0) +
               '" ' +
-              (this.options.uploadMultiple ? 'multiple="multiple"' : undefined) +
+              (this.options.uploadMultiple
+                ? 'multiple="multiple"'
+                : undefined) +
               ' /><input type="submit" value="Upload!"></div>';
 
             var fields = Dropzone.createElement(fieldsString);
@@ -1687,7 +1840,9 @@
                 var _iterator13 = elements,
                   _isArray13 = Array.isArray(_iterator13),
                   _i13 = 0,
-                  _iterator13 = _isArray13 ? _iterator13 : _iterator13[Symbol.iterator]();
+                  _iterator13 = _isArray13
+                    ? _iterator13
+                    : _iterator13[Symbol.iterator]();
                 ;
 
               ) {
@@ -1714,7 +1869,11 @@
             for (var _i14 = 0; _i14 < _arr.length; _i14++) {
               var tagName = _arr[_i14];
               var fallback;
-              if ((fallback = getFallback(this.element.getElementsByTagName(tagName)))) {
+              if (
+                (fallback = getFallback(
+                  this.element.getElementsByTagName(tagName)
+                ))
+              ) {
                 return fallback;
               }
             }
@@ -1730,7 +1889,13 @@
                 var result = [];
                 for (var event in elementListeners.events) {
                   var listener = elementListeners.events[event];
-                  result.push(elementListeners.element.addEventListener(event, listener, false));
+                  result.push(
+                    elementListeners.element.addEventListener(
+                      event,
+                      listener,
+                      false
+                    )
+                  );
                 }
                 return result;
               })();
@@ -1747,7 +1912,13 @@
                 var result = [];
                 for (var event in elementListeners.events) {
                   var listener = elementListeners.events[event];
-                  result.push(elementListeners.element.removeEventListener(event, listener, false));
+                  result.push(
+                    elementListeners.element.removeEventListener(
+                      event,
+                      listener,
+                      false
+                    )
+                  );
                 }
                 return result;
               })();
@@ -1798,7 +1969,8 @@
                 var cutoff = Math.pow(this.options.filesizeBase, 4 - i) / 10;
 
                 if (size >= cutoff) {
-                  selectedSize = size / Math.pow(this.options.filesizeBase, 4 - i);
+                  selectedSize =
+                    size / Math.pow(this.options.filesizeBase, 4 - i);
                   selectedUnit = unit;
                   break;
                 }
@@ -1807,7 +1979,12 @@
               selectedSize = Math.round(10 * selectedSize) / 10; // Cutting of digits
             }
 
-            return '<strong>' + selectedSize + '</strong> ' + this.options.dictFileSizeUnits[selectedUnit];
+            return (
+              '<strong>' +
+              selectedSize +
+              '</strong> ' +
+              this.options.dictFileSizeUnits[selectedUnit]
+            );
           },
 
           // Adds or removes the `dz-max-files-reached` class from the form.
@@ -1815,7 +1992,10 @@
         {
           key: '_updateMaxFilesReachedClass',
           value: function _updateMaxFilesReachedClass() {
-            if (this.options.maxFiles != null && this.getAcceptedFiles().length >= this.options.maxFiles) {
+            if (
+              this.options.maxFiles != null &&
+              this.getAcceptedFiles().length >= this.options.maxFiles
+            ) {
               if (this.getAcceptedFiles().length === this.options.maxFiles) {
                 this.emit('maxfilesreached', this.files);
               }
@@ -1881,7 +2061,9 @@
               var _iterator14 = files,
                 _isArray14 = Array.isArray(_iterator14),
                 _i15 = 0,
-                _iterator14 = _isArray14 ? _iterator14 : _iterator14[Symbol.iterator]();
+                _iterator14 = _isArray14
+                  ? _iterator14
+                  : _iterator14[Symbol.iterator]();
               ;
 
             ) {
@@ -1916,7 +2098,9 @@
                 var _iterator15 = items,
                   _isArray15 = Array.isArray(_iterator15),
                   _i16 = 0,
-                  _iterator15 = _isArray15 ? _iterator15 : _iterator15[Symbol.iterator]();
+                  _iterator15 = _isArray15
+                    ? _iterator15
+                    : _iterator15[Symbol.iterator]();
                 ;
 
               ) {
@@ -1934,12 +2118,17 @@
                 var item = _ref14;
 
                 var entry;
-                if (item.webkitGetAsEntry != null && (entry = item.webkitGetAsEntry())) {
+                if (
+                  item.webkitGetAsEntry != null &&
+                  (entry = item.webkitGetAsEntry())
+                ) {
                   if (entry.isFile) {
                     result.push(_this5.addFile(item.getAsFile()));
                   } else if (entry.isDirectory) {
                     // Append all files from that directory to files
-                    result.push(_this5._addFilesFromDirectory(entry, entry.name));
+                    result.push(
+                      _this5._addFilesFromDirectory(entry, entry.name)
+                    );
                   } else {
                     result.push(undefined);
                   }
@@ -1979,7 +2168,9 @@
                     var _iterator16 = entries,
                       _isArray16 = Array.isArray(_iterator16),
                       _i17 = 0,
-                      _iterator16 = _isArray16 ? _iterator16 : _iterator16[Symbol.iterator]();
+                      _iterator16 = _isArray16
+                        ? _iterator16
+                        : _iterator16[Symbol.iterator]();
                     ;
 
                   ) {
@@ -1998,14 +2189,20 @@
 
                     if (entry.isFile) {
                       entry.file(function (file) {
-                        if (_this6.options.ignoreHiddenFiles && file.name.substring(0, 1) === '.') {
+                        if (
+                          _this6.options.ignoreHiddenFiles &&
+                          file.name.substring(0, 1) === '.'
+                        ) {
                           return;
                         }
                         file.fullPath = path + '/' + file.name;
                         return _this6.addFile(file);
                       });
                     } else if (entry.isDirectory) {
-                      _this6._addFilesFromDirectory(entry, path + '/' + entry.name);
+                      _this6._addFilesFromDirectory(
+                        entry,
+                        path + '/' + entry.name
+                      );
                     }
                   }
 
@@ -2031,16 +2228,32 @@
         {
           key: 'accept',
           value: function accept(file, done) {
-            if (this.options.maxFilesize && file.size > this.options.maxFilesize * 1024 * 1024) {
+            if (
+              this.options.maxFilesize &&
+              file.size > this.options.maxFilesize * 1024 * 1024
+            ) {
               return done(
                 this.options.dictFileTooBig
-                  .replace('{{filesize}}', Math.round(file.size / 1024 / 10.24) / 100)
+                  .replace(
+                    '{{filesize}}',
+                    Math.round(file.size / 1024 / 10.24) / 100
+                  )
                   .replace('{{maxFilesize}}', this.options.maxFilesize)
               );
-            } else if (!Dropzone.isValidFile(file, this.options.acceptedFiles)) {
+            } else if (
+              !Dropzone.isValidFile(file, this.options.acceptedFiles)
+            ) {
               return done(this.options.dictInvalidFileType);
-            } else if (this.options.maxFiles != null && this.getAcceptedFiles().length >= this.options.maxFiles) {
-              done(this.options.dictMaxFilesExceeded.replace('{{maxFiles}}', this.options.maxFiles));
+            } else if (
+              this.options.maxFiles != null &&
+              this.getAcceptedFiles().length >= this.options.maxFiles
+            ) {
+              done(
+                this.options.dictMaxFilesExceeded.replace(
+                  '{{maxFiles}}',
+                  this.options.maxFiles
+                )
+              );
               return this.emit('maxfilesexceeded', file);
             } else {
               return this.options.accept.call(this, file, done);
@@ -2060,7 +2273,10 @@
               total: file.size,
               bytesSent: 0,
               filename: this._renameFile(file),
-              chunked: this.options.chunking && (this.options.forceChunking || file.size > this.options.chunkSize),
+              chunked:
+                this.options.chunking &&
+                (this.options.forceChunking ||
+                  file.size > this.options.chunkSize),
               totalChunkCount: Math.ceil(file.size / this.options.chunkSize),
             };
             this.files.push(file);
@@ -2094,7 +2310,9 @@
               var _iterator17 = files,
                 _isArray17 = Array.isArray(_iterator17),
                 _i18 = 0,
-                _iterator17 = _isArray17 ? _iterator17 : _iterator17[Symbol.iterator]();
+                _iterator17 = _isArray17
+                  ? _iterator17
+                  : _iterator17[Symbol.iterator]();
               ;
 
             ) {
@@ -2129,7 +2347,9 @@
                 }, 0); // Deferring the call
               }
             } else {
-              throw new Error("This file can't be queued because it has already been processed or was rejected.");
+              throw new Error(
+                "This file can't be queued because it has already been processed or was rejected."
+              );
             }
           },
         },
@@ -2155,7 +2375,10 @@
           value: function _processThumbnailQueue() {
             var _this10 = this;
 
-            if (this._processingThumbnail || this._thumbnailQueue.length === 0) {
+            if (
+              this._processingThumbnail ||
+              this._thumbnailQueue.length === 0
+            ) {
               return;
             }
 
@@ -2204,7 +2427,9 @@
               var _iterator18 = this.files.slice(),
                 _isArray18 = Array.isArray(_iterator18),
                 _i19 = 0,
-                _iterator18 = _isArray18 ? _iterator18 : _iterator18[Symbol.iterator]();
+                _iterator18 = _isArray18
+                  ? _iterator18
+                  : _iterator18[Symbol.iterator]();
               ;
 
             ) {
@@ -2234,32 +2459,61 @@
         },
         {
           key: 'resizeImage',
-          value: function resizeImage(file, width, height, resizeMethod, callback) {
+          value: function resizeImage(
+            file,
+            width,
+            height,
+            resizeMethod,
+            callback
+          ) {
             var _this11 = this;
 
-            return this.createThumbnail(file, width, height, resizeMethod, true, function (dataUrl, canvas) {
-              if (canvas == null) {
-                // The image has not been resized
-                return callback(file);
-              } else {
-                var resizeMimeType = _this11.options.resizeMimeType;
+            return this.createThumbnail(
+              file,
+              width,
+              height,
+              resizeMethod,
+              true,
+              function (dataUrl, canvas) {
+                if (canvas == null) {
+                  // The image has not been resized
+                  return callback(file);
+                } else {
+                  var resizeMimeType = _this11.options.resizeMimeType;
 
-                if (resizeMimeType == null) {
-                  resizeMimeType = file.type;
+                  if (resizeMimeType == null) {
+                    resizeMimeType = file.type;
+                  }
+                  var resizedDataURL = canvas.toDataURL(
+                    resizeMimeType,
+                    _this11.options.resizeQuality
+                  );
+                  if (
+                    resizeMimeType === 'image/jpeg' ||
+                    resizeMimeType === 'image/jpg'
+                  ) {
+                    // Now add the original EXIF information
+                    resizedDataURL = ExifRestore.restore(
+                      file.dataURL,
+                      resizedDataURL
+                    );
+                  }
+                  return callback(Dropzone.dataURItoBlob(resizedDataURL));
                 }
-                var resizedDataURL = canvas.toDataURL(resizeMimeType, _this11.options.resizeQuality);
-                if (resizeMimeType === 'image/jpeg' || resizeMimeType === 'image/jpg') {
-                  // Now add the original EXIF information
-                  resizedDataURL = ExifRestore.restore(file.dataURL, resizedDataURL);
-                }
-                return callback(Dropzone.dataURItoBlob(resizedDataURL));
               }
-            });
+            );
           },
         },
         {
           key: 'createThumbnail',
-          value: function createThumbnail(file, width, height, resizeMethod, fixOrientation, callback) {
+          value: function createThumbnail(
+            file,
+            width,
+            height,
+            resizeMethod,
+            fixOrientation,
+            callback
+          ) {
             var _this12 = this;
 
             var fileReader = new FileReader();
@@ -2275,7 +2529,14 @@
                 return;
               }
 
-              return _this12.createThumbnailFromUrl(file, width, height, resizeMethod, fixOrientation, callback);
+              return _this12.createThumbnailFromUrl(
+                file,
+                width,
+                height,
+                resizeMethod,
+                fixOrientation,
+                callback
+              );
             };
 
             return fileReader.readAsDataURL(file);
@@ -2306,7 +2567,11 @@
               var loadExif = function loadExif(callback) {
                 return callback(1);
               };
-              if (typeof EXIF !== 'undefined' && EXIF !== null && fixOrientation) {
+              if (
+                typeof EXIF !== 'undefined' &&
+                EXIF !== null &&
+                fixOrientation
+              ) {
                 loadExif = function loadExif(callback) {
                   return EXIF.getData(img, function () {
                     return callback(EXIF.getTag(this, 'Orientation'));
@@ -2318,7 +2583,13 @@
                 file.width = img.width;
                 file.height = img.height;
 
-                var resizeInfo = _this13.options.resize.call(_this13, file, width, height, resizeMethod);
+                var resizeInfo = _this13.options.resize.call(
+                  _this13,
+                  file,
+                  width,
+                  height,
+                  resizeMethod
+                );
 
                 var canvas = document.createElement('canvas');
                 var ctx = canvas.getContext('2d');
@@ -2422,7 +2693,9 @@
 
             if (this.options.uploadMultiple) {
               // The files should be uploaded in one request
-              return this.processFiles(queuedFiles.slice(0, parallelUploads - processingLength));
+              return this.processFiles(
+                queuedFiles.slice(0, parallelUploads - processingLength)
+              );
             } else {
               while (i < parallelUploads) {
                 if (!queuedFiles.length) {
@@ -2451,7 +2724,9 @@
               var _iterator19 = files,
                 _isArray19 = Array.isArray(_iterator19),
                 _i20 = 0,
-                _iterator19 = _isArray19 ? _iterator19 : _iterator19[Symbol.iterator]();
+                _iterator19 = _isArray19
+                  ? _iterator19
+                  : _iterator19[Symbol.iterator]();
               ;
 
             ) {
@@ -2508,7 +2783,9 @@
                 var _iterator20 = groupedFiles,
                   _isArray20 = Array.isArray(_iterator20),
                   _i21 = 0,
-                  _iterator20 = _isArray20 ? _iterator20 : _iterator20[Symbol.iterator]();
+                  _iterator20 = _isArray20
+                    ? _iterator20
+                    : _iterator20[Symbol.iterator]();
                 ;
 
               ) {
@@ -2534,7 +2811,9 @@
                 var _iterator21 = groupedFiles,
                   _isArray21 = Array.isArray(_iterator21),
                   _i22 = 0,
-                  _iterator21 = _isArray21 ? _iterator21 : _iterator21[Symbol.iterator]();
+                  _iterator21 = _isArray21
+                    ? _iterator21
+                    : _iterator21[Symbol.iterator]();
                 ;
 
               ) {
@@ -2556,7 +2835,10 @@
               if (this.options.uploadMultiple) {
                 this.emit('canceledmultiple', groupedFiles);
               }
-            } else if (file.status === Dropzone.ADDED || file.status === Dropzone.QUEUED) {
+            } else if (
+              file.status === Dropzone.ADDED ||
+              file.status === Dropzone.QUEUED
+            ) {
               file.status = Dropzone.CANCELED;
               this.emit('canceled', file);
               if (this.options.uploadMultiple) {
@@ -2574,7 +2856,9 @@
           value: function resolveOption(option) {
             if (typeof option === 'function') {
               for (
-                var _len3 = arguments.length, args = Array(_len3 > 1 ? _len3 - 1 : 0), _key3 = 1;
+                var _len3 = arguments.length,
+                  args = Array(_len3 > 1 ? _len3 - 1 : 0),
+                  _key3 = 1;
                 _key3 < _len3;
                 _key3++
               ) {
@@ -2623,7 +2907,10 @@
                   startedChunkCount++;
 
                   var start = chunkIndex * _this14.options.chunkSize;
-                  var end = Math.min(start + _this14.options.chunkSize, file.size);
+                  var end = Math.min(
+                    start + _this14.options.chunkSize,
+                    file.size
+                  );
 
                   var dataBlock = {
                     name: _this14._getParamName(0),
@@ -2698,7 +2985,10 @@
           key: '_getChunk',
           value: function _getChunk(file, xhr) {
             for (var i = 0; i < file.upload.totalChunkCount; i++) {
-              if (file.upload.chunks[i] !== undefined && file.upload.chunks[i].xhr === xhr) {
+              if (
+                file.upload.chunks[i] !== undefined &&
+                file.upload.chunks[i].xhr === xhr
+              ) {
                 return file.upload.chunks[i];
               }
             }
@@ -2720,7 +3010,9 @@
               var _iterator22 = files,
                 _isArray22 = Array.isArray(_iterator22),
                 _i24 = 0,
-                _iterator22 = _isArray22 ? _iterator22 : _iterator22[Symbol.iterator]();
+                _iterator22 = _isArray22
+                  ? _iterator22
+                  : _iterator22[Symbol.iterator]();
               ;
 
             ) {
@@ -2810,7 +3102,9 @@
               var _iterator23 = files,
                 _isArray23 = Array.isArray(_iterator23),
                 _i25 = 0,
-                _iterator23 = _isArray23 ? _iterator23 : _iterator23[Symbol.iterator]();
+                _iterator23 = _isArray23
+                  ? _iterator23
+                  : _iterator23[Symbol.iterator]();
               ;
 
             ) {
@@ -2839,7 +3133,11 @@
             // Has to be last because some servers (eg: S3) expect the file to be the last parameter
             for (var i = 0; i < dataBlocks.length; i++) {
               var dataBlock = dataBlocks[i];
-              formData.append(dataBlock.name, dataBlock.data, dataBlock.filename);
+              formData.append(
+                dataBlock.name,
+                dataBlock.data,
+                dataBlock.filename
+              );
             }
 
             this.submitRequest(xhr, formData, files);
@@ -2857,12 +3155,16 @@
             var doneCounter = 0;
 
             var _loop = function _loop(i) {
-              _this16.options.transformFile.call(_this16, files[i], function (transformedFile) {
-                transformedFiles[i] = transformedFile;
-                if (++doneCounter === files.length) {
-                  done(transformedFiles);
+              _this16.options.transformFile.call(
+                _this16,
+                files[i],
+                function (transformedFile) {
+                  transformedFiles[i] = transformedFile;
+                  if (++doneCounter === files.length) {
+                    done(transformedFiles);
+                  }
                 }
-              });
+              );
             };
 
             for (var i = 0; i < files.length; i++) {
@@ -2878,10 +3180,14 @@
             // Take care of other input elements
             if (this.element.tagName === 'FORM') {
               for (
-                var _iterator24 = this.element.querySelectorAll('input, textarea, select, button'),
+                var _iterator24 = this.element.querySelectorAll(
+                    'input, textarea, select, button'
+                  ),
                   _isArray24 = Array.isArray(_iterator24),
                   _i26 = 0,
-                  _iterator24 = _isArray24 ? _iterator24 : _iterator24[Symbol.iterator]();
+                  _iterator24 = _isArray24
+                    ? _iterator24
+                    : _iterator24[Symbol.iterator]();
                 ;
 
               ) {
@@ -2903,15 +3209,21 @@
                 if (inputType) inputType = inputType.toLowerCase();
 
                 // If the input doesn't have a name, we can't use it.
-                if (typeof inputName === 'undefined' || inputName === null) continue;
+                if (typeof inputName === 'undefined' || inputName === null)
+                  continue;
 
-                if (input.tagName === 'SELECT' && input.hasAttribute('multiple')) {
+                if (
+                  input.tagName === 'SELECT' &&
+                  input.hasAttribute('multiple')
+                ) {
                   // Possibly multiple values
                   for (
                     var _iterator25 = input.options,
                       _isArray25 = Array.isArray(_iterator25),
                       _i27 = 0,
-                      _iterator25 = _isArray25 ? _iterator25 : _iterator25[Symbol.iterator]();
+                      _iterator25 = _isArray25
+                        ? _iterator25
+                        : _iterator25[Symbol.iterator]();
                     ;
 
                   ) {
@@ -2932,7 +3244,11 @@
                       formData.append(inputName, option.value);
                     }
                   }
-                } else if (!inputType || (inputType !== 'checkbox' && inputType !== 'radio') || input.checked) {
+                } else if (
+                  !inputType ||
+                  (inputType !== 'checkbox' && inputType !== 'radio') ||
+                  input.checked
+                ) {
                   formData.append(inputName, input.value);
                 }
               }
@@ -2963,19 +3279,25 @@
                 file.upload.total = 0;
                 file.upload.bytesSent = 0;
                 for (var i = 0; i < file.upload.totalChunkCount; i++) {
-                  if (file.upload.chunks[i] !== undefined && file.upload.chunks[i].progress !== undefined) {
+                  if (
+                    file.upload.chunks[i] !== undefined &&
+                    file.upload.chunks[i].progress !== undefined
+                  ) {
                     file.upload.progress += file.upload.chunks[i].progress;
                     file.upload.total += file.upload.chunks[i].total;
                     file.upload.bytesSent += file.upload.chunks[i].bytesSent;
                   }
                 }
-                file.upload.progress = file.upload.progress / file.upload.totalChunkCount;
+                file.upload.progress =
+                  file.upload.progress / file.upload.totalChunkCount;
               } else {
                 for (
                   var _iterator26 = files,
                     _isArray26 = Array.isArray(_iterator26),
                     _i28 = 0,
-                    _iterator26 = _isArray26 ? _iterator26 : _iterator26[Symbol.iterator]();
+                    _iterator26 = _isArray26
+                      ? _iterator26
+                      : _iterator26[Symbol.iterator]();
                   ;
 
                 ) {
@@ -3001,7 +3323,9 @@
                 var _iterator27 = files,
                   _isArray27 = Array.isArray(_iterator27),
                   _i29 = 0,
-                  _iterator27 = _isArray27 ? _iterator27 : _iterator27[Symbol.iterator]();
+                  _iterator27 = _isArray27
+                    ? _iterator27
+                    : _iterator27[Symbol.iterator]();
                 ;
 
               ) {
@@ -3018,7 +3342,12 @@
 
                 var _file3 = _ref26;
 
-                this.emit('uploadprogress', _file3, _file3.upload.progress, _file3.upload.bytesSent);
+                this.emit(
+                  'uploadprogress',
+                  _file3,
+                  _file3.upload.progress,
+                  _file3.upload.bytesSent
+                );
               }
             } else {
               // Called when the file finished uploading
@@ -3031,7 +3360,9 @@
                 var _iterator28 = files,
                   _isArray28 = Array.isArray(_iterator28),
                   _i30 = 0,
-                  _iterator28 = _isArray28 ? _iterator28 : _iterator28[Symbol.iterator]();
+                  _iterator28 = _isArray28
+                    ? _iterator28
+                    : _iterator28[Symbol.iterator]();
                 ;
 
               ) {
@@ -3048,7 +3379,10 @@
 
                 var _file4 = _ref27;
 
-                if (_file4.upload.progress !== 100 || _file4.upload.bytesSent !== _file4.upload.total) {
+                if (
+                  _file4.upload.progress !== 100 ||
+                  _file4.upload.bytesSent !== _file4.upload.total
+                ) {
                   allFilesFinished = false;
                 }
                 _file4.upload.progress = progress;
@@ -3064,7 +3398,9 @@
                 var _iterator29 = files,
                   _isArray29 = Array.isArray(_iterator29),
                   _i31 = 0,
-                  _iterator29 = _isArray29 ? _iterator29 : _iterator29[Symbol.iterator]();
+                  _iterator29 = _isArray29
+                    ? _iterator29
+                    : _iterator29[Symbol.iterator]();
                 ;
 
               ) {
@@ -3081,7 +3417,12 @@
 
                 var _file5 = _ref28;
 
-                this.emit('uploadprogress', _file5, progress, _file5.upload.bytesSent);
+                this.emit(
+                  'uploadprogress',
+                  _file5,
+                  progress,
+                  _file5.upload.bytesSent
+                );
               }
             }
           },
@@ -3099,12 +3440,17 @@
               return;
             }
 
-            if (xhr.responseType !== 'arraybuffer' && xhr.responseType !== 'blob') {
+            if (
+              xhr.responseType !== 'arraybuffer' &&
+              xhr.responseType !== 'blob'
+            ) {
               response = xhr.responseText;
 
               if (
                 xhr.getResponseHeader('content-type') &&
-                ~xhr.getResponseHeader('content-type').indexOf('application/json')
+                ~xhr
+                  .getResponseHeader('content-type')
+                  .indexOf('application/json')
               ) {
                 try {
                   response = JSON.parse(response);
@@ -3121,7 +3467,9 @@
               this._handleUploadError(files, xhr, response);
             } else {
               if (files[0].upload.chunked) {
-                files[0].upload.finishedChunkUpload(this._getChunk(files[0], xhr));
+                files[0].upload.finishedChunkUpload(
+                  this._getChunk(files[0], xhr)
+                );
               } else {
                 this._finished(files, response, e);
               }
@@ -3149,7 +3497,9 @@
               var _iterator30 = files,
                 _isArray30 = Array.isArray(_iterator30),
                 _i32 = 0,
-                _iterator30 = _isArray30 ? _iterator30 : _iterator30[Symbol.iterator]();
+                _iterator30 = _isArray30
+                  ? _iterator30
+                  : _iterator30[Symbol.iterator]();
               ;
 
             ) {
@@ -3168,7 +3518,11 @@
 
               this._errorProcessing(
                 files,
-                response || this.options.dictResponseError.replace('{{statusCode}}', xhr.status),
+                response ||
+                  this.options.dictResponseError.replace(
+                    '{{statusCode}}',
+                    xhr.status
+                  ),
                 xhr
               );
             }
@@ -3190,7 +3544,9 @@
               var _iterator31 = files,
                 _isArray31 = Array.isArray(_iterator31),
                 _i33 = 0,
-                _iterator31 = _isArray31 ? _iterator31 : _iterator31[Symbol.iterator]();
+                _iterator31 = _isArray31
+                  ? _iterator31
+                  : _iterator31[Symbol.iterator]();
               ;
 
             ) {
@@ -3231,7 +3587,9 @@
               var _iterator32 = files,
                 _isArray32 = Array.isArray(_iterator32),
                 _i34 = 0,
-                _iterator32 = _isArray32 ? _iterator32 : _iterator32[Symbol.iterator]();
+                _iterator32 = _isArray32
+                  ? _iterator32
+                  : _iterator32[Symbol.iterator]();
               ;
 
             ) {
@@ -3267,11 +3625,14 @@
         {
           key: 'uuidv4',
           value: function uuidv4() {
-            return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
-              var r = (Math.random() * 16) | 0,
-                v = c === 'x' ? r : (r & 0x3) | 0x8;
-              return v.toString(16);
-            });
+            return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(
+              /[xy]/g,
+              function (c) {
+                var r = (Math.random() * 16) | 0,
+                  v = c === 'x' ? r : (r & 0x3) | 0x8;
+                return v.toString(16);
+              }
+            );
           },
         },
       ]
@@ -3344,7 +3705,9 @@
             var _iterator33 = elements,
               _isArray33 = Array.isArray(_iterator33),
               _i35 = 0,
-              _iterator33 = _isArray33 ? _iterator33 : _iterator33[Symbol.iterator]();
+              _iterator33 = _isArray33
+                ? _iterator33
+                : _iterator33[Symbol.iterator]();
             ;
 
           ) {
@@ -3380,7 +3743,9 @@
         var _iterator34 = dropzones,
           _isArray34 = Array.isArray(_iterator34),
           _i36 = 0,
-          _iterator34 = _isArray34 ? _iterator34 : _iterator34[Symbol.iterator]();
+          _iterator34 = _isArray34
+            ? _iterator34
+            : _iterator34[Symbol.iterator]();
         ;
 
       ) {
@@ -3444,7 +3809,9 @@
           var _iterator35 = Dropzone.blacklistedBrowsers,
             _isArray35 = Array.isArray(_iterator35),
             _i37 = 0,
-            _iterator35 = _isArray35 ? _iterator35 : _iterator35[Symbol.iterator]();
+            _iterator35 = _isArray35
+              ? _iterator35
+              : _iterator35[Symbol.iterator]();
           ;
 
         ) {
@@ -3485,7 +3852,11 @@
     // write the bytes of the string to an ArrayBuffer
     var ab = new ArrayBuffer(byteString.length);
     var ia = new Uint8Array(ab);
-    for (var i = 0, end = byteString.length, asc = 0 <= end; asc ? i <= end : i >= end; asc ? i++ : i--) {
+    for (
+      var i = 0, end = byteString.length, asc = 0 <= end;
+      asc ? i <= end : i >= end;
+      asc ? i++ : i--
+    ) {
       ia[i] = byteString.charCodeAt(i);
     }
 
@@ -3539,7 +3910,11 @@
       element = el;
     }
     if (element == null) {
-      throw new Error('Invalid `' + name + '` option provided. Please provide a CSS selector or a plain HTML element.');
+      throw new Error(
+        'Invalid `' +
+          name +
+          '` option provided. Please provide a CSS selector or a plain HTML element.'
+      );
     }
     return element;
   };
@@ -3554,7 +3929,9 @@
           var _iterator36 = els,
             _isArray36 = Array.isArray(_iterator36),
             _i38 = 0,
-            _iterator36 = _isArray36 ? _iterator36 : _iterator36[Symbol.iterator]();
+            _iterator36 = _isArray36
+              ? _iterator36
+              : _iterator36[Symbol.iterator]();
           ;
 
         ) {
@@ -3578,7 +3955,9 @@
         var _iterator37 = document.querySelectorAll(els),
           _isArray37 = Array.isArray(_iterator37),
           _i39 = 0,
-          _iterator37 = _isArray37 ? _iterator37 : _iterator37[Symbol.iterator]();
+          _iterator37 = _isArray37
+            ? _iterator37
+            : _iterator37[Symbol.iterator]();
         ;
 
       ) {
@@ -3655,7 +4034,14 @@
 
       validType = validType.trim();
       if (validType.charAt(0) === '.') {
-        if (file.name.toLowerCase().indexOf(validType.toLowerCase(), file.name.length - validType.length) !== -1) {
+        if (
+          file.name
+            .toLowerCase()
+            .indexOf(
+              validType.toLowerCase(),
+              file.name.length - validType.length
+            ) !== -1
+        ) {
           return true;
         }
       } else if (/\/\*$/.test(validType)) {
@@ -3753,7 +4139,18 @@
 
   // A replacement for context.drawImage
   // (args are for source and destination).
-  var drawImageIOSFix = function drawImageIOSFix(ctx, img, sx, sy, sw, sh, dx, dy, dw, dh) {
+  var drawImageIOSFix = function drawImageIOSFix(
+    ctx,
+    img,
+    sx,
+    sy,
+    sw,
+    sh,
+    dx,
+    dy,
+    dw,
+    dh
+  ) {
     var vertSquashRatio = detectVerticalSquash(img);
     return ctx.drawImage(img, sx, sy, sw, sh, dx, dy, dw, dh / vertSquashRatio);
   };
@@ -3771,7 +4168,8 @@
       {
         key: 'initClass',
         value: function initClass() {
-          this.KEY_STR = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=';
+          this.KEY_STR =
+            'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=';
         },
       },
       {
@@ -3820,7 +4218,9 @@
           if (!origFileBase64.match('data:image/jpeg;base64,')) {
             return resizedFileBase64;
           }
-          var rawImage = this.decode64(origFileBase64.replace('data:image/jpeg;base64,', ''));
+          var rawImage = this.decode64(
+            origFileBase64.replace('data:image/jpeg;base64,', '')
+          );
           var segments = this.slice2Segments(rawImage);
           var image = this.exifManipulation(resizedFileBase64, segments);
           return 'data:image/jpeg;base64,' + this.encode64(image);
@@ -3853,7 +4253,10 @@
       {
         key: 'insertExif',
         value: function insertExif(resizedFileBase64, exifArray) {
-          var imageData = resizedFileBase64.replace('data:image/jpeg;base64,', '');
+          var imageData = resizedFileBase64.replace(
+            'data:image/jpeg;base64,',
+            ''
+          );
           var buf = this.decode64(imageData);
           var separatePoint = buf.indexOf(255, 3);
           var mae = buf.slice(0, separatePoint);
@@ -3871,10 +4274,16 @@
           var segments = [];
           while (true) {
             var length;
-            if ((rawImageArray[head] === 255) & (rawImageArray[head + 1] === 218)) {
+            if (
+              (rawImageArray[head] === 255) &
+              (rawImageArray[head + 1] === 218)
+            ) {
               break;
             }
-            if ((rawImageArray[head] === 255) & (rawImageArray[head + 1] === 216)) {
+            if (
+              (rawImageArray[head] === 255) &
+              (rawImageArray[head + 1] === 216)
+            ) {
               head += 2;
             } else {
               length = rawImageArray[head + 2] * 256 + rawImageArray[head + 3];
@@ -4010,10 +4419,16 @@
   contentLoaded(window, Dropzone._autoDiscoverFunction);
 
   function __guard__(value, transform) {
-    return typeof value !== 'undefined' && value !== null ? transform(value) : undefined;
+    return typeof value !== 'undefined' && value !== null
+      ? transform(value)
+      : undefined;
   }
   function __guardMethod__(obj, methodName, transform) {
-    if (typeof obj !== 'undefined' && obj !== null && typeof obj[methodName] === 'function') {
+    if (
+      typeof obj !== 'undefined' &&
+      obj !== null &&
+      typeof obj[methodName] === 'function'
+    ) {
       return transform(obj, methodName);
     } else {
       return undefined;

@@ -276,13 +276,19 @@ module.exports = function (hljs) {
         end: /;/,
         //end: /\(/,
         relevance: 0,
-        contains: [hljs.C_BLOCK_COMMENT_MODE, AT_COMMENT_MODE, FUNCTION_REF_PARAMS],
+        contains: [
+          hljs.C_BLOCK_COMMENT_MODE,
+          AT_COMMENT_MODE,
+          FUNCTION_REF_PARAMS,
+        ],
       },
       {
         // custom method guard
         // excludes method names from keyword processing
         variants: [
-          { begin: hljs.UNDERSCORE_IDENT_RE + '\\.' + hljs.UNDERSCORE_IDENT_RE },
+          {
+            begin: hljs.UNDERSCORE_IDENT_RE + '\\.' + hljs.UNDERSCORE_IDENT_RE,
+          },
           { begin: hljs.UNDERSCORE_IDENT_RE + '\\s*=' },
         ],
         relevance: 0,

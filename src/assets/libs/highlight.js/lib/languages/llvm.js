@@ -67,11 +67,18 @@ module.exports = function (hljs) {
       },
       {
         className: 'symbol',
-        variants: [{ begin: '%' + identifier }, { begin: '%\\d+' }, { begin: '#\\d+' }],
+        variants: [
+          { begin: '%' + identifier },
+          { begin: '%\\d+' },
+          { begin: '#\\d+' },
+        ],
       },
       {
         className: 'number',
-        variants: [{ begin: '0[xX][a-fA-F0-9]+' }, { begin: '-?\\d+(?:[.]\\d+)?(?:[eE][-+]?\\d+(?:[.]\\d+)?)?' }],
+        variants: [
+          { begin: '0[xX][a-fA-F0-9]+' },
+          { begin: '-?\\d+(?:[.]\\d+)?(?:[eE][-+]?\\d+(?:[.]\\d+)?)?' },
+        ],
         relevance: 0,
       },
     ],

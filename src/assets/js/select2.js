@@ -17,7 +17,9 @@ var Select2 = (function () {
 
   function init($this) {
     var options = {
-      dropdownParent: $this.closest('.modal').length ? $this.closest('.modal') : $(document.body),
+      dropdownParent: $this.closest('.modal').length
+        ? $this.closest('.modal')
+        : $(document.body),
       minimumResultsForSearch: $this.data('minimum-results-for-search'),
       templateResult: formatAvatar,
     };

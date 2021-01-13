@@ -1,6 +1,7 @@
 module.exports = function (hljs) {
   var BASIC_ATOM_RE = "[a-z'][a-zA-Z0-9_']*";
-  var FUNCTION_NAME_RE = '(' + BASIC_ATOM_RE + ':' + BASIC_ATOM_RE + '|' + BASIC_ATOM_RE + ')';
+  var FUNCTION_NAME_RE =
+    '(' + BASIC_ATOM_RE + ':' + BASIC_ATOM_RE + '|' + BASIC_ATOM_RE + ')';
   var ERLANG_RESERVED = {
     keyword:
       'after and andalso|10 band begin bnot bor bsl bzr bxor case catch cond div end fun if ' +
@@ -121,7 +122,10 @@ module.exports = function (hljs) {
         end: '->',
         returnBegin: true,
         illegal: '\\(|#|//|/\\*|\\\\|:|;',
-        contains: [PARAMS, hljs.inherit(hljs.TITLE_MODE, { begin: BASIC_ATOM_RE })],
+        contains: [
+          PARAMS,
+          hljs.inherit(hljs.TITLE_MODE, { begin: BASIC_ATOM_RE }),
+        ],
         starts: {
           end: ';|\\.',
           keywords: ERLANG_RESERVED,

@@ -389,7 +389,8 @@
 
             // Target IE 10 & 11
 
-            @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+            @media all and (-ms-high-contrast: none),
+              (-ms-high-contrast: active) {
               min-height: none;
               height: 100%;
             }
@@ -456,7 +457,8 @@
 
           // Third level
           .navbar-nav .nav .nav .nav-link {
-            padding-left: $navbar-vertical-padding-x * 1.5 + $navbar-icon-min-width;
+            padding-left: $navbar-vertical-padding-x * 1.5 +
+              $navbar-icon-min-width;
           }
 
           // Navbar brand

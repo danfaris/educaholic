@@ -832,7 +832,8 @@ module.exports = function (hljs) {
   var language_code_constants = 'ENGLISH_LANGUAGE_CODE RUSSIAN_LANGUAGE_CODE ';
 
   // Launching external applications
-  var launching_external_applications_constants = 'smHidden smMaximized smMinimized smNormal wmNo wmYes ';
+  var launching_external_applications_constants =
+    'smHidden smMaximized smMinimized smNormal wmNo wmYes ';
 
   // Link kind
   var link_kind_constants =
@@ -845,7 +846,8 @@ module.exports = function (hljs) {
     'TASK_LINK_KIND ';
 
   // Lock type
-  var lock_type_constants = 'COMPONENT_TOKEN_LOCK_TYPE EDOCUMENT_VERSION_LOCK_TYPE ';
+  var lock_type_constants =
+    'COMPONENT_TOKEN_LOCK_TYPE EDOCUMENT_VERSION_LOCK_TYPE ';
 
   // Monitor block properties
   var monitor_block_properties_constants =
@@ -909,7 +911,9 @@ module.exports = function (hljs) {
 
   // Object params
   var object_params_constants =
-    'CURRENT_PERIOD_IS_REQUIRED ' + 'PREVIOUS_CARD_TYPE_NAME ' + 'SHOW_RECORD_PROPERTIES_FORM ';
+    'CURRENT_PERIOD_IS_REQUIRED ' +
+    'PREVIOUS_CARD_TYPE_NAME ' +
+    'SHOW_RECORD_PROPERTIES_FORM ';
 
   // Other
   var other_constants =
@@ -1025,11 +1029,16 @@ module.exports = function (hljs) {
 
   // Requisite ISBCertificateType values
   var requisite_ISBCertificateType_values_constants =
-    'CERTIFICATE_TYPE_ENCRYPT ' + 'CERTIFICATE_TYPE_SIGN ' + 'CERTIFICATE_TYPE_SIGN_AND_ENCRYPT ';
+    'CERTIFICATE_TYPE_ENCRYPT ' +
+    'CERTIFICATE_TYPE_SIGN ' +
+    'CERTIFICATE_TYPE_SIGN_AND_ENCRYPT ';
 
   // Requisite ISBEDocStorageType values
   var requisite_ISBEDocStorageType_values_constants =
-    'STORAGE_TYPE_FILE ' + 'STORAGE_TYPE_NAS_CIFS ' + 'STORAGE_TYPE_SAPERION ' + 'STORAGE_TYPE_SQL_SERVER ';
+    'STORAGE_TYPE_FILE ' +
+    'STORAGE_TYPE_NAS_CIFS ' +
+    'STORAGE_TYPE_SAPERION ' +
+    'STORAGE_TYPE_SQL_SERVER ';
 
   // Requisite CompType2 values
   var requisite_compType2_values_constants =
@@ -1319,7 +1328,11 @@ module.exports = function (hljs) {
 
   // System component
   var system_component_constants =
-    'SYSCOMP_CONTROL_JOBS ' + 'SYSCOMP_FOLDERS ' + 'SYSCOMP_JOBS ' + 'SYSCOMP_NOTICES ' + 'SYSCOMP_TASKS ';
+    'SYSCOMP_CONTROL_JOBS ' +
+    'SYSCOMP_FOLDERS ' +
+    'SYSCOMP_JOBS ' +
+    'SYSCOMP_NOTICES ' +
+    'SYSCOMP_TASKS ';
 
   // System dialogs
   var system_dialogs_constants =
@@ -1423,7 +1436,10 @@ module.exports = function (hljs) {
     'SYSREF_WORKING_TIME_CALENDARS ';
 
   // Table name
-  var table_name_constants = 'ACCESS_RIGHTS_TABLE_NAME ' + 'EDMS_ACCESS_TABLE_NAME ' + 'EDOC_TYPES_TABLE_NAME ';
+  var table_name_constants =
+    'ACCESS_RIGHTS_TABLE_NAME ' +
+    'EDMS_ACCESS_TABLE_NAME ' +
+    'EDOC_TYPES_TABLE_NAME ';
 
   // Test
   var test_constants =
@@ -1453,7 +1469,9 @@ module.exports = function (hljs) {
 
   // Using the document
   var using_the_document_constants =
-    'EDOC_VERSION_ACTIVE_STAGE_CODE ' + 'EDOC_VERSION_DESIGN_STAGE_CODE ' + 'EDOC_VERSION_OBSOLETE_STAGE_CODE ';
+    'EDOC_VERSION_ACTIVE_STAGE_CODE ' +
+    'EDOC_VERSION_DESIGN_STAGE_CODE ' +
+    'EDOC_VERSION_OBSOLETE_STAGE_CODE ';
 
   // Using the EA and encryption
   var using_the_EA_and_encryption_constants =
@@ -1469,7 +1487,8 @@ module.exports = function (hljs) {
     'cpValidToDate ';
 
   // Using the ISBL-editor
-  var using_the_ISBL_editor_constants = 'ISBL_SYNTAX ' + 'NO_SYNTAX ' + 'XML_SYNTAX ';
+  var using_the_ISBL_editor_constants =
+    'ISBL_SYNTAX ' + 'NO_SYNTAX ' + 'XML_SYNTAX ';
 
   // Wait block properties
   var wait_block_properties_constants =
@@ -1549,7 +1568,12 @@ module.exports = function (hljs) {
   var TAlignment = 'alLeft alRight ';
 
   // enum TAreaShowMode
-  var TAreaShowMode = 'asmNever ' + 'asmNoButCustomize ' + 'asmAsLastTime ' + 'asmYesButCustomize ' + 'asmAlways ';
+  var TAreaShowMode =
+    'asmNever ' +
+    'asmNoButCustomize ' +
+    'asmAsLastTime ' +
+    'asmYesButCustomize ' +
+    'asmAlways ';
 
   // enum TCertificateInvalidationReason
   var TCertificateInvalidationReason = 'cirCommon cirRevoked ';
@@ -1637,7 +1661,13 @@ module.exports = function (hljs) {
 
   // enum TCriterionContentType
   var TCriterionContentType =
-    'cctDate ' + 'cctInteger ' + 'cctNumeric ' + 'cctPick ' + 'cctReference ' + 'cctString ' + 'cctText ';
+    'cctDate ' +
+    'cctInteger ' +
+    'cctNumeric ' +
+    'cctPick ' +
+    'cctReference ' +
+    'cctString ' +
+    'cctText ';
 
   // enum TCultureType
   var TCultureType = 'cltInternal cltPrimary cltGUI ';
@@ -1760,7 +1790,8 @@ module.exports = function (hljs) {
   var TEDocumentStorageType = 'edstSQLServer edstFile ';
 
   // enum TEDocumentVersionSourceType
-  var TEDocumentVersionSourceType = 'edvstNone edvstEDocumentVersionCopy edvstFile edvstTemplate edvstScannedFile ';
+  var TEDocumentVersionSourceType =
+    'edvstNone edvstEDocumentVersionCopy edvstFile edvstTemplate edvstScannedFile ';
 
   // enum TEDocumentVersionState
   var TEDocumentVersionState = 'vsDefault vsDesign vsActive vsObsolete ';
@@ -1807,7 +1838,13 @@ module.exports = function (hljs) {
   var THyperlinkType = 'hltText ' + 'hltRTF ' + 'hltHTML ';
 
   // enum TImageFileFormat
-  var TImageFileFormat = 'iffBMP ' + 'iffJPEG ' + 'iffMultiPageTIFF ' + 'iffSinglePageTIFF ' + 'iffTIFF ' + 'iffPNG ';
+  var TImageFileFormat =
+    'iffBMP ' +
+    'iffJPEG ' +
+    'iffMultiPageTIFF ' +
+    'iffSinglePageTIFF ' +
+    'iffTIFF ' +
+    'iffPNG ';
 
   // enum TImageMode
   var TImageMode = 'im8bGrayscale ' + 'im24bRGB ' + 'im1bMonochrome ';
@@ -1816,7 +1853,8 @@ module.exports = function (hljs) {
   var TImageType = 'itBMP ' + 'itJPEG ' + 'itWMF ' + 'itPNG ';
 
   // enum TInplaceHintKind
-  var TInplaceHintKind = 'ikhInformation ' + 'ikhWarning ' + 'ikhError ' + 'ikhNoIcon ';
+  var TInplaceHintKind =
+    'ikhInformation ' + 'ikhWarning ' + 'ikhError ' + 'ikhNoIcon ';
 
   // enum TISBLContext
   var TISBLContext =
@@ -1888,7 +1926,13 @@ module.exports = function (hljs) {
 
   // enum TLifeCycleStageFontColor
   var TLifeCycleStageFontColor =
-    'sfcUndefined ' + 'sfcBlack ' + 'sfcGreen ' + 'sfcRed ' + 'sfcBlue ' + 'sfcOrange ' + 'sfcLilac ';
+    'sfcUndefined ' +
+    'sfcBlack ' +
+    'sfcGreen ' +
+    'sfcRed ' +
+    'sfcBlue ' +
+    'sfcOrange ' +
+    'sfcLilac ';
 
   // enum TLifeCycleStageFontStyle
   var TLifeCycleStageFontStyle = 'sfsItalic ' + 'sfsStrikeout ' + 'sfsNormal ';
@@ -1908,10 +1952,12 @@ module.exports = function (hljs) {
     'ldctServerEvents ';
 
   // enum TMaxRecordCountRestrictionType
-  var TMaxRecordCountRestrictionType = 'mrcrtNone ' + 'mrcrtUser ' + 'mrcrtMaximal ' + 'mrcrtCustom ';
+  var TMaxRecordCountRestrictionType =
+    'mrcrtNone ' + 'mrcrtUser ' + 'mrcrtMaximal ' + 'mrcrtCustom ';
 
   // enum TRangeValueType
-  var TRangeValueType = 'vtEqual ' + 'vtGreaterOrEqual ' + 'vtLessOrEqual ' + 'vtRange ';
+  var TRangeValueType =
+    'vtEqual ' + 'vtGreaterOrEqual ' + 'vtLessOrEqual ' + 'vtRange ';
 
   // enum TRelativeDate
   var TRelativeDate =
@@ -1950,7 +1996,8 @@ module.exports = function (hljs) {
   var TSBTimeType = 'ttGlobal ' + 'ttLocal ' + 'ttUser ' + 'ttSystem ';
 
   // enum TSearchShowMode
-  var TSearchShowMode = 'ssmBrowse ' + 'ssmSelect ' + 'ssmMultiSelect ' + 'ssmBrowseModal ';
+  var TSearchShowMode =
+    'ssmBrowse ' + 'ssmSelect ' + 'ssmMultiSelect ' + 'ssmBrowseModal ';
 
   // enum TSelectMode
   var TSelectMode = 'smSelect ' + 'smLike ' + 'smCard ';
@@ -2011,19 +2058,27 @@ module.exports = function (hljs) {
 
   // enum TUserType
   var TUserType =
-    'utUnknown ' + 'utUser ' + 'utDeveloper ' + 'utAdministrator ' + 'utSystemDeveloper ' + 'utDisconnected ';
+    'utUnknown ' +
+    'utUser ' +
+    'utDeveloper ' +
+    'utAdministrator ' +
+    'utSystemDeveloper ' +
+    'utDisconnected ';
 
   // enum TValuesBuildType
-  var TValuesBuildType = 'btAnd ' + 'btDetailAnd ' + 'btOr ' + 'btNotOr ' + 'btOnly ';
+  var TValuesBuildType =
+    'btAnd ' + 'btDetailAnd ' + 'btOr ' + 'btNotOr ' + 'btOnly ';
 
   // enum TViewMode
   var TViewMode = 'vmView ' + 'vmSelect ' + 'vmNavigation ';
 
   // enum TViewSelectionMode
-  var TViewSelectionMode = 'vsmSingle ' + 'vsmMultiple ' + 'vsmMultipleCheck ' + 'vsmNoSelection ';
+  var TViewSelectionMode =
+    'vsmSingle ' + 'vsmMultiple ' + 'vsmMultipleCheck ' + 'vsmNoSelection ';
 
   // enum TWizardActionType
-  var TWizardActionType = 'wfatPrevious ' + 'wfatNext ' + 'wfatCancel ' + 'wfatFinish ';
+  var TWizardActionType =
+    'wfatPrevious ' + 'wfatNext ' + 'wfatCancel ' + 'wfatFinish ';
 
   // enum TWizardFormElementProperty
   var TWizardFormElementProperty =
@@ -2047,7 +2102,8 @@ module.exports = function (hljs) {
     'wfepRadioGroupColumn3 ';
 
   // enum TWizardFormElementType
-  var TWizardFormElementType = 'wfetQueryParameter ' + 'wfetText ' + 'wfetDelimiter ' + 'wfetLabel ';
+  var TWizardFormElementType =
+    'wfetQueryParameter ' + 'wfetText ' + 'wfetDelimiter ' + 'wfetLabel ';
 
   // enum TWizardParamType
   var TWizardParamType =
@@ -2072,10 +2128,20 @@ module.exports = function (hljs) {
 
   // enum TWizardStepResult
   var TWizardStepResult =
-    'wsrComplete ' + 'wsrGoNext ' + 'wsrGoPrevious ' + 'wsrCustom ' + 'wsrCancel ' + 'wsrGoFinal ';
+    'wsrComplete ' +
+    'wsrGoNext ' +
+    'wsrGoPrevious ' +
+    'wsrCustom ' +
+    'wsrCancel ' +
+    'wsrGoFinal ';
 
   // enum TWizardStepType
-  var TWizardStepType = 'wstForm ' + 'wstEDocument ' + 'wstTaskCard ' + 'wstReferenceRecordCard ' + 'wstFinal ';
+  var TWizardStepType =
+    'wstForm ' +
+    'wstEDocument ' +
+    'wstTaskCard ' +
+    'wstReferenceRecordCard ' +
+    'wstFinal ';
 
   // enum TWorkAccessType
   var TWorkAccessType = 'waAll ' + 'waPerformers ' + 'waManual ';
@@ -2139,10 +2205,17 @@ module.exports = function (hljs) {
   var TWorkRouteType = 'wrtSoft ' + 'wrtHard ';
 
   // enum TWorkState
-  var TWorkState = 'wsInit ' + 'wsRunning ' + 'wsDone ' + 'wsControlled ' + 'wsAborted ' + 'wsContinued ';
+  var TWorkState =
+    'wsInit ' +
+    'wsRunning ' +
+    'wsDone ' +
+    'wsControlled ' +
+    'wsAborted ' +
+    'wsContinued ';
 
   // enum TWorkTextBuildingMode
-  var TWorkTextBuildingMode = 'wtmFull ' + 'wtmFromCurrent ' + 'wtmOnlyCurrent ';
+  var TWorkTextBuildingMode =
+    'wtmFull ' + 'wtmFromCurrent ' + 'wtmOnlyCurrent ';
 
   // Перечисления
   var ENUMS =
@@ -3089,6 +3162,14 @@ module.exports = function (hljs) {
     lexemes: UNDERSCORE_IDENT_RE,
     keywords: KEYWORDS,
     illegal: '\\$|\\?|%|,|;$|~|#|@|</',
-    contains: [FUNCTIONS, TYPES, METHODS, VARIABLES, STRINGS, NUMBERS, COMMENTS],
+    contains: [
+      FUNCTIONS,
+      TYPES,
+      METHODS,
+      VARIABLES,
+      STRINGS,
+      NUMBERS,
+      COMMENTS,
+    ],
   };
 };

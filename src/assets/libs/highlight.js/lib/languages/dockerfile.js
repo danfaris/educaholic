@@ -9,7 +9,8 @@ module.exports = function (hljs) {
       hljs.QUOTE_STRING_MODE,
       hljs.NUMBER_MODE,
       {
-        beginKeywords: 'run cmd entrypoint volume add copy workdir label healthcheck shell',
+        beginKeywords:
+          'run cmd entrypoint volume add copy workdir label healthcheck shell',
         starts: {
           end: /[^\\]$/,
           subLanguage: 'bash',

@@ -11,7 +11,8 @@
     return function (fp) {
       var days;
       function onDayHover(event) {
-        if (!event.target || !event.target.classList.contains('flatpickr-day')) return;
+        if (!event.target || !event.target.classList.contains('flatpickr-day'))
+          return;
         var dayIndex = Array.prototype.indexOf.call(days, event.target);
         fp.monthStartDay = new Date(
           days[dayIndex].dateObj.getFullYear(),
@@ -34,7 +35,8 @@
         //console.log(days[dayIndex].dateObj.toString());
         for (var i = days.length; i--; ) {
           var date = days[i].dateObj.getTime();
-          if (date > fp.monthEndDay || date < fp.monthStartDay) days[i].classList.remove('inRange');
+          if (date > fp.monthEndDay || date < fp.monthStartDay)
+            days[i].classList.remove('inRange');
           else days[i].classList.add('inRange');
           if (date != fp.monthEndDay) days[i].classList.remove('endRange');
           else days[i].classList.add('endRange');
@@ -45,7 +47,8 @@
       function highlightMonth() {
         for (var i = days.length; i--; ) {
           var date = days[i].dateObj.getTime();
-          if (date >= fp.monthStartDay && date <= fp.monthEndDay) days[i].classList.add('month', 'selected');
+          if (date >= fp.monthStartDay && date <= fp.monthEndDay)
+            days[i].classList.add('month', 'selected');
           if (date != fp.monthEndDay) days[i].classList.remove('endRange');
           else days[i].classList.add('endRange');
           if (date != fp.monthStartDay) days[i].classList.remove('startRange');

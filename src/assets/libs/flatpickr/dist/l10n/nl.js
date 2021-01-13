@@ -16,10 +16,31 @@
   var Dutch = {
     weekdays: {
       shorthand: ['zo', 'ma', 'di', 'wo', 'do', 'vr', 'za'],
-      longhand: ['zondag', 'maandag', 'dinsdag', 'woensdag', 'donderdag', 'vrijdag', 'zaterdag'],
+      longhand: [
+        'zondag',
+        'maandag',
+        'dinsdag',
+        'woensdag',
+        'donderdag',
+        'vrijdag',
+        'zaterdag',
+      ],
     },
     months: {
-      shorthand: ['jan', 'feb', 'mrt', 'apr', 'mei', 'jun', 'jul', 'aug', 'sept', 'okt', 'nov', 'dec'],
+      shorthand: [
+        'jan',
+        'feb',
+        'mrt',
+        'apr',
+        'mei',
+        'jun',
+        'jul',
+        'aug',
+        'sept',
+        'okt',
+        'nov',
+        'dec',
+      ],
       longhand: [
         'januari',
         'februari',

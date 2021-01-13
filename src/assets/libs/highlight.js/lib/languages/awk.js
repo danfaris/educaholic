@@ -3,7 +3,8 @@ module.exports = function (hljs) {
     className: 'variable',
     variants: [{ begin: /\$[\w\d#@][\w\d_]*/ }, { begin: /\$\{(.*?)}/ }],
   };
-  var KEYWORDS = 'BEGIN END if else while do for in break continue delete next nextfile function func exit|10';
+  var KEYWORDS =
+    'BEGIN END if else while do for in break continue delete next nextfile function func exit|10';
   var STRING = {
     className: 'string',
     contains: [hljs.BACKSLASH_ESCAPE],
@@ -44,6 +45,12 @@ module.exports = function (hljs) {
     keywords: {
       keyword: KEYWORDS,
     },
-    contains: [VARIABLE, STRING, hljs.REGEXP_MODE, hljs.HASH_COMMENT_MODE, hljs.NUMBER_MODE],
+    contains: [
+      VARIABLE,
+      STRING,
+      hljs.REGEXP_MODE,
+      hljs.HASH_COMMENT_MODE,
+      hljs.NUMBER_MODE,
+    ],
   };
 };

@@ -49,17 +49,34 @@ var Header = (function () {
               var content = '';
 
               if (data.datasets.length > 1) {
-                content += '<span class="popover-body-label mr-auto">' + label + '</span>';
+                content +=
+                  '<span class="popover-body-label mr-auto">' +
+                  label +
+                  '</span>';
               }
 
-              content += '<span class="popover-body-value">$' + yLabel + 'k</span>';
+              content +=
+                '<span class="popover-body-value">$' + yLabel + 'k</span>';
               return content;
             },
           },
         },
       },
       data: {
-        labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+        labels: [
+          'Jan',
+          'Feb',
+          'Mar',
+          'Apr',
+          'May',
+          'Jun',
+          'Jul',
+          'Aug',
+          'Sep',
+          'Oct',
+          'Nov',
+          'Dec',
+        ],
         datasets: [
           {
             label: 'Performance',
@@ -123,17 +140,34 @@ var Performance = (function () {
               var content = '';
 
               if (data.datasets.length > 1) {
-                content += '<span class="popover-body-label mr-auto">' + label + '</span>';
+                content +=
+                  '<span class="popover-body-label mr-auto">' +
+                  label +
+                  '</span>';
               }
 
-              content += '<span class="popover-body-value">$' + yLabel + 'k</span>';
+              content +=
+                '<span class="popover-body-value">$' + yLabel + 'k</span>';
               return content;
             },
           },
         },
       },
       data: {
-        labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+        labels: [
+          'Jan',
+          'Feb',
+          'Mar',
+          'Apr',
+          'May',
+          'Jun',
+          'Jul',
+          'Aug',
+          'Sep',
+          'Oct',
+          'Nov',
+          'Dec',
+        ],
         datasets: [
           {
             label: 'Performance',
@@ -197,17 +231,34 @@ var PerformanceAlias = (function () {
               var content = '';
 
               if (data.datasets.length > 1) {
-                content += '<span class="popover-body-label mr-auto">' + label + '</span>';
+                content +=
+                  '<span class="popover-body-label mr-auto">' +
+                  label +
+                  '</span>';
               }
 
-              content += '<span class="popover-body-value">$' + yLabel + 'k</span>';
+              content +=
+                '<span class="popover-body-value">$' + yLabel + 'k</span>';
               return content;
             },
           },
         },
       },
       data: {
-        labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+        labels: [
+          'Jan',
+          'Feb',
+          'Mar',
+          'Apr',
+          'May',
+          'Jun',
+          'Jul',
+          'Aug',
+          'Sep',
+          'Oct',
+          'Nov',
+          'Dec',
+        ],
         datasets: [
           {
             label: 'Performance',
@@ -273,17 +324,34 @@ var Orders = (function () {
               var content = '';
 
               if (data.datasets.length > 1) {
-                content += '<span class="popover-body-label mr-auto">' + label + '</span>';
+                content +=
+                  '<span class="popover-body-label mr-auto">' +
+                  label +
+                  '</span>';
               }
 
-              content += '<span class="popover-body-value">$' + yLabel + 'k</span>';
+              content +=
+                '<span class="popover-body-value">$' + yLabel + 'k</span>';
               return content;
             },
           },
         },
       },
       data: {
-        labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+        labels: [
+          'Jan',
+          'Feb',
+          'Mar',
+          'Apr',
+          'May',
+          'Jun',
+          'Jul',
+          'Aug',
+          'Sep',
+          'Oct',
+          'Nov',
+          'Dec',
+        ],
         datasets: [
           {
             label: 'Sales',
@@ -365,17 +433,34 @@ var OrdersAlias = (function () {
               var content = '';
 
               if (data.datasets.length > 1) {
-                content += '<span class="popover-body-label mr-auto">' + label + '</span>';
+                content +=
+                  '<span class="popover-body-label mr-auto">' +
+                  label +
+                  '</span>';
               }
 
-              content += '<span class="popover-body-value">$' + yLabel + 'k</span>';
+              content +=
+                '<span class="popover-body-value">$' + yLabel + 'k</span>';
               return content;
             },
           },
         },
       },
       data: {
-        labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+        labels: [
+          'Jan',
+          'Feb',
+          'Mar',
+          'Apr',
+          'May',
+          'Jun',
+          'Jul',
+          'Aug',
+          'Sep',
+          'Oct',
+          'Nov',
+          'Dec',
+        ],
         datasets: [
           {
             label: 'Sales',
@@ -429,7 +514,8 @@ var Devices = (function () {
               var value = data.datasets[0].data[item.index];
               var content = '';
 
-              content += '<span class="popover-body-value">' + value + '%</span>';
+              content +=
+                '<span class="popover-body-value">' + value + '%</span>';
               return content;
             },
           },
@@ -446,7 +532,9 @@ var Devices = (function () {
               ThemeCharts.colors.primary[100],
             ],
             hoverBorderColor:
-              ThemeCharts.colorScheme == 'dark' ? ThemeCharts.colors.gray[800] : ThemeCharts.colors.white,
+              ThemeCharts.colorScheme == 'dark'
+                ? ThemeCharts.colors.gray[800]
+                : ThemeCharts.colors.white,
           },
         ],
       },
@@ -519,10 +607,14 @@ var WeeklyHours = (function () {
               var content = '';
 
               if (data.datasets.length > 1) {
-                content += '<span class="popover-body-label mr-auto">' + label + '</span>';
+                content +=
+                  '<span class="popover-body-label mr-auto">' +
+                  label +
+                  '</span>';
               }
 
-              content += '<span class="popover-body-value">' + yLabel + 'hrs</span>';
+              content +=
+                '<span class="popover-body-value">' + yLabel + 'hrs</span>';
               return content;
             },
           },

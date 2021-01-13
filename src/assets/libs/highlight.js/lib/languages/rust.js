@@ -40,7 +40,10 @@ module.exports = function (hljs) {
       hljs.inherit(hljs.QUOTE_STRING_MODE, { begin: /b?"/, illegal: null }),
       {
         className: 'string',
-        variants: [{ begin: /r(#*)"(.|\n)*?"\1(?!#)/ }, { begin: /b?'\\?(x\w{2}|u\w{4}|U\w{8}|.)'/ }],
+        variants: [
+          { begin: /r(#*)"(.|\n)*?"\1(?!#)/ },
+          { begin: /b?'\\?(x\w{2}|u\w{4}|U\w{8}|.)'/ },
+        ],
       },
       {
         className: 'symbol',
@@ -52,7 +55,10 @@ module.exports = function (hljs) {
           { begin: '\\b0b([01_]+)' + NUM_SUFFIX },
           { begin: '\\b0o([0-7_]+)' + NUM_SUFFIX },
           { begin: '\\b0x([A-Fa-f0-9_]+)' + NUM_SUFFIX },
-          { begin: '\\b(\\d[\\d_]*(\\.[0-9_]+)?([eE][+-]?[0-9_]+)?)' + NUM_SUFFIX },
+          {
+            begin:
+              '\\b(\\d[\\d_]*(\\.[0-9_]+)?([eE][+-]?[0-9_]+)?)' + NUM_SUFFIX,
+          },
         ],
         relevance: 0,
       },
@@ -79,14 +85,18 @@ module.exports = function (hljs) {
         className: 'class',
         beginKeywords: 'type',
         end: ';',
-        contains: [hljs.inherit(hljs.UNDERSCORE_TITLE_MODE, { endsParent: true })],
+        contains: [
+          hljs.inherit(hljs.UNDERSCORE_TITLE_MODE, { endsParent: true }),
+        ],
         illegal: '\\S',
       },
       {
         className: 'class',
         beginKeywords: 'trait enum struct union',
         end: '{',
-        contains: [hljs.inherit(hljs.UNDERSCORE_TITLE_MODE, { endsParent: true })],
+        contains: [
+          hljs.inherit(hljs.UNDERSCORE_TITLE_MODE, { endsParent: true }),
+        ],
         illegal: '[\\w\\d]',
       },
       {

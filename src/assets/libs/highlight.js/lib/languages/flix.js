@@ -30,8 +30,16 @@ module.exports = function (hljs) {
   return {
     keywords: {
       literal: 'true false',
-      keyword: 'case class def else enum if impl import in lat rel index let match namespace switch type yield with',
+      keyword:
+        'case class def else enum if impl import in lat rel index let match namespace switch type yield with',
     },
-    contains: [hljs.C_LINE_COMMENT_MODE, hljs.C_BLOCK_COMMENT_MODE, CHAR, STRING, METHOD, hljs.C_NUMBER_MODE],
+    contains: [
+      hljs.C_LINE_COMMENT_MODE,
+      hljs.C_BLOCK_COMMENT_MODE,
+      CHAR,
+      STRING,
+      METHOD,
+      hljs.C_NUMBER_MODE,
+    ],
   };
 };

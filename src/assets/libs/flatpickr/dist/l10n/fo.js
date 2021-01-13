@@ -16,10 +16,31 @@
   var Faroese = {
     weekdays: {
       shorthand: ['Sun', 'Mán', 'Týs', 'Mik', 'Hós', 'Frí', 'Ley'],
-      longhand: ['Sunnudagur', 'Mánadagur', 'Týsdagur', 'Mikudagur', 'Hósdagur', 'Fríggjadagur', 'Leygardagur'],
+      longhand: [
+        'Sunnudagur',
+        'Mánadagur',
+        'Týsdagur',
+        'Mikudagur',
+        'Hósdagur',
+        'Fríggjadagur',
+        'Leygardagur',
+      ],
     },
     months: {
-      shorthand: ['Jan', 'Feb', 'Mar', 'Apr', 'Mai', 'Jun', 'Jul', 'Aug', 'Sep', 'Okt', 'Nov', 'Des'],
+      shorthand: [
+        'Jan',
+        'Feb',
+        'Mar',
+        'Apr',
+        'Mai',
+        'Jun',
+        'Jul',
+        'Aug',
+        'Sep',
+        'Okt',
+        'Nov',
+        'Des',
+      ],
       longhand: [
         'Januar',
         'Februar',

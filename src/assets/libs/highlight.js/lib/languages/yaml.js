@@ -22,7 +22,11 @@ module.exports = function (hljs) {
   var STRING = {
     className: 'string',
     relevance: 0,
-    variants: [{ begin: /'/, end: /'/ }, { begin: /"/, end: /"/ }, { begin: /\S+/ }],
+    variants: [
+      { begin: /'/, end: /'/ },
+      { begin: /"/, end: /"/ },
+      { begin: /\S+/ },
+    ],
     contains: [hljs.BACKSLASH_ESCAPE, TEMPLATE_VARIABLES],
   };
 

@@ -11,6 +11,10 @@ module.exports = function (hljs) {
     aliases: ['k', 'kdb'],
     keywords: Q_KEYWORDS,
     lexemes: /(`?)[A-Za-z0-9_]+\b/,
-    contains: [hljs.C_LINE_COMMENT_MODE, hljs.QUOTE_STRING_MODE, hljs.C_NUMBER_MODE],
+    contains: [
+      hljs.C_LINE_COMMENT_MODE,
+      hljs.QUOTE_STRING_MODE,
+      hljs.C_NUMBER_MODE,
+    ],
   };
 };

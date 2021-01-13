@@ -17,7 +17,10 @@ var Flatpickr = (function () {
 
   function init($this) {
     var options = {
-      mode: $this.data('flatpickr-mode') !== undefined ? $this.data('flatpickr-mode') : 'single',
+      mode:
+        $this.data('flatpickr-mode') !== undefined
+          ? $this.data('flatpickr-mode')
+          : 'single',
     };
 
     // Init Flatpickr

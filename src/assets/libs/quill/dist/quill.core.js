@@ -5,7 +5,8 @@
  * Copyright (c) 2013, salesforce.com
  */
 (function webpackUniversalModuleDefinition(root, factory) {
-  if (typeof exports === 'object' && typeof module === 'object') module.exports = factory();
+  if (typeof exports === 'object' && typeof module === 'object')
+    module.exports = factory();
   else if (typeof define === 'function' && define.amd) define([], factory);
   else if (typeof exports === 'object') exports['Quill'] = factory();
   else root['Quill'] = factory();
@@ -29,7 +30,12 @@
         /******/
       }); // Execute the module function
       /******/
-      /******/ /******/ modules[moduleId].call(module.exports, module, module.exports, __webpack_require__); // Flag the module as loaded
+      /******/ /******/ modules[moduleId].call(
+        module.exports,
+        module,
+        module.exports,
+        __webpack_require__
+      ); // Flag the module as loaded
       /******/
       /******/ /******/ module.l = true; // Return the exports of the module
       /******/
@@ -144,7 +150,10 @@
               function __() {
                 this.constructor = d;
               }
-              d.prototype = b === null ? Object.create(b) : ((__.prototype = b.prototype), new __());
+              d.prototype =
+                b === null
+                  ? Object.create(b)
+                  : ((__.prototype = b.prototype), new __());
             };
           })();
         Object.defineProperty(exports, '__esModule', { value: true });
@@ -188,7 +197,9 @@
           var BlotClass = match;
           var node =
             // @ts-ignore
-            input instanceof Node || input['nodeType'] === Node.TEXT_NODE ? input : BlotClass.create(value);
+            input instanceof Node || input['nodeType'] === Node.TEXT_NODE
+              ? input
+              : BlotClass.create(value);
           return new BlotClass(node, value);
         }
         exports.create = create;
@@ -198,7 +209,8 @@
           }
           if (node == null) return null;
           // @ts-ignore
-          if (node[exports.DATA_KEY] != null) return node[exports.DATA_KEY].blot;
+          if (node[exports.DATA_KEY] != null)
+            return node[exports.DATA_KEY].blot;
           if (bubble) return find(node.parentNode, bubble);
           return null;
         }
@@ -211,7 +223,10 @@
           if (typeof query === 'string') {
             match = types[query] || attributes[query];
             // @ts-ignore
-          } else if (query instanceof Text || query['nodeType'] === Node.TEXT_NODE) {
+          } else if (
+            query instanceof Text ||
+            query['nodeType'] === Node.TEXT_NODE
+          ) {
             match = types['text'];
           } else if (typeof query === 'number') {
             if (query & Scope.LEVEL & Scope.BLOCK) {
@@ -229,7 +244,11 @@
           }
           if (match == null) return null;
           // @ts-ignore
-          if (scope & Scope.LEVEL & match.scope && scope & Scope.TYPE & match.scope) return match;
+          if (
+            scope & Scope.LEVEL & match.scope &&
+            scope & Scope.TYPE & match.scope
+          )
+            return match;
           return null;
         }
         exports.query = query;
@@ -244,7 +263,10 @@
             });
           }
           var Definition = Definitions[0];
-          if (typeof Definition.blotName !== 'string' && typeof Definition.attrName !== 'string') {
+          if (
+            typeof Definition.blotName !== 'string' &&
+            typeof Definition.attrName !== 'string'
+          ) {
             throw new ParchmentError('Invalid definition');
           } else if (Definition.blotName === 'abstract') {
             throw new ParchmentError('Cannot register abstract class');
@@ -264,7 +286,9 @@
               } else {
                 Definition.tagName = Definition.tagName.toUpperCase();
               }
-              var tagNames = Array.isArray(Definition.tagName) ? Definition.tagName : [Definition.tagName];
+              var tagNames = Array.isArray(Definition.tagName)
+                ? Definition.tagName
+                : [Definition.tagName];
               tagNames.forEach(function (tag) {
                 if (tags[tag] == null || Definition.className == null) {
                   tags[tag] = Definition;
@@ -302,7 +326,11 @@
           var newOp = {};
           if (text.length === 0) return this;
           newOp.insert = text;
-          if (attributes != null && typeof attributes === 'object' && Object.keys(attributes).length > 0) {
+          if (
+            attributes != null &&
+            typeof attributes === 'object' &&
+            Object.keys(attributes).length > 0
+          ) {
             newOp.attributes = attributes;
           }
           return this.push(newOp);
@@ -316,7 +344,11 @@
         Delta.prototype.retain = function (length, attributes) {
           if (length <= 0) return this;
           var newOp = { retain: length };
-          if (attributes != null && typeof attributes === 'object' && Object.keys(attributes).length > 0) {
+          if (
+            attributes != null &&
+            typeof attributes === 'object' &&
+            Object.keys(attributes).length > 0
+          ) {
             newOp.attributes = attributes;
           }
           return this.push(newOp);
@@ -327,8 +359,13 @@
           var lastOp = this.ops[index - 1];
           newOp = extend(true, {}, newOp);
           if (typeof lastOp === 'object') {
-            if (typeof newOp['delete'] === 'number' && typeof lastOp['delete'] === 'number') {
-              this.ops[index - 1] = { delete: lastOp['delete'] + newOp['delete'] };
+            if (
+              typeof newOp['delete'] === 'number' &&
+              typeof lastOp['delete'] === 'number'
+            ) {
+              this.ops[index - 1] = {
+                delete: lastOp['delete'] + newOp['delete'],
+              };
               return this;
             }
             // Since it does not matter if we insert before or after deleting at the same index,
@@ -342,13 +379,21 @@
               }
             }
             if (equal(newOp.attributes, lastOp.attributes)) {
-              if (typeof newOp.insert === 'string' && typeof lastOp.insert === 'string') {
+              if (
+                typeof newOp.insert === 'string' &&
+                typeof lastOp.insert === 'string'
+              ) {
                 this.ops[index - 1] = { insert: lastOp.insert + newOp.insert };
-                if (typeof newOp.attributes === 'object') this.ops[index - 1].attributes = newOp.attributes;
+                if (typeof newOp.attributes === 'object')
+                  this.ops[index - 1].attributes = newOp.attributes;
                 return this;
-              } else if (typeof newOp.retain === 'number' && typeof lastOp.retain === 'number') {
+              } else if (
+                typeof newOp.retain === 'number' &&
+                typeof lastOp.retain === 'number'
+              ) {
                 this.ops[index - 1] = { retain: lastOp.retain + newOp.retain };
-                if (typeof newOp.attributes === 'object') this.ops[index - 1].attributes = newOp.attributes;
+                if (typeof newOp.attributes === 'object')
+                  this.ops[index - 1].attributes = newOp.attributes;
                 return this;
               }
             }
@@ -441,7 +486,10 @@
             } else if (thisIter.peekType() === 'delete') {
               delta.push(thisIter.next());
             } else {
-              var length = Math.min(thisIter.peekLength(), otherIter.peekLength());
+              var length = Math.min(
+                thisIter.peekLength(),
+                otherIter.peekLength()
+              );
               var thisOp = thisIter.next(length);
               var otherOp = otherIter.next(length);
               if (typeof otherOp.retain === 'number') {
@@ -461,7 +509,10 @@
                 delta.push(newOp);
                 // Other op should be delete, we could be an insert or retain
                 // Insert + delete cancels out
-              } else if (typeof otherOp['delete'] === 'number' && typeof thisOp.retain === 'number') {
+              } else if (
+                typeof otherOp['delete'] === 'number' &&
+                typeof thisOp.retain === 'number'
+              ) {
                 delta.push(otherOp);
               }
             }
@@ -486,7 +537,9 @@
             return delta
               .map(function (op) {
                 if (op.insert != null) {
-                  return typeof op.insert === 'string' ? op.insert : NULL_CHARACTER;
+                  return typeof op.insert === 'string'
+                    ? op.insert
+                    : NULL_CHARACTER;
                 }
                 var prep = delta === other ? 'on' : 'with';
                 throw new Error('diff() called ' + prep + ' non-document');
@@ -512,11 +565,18 @@
                   delta['delete'](opLength);
                   break;
                 case diff.EQUAL:
-                  opLength = Math.min(thisIter.peekLength(), otherIter.peekLength(), length);
+                  opLength = Math.min(
+                    thisIter.peekLength(),
+                    otherIter.peekLength(),
+                    length
+                  );
                   var thisOp = thisIter.next(opLength);
                   var otherOp = otherIter.next(opLength);
                   if (equal(thisOp.insert, otherOp.insert)) {
-                    delta.retain(opLength, op.attributes.diff(thisOp.attributes, otherOp.attributes));
+                    delta.retain(
+                      opLength,
+                      op.attributes.diff(thisOp.attributes, otherOp.attributes)
+                    );
                   } else {
                     delta.push(otherOp)['delete'](opLength);
                   }
@@ -537,7 +597,10 @@
             if (iter.peekType() !== 'insert') return;
             var thisOp = iter.peek();
             var start = op.length(thisOp) - iter.peekLength();
-            var index = typeof thisOp.insert === 'string' ? thisOp.insert.indexOf(newline, start) - start : -1;
+            var index =
+              typeof thisOp.insert === 'string'
+                ? thisOp.insert.indexOf(newline, start) - start
+                : -1;
             if (index < 0) {
               line.push(iter.next());
             } else if (index > 0) {
@@ -564,12 +627,18 @@
           var otherIter = op.iterator(other.ops);
           var delta = new Delta();
           while (thisIter.hasNext() || otherIter.hasNext()) {
-            if (thisIter.peekType() === 'insert' && (priority || otherIter.peekType() !== 'insert')) {
+            if (
+              thisIter.peekType() === 'insert' &&
+              (priority || otherIter.peekType() !== 'insert')
+            ) {
               delta.retain(op.length(thisIter.next()));
             } else if (otherIter.peekType() === 'insert') {
               delta.push(otherIter.next());
             } else {
-              var length = Math.min(thisIter.peekLength(), otherIter.peekLength());
+              var length = Math.min(
+                thisIter.peekLength(),
+                otherIter.peekLength()
+              );
               var thisOp = thisIter.next(length);
               var otherOp = otherIter.next(length);
               if (thisOp['delete']) {
@@ -579,7 +648,14 @@
                 delta.push(otherOp);
               } else {
                 // We retain either their retain or insert
-                delta.retain(length, op.attributes.transform(thisOp.attributes, otherOp.attributes, priority));
+                delta.retain(
+                  length,
+                  op.attributes.transform(
+                    thisOp.attributes,
+                    otherOp.attributes,
+                    priority
+                  )
+                );
               }
             }
           }
@@ -631,7 +707,9 @@
 
           var hasOwnConstructor = hasOwn.call(obj, 'constructor');
           var hasIsPrototypeOf =
-            obj.constructor && obj.constructor.prototype && hasOwn.call(obj.constructor.prototype, 'isPrototypeOf');
+            obj.constructor &&
+            obj.constructor.prototype &&
+            hasOwn.call(obj.constructor.prototype, 'isPrototypeOf');
           // Not own constructor property must be Object
           if (obj.constructor && !hasOwnConstructor && !hasIsPrototypeOf) {
             return false;
@@ -661,7 +739,10 @@
             // skip the boolean and the target
             i = 2;
           }
-          if (target == null || (typeof target !== 'object' && typeof target !== 'function')) {
+          if (
+            target == null ||
+            (typeof target !== 'object' && typeof target !== 'function')
+          ) {
             target = {};
           }
 
@@ -677,7 +758,11 @@
                 // Prevent never-ending loop
                 if (target !== copy) {
                   // Recurse if we're merging plain objects or arrays
-                  if (deep && copy && (isPlainObject(copy) || (copyIsArray = isArray(copy)))) {
+                  if (
+                    deep &&
+                    copy &&
+                    (isPlainObject(copy) || (copyIsArray = isArray(copy)))
+                  ) {
                     if (copyIsArray) {
                       copyIsArray = false;
                       clone = src && isArray(src) ? src : [];
@@ -786,20 +871,38 @@
 
         function _possibleConstructorReturn(self, call) {
           if (!self) {
-            throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+            throw new ReferenceError(
+              "this hasn't been initialised - super() hasn't been called"
+            );
           }
-          return call && (typeof call === 'object' || typeof call === 'function') ? call : self;
+          return call &&
+            (typeof call === 'object' || typeof call === 'function')
+            ? call
+            : self;
         }
 
         function _inherits(subClass, superClass) {
           if (typeof superClass !== 'function' && superClass !== null) {
-            throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass);
+            throw new TypeError(
+              'Super expression must either be null or a function, not ' +
+                typeof superClass
+            );
           }
-          subClass.prototype = Object.create(superClass && superClass.prototype, {
-            constructor: { value: subClass, enumerable: false, writable: true, configurable: true },
-          });
+          subClass.prototype = Object.create(
+            superClass && superClass.prototype,
+            {
+              constructor: {
+                value: subClass,
+                enumerable: false,
+                writable: true,
+                configurable: true,
+              },
+            }
+          );
           if (superClass)
-            Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : (subClass.__proto__ = superClass);
+            Object.setPrototypeOf
+              ? Object.setPrototypeOf(subClass, superClass)
+              : (subClass.__proto__ = superClass);
         }
 
         var NEWLINE_LENGTH = 1;
@@ -812,7 +915,10 @@
 
             return _possibleConstructorReturn(
               this,
-              (BlockEmbed.__proto__ || Object.getPrototypeOf(BlockEmbed)).apply(this, arguments)
+              (BlockEmbed.__proto__ || Object.getPrototypeOf(BlockEmbed)).apply(
+                this,
+                arguments
+              )
             );
           }
 
@@ -821,11 +927,14 @@
               key: 'attach',
               value: function attach() {
                 _get(
-                  BlockEmbed.prototype.__proto__ || Object.getPrototypeOf(BlockEmbed.prototype),
+                  BlockEmbed.prototype.__proto__ ||
+                    Object.getPrototypeOf(BlockEmbed.prototype),
                   'attach',
                   this
                 ).call(this);
-                this.attributes = new _parchment2.default.Attributor.Store(this.domNode);
+                this.attributes = new _parchment2.default.Attributor.Store(
+                  this.domNode
+                );
               },
             },
             {
@@ -833,14 +942,20 @@
               value: function delta() {
                 return new _quillDelta2.default().insert(
                   this.value(),
-                  (0, _extend2.default)(this.formats(), this.attributes.values())
+                  (0, _extend2.default)(
+                    this.formats(),
+                    this.attributes.values()
+                  )
                 );
               },
             },
             {
               key: 'format',
               value: function format(name, value) {
-                var attribute = _parchment2.default.query(name, _parchment2.default.Scope.BLOCK_ATTRIBUTE);
+                var attribute = _parchment2.default.query(
+                  name,
+                  _parchment2.default.Scope.BLOCK_ATTRIBUTE
+                );
                 if (attribute != null) {
                   this.attributes.attribute(attribute, value);
                 }
@@ -857,11 +972,15 @@
               value: function insertAt(index, value, def) {
                 if (typeof value === 'string' && value.endsWith('\n')) {
                   var block = _parchment2.default.create(Block.blotName);
-                  this.parent.insertBefore(block, index === 0 ? this : this.next);
+                  this.parent.insertBefore(
+                    block,
+                    index === 0 ? this : this.next
+                  );
                   block.insertAt(0, value.slice(0, -1));
                 } else {
                   _get(
-                    BlockEmbed.prototype.__proto__ || Object.getPrototypeOf(BlockEmbed.prototype),
+                    BlockEmbed.prototype.__proto__ ||
+                      Object.getPrototypeOf(BlockEmbed.prototype),
                     'insertAt',
                     this
                   ).call(this, index, value, def);
@@ -884,7 +1003,10 @@
 
             var _this2 = _possibleConstructorReturn(
               this,
-              (Block.__proto__ || Object.getPrototypeOf(Block)).call(this, domNode)
+              (Block.__proto__ || Object.getPrototypeOf(Block)).call(
+                this,
+                domNode
+              )
             );
 
             _this2.cache = {};
@@ -912,11 +1034,12 @@
             {
               key: 'deleteAt',
               value: function deleteAt(index, length) {
-                _get(Block.prototype.__proto__ || Object.getPrototypeOf(Block.prototype), 'deleteAt', this).call(
-                  this,
-                  index,
-                  length
-                );
+                _get(
+                  Block.prototype.__proto__ ||
+                    Object.getPrototypeOf(Block.prototype),
+                  'deleteAt',
+                  this
+                ).call(this, index, length);
                 this.cache = {};
               },
             },
@@ -924,12 +1047,22 @@
               key: 'formatAt',
               value: function formatAt(index, length, name, value) {
                 if (length <= 0) return;
-                if (_parchment2.default.query(name, _parchment2.default.Scope.BLOCK)) {
+                if (
+                  _parchment2.default.query(
+                    name,
+                    _parchment2.default.Scope.BLOCK
+                  )
+                ) {
                   if (index + length === this.length()) {
                     this.format(name, value);
                   }
                 } else {
-                  _get(Block.prototype.__proto__ || Object.getPrototypeOf(Block.prototype), 'formatAt', this).call(
+                  _get(
+                    Block.prototype.__proto__ ||
+                      Object.getPrototypeOf(Block.prototype),
+                    'formatAt',
+                    this
+                  ).call(
                     this,
                     index,
                     Math.min(length, this.length() - index - 1),
@@ -945,7 +1078,8 @@
               value: function insertAt(index, value, def) {
                 if (def != null)
                   return _get(
-                    Block.prototype.__proto__ || Object.getPrototypeOf(Block.prototype),
+                    Block.prototype.__proto__ ||
+                      Object.getPrototypeOf(Block.prototype),
                     'insertAt',
                     this
                   ).call(this, index, value, def);
@@ -954,13 +1088,17 @@
                 var text = lines.shift();
                 if (text.length > 0) {
                   if (index < this.length() - 1 || this.children.tail == null) {
-                    _get(Block.prototype.__proto__ || Object.getPrototypeOf(Block.prototype), 'insertAt', this).call(
-                      this,
-                      Math.min(index, this.length() - 1),
+                    _get(
+                      Block.prototype.__proto__ ||
+                        Object.getPrototypeOf(Block.prototype),
+                      'insertAt',
+                      this
+                    ).call(this, Math.min(index, this.length() - 1), text);
+                  } else {
+                    this.children.tail.insertAt(
+                      this.children.tail.length(),
                       text
                     );
-                  } else {
-                    this.children.tail.insertAt(this.children.tail.length(), text);
                   }
                   this.cache = {};
                 }
@@ -976,11 +1114,12 @@
               key: 'insertBefore',
               value: function insertBefore(blot, ref) {
                 var head = this.children.head;
-                _get(Block.prototype.__proto__ || Object.getPrototypeOf(Block.prototype), 'insertBefore', this).call(
-                  this,
-                  blot,
-                  ref
-                );
+                _get(
+                  Block.prototype.__proto__ ||
+                    Object.getPrototypeOf(Block.prototype),
+                  'insertBefore',
+                  this
+                ).call(this, blot, ref);
                 if (head instanceof _break2.default) {
                   head.remove();
                 }
@@ -992,9 +1131,12 @@
               value: function length() {
                 if (this.cache.length == null) {
                   this.cache.length =
-                    _get(Block.prototype.__proto__ || Object.getPrototypeOf(Block.prototype), 'length', this).call(
+                    _get(
+                      Block.prototype.__proto__ ||
+                        Object.getPrototypeOf(Block.prototype),
+                      'length',
                       this
-                    ) + NEWLINE_LENGTH;
+                    ).call(this) + NEWLINE_LENGTH;
                 }
                 return this.cache.length;
               },
@@ -1002,50 +1144,62 @@
             {
               key: 'moveChildren',
               value: function moveChildren(target, ref) {
-                _get(Block.prototype.__proto__ || Object.getPrototypeOf(Block.prototype), 'moveChildren', this).call(
-                  this,
-                  target,
-                  ref
-                );
+                _get(
+                  Block.prototype.__proto__ ||
+                    Object.getPrototypeOf(Block.prototype),
+                  'moveChildren',
+                  this
+                ).call(this, target, ref);
                 this.cache = {};
               },
             },
             {
               key: 'optimize',
               value: function optimize(context) {
-                _get(Block.prototype.__proto__ || Object.getPrototypeOf(Block.prototype), 'optimize', this).call(
-                  this,
-                  context
-                );
+                _get(
+                  Block.prototype.__proto__ ||
+                    Object.getPrototypeOf(Block.prototype),
+                  'optimize',
+                  this
+                ).call(this, context);
                 this.cache = {};
               },
             },
             {
               key: 'path',
               value: function path(index) {
-                return _get(Block.prototype.__proto__ || Object.getPrototypeOf(Block.prototype), 'path', this).call(
-                  this,
-                  index,
-                  true
-                );
+                return _get(
+                  Block.prototype.__proto__ ||
+                    Object.getPrototypeOf(Block.prototype),
+                  'path',
+                  this
+                ).call(this, index, true);
               },
             },
             {
               key: 'removeChild',
               value: function removeChild(child) {
-                _get(Block.prototype.__proto__ || Object.getPrototypeOf(Block.prototype), 'removeChild', this).call(
-                  this,
-                  child
-                );
+                _get(
+                  Block.prototype.__proto__ ||
+                    Object.getPrototypeOf(Block.prototype),
+                  'removeChild',
+                  this
+                ).call(this, child);
                 this.cache = {};
               },
             },
             {
               key: 'split',
               value: function split(index) {
-                var force = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
+                var force =
+                  arguments.length > 1 && arguments[1] !== undefined
+                    ? arguments[1]
+                    : false;
 
-                if (force && (index === 0 || index >= this.length() - NEWLINE_LENGTH)) {
+                if (
+                  force &&
+                  (index === 0 || index >= this.length() - NEWLINE_LENGTH)
+                ) {
                   var clone = this.clone();
                   if (index === 0) {
                     this.parent.insertBefore(clone, this);
@@ -1056,7 +1210,8 @@
                   }
                 } else {
                   var next = _get(
-                    Block.prototype.__proto__ || Object.getPrototypeOf(Block.prototype),
+                    Block.prototype.__proto__ ||
+                      Object.getPrototypeOf(Block.prototype),
                     'split',
                     this
                   ).call(this, index, force);
@@ -1073,10 +1228,17 @@
         Block.blotName = 'block';
         Block.tagName = 'P';
         Block.defaultChild = 'break';
-        Block.allowedChildren = [_inline2.default, _parchment2.default.Embed, _text2.default];
+        Block.allowedChildren = [
+          _inline2.default,
+          _parchment2.default.Embed,
+          _text2.default,
+        ];
 
         function bubbleFormats(blot) {
-          var formats = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+          var formats =
+            arguments.length > 1 && arguments[1] !== undefined
+              ? arguments[1]
+              : {};
 
           if (blot == null) return formats;
           if (typeof blot.formats === 'function') {
@@ -1113,7 +1275,10 @@
                 return typeof obj;
               }
             : function (obj) {
-                return obj && typeof Symbol === 'function' && obj.constructor === Symbol && obj !== Symbol.prototype
+                return obj &&
+                  typeof Symbol === 'function' &&
+                  obj.constructor === Symbol &&
+                  obj !== Symbol.prototype
                   ? 'symbol'
                   : typeof obj;
               };
@@ -1125,7 +1290,11 @@
             var _d = false;
             var _e = undefined;
             try {
-              for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) {
+              for (
+                var _i = arr[Symbol.iterator](), _s;
+                !(_n = (_s = _i.next()).done);
+                _n = true
+              ) {
                 _arr.push(_s.value);
                 if (i && _arr.length === i) break;
               }
@@ -1147,7 +1316,9 @@
             } else if (Symbol.iterator in Object(arr)) {
               return sliceIterator(arr, i);
             } else {
-              throw new TypeError('Invalid attempt to destructure non-iterable instance');
+              throw new TypeError(
+                'Invalid attempt to destructure non-iterable instance'
+              );
             }
           };
         })();
@@ -1213,7 +1384,12 @@
 
         function _defineProperty(obj, key, value) {
           if (key in obj) {
-            Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });
+            Object.defineProperty(obj, key, {
+              value: value,
+              enumerable: true,
+              configurable: true,
+              writable: true,
+            });
           } else {
             obj[key] = value;
           }
@@ -1249,7 +1425,11 @@
               key: 'import',
               value: function _import(name) {
                 if (this.imports[name] == null) {
-                  debug.error('Cannot import ' + name + '. Are you sure it was registered?');
+                  debug.error(
+                    'Cannot import ' +
+                      name +
+                      '. Are you sure it was registered?'
+                  );
                 }
                 return this.imports[name];
               },
@@ -1259,7 +1439,10 @@
               value: function register(path, target) {
                 var _this = this;
 
-                var overwrite = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;
+                var overwrite =
+                  arguments.length > 2 && arguments[2] !== undefined
+                    ? arguments[2]
+                    : false;
 
                 if (typeof path !== 'string') {
                   var name = path.attrName || path.blotName;
@@ -1276,9 +1459,16 @@
                     debug.warn('Overwriting ' + path + ' with', target);
                   }
                   this.imports[path] = target;
-                  if ((path.startsWith('blots/') || path.startsWith('formats/')) && target.blotName !== 'abstract') {
+                  if (
+                    (path.startsWith('blots/') ||
+                      path.startsWith('formats/')) &&
+                    target.blotName !== 'abstract'
+                  ) {
                     _parchment2.default.register(target);
-                  } else if (path.startsWith('modules') && typeof target.register === 'function') {
+                  } else if (
+                    path.startsWith('modules') &&
+                    typeof target.register === 'function'
+                  ) {
                     target.register();
                   }
                 }
@@ -1289,7 +1479,10 @@
           function Quill(container) {
             var _this2 = this;
 
-            var options = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+            var options =
+              arguments.length > 1 && arguments[1] !== undefined
+                ? arguments[1]
+                : {};
 
             _classCallCheck(this, Quill);
 
@@ -1308,7 +1501,8 @@
             this.root = this.addContainer('ql-editor');
             this.root.classList.add('ql-blank');
             this.root.setAttribute('data-gramm', false);
-            this.scrollingContainer = this.options.scrollingContainer || this.root;
+            this.scrollingContainer =
+              this.options.scrollingContainer || this.root;
             this.emitter = new _emitter4.default();
             this.scroll = _parchment2.default.create(this.root, {
               emitter: this.emitter,
@@ -1321,29 +1515,44 @@
             this.clipboard = this.theme.addModule('clipboard');
             this.history = this.theme.addModule('history');
             this.theme.init();
-            this.emitter.on(_emitter4.default.events.EDITOR_CHANGE, function (type) {
-              if (type === _emitter4.default.events.TEXT_CHANGE) {
-                _this2.root.classList.toggle('ql-blank', _this2.editor.isBlank());
+            this.emitter.on(
+              _emitter4.default.events.EDITOR_CHANGE,
+              function (type) {
+                if (type === _emitter4.default.events.TEXT_CHANGE) {
+                  _this2.root.classList.toggle(
+                    'ql-blank',
+                    _this2.editor.isBlank()
+                  );
+                }
               }
-            });
-            this.emitter.on(_emitter4.default.events.SCROLL_UPDATE, function (source, mutations) {
-              var range = _this2.selection.lastRange;
-              var index = range && range.length === 0 ? range.index : undefined;
-              modify.call(
-                _this2,
-                function () {
-                  return _this2.editor.update(null, mutations, index);
-                },
-                source
-              );
-            });
+            );
+            this.emitter.on(
+              _emitter4.default.events.SCROLL_UPDATE,
+              function (source, mutations) {
+                var range = _this2.selection.lastRange;
+                var index =
+                  range && range.length === 0 ? range.index : undefined;
+                modify.call(
+                  _this2,
+                  function () {
+                    return _this2.editor.update(null, mutations, index);
+                  },
+                  source
+                );
+              }
+            );
             var contents = this.clipboard.convert(
-              '<div class=\'ql-editor\' style="white-space: normal;">' + html + '<p><br></p></div>'
+              '<div class=\'ql-editor\' style="white-space: normal;">' +
+                html +
+                '<p><br></p></div>'
             );
             this.setContents(contents);
             this.history.clear();
             if (this.options.placeholder) {
-              this.root.setAttribute('data-placeholder', this.options.placeholder);
+              this.root.setAttribute(
+                'data-placeholder',
+                this.options.placeholder
+              );
             }
             if (this.options.readOnly) {
               this.disable();
@@ -1354,7 +1563,10 @@
             {
               key: 'addContainer',
               value: function addContainer(container) {
-                var refNode = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : null;
+                var refNode =
+                  arguments.length > 1 && arguments[1] !== undefined
+                    ? arguments[1]
+                    : null;
 
                 if (typeof container === 'string') {
                   var className = container;
@@ -1404,7 +1616,10 @@
             {
               key: 'enable',
               value: function enable() {
-                var enabled = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : true;
+                var enabled =
+                  arguments.length > 0 && arguments[0] !== undefined
+                    ? arguments[0]
+                    : true;
 
                 this.scroll.enable(enabled);
                 this.container.classList.toggle('ql-disabled', !enabled);
@@ -1425,7 +1640,9 @@
                 var _this4 = this;
 
                 var source =
-                  arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : _emitter4.default.sources.API;
+                  arguments.length > 2 && arguments[2] !== undefined
+                    ? arguments[2]
+                    : _emitter4.default.sources.API;
 
                 return modify.call(
                   this,
@@ -1434,15 +1651,31 @@
                     var change = new _quillDelta2.default();
                     if (range == null) {
                       return change;
-                    } else if (_parchment2.default.query(name, _parchment2.default.Scope.BLOCK)) {
-                      change = _this4.editor.formatLine(range.index, range.length, _defineProperty({}, name, value));
+                    } else if (
+                      _parchment2.default.query(
+                        name,
+                        _parchment2.default.Scope.BLOCK
+                      )
+                    ) {
+                      change = _this4.editor.formatLine(
+                        range.index,
+                        range.length,
+                        _defineProperty({}, name, value)
+                      );
                     } else if (range.length === 0) {
                       _this4.selection.format(name, value);
                       return change;
                     } else {
-                      change = _this4.editor.formatText(range.index, range.length, _defineProperty({}, name, value));
+                      change = _this4.editor.formatText(
+                        range.index,
+                        range.length,
+                        _defineProperty({}, name, value)
+                      );
                     }
-                    _this4.setSelection(range, _emitter4.default.sources.SILENT);
+                    _this4.setSelection(
+                      range,
+                      _emitter4.default.sources.SILENT
+                    );
                     return change;
                   },
                   source
@@ -1506,7 +1739,10 @@
             {
               key: 'getBounds',
               value: function getBounds(index) {
-                var length = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 0;
+                var length =
+                  arguments.length > 1 && arguments[1] !== undefined
+                    ? arguments[1]
+                    : 0;
 
                 var bounds = void 0;
                 if (typeof index === 'number') {
@@ -1528,9 +1764,14 @@
             {
               key: 'getContents',
               value: function getContents() {
-                var index = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 0;
+                var index =
+                  arguments.length > 0 && arguments[0] !== undefined
+                    ? arguments[0]
+                    : 0;
                 var length =
-                  arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : this.getLength() - index;
+                  arguments.length > 1 && arguments[1] !== undefined
+                    ? arguments[1]
+                    : this.getLength() - index;
 
                 var _overload7 = overload(index, length);
 
@@ -1545,8 +1786,14 @@
             {
               key: 'getFormat',
               value: function getFormat() {
-                var index = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : this.getSelection(true);
-                var length = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 0;
+                var index =
+                  arguments.length > 0 && arguments[0] !== undefined
+                    ? arguments[0]
+                    : this.getSelection(true);
+                var length =
+                  arguments.length > 1 && arguments[1] !== undefined
+                    ? arguments[1]
+                    : 0;
 
                 if (typeof index === 'number') {
                   return this.editor.getFormat(index, length);
@@ -1582,8 +1829,14 @@
             {
               key: 'getLines',
               value: function getLines() {
-                var index = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 0;
-                var length = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : Number.MAX_VALUE;
+                var index =
+                  arguments.length > 0 && arguments[0] !== undefined
+                    ? arguments[0]
+                    : 0;
+                var length =
+                  arguments.length > 1 && arguments[1] !== undefined
+                    ? arguments[1]
+                    : Number.MAX_VALUE;
 
                 if (typeof index !== 'number') {
                   return this.scroll.lines(index.index, index.length);
@@ -1601,7 +1854,10 @@
             {
               key: 'getSelection',
               value: function getSelection() {
-                var focus = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : false;
+                var focus =
+                  arguments.length > 0 && arguments[0] !== undefined
+                    ? arguments[0]
+                    : false;
 
                 if (focus) this.focus();
                 this.update(); // Make sure we access getRange with editor in consistent state
@@ -1611,9 +1867,14 @@
             {
               key: 'getText',
               value: function getText() {
-                var index = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 0;
+                var index =
+                  arguments.length > 0 && arguments[0] !== undefined
+                    ? arguments[0]
+                    : 0;
                 var length =
-                  arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : this.getLength() - index;
+                  arguments.length > 1 && arguments[1] !== undefined
+                    ? arguments[1]
+                    : this.getLength() - index;
 
                 var _overload9 = overload(index, length);
 
@@ -1636,7 +1897,10 @@
               value: function insertEmbed(index, embed, value) {
                 var _this7 = this;
 
-                var source = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : Quill.sources.API;
+                var source =
+                  arguments.length > 3 && arguments[3] !== undefined
+                    ? arguments[3]
+                    : Quill.sources.API;
 
                 return modify.call(
                   this,
@@ -1739,7 +2003,9 @@
                 var _this10 = this;
 
                 var source =
-                  arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : _emitter4.default.sources.API;
+                  arguments.length > 1 && arguments[1] !== undefined
+                    ? arguments[1]
+                    : _emitter4.default.sources.API;
 
                 return modify.call(
                   this,
@@ -1778,7 +2044,10 @@
                   length = _overload16[1];
                   source = _overload16[3];
 
-                  this.selection.setRange(new _selection.Range(index, length), source);
+                  this.selection.setRange(
+                    new _selection.Range(index, length),
+                    source
+                  );
                   if (source !== _emitter4.default.sources.SILENT) {
                     this.selection.scrollIntoView(this.scrollingContainer);
                   }
@@ -1789,7 +2058,9 @@
               key: 'setText',
               value: function setText(text) {
                 var source =
-                  arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : _emitter4.default.sources.API;
+                  arguments.length > 1 && arguments[1] !== undefined
+                    ? arguments[1]
+                    : _emitter4.default.sources.API;
 
                 var delta = new _quillDelta2.default().insert(text);
                 return this.setContents(delta, source);
@@ -1799,7 +2070,9 @@
               key: 'update',
               value: function update() {
                 var source =
-                  arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : _emitter4.default.sources.USER;
+                  arguments.length > 0 && arguments[0] !== undefined
+                    ? arguments[0]
+                    : _emitter4.default.sources.USER;
 
                 var change = this.scroll.update(source); // Will update selection before selection.update() does if text changes
                 this.selection.update(source);
@@ -1812,7 +2085,9 @@
                 var _this11 = this;
 
                 var source =
-                  arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : _emitter4.default.sources.API;
+                  arguments.length > 1 && arguments[1] !== undefined
+                    ? arguments[1]
+                    : _emitter4.default.sources.API;
 
                 return modify.call(
                   this,
@@ -1870,10 +2145,16 @@
           } else {
             userConfig.theme = Quill.import('themes/' + userConfig.theme);
             if (userConfig.theme == null) {
-              throw new Error('Invalid theme ' + userConfig.theme + '. Did you register it?');
+              throw new Error(
+                'Invalid theme ' + userConfig.theme + '. Did you register it?'
+              );
             }
           }
-          var themeConfig = (0, _extend2.default)(true, {}, userConfig.theme.DEFAULTS);
+          var themeConfig = (0, _extend2.default)(
+            true,
+            {},
+            userConfig.theme.DEFAULTS
+          );
           [themeConfig, userConfig].forEach(function (config) {
             config.modules = config.modules || {};
             Object.keys(config.modules).forEach(function (module) {
@@ -1882,11 +2163,17 @@
               }
             });
           });
-          var moduleNames = Object.keys(themeConfig.modules).concat(Object.keys(userConfig.modules));
+          var moduleNames = Object.keys(themeConfig.modules).concat(
+            Object.keys(userConfig.modules)
+          );
           var moduleConfig = moduleNames.reduce(function (config, name) {
             var moduleClass = Quill.import('modules/' + name);
             if (moduleClass == null) {
-              debug.error('Cannot load ' + name + ' module. Are you sure you registered it?');
+              debug.error(
+                'Cannot load ' +
+                  name +
+                  ' module. Are you sure you registered it?'
+              );
             } else {
               config[name] = moduleClass.DEFAULTS || {};
             }
@@ -1915,19 +2202,27 @@
               userConfig[key] = document.querySelector(userConfig[key]);
             }
           });
-          userConfig.modules = Object.keys(userConfig.modules).reduce(function (config, name) {
+          userConfig.modules = Object.keys(userConfig.modules).reduce(function (
+            config,
+            name
+          ) {
             if (userConfig.modules[name]) {
               config[name] = userConfig.modules[name];
             }
             return config;
-          }, {});
+          },
+          {});
           return userConfig;
         }
 
         // Handle selection preservation and TEXT_CHANGE emission
         // common to modification APIs
         function modify(modifier, source, index, shift) {
-          if (this.options.strict && !this.isEnabled() && source === _emitter4.default.sources.USER) {
+          if (
+            this.options.strict &&
+            !this.isEnabled() &&
+            source === _emitter4.default.sources.USER
+          ) {
             return new _quillDelta2.default();
           }
           var range = index == null ? null : this.getSelection();
@@ -1945,8 +2240,16 @@
           if (change.length() > 0) {
             var _emitter;
 
-            var args = [_emitter4.default.events.TEXT_CHANGE, change, oldDelta, source];
-            (_emitter = this.emitter).emit.apply(_emitter, [_emitter4.default.events.EDITOR_CHANGE].concat(args));
+            var args = [
+              _emitter4.default.events.TEXT_CHANGE,
+              change,
+              oldDelta,
+              source,
+            ];
+            (_emitter = this.emitter).emit.apply(
+              _emitter,
+              [_emitter4.default.events.EDITOR_CHANGE].concat(args)
+            );
             if (source !== _emitter4.default.sources.SILENT) {
               var _emitter2;
 
@@ -1958,10 +2261,17 @@
 
         function overload(index, length, name, value, source) {
           var formats = {};
-          if (typeof index.index === 'number' && typeof index.length === 'number') {
+          if (
+            typeof index.index === 'number' &&
+            typeof index.length === 'number'
+          ) {
             // Allow for throwaway end (used by insertText/insertEmbed)
             if (typeof length !== 'number') {
-              (source = value), (value = name), (name = length), (length = index.length), (index = index.index);
+              (source = value),
+                (value = name),
+                (name = length),
+                (length = index.length),
+                (index = index.index);
             } else {
               (length = index.length), (index = index.index);
             }
@@ -1969,7 +2279,10 @@
             (source = value), (value = name), (name = length), (length = 0);
           }
           // Handle format being object, two format name/value strings or excluded
-          if ((typeof name === 'undefined' ? 'undefined' : _typeof(name)) === 'object') {
+          if (
+            (typeof name === 'undefined' ? 'undefined' : _typeof(name)) ===
+            'object'
+          ) {
             formats = name;
             source = value;
           } else if (typeof name === 'string') {
@@ -1989,8 +2302,13 @@
           var start = void 0,
             end = void 0;
           if (index instanceof _quillDelta2.default) {
-            var _map = [range.index, range.index + range.length].map(function (pos) {
-              return index.transformPosition(pos, source !== _emitter4.default.sources.USER);
+            var _map = [range.index, range.index + range.length].map(function (
+              pos
+            ) {
+              return index.transformPosition(
+                pos,
+                source !== _emitter4.default.sources.USER
+              );
             });
 
             var _map2 = _slicedToArray(_map, 2);
@@ -1998,8 +2316,14 @@
             start = _map2[0];
             end = _map2[1];
           } else {
-            var _map3 = [range.index, range.index + range.length].map(function (pos) {
-              if (pos < index || (pos === index && source === _emitter4.default.sources.USER)) return pos;
+            var _map3 = [range.index, range.index + range.length].map(function (
+              pos
+            ) {
+              if (
+                pos < index ||
+                (pos === index && source === _emitter4.default.sources.USER)
+              )
+                return pos;
               if (length >= 0) {
                 return pos + length;
               } else {
@@ -2087,20 +2411,38 @@
 
         function _possibleConstructorReturn(self, call) {
           if (!self) {
-            throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+            throw new ReferenceError(
+              "this hasn't been initialised - super() hasn't been called"
+            );
           }
-          return call && (typeof call === 'object' || typeof call === 'function') ? call : self;
+          return call &&
+            (typeof call === 'object' || typeof call === 'function')
+            ? call
+            : self;
         }
 
         function _inherits(subClass, superClass) {
           if (typeof superClass !== 'function' && superClass !== null) {
-            throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass);
+            throw new TypeError(
+              'Super expression must either be null or a function, not ' +
+                typeof superClass
+            );
           }
-          subClass.prototype = Object.create(superClass && superClass.prototype, {
-            constructor: { value: subClass, enumerable: false, writable: true, configurable: true },
-          });
+          subClass.prototype = Object.create(
+            superClass && superClass.prototype,
+            {
+              constructor: {
+                value: subClass,
+                enumerable: false,
+                writable: true,
+                configurable: true,
+              },
+            }
+          );
           if (superClass)
-            Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : (subClass.__proto__ = superClass);
+            Object.setPrototypeOf
+              ? Object.setPrototypeOf(subClass, superClass)
+              : (subClass.__proto__ = superClass);
         }
 
         var Inline = (function (_Parchment$Inline) {
@@ -2111,7 +2453,10 @@
 
             return _possibleConstructorReturn(
               this,
-              (Inline.__proto__ || Object.getPrototypeOf(Inline)).apply(this, arguments)
+              (Inline.__proto__ || Object.getPrototypeOf(Inline)).apply(
+                this,
+                arguments
+              )
             );
           }
 
@@ -2123,35 +2468,45 @@
                 value: function formatAt(index, length, name, value) {
                   if (
                     Inline.compare(this.statics.blotName, name) < 0 &&
-                    _parchment2.default.query(name, _parchment2.default.Scope.BLOT)
+                    _parchment2.default.query(
+                      name,
+                      _parchment2.default.Scope.BLOT
+                    )
                   ) {
                     var blot = this.isolate(index, length);
                     if (value) {
                       blot.wrap(name, value);
                     }
                   } else {
-                    _get(Inline.prototype.__proto__ || Object.getPrototypeOf(Inline.prototype), 'formatAt', this).call(
-                      this,
-                      index,
-                      length,
-                      name,
-                      value
-                    );
+                    _get(
+                      Inline.prototype.__proto__ ||
+                        Object.getPrototypeOf(Inline.prototype),
+                      'formatAt',
+                      this
+                    ).call(this, index, length, name, value);
                   }
                 },
               },
               {
                 key: 'optimize',
                 value: function optimize(context) {
-                  _get(Inline.prototype.__proto__ || Object.getPrototypeOf(Inline.prototype), 'optimize', this).call(
-                    this,
-                    context
-                  );
+                  _get(
+                    Inline.prototype.__proto__ ||
+                      Object.getPrototypeOf(Inline.prototype),
+                    'optimize',
+                    this
+                  ).call(this, context);
                   if (
                     this.parent instanceof Inline &&
-                    Inline.compare(this.statics.blotName, this.parent.statics.blotName) > 0
+                    Inline.compare(
+                      this.statics.blotName,
+                      this.parent.statics.blotName
+                    ) > 0
                   ) {
-                    var parent = this.parent.isolate(this.offset(), this.length());
+                    var parent = this.parent.isolate(
+                      this.offset(),
+                      this.length()
+                    );
                     this.moveChildren(parent);
                     parent.wrap(this);
                   }
@@ -2181,7 +2536,11 @@
           return Inline;
         })(_parchment2.default.Inline);
 
-        Inline.allowedChildren = [Inline, _parchment2.default.Embed, _text2.default];
+        Inline.allowedChildren = [
+          Inline,
+          _parchment2.default.Embed,
+          _text2.default,
+        ];
         // Lower index means deeper in the DOM tree, since not found (-1) is for embeds
         Inline.order = [
           'cursor',
@@ -2223,20 +2582,38 @@
 
         function _possibleConstructorReturn(self, call) {
           if (!self) {
-            throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+            throw new ReferenceError(
+              "this hasn't been initialised - super() hasn't been called"
+            );
           }
-          return call && (typeof call === 'object' || typeof call === 'function') ? call : self;
+          return call &&
+            (typeof call === 'object' || typeof call === 'function')
+            ? call
+            : self;
         }
 
         function _inherits(subClass, superClass) {
           if (typeof superClass !== 'function' && superClass !== null) {
-            throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass);
+            throw new TypeError(
+              'Super expression must either be null or a function, not ' +
+                typeof superClass
+            );
           }
-          subClass.prototype = Object.create(superClass && superClass.prototype, {
-            constructor: { value: subClass, enumerable: false, writable: true, configurable: true },
-          });
+          subClass.prototype = Object.create(
+            superClass && superClass.prototype,
+            {
+              constructor: {
+                value: subClass,
+                enumerable: false,
+                writable: true,
+                configurable: true,
+              },
+            }
+          );
           if (superClass)
-            Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : (subClass.__proto__ = superClass);
+            Object.setPrototypeOf
+              ? Object.setPrototypeOf(subClass, superClass)
+              : (subClass.__proto__ = superClass);
         }
 
         var TextBlot = (function (_Parchment$Text) {
@@ -2247,7 +2624,10 @@
 
             return _possibleConstructorReturn(
               this,
-              (TextBlot.__proto__ || Object.getPrototypeOf(TextBlot)).apply(this, arguments)
+              (TextBlot.__proto__ || Object.getPrototypeOf(TextBlot)).apply(
+                this,
+                arguments
+              )
             );
           }
 
@@ -2324,20 +2704,38 @@
 
         function _possibleConstructorReturn(self, call) {
           if (!self) {
-            throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+            throw new ReferenceError(
+              "this hasn't been initialised - super() hasn't been called"
+            );
           }
-          return call && (typeof call === 'object' || typeof call === 'function') ? call : self;
+          return call &&
+            (typeof call === 'object' || typeof call === 'function')
+            ? call
+            : self;
         }
 
         function _inherits(subClass, superClass) {
           if (typeof superClass !== 'function' && superClass !== null) {
-            throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass);
+            throw new TypeError(
+              'Super expression must either be null or a function, not ' +
+                typeof superClass
+            );
           }
-          subClass.prototype = Object.create(superClass && superClass.prototype, {
-            constructor: { value: subClass, enumerable: false, writable: true, configurable: true },
-          });
+          subClass.prototype = Object.create(
+            superClass && superClass.prototype,
+            {
+              constructor: {
+                value: subClass,
+                enumerable: false,
+                writable: true,
+                configurable: true,
+              },
+            }
+          );
           if (superClass)
-            Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : (subClass.__proto__ = superClass);
+            Object.setPrototypeOf
+              ? Object.setPrototypeOf(subClass, superClass)
+              : (subClass.__proto__ = superClass);
         }
 
         var debug = (0, _logger2.default)('quill:events');
@@ -2346,18 +2744,28 @@
 
         EVENTS.forEach(function (eventName) {
           document.addEventListener(eventName, function () {
-            for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+            for (
+              var _len = arguments.length, args = Array(_len), _key = 0;
+              _key < _len;
+              _key++
+            ) {
               args[_key] = arguments[_key];
             }
 
-            [].slice.call(document.querySelectorAll('.ql-container')).forEach(function (node) {
-              // TODO use WeakMap
-              if (node.__quill && node.__quill.emitter) {
-                var _node$__quill$emitter;
+            [].slice
+              .call(document.querySelectorAll('.ql-container'))
+              .forEach(function (node) {
+                // TODO use WeakMap
+                if (node.__quill && node.__quill.emitter) {
+                  var _node$__quill$emitter;
 
-                (_node$__quill$emitter = node.__quill.emitter).handleDOM.apply(_node$__quill$emitter, args);
-              }
-            });
+                  (_node$__quill$emitter =
+                    node.__quill.emitter).handleDOM.apply(
+                    _node$__quill$emitter,
+                    args
+                  );
+                }
+              });
           });
         });
 
@@ -2382,17 +2790,21 @@
               key: 'emit',
               value: function emit() {
                 debug.log.apply(debug, arguments);
-                _get(Emitter.prototype.__proto__ || Object.getPrototypeOf(Emitter.prototype), 'emit', this).apply(
-                  this,
-                  arguments
-                );
+                _get(
+                  Emitter.prototype.__proto__ ||
+                    Object.getPrototypeOf(Emitter.prototype),
+                  'emit',
+                  this
+                ).apply(this, arguments);
               },
             },
             {
               key: 'handleDOM',
               value: function handleDOM(event) {
                 for (
-                  var _len2 = arguments.length, args = Array(_len2 > 1 ? _len2 - 1 : 0), _key2 = 1;
+                  var _len2 = arguments.length,
+                    args = Array(_len2 > 1 ? _len2 - 1 : 0),
+                    _key2 = 1;
                   _key2 < _len2;
                   _key2++
                 ) {
@@ -2415,7 +2827,10 @@
                 if (!this.listeners[eventName]) {
                   this.listeners[eventName] = [];
                 }
-                this.listeners[eventName].push({ node: node, handler: handler });
+                this.listeners[eventName].push({
+                  node: node,
+                  handler: handler,
+                });
               },
             },
           ]);
@@ -2456,7 +2871,10 @@
         }
 
         var Module = function Module(quill) {
-          var options = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+          var options =
+            arguments.length > 1 && arguments[1] !== undefined
+              ? arguments[1]
+              : {};
 
           _classCallCheck(this, Module);
 
@@ -2484,7 +2902,13 @@
           if (levels.indexOf(method) <= levels.indexOf(level)) {
             var _console;
 
-            for (var _len = arguments.length, args = Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
+            for (
+              var _len = arguments.length,
+                args = Array(_len > 1 ? _len - 1 : 0),
+                _key = 1;
+              _key < _len;
+              _key++
+            ) {
               args[_key - 1] = arguments[_key];
             }
 
@@ -2523,7 +2947,11 @@
 
             // 7.3. Other pairs that do not both pass typeof value == 'object',
             // equivalence is determined by ==.
-          } else if (!actual || !expected || (typeof actual != 'object' && typeof expected != 'object')) {
+          } else if (
+            !actual ||
+            !expected ||
+            (typeof actual != 'object' && typeof expected != 'object')
+          ) {
             return opts.strict ? actual === expected : actual == expected;
 
             // 7.4. For all other Object pairs, including Array objects, equivalence is
@@ -2542,7 +2970,8 @@
         }
 
         function isBuffer(x) {
-          if (!x || typeof x !== 'object' || typeof x.length !== 'number') return false;
+          if (!x || typeof x !== 'object' || typeof x.length !== 'number')
+            return false;
           if (typeof x.copy !== 'function' || typeof x.slice !== 'function') {
             return false;
           }
@@ -2619,7 +3048,8 @@
             var attributeBit = Registry.Scope.TYPE & Registry.Scope.ATTRIBUTE;
             if (options.scope != null) {
               // Ignore type bits, force attribute bit
-              this.scope = (options.scope & Registry.Scope.LEVEL) | attributeBit;
+              this.scope =
+                (options.scope & Registry.Scope.LEVEL) | attributeBit;
             } else {
               this.scope = Registry.Scope.ATTRIBUTE;
             }
@@ -2636,7 +3066,10 @@
             return true;
           };
           Attributor.prototype.canAdd = function (node, value) {
-            var match = Registry.query(node, Registry.Scope.BLOT & (this.scope | Registry.Scope.TYPE));
+            var match = Registry.query(
+              node,
+              Registry.Scope.BLOT & (this.scope | Registry.Scope.TYPE)
+            );
             if (match == null) return false;
             if (this.whitelist == null) return true;
             if (typeof value === 'string') {
@@ -2677,7 +3110,11 @@
             var _d = false;
             var _e = undefined;
             try {
-              for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) {
+              for (
+                var _i = arr[Symbol.iterator](), _s;
+                !(_n = (_s = _i.next()).done);
+                _n = true
+              ) {
                 _arr.push(_s.value);
                 if (i && _arr.length === i) break;
               }
@@ -2699,7 +3136,9 @@
             } else if (Symbol.iterator in Object(arr)) {
               return sliceIterator(arr, i);
             } else {
-              throw new TypeError('Invalid attempt to destructure non-iterable instance');
+              throw new TypeError(
+                'Invalid attempt to destructure non-iterable instance'
+              );
             }
           };
         })();
@@ -2774,20 +3213,38 @@
 
         function _possibleConstructorReturn(self, call) {
           if (!self) {
-            throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+            throw new ReferenceError(
+              "this hasn't been initialised - super() hasn't been called"
+            );
           }
-          return call && (typeof call === 'object' || typeof call === 'function') ? call : self;
+          return call &&
+            (typeof call === 'object' || typeof call === 'function')
+            ? call
+            : self;
         }
 
         function _inherits(subClass, superClass) {
           if (typeof superClass !== 'function' && superClass !== null) {
-            throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass);
+            throw new TypeError(
+              'Super expression must either be null or a function, not ' +
+                typeof superClass
+            );
           }
-          subClass.prototype = Object.create(superClass && superClass.prototype, {
-            constructor: { value: subClass, enumerable: false, writable: true, configurable: true },
-          });
+          subClass.prototype = Object.create(
+            superClass && superClass.prototype,
+            {
+              constructor: {
+                value: subClass,
+                enumerable: false,
+                writable: true,
+                configurable: true,
+              },
+            }
+          );
           if (superClass)
-            Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : (subClass.__proto__ = superClass);
+            Object.setPrototypeOf
+              ? Object.setPrototypeOf(subClass, superClass)
+              : (subClass.__proto__ = superClass);
         }
 
         var Code = (function (_Inline) {
@@ -2798,7 +3255,10 @@
 
             return _possibleConstructorReturn(
               this,
-              (Code.__proto__ || Object.getPrototypeOf(Code)).apply(this, arguments)
+              (Code.__proto__ || Object.getPrototypeOf(Code)).apply(
+                this,
+                arguments
+              )
             );
           }
 
@@ -2816,7 +3276,10 @@
 
             return _possibleConstructorReturn(
               this,
-              (CodeBlock.__proto__ || Object.getPrototypeOf(CodeBlock)).apply(this, arguments)
+              (CodeBlock.__proto__ || Object.getPrototypeOf(CodeBlock)).apply(
+                this,
+                arguments
+              )
             );
           }
 
@@ -2843,7 +3306,10 @@
                 value: function format(name, value) {
                   if (name === this.statics.blotName && value) return;
 
-                  var _descendant = this.descendant(_text2.default, this.length() - 1),
+                  var _descendant = this.descendant(
+                      _text2.default,
+                      this.length() - 1
+                    ),
                     _descendant2 = _slicedToArray(_descendant, 1),
                     text = _descendant2[0];
 
@@ -2851,7 +3317,8 @@
                     text.deleteAt(text.length() - 1, 1);
                   }
                   _get(
-                    CodeBlock.prototype.__proto__ || Object.getPrototypeOf(CodeBlock.prototype),
+                    CodeBlock.prototype.__proto__ ||
+                      Object.getPrototypeOf(CodeBlock.prototype),
                     'format',
                     this
                   ).call(this, name, value);
@@ -2862,8 +3329,12 @@
                 value: function formatAt(index, length, name, value) {
                   if (length === 0) return;
                   if (
-                    _parchment2.default.query(name, _parchment2.default.Scope.BLOCK) == null ||
-                    (name === this.statics.blotName && value === this.statics.formats(this.domNode))
+                    _parchment2.default.query(
+                      name,
+                      _parchment2.default.Scope.BLOCK
+                    ) == null ||
+                    (name === this.statics.blotName &&
+                      value === this.statics.formats(this.domNode))
                   ) {
                     return;
                   }
@@ -2875,7 +3346,12 @@
                   var next = blot.next;
                   blot.format(name, value);
                   if (next instanceof CodeBlock) {
-                    next.formatAt(0, index - prevNewline + length - isolateLength, name, value);
+                    next.formatAt(
+                      0,
+                      index - prevNewline + length - isolateLength,
+                      name,
+                      value
+                    );
                   }
                 },
               },
@@ -2905,13 +3381,20 @@
               {
                 key: 'newlineIndex',
                 value: function newlineIndex(searchIndex) {
-                  var reverse = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
+                  var reverse =
+                    arguments.length > 1 && arguments[1] !== undefined
+                      ? arguments[1]
+                      : false;
 
                   if (!reverse) {
-                    var offset = this.domNode.textContent.slice(searchIndex).indexOf('\n');
+                    var offset = this.domNode.textContent
+                      .slice(searchIndex)
+                      .indexOf('\n');
                     return offset > -1 ? searchIndex + offset : -1;
                   } else {
-                    return this.domNode.textContent.slice(0, searchIndex).lastIndexOf('\n');
+                    return this.domNode.textContent
+                      .slice(0, searchIndex)
+                      .lastIndexOf('\n');
                   }
                 },
               },
@@ -2922,7 +3405,8 @@
                     this.appendChild(_parchment2.default.create('text', '\n'));
                   }
                   _get(
-                    CodeBlock.prototype.__proto__ || Object.getPrototypeOf(CodeBlock.prototype),
+                    CodeBlock.prototype.__proto__ ||
+                      Object.getPrototypeOf(CodeBlock.prototype),
                     'optimize',
                     this
                   ).call(this, context);
@@ -2931,7 +3415,8 @@
                     next != null &&
                     next.prev === this &&
                     next.statics.blotName === this.statics.blotName &&
-                    this.statics.formats(this.domNode) === next.statics.formats(next.domNode)
+                    this.statics.formats(this.domNode) ===
+                      next.statics.formats(next.domNode)
                   ) {
                     next.optimize(context);
                     next.moveChildren(this);
@@ -2943,20 +3428,23 @@
                 key: 'replace',
                 value: function replace(target) {
                   _get(
-                    CodeBlock.prototype.__proto__ || Object.getPrototypeOf(CodeBlock.prototype),
+                    CodeBlock.prototype.__proto__ ||
+                      Object.getPrototypeOf(CodeBlock.prototype),
                     'replace',
                     this
                   ).call(this, target);
-                  [].slice.call(this.domNode.querySelectorAll('*')).forEach(function (node) {
-                    var blot = _parchment2.default.find(node);
-                    if (blot == null) {
-                      node.parentNode.removeChild(node);
-                    } else if (blot instanceof _parchment2.default.Embed) {
-                      blot.remove();
-                    } else {
-                      blot.unwrap();
-                    }
-                  });
+                  [].slice
+                    .call(this.domNode.querySelectorAll('*'))
+                    .forEach(function (node) {
+                      var blot = _parchment2.default.find(node);
+                      if (blot == null) {
+                        node.parentNode.removeChild(node);
+                      } else if (blot instanceof _parchment2.default.Embed) {
+                        blot.remove();
+                      } else {
+                        blot.unwrap();
+                      }
+                    });
                 },
               },
             ],
@@ -2964,10 +3452,11 @@
               {
                 key: 'create',
                 value: function create(value) {
-                  var domNode = _get(CodeBlock.__proto__ || Object.getPrototypeOf(CodeBlock), 'create', this).call(
-                    this,
-                    value
-                  );
+                  var domNode = _get(
+                    CodeBlock.__proto__ || Object.getPrototypeOf(CodeBlock),
+                    'create',
+                    this
+                  ).call(this, value);
                   domNode.setAttribute('spellcheck', false);
                   return domNode;
                 },
@@ -3007,7 +3496,10 @@
                 return typeof obj;
               }
             : function (obj) {
-                return obj && typeof Symbol === 'function' && obj.constructor === Symbol && obj !== Symbol.prototype
+                return obj &&
+                  typeof Symbol === 'function' &&
+                  obj.constructor === Symbol &&
+                  obj !== Symbol.prototype
                   ? 'symbol'
                   : typeof obj;
               };
@@ -3019,7 +3511,11 @@
             var _d = false;
             var _e = undefined;
             try {
-              for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) {
+              for (
+                var _i = arr[Symbol.iterator](), _s;
+                !(_n = (_s = _i.next()).done);
+                _n = true
+              ) {
                 _arr.push(_s.value);
                 if (i && _arr.length === i) break;
               }
@@ -3041,7 +3537,9 @@
             } else if (Symbol.iterator in Object(arr)) {
               return sliceIterator(arr, i);
             } else {
-              throw new TypeError('Invalid attempt to destructure non-iterable instance');
+              throw new TypeError(
+                'Invalid attempt to destructure non-iterable instance'
+              );
             }
           };
         })();
@@ -3109,7 +3607,12 @@
 
         function _defineProperty(obj, key, value) {
           if (key in obj) {
-            Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });
+            Object.defineProperty(obj, key, {
+              value: value,
+              enumerable: true,
+              configurable: true,
+              writable: true,
+            });
           } else {
             obj[key] = value;
           }
@@ -3163,15 +3666,28 @@
                         line = _scroll$line2[0],
                         offset = _scroll$line2[1];
 
-                      var formats = (0, _extend2.default)({}, (0, _block.bubbleFormats)(line));
+                      var formats = (0, _extend2.default)(
+                        {},
+                        (0, _block.bubbleFormats)(line)
+                      );
                       if (line instanceof _block2.default) {
-                        var _line$descendant = line.descendant(_parchment2.default.Leaf, offset),
-                          _line$descendant2 = _slicedToArray(_line$descendant, 1),
+                        var _line$descendant = line.descendant(
+                            _parchment2.default.Leaf,
+                            offset
+                          ),
+                          _line$descendant2 = _slicedToArray(
+                            _line$descendant,
+                            1
+                          ),
                           leaf = _line$descendant2[0];
 
-                        formats = (0, _extend2.default)(formats, (0, _block.bubbleFormats)(leaf));
+                        formats = (0, _extend2.default)(
+                          formats,
+                          (0, _block.bubbleFormats)(leaf)
+                        );
                       }
-                      attributes = _op2.default.attributes.diff(formats, attributes) || {};
+                      attributes =
+                        _op2.default.attributes.diff(formats, attributes) || {};
                     } else if (_typeof(op.insert) === 'object') {
                       var key = Object.keys(op.insert)[0]; // There should only be one key
                       if (key == null) return index;
@@ -3180,7 +3696,12 @@
                     scrollLength += length;
                   }
                   Object.keys(attributes).forEach(function (name) {
-                    _this.scroll.formatAt(index, length, name, attributes[name]);
+                    _this.scroll.formatAt(
+                      index,
+                      length,
+                      name,
+                      attributes[name]
+                    );
                   });
                   return index + length;
                 }, 0);
@@ -3199,7 +3720,9 @@
               key: 'deleteText',
               value: function deleteText(index, length) {
                 this.scroll.deleteAt(index, length);
-                return this.update(new _quillDelta2.default().retain(index).delete(length));
+                return this.update(
+                  new _quillDelta2.default().retain(index).delete(length)
+                );
               },
             },
             {
@@ -3207,11 +3730,18 @@
               value: function formatLine(index, length) {
                 var _this2 = this;
 
-                var formats = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
+                var formats =
+                  arguments.length > 2 && arguments[2] !== undefined
+                    ? arguments[2]
+                    : {};
 
                 this.scroll.update();
                 Object.keys(formats).forEach(function (format) {
-                  if (_this2.scroll.whitelist != null && !_this2.scroll.whitelist[format]) return;
+                  if (
+                    _this2.scroll.whitelist != null &&
+                    !_this2.scroll.whitelist[format]
+                  )
+                    return;
                   var lines = _this2.scroll.lines(index, Math.max(length, 1));
                   var lengthRemaining = length;
                   lines.forEach(function (line) {
@@ -3220,15 +3750,25 @@
                       line.format(format, formats[format]);
                     } else {
                       var codeIndex = index - line.offset(_this2.scroll);
-                      var codeLength = line.newlineIndex(codeIndex + lengthRemaining) - codeIndex + 1;
-                      line.formatAt(codeIndex, codeLength, format, formats[format]);
+                      var codeLength =
+                        line.newlineIndex(codeIndex + lengthRemaining) -
+                        codeIndex +
+                        1;
+                      line.formatAt(
+                        codeIndex,
+                        codeLength,
+                        format,
+                        formats[format]
+                      );
                     }
                     lengthRemaining -= lineLength;
                   });
                 });
                 this.scroll.optimize();
                 return this.update(
-                  new _quillDelta2.default().retain(index).retain(length, (0, _clone2.default)(formats))
+                  new _quillDelta2.default()
+                    .retain(index)
+                    .retain(length, (0, _clone2.default)(formats))
                 );
               },
             },
@@ -3237,13 +3777,23 @@
               value: function formatText(index, length) {
                 var _this3 = this;
 
-                var formats = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
+                var formats =
+                  arguments.length > 2 && arguments[2] !== undefined
+                    ? arguments[2]
+                    : {};
 
                 Object.keys(formats).forEach(function (format) {
-                  _this3.scroll.formatAt(index, length, format, formats[format]);
+                  _this3.scroll.formatAt(
+                    index,
+                    length,
+                    format,
+                    formats[format]
+                  );
                 });
                 return this.update(
-                  new _quillDelta2.default().retain(index).retain(length, (0, _clone2.default)(formats))
+                  new _quillDelta2.default()
+                    .retain(index)
+                    .retain(length, (0, _clone2.default)(formats))
                 );
               },
             },
@@ -3264,7 +3814,10 @@
             {
               key: 'getFormat',
               value: function getFormat(index) {
-                var length = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 0;
+                var length =
+                  arguments.length > 1 && arguments[1] !== undefined
+                    ? arguments[1]
+                    : 0;
 
                 var lines = [],
                   leaves = [];
@@ -3281,7 +3834,11 @@
                   });
                 } else {
                   lines = this.scroll.lines(index, length);
-                  leaves = this.scroll.descendants(_parchment2.default.Leaf, index, length);
+                  leaves = this.scroll.descendants(
+                    _parchment2.default.Leaf,
+                    index,
+                    length
+                  );
                 }
                 var formatsArr = [lines, leaves].map(function (blots) {
                   if (blots.length === 0) return {};
@@ -3289,7 +3846,10 @@
                   while (Object.keys(formats).length > 0) {
                     var blot = blots.shift();
                     if (blot == null) return formats;
-                    formats = combineFormats((0, _block.bubbleFormats)(blot), formats);
+                    formats = combineFormats(
+                      (0, _block.bubbleFormats)(blot),
+                      formats
+                    );
                   }
                   return formats;
                 });
@@ -3313,7 +3873,11 @@
               key: 'insertEmbed',
               value: function insertEmbed(index, embed, value) {
                 this.scroll.insertAt(index, embed, value);
-                return this.update(new _quillDelta2.default().retain(index).insert(_defineProperty({}, embed, value)));
+                return this.update(
+                  new _quillDelta2.default()
+                    .retain(index)
+                    .insert(_defineProperty({}, embed, value))
+                );
               },
             },
             {
@@ -3321,15 +3885,25 @@
               value: function insertText(index, text) {
                 var _this4 = this;
 
-                var formats = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
+                var formats =
+                  arguments.length > 2 && arguments[2] !== undefined
+                    ? arguments[2]
+                    : {};
 
                 text = text.replace(/\r\n/g, '\n').replace(/\r/g, '\n');
                 this.scroll.insertAt(index, text);
                 Object.keys(formats).forEach(function (format) {
-                  _this4.scroll.formatAt(index, text.length, format, formats[format]);
+                  _this4.scroll.formatAt(
+                    index,
+                    text.length,
+                    format,
+                    formats[format]
+                  );
                 });
                 return this.update(
-                  new _quillDelta2.default().retain(index).insert(text, (0, _clone2.default)(formats))
+                  new _quillDelta2.default()
+                    .retain(index)
+                    .insert(text, (0, _clone2.default)(formats))
                 );
               },
             },
@@ -3339,7 +3913,8 @@
                 if (this.scroll.children.length == 0) return true;
                 if (this.scroll.children.length > 1) return false;
                 var block = this.scroll.children.head;
-                if (block.statics.blotName !== _block2.default.blotName) return false;
+                if (block.statics.blotName !== _block2.default.blotName)
+                  return false;
                 if (block.children.length > 1) return false;
                 return block.children.head instanceof _break2.default;
               },
@@ -3368,16 +3943,26 @@
                     .insert('\n');
                 }
                 var contents = this.getContents(index, length + suffixLength);
-                var diff = contents.diff(new _quillDelta2.default().insert(text).concat(suffix));
-                var delta = new _quillDelta2.default().retain(index).concat(diff);
+                var diff = contents.diff(
+                  new _quillDelta2.default().insert(text).concat(suffix)
+                );
+                var delta = new _quillDelta2.default()
+                  .retain(index)
+                  .concat(diff);
                 return this.applyDelta(delta);
               },
             },
             {
               key: 'update',
               value: function update(change) {
-                var mutations = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : [];
-                var cursorIndex = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : undefined;
+                var mutations =
+                  arguments.length > 1 && arguments[1] !== undefined
+                    ? arguments[1]
+                    : [];
+                var cursorIndex =
+                  arguments.length > 2 && arguments[2] !== undefined
+                    ? arguments[2]
+                    : undefined;
 
                 var oldDelta = this.delta;
                 if (
@@ -3390,10 +3975,17 @@
                   var textBlot = _parchment2.default.find(mutations[0].target);
                   var formats = (0, _block.bubbleFormats)(textBlot);
                   var index = textBlot.offset(this.scroll);
-                  var oldValue = mutations[0].oldValue.replace(_cursor2.default.CONTENTS, '');
+                  var oldValue = mutations[0].oldValue.replace(
+                    _cursor2.default.CONTENTS,
+                    ''
+                  );
                   var oldText = new _quillDelta2.default().insert(oldValue);
-                  var newText = new _quillDelta2.default().insert(textBlot.value());
-                  var diffDelta = new _quillDelta2.default().retain(index).concat(oldText.diff(newText, cursorIndex));
+                  var newText = new _quillDelta2.default().insert(
+                    textBlot.value()
+                  );
+                  var diffDelta = new _quillDelta2.default()
+                    .retain(index)
+                    .concat(oldText.diff(newText, cursorIndex));
                   change = diffDelta.reduce(function (delta, op) {
                     if (op.insert) {
                       return delta.insert(op.insert, formats);
@@ -3404,7 +3996,13 @@
                   this.delta = oldDelta.compose(change);
                 } else {
                   this.delta = this.getDelta();
-                  if (!change || !(0, _deepEqual2.default)(oldDelta.compose(change), this.delta)) {
+                  if (
+                    !change ||
+                    !(0, _deepEqual2.default)(
+                      oldDelta.compose(change),
+                      this.delta
+                    )
+                  ) {
                     change = oldDelta.diff(this.delta, cursorIndex);
                   }
                 }
@@ -3439,7 +4037,10 @@
               delete attributes['image'];
               return delta.insert({ image: op.attributes.image }, attributes);
             }
-            if (op.attributes != null && (op.attributes.list === true || op.attributes.bullet === true)) {
+            if (
+              op.attributes != null &&
+              (op.attributes.list === true || op.attributes.bullet === true)
+            ) {
               op = (0, _clone2.default)(op);
               if (op.attributes.list) {
                 op.attributes.list = 'ordered';
@@ -3476,7 +4077,11 @@
             var _d = false;
             var _e = undefined;
             try {
-              for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) {
+              for (
+                var _i = arr[Symbol.iterator](), _s;
+                !(_n = (_s = _i.next()).done);
+                _n = true
+              ) {
                 _arr.push(_s.value);
                 if (i && _arr.length === i) break;
               }
@@ -3498,7 +4103,9 @@
             } else if (Symbol.iterator in Object(arr)) {
               return sliceIterator(arr, i);
             } else {
-              throw new TypeError('Invalid attempt to destructure non-iterable instance');
+              throw new TypeError(
+                'Invalid attempt to destructure non-iterable instance'
+              );
             }
           };
         })();
@@ -3564,7 +4171,10 @@
         var debug = (0, _logger2.default)('quill:selection');
 
         var Range = function Range(index) {
-          var length = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 0;
+          var length =
+            arguments.length > 1 && arguments[1] !== undefined
+              ? arguments[1]
+              : 0;
 
           _classCallCheck(this, Range);
 
@@ -3590,37 +4200,65 @@
             this.handleDragging();
             this.emitter.listenDOM('selectionchange', document, function () {
               if (!_this.mouseDown) {
-                setTimeout(_this.update.bind(_this, _emitter4.default.sources.USER), 1);
+                setTimeout(
+                  _this.update.bind(_this, _emitter4.default.sources.USER),
+                  1
+                );
               }
             });
-            this.emitter.on(_emitter4.default.events.EDITOR_CHANGE, function (type, delta) {
-              if (type === _emitter4.default.events.TEXT_CHANGE && delta.length() > 0) {
-                _this.update(_emitter4.default.sources.SILENT);
+            this.emitter.on(
+              _emitter4.default.events.EDITOR_CHANGE,
+              function (type, delta) {
+                if (
+                  type === _emitter4.default.events.TEXT_CHANGE &&
+                  delta.length() > 0
+                ) {
+                  _this.update(_emitter4.default.sources.SILENT);
+                }
               }
-            });
-            this.emitter.on(_emitter4.default.events.SCROLL_BEFORE_UPDATE, function () {
-              if (!_this.hasFocus()) return;
-              var native = _this.getNativeRange();
-              if (native == null) return;
-              if (native.start.node === _this.cursor.textNode) return; // cursor.restore() will handle
-              // TODO unclear if this has negative side effects
-              _this.emitter.once(_emitter4.default.events.SCROLL_UPDATE, function () {
-                try {
-                  _this.setNativeRange(native.start.node, native.start.offset, native.end.node, native.end.offset);
-                } catch (ignored) {}
-              });
-            });
-            this.emitter.on(_emitter4.default.events.SCROLL_OPTIMIZE, function (mutations, context) {
-              if (context.range) {
-                var _context$range = context.range,
-                  startNode = _context$range.startNode,
-                  startOffset = _context$range.startOffset,
-                  endNode = _context$range.endNode,
-                  endOffset = _context$range.endOffset;
+            );
+            this.emitter.on(
+              _emitter4.default.events.SCROLL_BEFORE_UPDATE,
+              function () {
+                if (!_this.hasFocus()) return;
+                var native = _this.getNativeRange();
+                if (native == null) return;
+                if (native.start.node === _this.cursor.textNode) return; // cursor.restore() will handle
+                // TODO unclear if this has negative side effects
+                _this.emitter.once(
+                  _emitter4.default.events.SCROLL_UPDATE,
+                  function () {
+                    try {
+                      _this.setNativeRange(
+                        native.start.node,
+                        native.start.offset,
+                        native.end.node,
+                        native.end.offset
+                      );
+                    } catch (ignored) {}
+                  }
+                );
+              }
+            );
+            this.emitter.on(
+              _emitter4.default.events.SCROLL_OPTIMIZE,
+              function (mutations, context) {
+                if (context.range) {
+                  var _context$range = context.range,
+                    startNode = _context$range.startNode,
+                    startOffset = _context$range.startOffset,
+                    endNode = _context$range.endNode,
+                    endOffset = _context$range.endOffset;
 
-                _this.setNativeRange(startNode, startOffset, endNode, endOffset);
+                  _this.setNativeRange(
+                    startNode,
+                    startOffset,
+                    endNode,
+                    endOffset
+                  );
+                }
               }
-            });
+            );
             this.update(_emitter4.default.sources.SILENT);
           }
 
@@ -3639,7 +4277,12 @@
                     var range = _this2.cursor.restore();
                     if (!range) return;
                     setTimeout(function () {
-                      _this2.setNativeRange(range.startNode, range.startOffset, range.endNode, range.endOffset);
+                      _this2.setNativeRange(
+                        range.startNode,
+                        range.startOffset,
+                        range.endNode,
+                        range.endOffset
+                      );
                     }, 1);
                   }
                 });
@@ -3670,17 +4313,27 @@
             {
               key: 'format',
               value: function format(_format, value) {
-                if (this.scroll.whitelist != null && !this.scroll.whitelist[_format]) return;
+                if (
+                  this.scroll.whitelist != null &&
+                  !this.scroll.whitelist[_format]
+                )
+                  return;
                 this.scroll.update();
                 var nativeRange = this.getNativeRange();
                 if (
                   nativeRange == null ||
                   !nativeRange.native.collapsed ||
-                  _parchment2.default.query(_format, _parchment2.default.Scope.BLOCK)
+                  _parchment2.default.query(
+                    _format,
+                    _parchment2.default.Scope.BLOCK
+                  )
                 )
                   return;
                 if (nativeRange.start.node !== this.cursor.textNode) {
-                  var blot = _parchment2.default.find(nativeRange.start.node, false);
+                  var blot = _parchment2.default.find(
+                    nativeRange.start.node,
+                    false
+                  );
                   if (blot == null) return;
                   // TODO Give blot ability to not split
                   if (blot instanceof _parchment2.default.Leaf) {
@@ -3693,14 +4346,20 @@
                 }
                 this.cursor.format(_format, value);
                 this.scroll.optimize();
-                this.setNativeRange(this.cursor.textNode, this.cursor.textNode.data.length);
+                this.setNativeRange(
+                  this.cursor.textNode,
+                  this.cursor.textNode.data.length
+                );
                 this.update();
               },
             },
             {
               key: 'getBounds',
               value: function getBounds(index) {
-                var length = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 0;
+                var length =
+                  arguments.length > 1 && arguments[1] !== undefined
+                    ? arguments[1]
+                    : 0;
 
                 var scrollLength = this.scroll.length();
                 index = Math.min(index, scrollLength - 1);
@@ -3820,8 +4479,14 @@
                     return index + blot.index(node, offset);
                   }
                 });
-                var end = Math.min(Math.max.apply(Math, _toConsumableArray(indexes)), this.scroll.length() - 1);
-                var start = Math.min.apply(Math, [end].concat(_toConsumableArray(indexes)));
+                var end = Math.min(
+                  Math.max.apply(Math, _toConsumableArray(indexes)),
+                  this.scroll.length() - 1
+                );
+                var start = Math.min.apply(
+                  Math,
+                  [end].concat(_toConsumableArray(indexes))
+                );
                 return new Range(start, end - start);
               },
             },
@@ -3830,25 +4495,38 @@
               value: function normalizeNative(nativeRange) {
                 if (
                   !contains(this.root, nativeRange.startContainer) ||
-                  (!nativeRange.collapsed && !contains(this.root, nativeRange.endContainer))
+                  (!nativeRange.collapsed &&
+                    !contains(this.root, nativeRange.endContainer))
                 ) {
                   return null;
                 }
                 var range = {
-                  start: { node: nativeRange.startContainer, offset: nativeRange.startOffset },
-                  end: { node: nativeRange.endContainer, offset: nativeRange.endOffset },
+                  start: {
+                    node: nativeRange.startContainer,
+                    offset: nativeRange.startOffset,
+                  },
+                  end: {
+                    node: nativeRange.endContainer,
+                    offset: nativeRange.endOffset,
+                  },
                   native: nativeRange,
                 };
                 [range.start, range.end].forEach(function (position) {
                   var node = position.node,
                     offset = position.offset;
-                  while (!(node instanceof Text) && node.childNodes.length > 0) {
+                  while (
+                    !(node instanceof Text) &&
+                    node.childNodes.length > 0
+                  ) {
                     if (node.childNodes.length > offset) {
                       node = node.childNodes[offset];
                       offset = 0;
                     } else if (node.childNodes.length === offset) {
                       node = node.lastChild;
-                      offset = node instanceof Text ? node.data.length : node.childNodes.length + 1;
+                      offset =
+                        node instanceof Text
+                          ? node.data.length
+                          : node.childNodes.length + 1;
                     } else {
                       break;
                     }
@@ -3863,7 +4541,9 @@
               value: function rangeToNative(range) {
                 var _this5 = this;
 
-                var indexes = range.collapsed ? [range.index] : [range.index, range.index + range.length];
+                var indexes = range.collapsed
+                  ? [range.index]
+                  : [range.index, range.index + range.length];
                 var args = [];
                 var scrollLength = this.scroll.length();
                 indexes.forEach(function (index, i) {
@@ -3897,13 +4577,17 @@
                 if (bounds == null) return;
                 var limit = this.scroll.length() - 1;
 
-                var _scroll$line = this.scroll.line(Math.min(range.index, limit)),
+                var _scroll$line = this.scroll.line(
+                    Math.min(range.index, limit)
+                  ),
                   _scroll$line2 = _slicedToArray(_scroll$line, 1),
                   first = _scroll$line2[0];
 
                 var last = first;
                 if (range.length > 0) {
-                  var _scroll$line3 = this.scroll.line(Math.min(range.index + range.length, limit));
+                  var _scroll$line3 = this.scroll.line(
+                    Math.min(range.index + range.length, limit)
+                  );
 
                   var _scroll$line4 = _slicedToArray(_scroll$line3, 1);
 
@@ -3914,21 +4598,39 @@
                 if (bounds.top < scrollBounds.top) {
                   scrollingContainer.scrollTop -= scrollBounds.top - bounds.top;
                 } else if (bounds.bottom > scrollBounds.bottom) {
-                  scrollingContainer.scrollTop += bounds.bottom - scrollBounds.bottom;
+                  scrollingContainer.scrollTop +=
+                    bounds.bottom - scrollBounds.bottom;
                 }
               },
             },
             {
               key: 'setNativeRange',
               value: function setNativeRange(startNode, startOffset) {
-                var endNode = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : startNode;
-                var endOffset = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : startOffset;
-                var force = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : false;
+                var endNode =
+                  arguments.length > 2 && arguments[2] !== undefined
+                    ? arguments[2]
+                    : startNode;
+                var endOffset =
+                  arguments.length > 3 && arguments[3] !== undefined
+                    ? arguments[3]
+                    : startOffset;
+                var force =
+                  arguments.length > 4 && arguments[4] !== undefined
+                    ? arguments[4]
+                    : false;
 
-                debug.info('setNativeRange', startNode, startOffset, endNode, endOffset);
+                debug.info(
+                  'setNativeRange',
+                  startNode,
+                  startOffset,
+                  endNode,
+                  endOffset
+                );
                 if (
                   startNode != null &&
-                  (this.root.parentNode == null || startNode.parentNode == null || endNode.parentNode == null)
+                  (this.root.parentNode == null ||
+                    startNode.parentNode == null ||
+                    endNode.parentNode == null)
                 ) {
                   return;
                 }
@@ -3946,11 +4648,17 @@
                     endOffset !== native.endOffset
                   ) {
                     if (startNode.tagName == 'BR') {
-                      startOffset = [].indexOf.call(startNode.parentNode.childNodes, startNode);
+                      startOffset = [].indexOf.call(
+                        startNode.parentNode.childNodes,
+                        startNode
+                      );
                       startNode = startNode.parentNode;
                     }
                     if (endNode.tagName == 'BR') {
-                      endOffset = [].indexOf.call(endNode.parentNode.childNodes, endNode);
+                      endOffset = [].indexOf.call(
+                        endNode.parentNode.childNodes,
+                        endNode
+                      );
                       endNode = endNode.parentNode;
                     }
                     var range = document.createRange();
@@ -3969,9 +4677,14 @@
             {
               key: 'setRange',
               value: function setRange(range) {
-                var force = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
+                var force =
+                  arguments.length > 1 && arguments[1] !== undefined
+                    ? arguments[1]
+                    : false;
                 var source =
-                  arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : _emitter4.default.sources.API;
+                  arguments.length > 2 && arguments[2] !== undefined
+                    ? arguments[2]
+                    : _emitter4.default.sources.API;
 
                 if (typeof force === 'string') {
                   source = force;
@@ -3980,7 +4693,10 @@
                 debug.info('setRange', range);
                 if (range != null) {
                   var args = this.rangeToNative(range);
-                  this.setNativeRange.apply(this, _toConsumableArray(args).concat([force]));
+                  this.setNativeRange.apply(
+                    this,
+                    _toConsumableArray(args).concat([force])
+                  );
                 } else {
                   this.setNativeRange(null);
                 }
@@ -3991,7 +4707,9 @@
               key: 'update',
               value: function update() {
                 var source =
-                  arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : _emitter4.default.sources.USER;
+                  arguments.length > 0 && arguments[0] !== undefined
+                    ? arguments[0]
+                    : _emitter4.default.sources.USER;
 
                 var oldRange = this.lastRange;
 
@@ -4021,7 +4739,10 @@
                     (0, _clone2.default)(oldRange),
                     source,
                   ];
-                  (_emitter = this.emitter).emit.apply(_emitter, [_emitter4.default.events.EDITOR_CHANGE].concat(args));
+                  (_emitter = this.emitter).emit.apply(
+                    _emitter,
+                    [_emitter4.default.events.EDITOR_CHANGE].concat(args)
+                  );
                   if (source !== _emitter4.default.sources.SILENT) {
                     var _emitter2;
 
@@ -4117,20 +4838,38 @@
 
         function _possibleConstructorReturn(self, call) {
           if (!self) {
-            throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+            throw new ReferenceError(
+              "this hasn't been initialised - super() hasn't been called"
+            );
           }
-          return call && (typeof call === 'object' || typeof call === 'function') ? call : self;
+          return call &&
+            (typeof call === 'object' || typeof call === 'function')
+            ? call
+            : self;
         }
 
         function _inherits(subClass, superClass) {
           if (typeof superClass !== 'function' && superClass !== null) {
-            throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass);
+            throw new TypeError(
+              'Super expression must either be null or a function, not ' +
+                typeof superClass
+            );
           }
-          subClass.prototype = Object.create(superClass && superClass.prototype, {
-            constructor: { value: subClass, enumerable: false, writable: true, configurable: true },
-          });
+          subClass.prototype = Object.create(
+            superClass && superClass.prototype,
+            {
+              constructor: {
+                value: subClass,
+                enumerable: false,
+                writable: true,
+                configurable: true,
+              },
+            }
+          );
           if (superClass)
-            Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : (subClass.__proto__ = superClass);
+            Object.setPrototypeOf
+              ? Object.setPrototypeOf(subClass, superClass)
+              : (subClass.__proto__ = superClass);
         }
 
         var Break = (function (_Parchment$Embed) {
@@ -4141,7 +4880,10 @@
 
             return _possibleConstructorReturn(
               this,
-              (Break.__proto__ || Object.getPrototypeOf(Break)).apply(this, arguments)
+              (Break.__proto__ || Object.getPrototypeOf(Break)).apply(
+                this,
+                arguments
+              )
             );
           }
 
@@ -4152,11 +4894,12 @@
                 key: 'insertInto',
                 value: function insertInto(parent, ref) {
                   if (parent.children.length === 0) {
-                    _get(Break.prototype.__proto__ || Object.getPrototypeOf(Break.prototype), 'insertInto', this).call(
-                      this,
-                      parent,
-                      ref
-                    );
+                    _get(
+                      Break.prototype.__proto__ ||
+                        Object.getPrototypeOf(Break.prototype),
+                      'insertInto',
+                      this
+                    ).call(this, parent, ref);
                   } else {
                     this.remove();
                   }
@@ -4216,7 +4959,10 @@
               function __() {
                 this.constructor = d;
               }
-              d.prototype = b === null ? Object.create(b) : ((__.prototype = b.prototype), new __());
+              d.prototype =
+                b === null
+                  ? Object.create(b)
+                  : ((__.prototype = b.prototype), new __());
             };
           })();
         Object.defineProperty(exports, '__esModule', { value: true });
@@ -4260,9 +5006,13 @@
             if (index === 0 && length === this.length()) {
               return this.remove();
             }
-            this.children.forEachAt(index, length, function (child, offset, length) {
-              child.deleteAt(offset, length);
-            });
+            this.children.forEachAt(
+              index,
+              length,
+              function (child, offset, length) {
+                child.deleteAt(offset, length);
+              }
+            );
           };
           ContainerBlot.prototype.descendant = function (criteria, index) {
             var _a = this.children.find(index),
@@ -4279,7 +5029,11 @@
               return [null, -1];
             }
           };
-          ContainerBlot.prototype.descendants = function (criteria, index, length) {
+          ContainerBlot.prototype.descendants = function (
+            criteria,
+            index,
+            length
+          ) {
             if (index === void 0) {
               index = 0;
             }
@@ -4288,18 +5042,24 @@
             }
             var descendants = [];
             var lengthLeft = length;
-            this.children.forEachAt(index, length, function (child, index, length) {
-              if (
-                (criteria.blotName == null && criteria(child)) ||
-                (criteria.blotName != null && child instanceof criteria)
-              ) {
-                descendants.push(child);
+            this.children.forEachAt(
+              index,
+              length,
+              function (child, index, length) {
+                if (
+                  (criteria.blotName == null && criteria(child)) ||
+                  (criteria.blotName != null && child instanceof criteria)
+                ) {
+                  descendants.push(child);
+                }
+                if (child instanceof ContainerBlot) {
+                  descendants = descendants.concat(
+                    child.descendants(criteria, index, lengthLeft)
+                  );
+                }
+                lengthLeft -= length;
               }
-              if (child instanceof ContainerBlot) {
-                descendants = descendants.concat(child.descendants(criteria, index, lengthLeft));
-              }
-              lengthLeft -= length;
-            });
+            );
             return descendants;
           };
           ContainerBlot.prototype.detach = function () {
@@ -4308,10 +5068,19 @@
             });
             _super.prototype.detach.call(this);
           };
-          ContainerBlot.prototype.formatAt = function (index, length, name, value) {
-            this.children.forEachAt(index, length, function (child, offset, length) {
-              child.formatAt(offset, length, name, value);
-            });
+          ContainerBlot.prototype.formatAt = function (
+            index,
+            length,
+            name,
+            value
+          ) {
+            this.children.forEachAt(
+              index,
+              length,
+              function (child, offset, length) {
+                child.formatAt(offset, length, name, value);
+              }
+            );
           };
           ContainerBlot.prototype.insertAt = function (index, value, def) {
             var _a = this.children.find(index),
@@ -4320,7 +5089,10 @@
             if (child) {
               child.insertAt(offset, value, def);
             } else {
-              var blot = def == null ? Registry.create('text', value) : Registry.create(value, def);
+              var blot =
+                def == null
+                  ? Registry.create('text', value)
+                  : Registry.create(value, def);
               this.appendChild(blot);
             }
           };
@@ -4332,7 +5104,10 @@
               })
             ) {
               throw new Registry.ParchmentError(
-                'Cannot insert ' + childBlot.statics.blotName + ' into ' + this.statics.blotName
+                'Cannot insert ' +
+                  childBlot.statics.blotName +
+                  ' into ' +
+                  this.statics.blotName
               );
             }
             childBlot.insertInto(this, refBlot);
@@ -4342,7 +5117,10 @@
               return memo + child.length();
             }, 0);
           };
-          ContainerBlot.prototype.moveChildren = function (targetParent, refNode) {
+          ContainerBlot.prototype.moveChildren = function (
+            targetParent,
+            refNode
+          ) {
             this.children.forEach(function (child) {
               targetParent.insertBefore(child, refNode);
             });
@@ -4393,10 +5171,14 @@
             }
             var after = this.clone();
             this.parent.insertBefore(after, this.next);
-            this.children.forEachAt(index, this.length(), function (child, offset, length) {
-              child = child.split(offset, force);
-              after.appendChild(child);
-            });
+            this.children.forEachAt(
+              index,
+              this.length(),
+              function (child, offset, length) {
+                child = child.split(offset, force);
+                after.appendChild(child);
+              }
+            );
             return after;
           };
           ContainerBlot.prototype.unwrap = function () {
@@ -4408,7 +5190,10 @@
             var addedNodes = [];
             var removedNodes = [];
             mutations.forEach(function (mutation) {
-              if (mutation.target === _this.domNode && mutation.type === 'childList') {
+              if (
+                mutation.target === _this.domNode &&
+                mutation.type === 'childList'
+              ) {
                 addedNodes.push.apply(addedNodes, mutation.addedNodes);
                 removedNodes.push.apply(removedNodes, mutation.removedNodes);
               }
@@ -4421,13 +5206,17 @@
                 node.parentNode != null &&
                 // @ts-ignore
                 node.tagName !== 'IFRAME' &&
-                document.body.compareDocumentPosition(node) & Node.DOCUMENT_POSITION_CONTAINED_BY
+                document.body.compareDocumentPosition(node) &
+                  Node.DOCUMENT_POSITION_CONTAINED_BY
               ) {
                 return;
               }
               var blot = Registry.find(node);
               if (blot == null) return;
-              if (blot.domNode.parentNode == null || blot.domNode.parentNode === _this.domNode) {
+              if (
+                blot.domNode.parentNode == null ||
+                blot.domNode.parentNode === _this.domNode
+              ) {
                 blot.detach();
               }
             });
@@ -4437,7 +5226,10 @@
               })
               .sort(function (a, b) {
                 if (a === b) return 0;
-                if (a.compareDocumentPosition(b) & Node.DOCUMENT_POSITION_FOLLOWING) {
+                if (
+                  a.compareDocumentPosition(b) &
+                  Node.DOCUMENT_POSITION_FOLLOWING
+                ) {
                   return 1;
                 }
                 return -1;
@@ -4502,7 +5294,10 @@
               function __() {
                 this.constructor = d;
               }
-              d.prototype = b === null ? Object.create(b) : ((__.prototype = b.prototype), new __());
+              d.prototype =
+                b === null
+                  ? Object.create(b)
+                  : ((__.prototype = b.prototype), new __());
             };
           })();
         Object.defineProperty(exports, '__esModule', { value: true });
@@ -4530,7 +5325,11 @@
             if (format instanceof attributor_1.default) {
               this.attributes.attribute(format, value);
             } else if (value) {
-              if (format != null && (name !== this.statics.blotName || this.formats()[name] !== value)) {
+              if (
+                format != null &&
+                (name !== this.statics.blotName ||
+                  this.formats()[name] !== value)
+              ) {
                 this.replaceWith(name, value);
               }
             }
@@ -4544,7 +5343,11 @@
             return formats;
           };
           FormatBlot.prototype.replaceWith = function (name, value) {
-            var replacement = _super.prototype.replaceWith.call(this, name, value);
+            var replacement = _super.prototype.replaceWith.call(
+              this,
+              name,
+              value
+            );
             this.attributes.copy(replacement);
             return replacement;
           };
@@ -4553,7 +5356,10 @@
             _super.prototype.update.call(this, mutations, context);
             if (
               mutations.some(function (mutation) {
-                return mutation.target === _this.domNode && mutation.type === 'attributes';
+                return (
+                  mutation.target === _this.domNode &&
+                  mutation.type === 'attributes'
+                );
               })
             ) {
               this.attributes.build();
@@ -4561,7 +5367,10 @@
           };
           FormatBlot.prototype.wrap = function (name, value) {
             var wrapper = _super.prototype.wrap.call(this, name, value);
-            if (wrapper instanceof FormatBlot && wrapper.statics.scope === this.statics.scope) {
+            if (
+              wrapper instanceof FormatBlot &&
+              wrapper.statics.scope === this.statics.scope
+            ) {
               this.attributes.move(wrapper);
             }
             return wrapper;
@@ -4593,7 +5402,10 @@
               function __() {
                 this.constructor = d;
               }
-              d.prototype = b === null ? Object.create(b) : ((__.prototype = b.prototype), new __());
+              d.prototype =
+                b === null
+                  ? Object.create(b)
+                  : ((__.prototype = b.prototype), new __());
             };
           })();
         Object.defineProperty(exports, '__esModule', { value: true });
@@ -4610,19 +5422,28 @@
           LeafBlot.prototype.index = function (node, offset) {
             if (
               this.domNode === node ||
-              this.domNode.compareDocumentPosition(node) & Node.DOCUMENT_POSITION_CONTAINED_BY
+              this.domNode.compareDocumentPosition(node) &
+                Node.DOCUMENT_POSITION_CONTAINED_BY
             ) {
               return Math.min(offset, 1);
             }
             return -1;
           };
           LeafBlot.prototype.position = function (index, inclusive) {
-            var offset = [].indexOf.call(this.parent.domNode.childNodes, this.domNode);
+            var offset = [].indexOf.call(
+              this.parent.domNode.childNodes,
+              this.domNode
+            );
             if (index > 0) offset += 1;
             return [this.parent.domNode, offset];
           };
           LeafBlot.prototype.value = function () {
-            return (_a = {}), (_a[this.statics.blotName] = this.statics.value(this.domNode) || true), _a;
+            return (
+              (_a = {}),
+              (_a[this.statics.blotName] =
+                this.statics.value(this.domNode) || true),
+              _a
+            );
             var _a;
           };
           LeafBlot.scope = Registry.Scope.INLINE_BLOT;
@@ -4644,19 +5465,25 @@
               if (typeof b !== 'object') b = {};
               var attributes = extend(true, {}, b);
               if (!keepNull) {
-                attributes = Object.keys(attributes).reduce(function (copy, key) {
+                attributes = Object.keys(attributes).reduce(function (
+                  copy,
+                  key
+                ) {
                   if (attributes[key] != null) {
                     copy[key] = attributes[key];
                   }
                   return copy;
-                }, {});
+                },
+                {});
               }
               for (var key in a) {
                 if (a[key] !== undefined && b[key] === undefined) {
                   attributes[key] = a[key];
                 }
               }
-              return Object.keys(attributes).length > 0 ? attributes : undefined;
+              return Object.keys(attributes).length > 0
+                ? attributes
+                : undefined;
             },
 
             diff: function (a, b) {
@@ -4670,18 +5497,26 @@
                   }
                   return attributes;
                 }, {});
-              return Object.keys(attributes).length > 0 ? attributes : undefined;
+              return Object.keys(attributes).length > 0
+                ? attributes
+                : undefined;
             },
 
             transform: function (a, b, priority) {
               if (typeof a !== 'object') return b;
               if (typeof b !== 'object') return undefined;
               if (!priority) return b; // b simply overwrites us without priority
-              var attributes = Object.keys(b).reduce(function (attributes, key) {
+              var attributes = Object.keys(b).reduce(function (
+                attributes,
+                key
+              ) {
                 if (a[key] === undefined) attributes[key] = b[key]; // null is a valid value
                 return attributes;
-              }, {});
-              return Object.keys(attributes).length > 0 ? attributes : undefined;
+              },
+              {});
+              return Object.keys(attributes).length > 0
+                ? attributes
+                : undefined;
             },
           },
 
@@ -4828,7 +5663,13 @@
            *    should be cloned as well. Non-enumerable properties on the prototype
            *    chain will be ignored. (optional - false by default)
            */
-          function clone(parent, circular, depth, prototype, includeNonEnumerable) {
+          function clone(
+            parent,
+            circular,
+            depth,
+            prototype,
+            includeNonEnumerable
+          ) {
             if (typeof circular === 'object') {
               depth = circular.depth;
               prototype = circular.prototype;
@@ -4939,8 +5780,15 @@
                   // Don't need to worry about cloning a symbol because it is a primitive,
                   // like a number or string.
                   var symbol = symbols[i];
-                  var descriptor = Object.getOwnPropertyDescriptor(parent, symbol);
-                  if (descriptor && !descriptor.enumerable && !includeNonEnumerable) {
+                  var descriptor = Object.getOwnPropertyDescriptor(
+                    parent,
+                    symbol
+                  );
+                  if (
+                    descriptor &&
+                    !descriptor.enumerable &&
+                    !includeNonEnumerable
+                  ) {
                     continue;
                   }
                   child[symbol] = _clone(parent[symbol], depth - 1);
@@ -4956,7 +5804,10 @@
                 var allPropertyNames = Object.getOwnPropertyNames(parent);
                 for (var i = 0; i < allPropertyNames.length; i++) {
                   var propertyName = allPropertyNames[i];
-                  var descriptor = Object.getOwnPropertyDescriptor(parent, propertyName);
+                  var descriptor = Object.getOwnPropertyDescriptor(
+                    parent,
+                    propertyName
+                  );
                   if (descriptor && descriptor.enumerable) {
                     continue;
                   }
@@ -5043,7 +5894,11 @@
             var _d = false;
             var _e = undefined;
             try {
-              for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) {
+              for (
+                var _i = arr[Symbol.iterator](), _s;
+                !(_n = (_s = _i.next()).done);
+                _n = true
+              ) {
                 _arr.push(_s.value);
                 if (i && _arr.length === i) break;
               }
@@ -5065,7 +5920,9 @@
             } else if (Symbol.iterator in Object(arr)) {
               return sliceIterator(arr, i);
             } else {
-              throw new TypeError('Invalid attempt to destructure non-iterable instance');
+              throw new TypeError(
+                'Invalid attempt to destructure non-iterable instance'
+              );
             }
           };
         })();
@@ -5144,24 +6001,44 @@
 
         function _possibleConstructorReturn(self, call) {
           if (!self) {
-            throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+            throw new ReferenceError(
+              "this hasn't been initialised - super() hasn't been called"
+            );
           }
-          return call && (typeof call === 'object' || typeof call === 'function') ? call : self;
+          return call &&
+            (typeof call === 'object' || typeof call === 'function')
+            ? call
+            : self;
         }
 
         function _inherits(subClass, superClass) {
           if (typeof superClass !== 'function' && superClass !== null) {
-            throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass);
+            throw new TypeError(
+              'Super expression must either be null or a function, not ' +
+                typeof superClass
+            );
           }
-          subClass.prototype = Object.create(superClass && superClass.prototype, {
-            constructor: { value: subClass, enumerable: false, writable: true, configurable: true },
-          });
+          subClass.prototype = Object.create(
+            superClass && superClass.prototype,
+            {
+              constructor: {
+                value: subClass,
+                enumerable: false,
+                writable: true,
+                configurable: true,
+              },
+            }
+          );
           if (superClass)
-            Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : (subClass.__proto__ = superClass);
+            Object.setPrototypeOf
+              ? Object.setPrototypeOf(subClass, superClass)
+              : (subClass.__proto__ = superClass);
         }
 
         function isLine(blot) {
-          return blot instanceof _block2.default || blot instanceof _block.BlockEmbed;
+          return (
+            blot instanceof _block2.default || blot instanceof _block.BlockEmbed
+          );
         }
 
         var Scroll = (function (_Parchment$Scroll) {
@@ -5172,15 +6049,22 @@
 
             var _this = _possibleConstructorReturn(
               this,
-              (Scroll.__proto__ || Object.getPrototypeOf(Scroll)).call(this, domNode)
+              (Scroll.__proto__ || Object.getPrototypeOf(Scroll)).call(
+                this,
+                domNode
+              )
             );
 
             _this.emitter = config.emitter;
             if (Array.isArray(config.whitelist)) {
-              _this.whitelist = config.whitelist.reduce(function (whitelist, format) {
+              _this.whitelist = config.whitelist.reduce(function (
+                whitelist,
+                format
+              ) {
                 whitelist[format] = true;
                 return whitelist;
-              }, {});
+              },
+              {});
             }
             // Some reason fixes composition issues with character languages in Windows/Chrome, Safari
             _this.domNode.addEventListener('DOMNodeInserted', function () {});
@@ -5215,13 +6099,17 @@
                   _line4 = _slicedToArray(_line3, 1),
                   last = _line4[0];
 
-                _get(Scroll.prototype.__proto__ || Object.getPrototypeOf(Scroll.prototype), 'deleteAt', this).call(
-                  this,
-                  index,
-                  length
-                );
+                _get(
+                  Scroll.prototype.__proto__ ||
+                    Object.getPrototypeOf(Scroll.prototype),
+                  'deleteAt',
+                  this
+                ).call(this, index, length);
                 if (last != null && first !== last && offset > 0) {
-                  if (first instanceof _block.BlockEmbed || last instanceof _block.BlockEmbed) {
+                  if (
+                    first instanceof _block.BlockEmbed ||
+                    last instanceof _block.BlockEmbed
+                  ) {
                     this.optimize();
                     return;
                   }
@@ -5240,7 +6128,10 @@
                       last.split(_newlineIndex + 1);
                     }
                   }
-                  var ref = last.children.head instanceof _break2.default ? null : last.children.head;
+                  var ref =
+                    last.children.head instanceof _break2.default
+                      ? null
+                      : last.children.head;
                   first.moveChildren(last, ref);
                   first.remove();
                 }
@@ -5250,7 +6141,10 @@
             {
               key: 'enable',
               value: function enable() {
-                var enabled = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : true;
+                var enabled =
+                  arguments.length > 0 && arguments[0] !== undefined
+                    ? arguments[0]
+                    : true;
 
                 this.domNode.setAttribute('contenteditable', enabled);
               },
@@ -5259,23 +6153,35 @@
               key: 'formatAt',
               value: function formatAt(index, length, format, value) {
                 if (this.whitelist != null && !this.whitelist[format]) return;
-                _get(Scroll.prototype.__proto__ || Object.getPrototypeOf(Scroll.prototype), 'formatAt', this).call(
-                  this,
-                  index,
-                  length,
-                  format,
-                  value
-                );
+                _get(
+                  Scroll.prototype.__proto__ ||
+                    Object.getPrototypeOf(Scroll.prototype),
+                  'formatAt',
+                  this
+                ).call(this, index, length, format, value);
                 this.optimize();
               },
             },
             {
               key: 'insertAt',
               value: function insertAt(index, value, def) {
-                if (def != null && this.whitelist != null && !this.whitelist[value]) return;
+                if (
+                  def != null &&
+                  this.whitelist != null &&
+                  !this.whitelist[value]
+                )
+                  return;
                 if (index >= this.length()) {
-                  if (def == null || _parchment2.default.query(value, _parchment2.default.Scope.BLOCK) == null) {
-                    var blot = _parchment2.default.create(this.statics.defaultChild);
+                  if (
+                    def == null ||
+                    _parchment2.default.query(
+                      value,
+                      _parchment2.default.Scope.BLOCK
+                    ) == null
+                  ) {
+                    var blot = _parchment2.default.create(
+                      this.statics.defaultChild
+                    );
                     this.appendChild(blot);
                     if (def == null && value.endsWith('\n')) {
                       value = value.slice(0, -1);
@@ -5286,12 +6192,12 @@
                     this.appendChild(embed);
                   }
                 } else {
-                  _get(Scroll.prototype.__proto__ || Object.getPrototypeOf(Scroll.prototype), 'insertAt', this).call(
-                    this,
-                    index,
-                    value,
-                    def
-                  );
+                  _get(
+                    Scroll.prototype.__proto__ ||
+                      Object.getPrototypeOf(Scroll.prototype),
+                    'insertAt',
+                    this
+                  ).call(this, index, value, def);
                 }
                 this.optimize();
               },
@@ -5299,16 +6205,21 @@
             {
               key: 'insertBefore',
               value: function insertBefore(blot, ref) {
-                if (blot.statics.scope === _parchment2.default.Scope.INLINE_BLOT) {
-                  var wrapper = _parchment2.default.create(this.statics.defaultChild);
+                if (
+                  blot.statics.scope === _parchment2.default.Scope.INLINE_BLOT
+                ) {
+                  var wrapper = _parchment2.default.create(
+                    this.statics.defaultChild
+                  );
                   wrapper.appendChild(blot);
                   blot = wrapper;
                 }
-                _get(Scroll.prototype.__proto__ || Object.getPrototypeOf(Scroll.prototype), 'insertBefore', this).call(
-                  this,
-                  blot,
-                  ref
-                );
+                _get(
+                  Scroll.prototype.__proto__ ||
+                    Object.getPrototypeOf(Scroll.prototype),
+                  'insertBefore',
+                  this
+                ).call(this, blot, ref);
               },
             },
             {
@@ -5329,20 +6240,34 @@
             {
               key: 'lines',
               value: function lines() {
-                var index = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 0;
-                var length = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : Number.MAX_VALUE;
+                var index =
+                  arguments.length > 0 && arguments[0] !== undefined
+                    ? arguments[0]
+                    : 0;
+                var length =
+                  arguments.length > 1 && arguments[1] !== undefined
+                    ? arguments[1]
+                    : Number.MAX_VALUE;
 
                 var getLines = function getLines(blot, index, length) {
                   var lines = [],
                     lengthLeft = length;
-                  blot.children.forEachAt(index, length, function (child, index, length) {
-                    if (isLine(child)) {
-                      lines.push(child);
-                    } else if (child instanceof _parchment2.default.Container) {
-                      lines = lines.concat(getLines(child, index, lengthLeft));
+                  blot.children.forEachAt(
+                    index,
+                    length,
+                    function (child, index, length) {
+                      if (isLine(child)) {
+                        lines.push(child);
+                      } else if (
+                        child instanceof _parchment2.default.Container
+                      ) {
+                        lines = lines.concat(
+                          getLines(child, index, lengthLeft)
+                        );
+                      }
+                      lengthLeft -= length;
                     }
-                    lengthLeft -= length;
-                  });
+                  );
                   return lines;
                 };
                 return getLines(this, index, length);
@@ -5351,24 +6276,40 @@
             {
               key: 'optimize',
               value: function optimize() {
-                var mutations = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
-                var context = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+                var mutations =
+                  arguments.length > 0 && arguments[0] !== undefined
+                    ? arguments[0]
+                    : [];
+                var context =
+                  arguments.length > 1 && arguments[1] !== undefined
+                    ? arguments[1]
+                    : {};
 
                 if (this.batch === true) return;
-                _get(Scroll.prototype.__proto__ || Object.getPrototypeOf(Scroll.prototype), 'optimize', this).call(
-                  this,
-                  mutations,
-                  context
-                );
+                _get(
+                  Scroll.prototype.__proto__ ||
+                    Object.getPrototypeOf(Scroll.prototype),
+                  'optimize',
+                  this
+                ).call(this, mutations, context);
                 if (mutations.length > 0) {
-                  this.emitter.emit(_emitter2.default.events.SCROLL_OPTIMIZE, mutations, context);
+                  this.emitter.emit(
+                    _emitter2.default.events.SCROLL_OPTIMIZE,
+                    mutations,
+                    context
+                  );
                 }
               },
             },
             {
               key: 'path',
               value: function path(index) {
-                return _get(Scroll.prototype.__proto__ || Object.getPrototypeOf(Scroll.prototype), 'path', this)
+                return _get(
+                  Scroll.prototype.__proto__ ||
+                    Object.getPrototypeOf(Scroll.prototype),
+                  'path',
+                  this
+                )
                   .call(this, index)
                   .slice(1); // Exclude self
               },
@@ -5385,14 +6326,24 @@
                   mutations = this.observer.takeRecords();
                 }
                 if (mutations.length > 0) {
-                  this.emitter.emit(_emitter2.default.events.SCROLL_BEFORE_UPDATE, source, mutations);
+                  this.emitter.emit(
+                    _emitter2.default.events.SCROLL_BEFORE_UPDATE,
+                    source,
+                    mutations
+                  );
                 }
-                _get(Scroll.prototype.__proto__ || Object.getPrototypeOf(Scroll.prototype), 'update', this).call(
-                  this,
-                  mutations.concat([])
-                ); // pass copy
+                _get(
+                  Scroll.prototype.__proto__ ||
+                    Object.getPrototypeOf(Scroll.prototype),
+                  'update',
+                  this
+                ).call(this, mutations.concat([])); // pass copy
                 if (mutations.length > 0) {
-                  this.emitter.emit(_emitter2.default.events.SCROLL_UPDATE, source, mutations);
+                  this.emitter.emit(
+                    _emitter2.default.events.SCROLL_UPDATE,
+                    source,
+                    mutations
+                  );
                 }
               },
             },
@@ -5405,7 +6356,11 @@
         Scroll.className = 'ql-editor';
         Scroll.tagName = 'DIV';
         Scroll.defaultChild = 'block';
-        Scroll.allowedChildren = [_block2.default, _block.BlockEmbed, _container2.default];
+        Scroll.allowedChildren = [
+          _block2.default,
+          _block.BlockEmbed,
+          _container2.default,
+        ];
 
         exports.default = Scroll;
 
@@ -5426,7 +6381,10 @@
                 return typeof obj;
               }
             : function (obj) {
-                return obj && typeof Symbol === 'function' && obj.constructor === Symbol && obj !== Symbol.prototype
+                return obj &&
+                  typeof Symbol === 'function' &&
+                  obj.constructor === Symbol &&
+                  obj !== Symbol.prototype
                   ? 'symbol'
                   : typeof obj;
               };
@@ -5438,7 +6396,11 @@
             var _d = false;
             var _e = undefined;
             try {
-              for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) {
+              for (
+                var _i = arr[Symbol.iterator](), _s;
+                !(_n = (_s = _i.next()).done);
+                _n = true
+              ) {
                 _arr.push(_s.value);
                 if (i && _arr.length === i) break;
               }
@@ -5460,7 +6422,9 @@
             } else if (Symbol.iterator in Object(arr)) {
               return sliceIterator(arr, i);
             } else {
-              throw new TypeError('Invalid attempt to destructure non-iterable instance');
+              throw new TypeError(
+                'Invalid attempt to destructure non-iterable instance'
+              );
             }
           };
         })();
@@ -5524,7 +6488,12 @@
 
         function _defineProperty(obj, key, value) {
           if (key in obj) {
-            Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });
+            Object.defineProperty(obj, key, {
+              value: value,
+              enumerable: true,
+              configurable: true,
+              writable: true,
+            });
           } else {
             obj[key] = value;
           }
@@ -5539,20 +6508,38 @@
 
         function _possibleConstructorReturn(self, call) {
           if (!self) {
-            throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+            throw new ReferenceError(
+              "this hasn't been initialised - super() hasn't been called"
+            );
           }
-          return call && (typeof call === 'object' || typeof call === 'function') ? call : self;
+          return call &&
+            (typeof call === 'object' || typeof call === 'function')
+            ? call
+            : self;
         }
 
         function _inherits(subClass, superClass) {
           if (typeof superClass !== 'function' && superClass !== null) {
-            throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass);
+            throw new TypeError(
+              'Super expression must either be null or a function, not ' +
+                typeof superClass
+            );
           }
-          subClass.prototype = Object.create(superClass && superClass.prototype, {
-            constructor: { value: subClass, enumerable: false, writable: true, configurable: true },
-          });
+          subClass.prototype = Object.create(
+            superClass && superClass.prototype,
+            {
+              constructor: {
+                value: subClass,
+                enumerable: false,
+                writable: true,
+                configurable: true,
+              },
+            }
+          );
           if (superClass)
-            Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : (subClass.__proto__ = superClass);
+            Object.setPrototypeOf
+              ? Object.setPrototypeOf(subClass, superClass)
+              : (subClass.__proto__ = superClass);
         }
 
         var debug = (0, _logger2.default)('quill:keyboard');
@@ -5568,7 +6555,9 @@
               value: function match(evt, binding) {
                 binding = normalize(binding);
                 if (
-                  ['altKey', 'ctrlKey', 'metaKey', 'shiftKey'].some(function (key) {
+                  ['altKey', 'ctrlKey', 'metaKey', 'shiftKey'].some(function (
+                    key
+                  ) {
                     return !!binding[key] !== evt[key] && binding[key] !== null;
                   })
                 ) {
@@ -5584,32 +6573,81 @@
 
             var _this = _possibleConstructorReturn(
               this,
-              (Keyboard.__proto__ || Object.getPrototypeOf(Keyboard)).call(this, quill, options)
+              (Keyboard.__proto__ || Object.getPrototypeOf(Keyboard)).call(
+                this,
+                quill,
+                options
+              )
             );
 
             _this.bindings = {};
             Object.keys(_this.options.bindings).forEach(function (name) {
-              if (name === 'list autofill' && quill.scroll.whitelist != null && !quill.scroll.whitelist['list']) {
+              if (
+                name === 'list autofill' &&
+                quill.scroll.whitelist != null &&
+                !quill.scroll.whitelist['list']
+              ) {
                 return;
               }
               if (_this.options.bindings[name]) {
                 _this.addBinding(_this.options.bindings[name]);
               }
             });
-            _this.addBinding({ key: Keyboard.keys.ENTER, shiftKey: null }, handleEnter);
-            _this.addBinding({ key: Keyboard.keys.ENTER, metaKey: null, ctrlKey: null, altKey: null }, function () {});
+            _this.addBinding(
+              { key: Keyboard.keys.ENTER, shiftKey: null },
+              handleEnter
+            );
+            _this.addBinding(
+              {
+                key: Keyboard.keys.ENTER,
+                metaKey: null,
+                ctrlKey: null,
+                altKey: null,
+              },
+              function () {}
+            );
             if (/Firefox/i.test(navigator.userAgent)) {
               // Need to handle delete and backspace for Firefox in the general case #1171
-              _this.addBinding({ key: Keyboard.keys.BACKSPACE }, { collapsed: true }, handleBackspace);
-              _this.addBinding({ key: Keyboard.keys.DELETE }, { collapsed: true }, handleDelete);
+              _this.addBinding(
+                { key: Keyboard.keys.BACKSPACE },
+                { collapsed: true },
+                handleBackspace
+              );
+              _this.addBinding(
+                { key: Keyboard.keys.DELETE },
+                { collapsed: true },
+                handleDelete
+              );
             } else {
-              _this.addBinding({ key: Keyboard.keys.BACKSPACE }, { collapsed: true, prefix: /^.?$/ }, handleBackspace);
-              _this.addBinding({ key: Keyboard.keys.DELETE }, { collapsed: true, suffix: /^.?$/ }, handleDelete);
+              _this.addBinding(
+                { key: Keyboard.keys.BACKSPACE },
+                { collapsed: true, prefix: /^.?$/ },
+                handleBackspace
+              );
+              _this.addBinding(
+                { key: Keyboard.keys.DELETE },
+                { collapsed: true, suffix: /^.?$/ },
+                handleDelete
+              );
             }
-            _this.addBinding({ key: Keyboard.keys.BACKSPACE }, { collapsed: false }, handleDeleteRange);
-            _this.addBinding({ key: Keyboard.keys.DELETE }, { collapsed: false }, handleDeleteRange);
             _this.addBinding(
-              { key: Keyboard.keys.BACKSPACE, altKey: null, ctrlKey: null, metaKey: null, shiftKey: null },
+              { key: Keyboard.keys.BACKSPACE },
+              { collapsed: false },
+              handleDeleteRange
+            );
+            _this.addBinding(
+              { key: Keyboard.keys.DELETE },
+              { collapsed: false },
+              handleDeleteRange
+            );
+            _this.addBinding(
+              {
+                key: Keyboard.keys.BACKSPACE,
+                altKey: null,
+                ctrlKey: null,
+                metaKey: null,
+                shiftKey: null,
+              },
               { collapsed: true, offset: 0 },
               handleBackspace
             );
@@ -5621,12 +6659,21 @@
             {
               key: 'addBinding',
               value: function addBinding(key) {
-                var context = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
-                var handler = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
+                var context =
+                  arguments.length > 1 && arguments[1] !== undefined
+                    ? arguments[1]
+                    : {};
+                var handler =
+                  arguments.length > 2 && arguments[2] !== undefined
+                    ? arguments[2]
+                    : {};
 
                 var binding = normalize(key);
                 if (binding == null || binding.key == null) {
-                  return debug.warn('Attempted to add invalid keyboard binding', binding);
+                  return debug.warn(
+                    'Attempted to add invalid keyboard binding',
+                    binding
+                  );
                 }
                 if (typeof context === 'function') {
                   context = { handler: context };
@@ -5647,9 +6694,11 @@
                 this.quill.root.addEventListener('keydown', function (evt) {
                   if (evt.defaultPrevented) return;
                   var which = evt.which || evt.keyCode;
-                  var bindings = (_this2.bindings[which] || []).filter(function (binding) {
-                    return Keyboard.match(evt, binding);
-                  });
+                  var bindings = (_this2.bindings[which] || []).filter(
+                    function (binding) {
+                      return Keyboard.match(evt, binding);
+                    }
+                  );
                   if (bindings.length === 0) return;
                   var range = _this2.quill.getSelection();
                   if (range == null || !_this2.quill.hasFocus()) return;
@@ -5665,14 +6714,21 @@
                     offsetStart = _quill$getLeaf2[1];
 
                   var _ref =
-                      range.length === 0 ? [leafStart, offsetStart] : _this2.quill.getLeaf(range.index + range.length),
+                      range.length === 0
+                        ? [leafStart, offsetStart]
+                        : _this2.quill.getLeaf(range.index + range.length),
                     _ref2 = _slicedToArray(_ref, 2),
                     leafEnd = _ref2[0],
                     offsetEnd = _ref2[1];
 
                   var prefixText =
-                    leafStart instanceof _parchment2.default.Text ? leafStart.value().slice(0, offsetStart) : '';
-                  var suffixText = leafEnd instanceof _parchment2.default.Text ? leafEnd.value().slice(offsetEnd) : '';
+                    leafStart instanceof _parchment2.default.Text
+                      ? leafStart.value().slice(0, offsetStart)
+                      : '';
+                  var suffixText =
+                    leafEnd instanceof _parchment2.default.Text
+                      ? leafEnd.value().slice(offsetEnd)
+                      : '';
                   var curContext = {
                     collapsed: range.length === 0,
                     empty: range.length === 0 && line.length() <= 1,
@@ -5682,9 +6738,21 @@
                     suffix: suffixText,
                   };
                   var prevented = bindings.some(function (binding) {
-                    if (binding.collapsed != null && binding.collapsed !== curContext.collapsed) return false;
-                    if (binding.empty != null && binding.empty !== curContext.empty) return false;
-                    if (binding.offset != null && binding.offset !== curContext.offset) return false;
+                    if (
+                      binding.collapsed != null &&
+                      binding.collapsed !== curContext.collapsed
+                    )
+                      return false;
+                    if (
+                      binding.empty != null &&
+                      binding.empty !== curContext.empty
+                    )
+                      return false;
+                    if (
+                      binding.offset != null &&
+                      binding.offset !== curContext.offset
+                    )
+                      return false;
                     if (Array.isArray(binding.format)) {
                       // any format is present
                       if (
@@ -5698,17 +6766,30 @@
                       // all formats must match
                       if (
                         !Object.keys(binding.format).every(function (name) {
-                          if (binding.format[name] === true) return curContext.format[name] != null;
-                          if (binding.format[name] === false) return curContext.format[name] == null;
-                          return (0, _deepEqual2.default)(binding.format[name], curContext.format[name]);
+                          if (binding.format[name] === true)
+                            return curContext.format[name] != null;
+                          if (binding.format[name] === false)
+                            return curContext.format[name] == null;
+                          return (0,
+                          _deepEqual2.default)(binding.format[name], curContext.format[name]);
                         })
                       ) {
                         return false;
                       }
                     }
-                    if (binding.prefix != null && !binding.prefix.test(curContext.prefix)) return false;
-                    if (binding.suffix != null && !binding.suffix.test(curContext.suffix)) return false;
-                    return binding.handler.call(_this2, range, curContext) !== true;
+                    if (
+                      binding.prefix != null &&
+                      !binding.prefix.test(curContext.prefix)
+                    )
+                      return false;
+                    if (
+                      binding.suffix != null &&
+                      !binding.suffix.test(curContext.suffix)
+                    )
+                      return false;
+                    return (
+                      binding.handler.call(_this2, range, curContext) !== true
+                    );
                   });
                   if (prevented) {
                     evt.preventDefault();
@@ -5768,9 +6849,17 @@
               offset: 0,
               handler: function handler(range, context) {
                 if (context.format.indent != null) {
-                  this.quill.format('indent', '-1', _quill2.default.sources.USER);
+                  this.quill.format(
+                    'indent',
+                    '-1',
+                    _quill2.default.sources.USER
+                  );
                 } else if (context.format.list != null) {
-                  this.quill.format('list', false, _quill2.default.sources.USER);
+                  this.quill.format(
+                    'list',
+                    false,
+                    _quill2.default.sources.USER
+                  );
                 }
               },
             },
@@ -5782,17 +6871,27 @@
               collapsed: true,
               prefix: /\t$/,
               handler: function handler(range) {
-                this.quill.deleteText(range.index - 1, 1, _quill2.default.sources.USER);
+                this.quill.deleteText(
+                  range.index - 1,
+                  1,
+                  _quill2.default.sources.USER
+                );
               },
             },
             tab: {
               key: Keyboard.keys.TAB,
               handler: function handler(range) {
                 this.quill.history.cutoff();
-                var delta = new _quillDelta2.default().retain(range.index).delete(range.length).insert('\t');
+                var delta = new _quillDelta2.default()
+                  .retain(range.index)
+                  .delete(range.length)
+                  .insert('\t');
                 this.quill.updateContents(delta, _quill2.default.sources.USER);
                 this.quill.history.cutoff();
-                this.quill.setSelection(range.index + 1, _quill2.default.sources.SILENT);
+                this.quill.setSelection(
+                  range.index + 1,
+                  _quill2.default.sources.SILENT
+                );
               },
             },
             'list empty enter': {
@@ -5803,7 +6902,11 @@
               handler: function handler(range, context) {
                 this.quill.format('list', false, _quill2.default.sources.USER);
                 if (context.format.indent) {
-                  this.quill.format('indent', false, _quill2.default.sources.USER);
+                  this.quill.format(
+                    'indent',
+                    false,
+                    _quill2.default.sources.USER
+                  );
                 }
               },
             },
@@ -5817,14 +6920,19 @@
                   line = _quill$getLine4[0],
                   offset = _quill$getLine4[1];
 
-                var formats = (0, _extend2.default)({}, line.formats(), { list: 'checked' });
+                var formats = (0, _extend2.default)({}, line.formats(), {
+                  list: 'checked',
+                });
                 var delta = new _quillDelta2.default()
                   .retain(range.index)
                   .insert('\n', formats)
                   .retain(line.length() - offset - 1)
                   .retain(1, { list: 'unchecked' });
                 this.quill.updateContents(delta, _quill2.default.sources.USER);
-                this.quill.setSelection(range.index + 1, _quill2.default.sources.SILENT);
+                this.quill.setSelection(
+                  range.index + 1,
+                  _quill2.default.sources.SILENT
+                );
                 this.quill.scrollIntoView();
               },
             },
@@ -5845,7 +6953,10 @@
                   .retain(line.length() - offset - 1)
                   .retain(1, { header: null });
                 this.quill.updateContents(delta, _quill2.default.sources.USER);
-                this.quill.setSelection(range.index + 1, _quill2.default.sources.SILENT);
+                this.quill.setSelection(
+                  range.index + 1,
+                  _quill2.default.sources.SILENT
+                );
                 this.quill.scrollIntoView();
               },
             },
@@ -5879,7 +6990,11 @@
                   default:
                     value = 'ordered';
                 }
-                this.quill.insertText(range.index, ' ', _quill2.default.sources.USER);
+                this.quill.insertText(
+                  range.index,
+                  ' ',
+                  _quill2.default.sources.USER
+                );
                 this.quill.history.cutoff();
                 var delta = new _quillDelta2.default()
                   .retain(range.index - offset)
@@ -5888,7 +7003,10 @@
                   .retain(1, { list: value });
                 this.quill.updateContents(delta, _quill2.default.sources.USER);
                 this.quill.history.cutoff();
-                this.quill.setSelection(range.index - length, _quill2.default.sources.SILENT);
+                this.quill.setSelection(
+                  range.index - length,
+                  _quill2.default.sources.SILENT
+                );
               },
             },
             'code exit': {
@@ -5913,7 +7031,10 @@
             'embed left': makeEmbedArrowHandler(Keyboard.keys.LEFT, false),
             'embed left shift': makeEmbedArrowHandler(Keyboard.keys.LEFT, true),
             'embed right': makeEmbedArrowHandler(Keyboard.keys.RIGHT, false),
-            'embed right shift': makeEmbedArrowHandler(Keyboard.keys.RIGHT, true),
+            'embed right shift': makeEmbedArrowHandler(
+              Keyboard.keys.RIGHT,
+              true
+            ),
           },
         };
 
@@ -5941,15 +7062,29 @@
               if (!(leaf instanceof _parchment2.default.Embed)) return true;
               if (key === Keyboard.keys.LEFT) {
                 if (shiftKey) {
-                  this.quill.setSelection(range.index - 1, range.length + 1, _quill2.default.sources.USER);
+                  this.quill.setSelection(
+                    range.index - 1,
+                    range.length + 1,
+                    _quill2.default.sources.USER
+                  );
                 } else {
-                  this.quill.setSelection(range.index - 1, _quill2.default.sources.USER);
+                  this.quill.setSelection(
+                    range.index - 1,
+                    _quill2.default.sources.USER
+                  );
                 }
               } else {
                 if (shiftKey) {
-                  this.quill.setSelection(range.index, range.length + 1, _quill2.default.sources.USER);
+                  this.quill.setSelection(
+                    range.index,
+                    range.length + 1,
+                    _quill2.default.sources.USER
+                  );
                 } else {
-                  this.quill.setSelection(range.index + range.length + 1, _quill2.default.sources.USER);
+                  this.quill.setSelection(
+                    range.index + range.length + 1,
+                    _quill2.default.sources.USER
+                  );
                 }
               }
               return false;
@@ -5974,21 +7109,35 @@
             if (prev != null && prev.length() > 1) {
               var curFormats = line.formats();
               var prevFormats = this.quill.getFormat(range.index - 1, 1);
-              formats = _op2.default.attributes.diff(curFormats, prevFormats) || {};
+              formats =
+                _op2.default.attributes.diff(curFormats, prevFormats) || {};
             }
           }
           // Check for astral symbols
-          var length = /[\uD800-\uDBFF][\uDC00-\uDFFF]$/.test(context.prefix) ? 2 : 1;
-          this.quill.deleteText(range.index - length, length, _quill2.default.sources.USER);
+          var length = /[\uD800-\uDBFF][\uDC00-\uDFFF]$/.test(context.prefix)
+            ? 2
+            : 1;
+          this.quill.deleteText(
+            range.index - length,
+            length,
+            _quill2.default.sources.USER
+          );
           if (Object.keys(formats).length > 0) {
-            this.quill.formatLine(range.index - length, length, formats, _quill2.default.sources.USER);
+            this.quill.formatLine(
+              range.index - length,
+              length,
+              formats,
+              _quill2.default.sources.USER
+            );
           }
           this.quill.focus();
         }
 
         function handleDelete(range, context) {
           // Check for astral symbols
-          var length = /^[\uD800-\uDBFF][\uDC00-\uDFFF]/.test(context.suffix) ? 2 : 1;
+          var length = /^[\uD800-\uDBFF][\uDC00-\uDFFF]/.test(context.suffix)
+            ? 2
+            : 1;
           if (range.index >= this.quill.getLength() - length) return;
           var formats = {},
             nextLength = 0;
@@ -6005,13 +7154,23 @@
             if (next) {
               var curFormats = line.formats();
               var nextFormats = this.quill.getFormat(range.index, 1);
-              formats = _op2.default.attributes.diff(curFormats, nextFormats) || {};
+              formats =
+                _op2.default.attributes.diff(curFormats, nextFormats) || {};
               nextLength = next.length();
             }
           }
-          this.quill.deleteText(range.index, length, _quill2.default.sources.USER);
+          this.quill.deleteText(
+            range.index,
+            length,
+            _quill2.default.sources.USER
+          );
           if (Object.keys(formats).length > 0) {
-            this.quill.formatLine(range.index + nextLength - 1, length, formats, _quill2.default.sources.USER);
+            this.quill.formatLine(
+              range.index + nextLength - 1,
+              length,
+              formats,
+              _quill2.default.sources.USER
+            );
           }
         }
 
@@ -6021,11 +7180,17 @@
           if (lines.length > 1) {
             var firstFormats = lines[0].formats();
             var lastFormats = lines[lines.length - 1].formats();
-            formats = _op2.default.attributes.diff(lastFormats, firstFormats) || {};
+            formats =
+              _op2.default.attributes.diff(lastFormats, firstFormats) || {};
           }
           this.quill.deleteText(range, _quill2.default.sources.USER);
           if (Object.keys(formats).length > 0) {
-            this.quill.formatLine(range.index, 1, formats, _quill2.default.sources.USER);
+            this.quill.formatLine(
+              range.index,
+              1,
+              formats,
+              _quill2.default.sources.USER
+            );
           }
           this.quill.setSelection(range.index, _quill2.default.sources.SILENT);
           this.quill.focus();
@@ -6037,25 +7202,44 @@
           if (range.length > 0) {
             this.quill.scroll.deleteAt(range.index, range.length); // So we do not trigger text-change
           }
-          var lineFormats = Object.keys(context.format).reduce(function (lineFormats, format) {
+          var lineFormats = Object.keys(context.format).reduce(function (
+            lineFormats,
+            format
+          ) {
             if (
-              _parchment2.default.query(format, _parchment2.default.Scope.BLOCK) &&
+              _parchment2.default.query(
+                format,
+                _parchment2.default.Scope.BLOCK
+              ) &&
               !Array.isArray(context.format[format])
             ) {
               lineFormats[format] = context.format[format];
             }
             return lineFormats;
-          }, {});
-          this.quill.insertText(range.index, '\n', lineFormats, _quill2.default.sources.USER);
+          },
+          {});
+          this.quill.insertText(
+            range.index,
+            '\n',
+            lineFormats,
+            _quill2.default.sources.USER
+          );
           // Earlier scroll.deleteAt might have messed up our selection,
           // so insertText's built in selection preservation is not reliable
-          this.quill.setSelection(range.index + 1, _quill2.default.sources.SILENT);
+          this.quill.setSelection(
+            range.index + 1,
+            _quill2.default.sources.SILENT
+          );
           this.quill.focus();
           Object.keys(context.format).forEach(function (name) {
             if (lineFormats[name] != null) return;
             if (Array.isArray(context.format[name])) return;
             if (name === 'link') return;
-            _this3.quill.format(name, context.format[name], _quill2.default.sources.USER);
+            _this3.quill.format(
+              name,
+              context.format[name],
+              _quill2.default.sources.USER
+            );
           });
         }
 
@@ -6069,8 +7253,14 @@
               var index = range.index,
                 length = range.length;
 
-              var _quill$scroll$descend = this.quill.scroll.descendant(CodeBlock, index),
-                _quill$scroll$descend2 = _slicedToArray(_quill$scroll$descend, 2),
+              var _quill$scroll$descend = this.quill.scroll.descendant(
+                  CodeBlock,
+                  index
+                ),
+                _quill$scroll$descend2 = _slicedToArray(
+                  _quill$scroll$descend,
+                  2
+                ),
                 block = _quill$scroll$descend2[0],
                 offset = _quill$scroll$descend2[1];
 
@@ -6078,7 +7268,9 @@
               var scrollIndex = this.quill.getIndex(block);
               var start = block.newlineIndex(offset, true) + 1;
               var end = block.newlineIndex(scrollIndex + offset + length);
-              var lines = block.domNode.textContent.slice(start, end).split('\n');
+              var lines = block.domNode.textContent
+                .slice(start, end)
+                .split('\n');
               offset = 0;
               lines.forEach(function (line, i) {
                 if (indent) {
@@ -6101,7 +7293,11 @@
                 offset += line.length + 1;
               });
               this.quill.update(_quill2.default.sources.USER);
-              this.quill.setSelection(index, length, _quill2.default.sources.SILENT);
+              this.quill.setSelection(
+                index,
+                length,
+                _quill2.default.sources.SILENT
+              );
             },
           };
         }
@@ -6111,7 +7307,11 @@
             key: format[0].toUpperCase(),
             shortKey: true,
             handler: function handler(range, context) {
-              this.quill.format(format, !context.format[format], _quill2.default.sources.USER);
+              this.quill.format(
+                format,
+                !context.format[format],
+                _quill2.default.sources.USER
+              );
             },
           };
         }
@@ -6120,7 +7320,11 @@
           if (typeof binding === 'string' || typeof binding === 'number') {
             return normalize({ key: binding });
           }
-          if ((typeof binding === 'undefined' ? 'undefined' : _typeof(binding)) === 'object') {
+          if (
+            (typeof binding === 'undefined'
+              ? 'undefined'
+              : _typeof(binding)) === 'object'
+          ) {
             binding = (0, _clone2.default)(binding, false);
           }
           if (typeof binding.key === 'string') {
@@ -6159,7 +7363,11 @@
             var _d = false;
             var _e = undefined;
             try {
-              for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) {
+              for (
+                var _i = arr[Symbol.iterator](), _s;
+                !(_n = (_s = _i.next()).done);
+                _n = true
+              ) {
                 _arr.push(_s.value);
                 if (i && _arr.length === i) break;
               }
@@ -6181,7 +7389,9 @@
             } else if (Symbol.iterator in Object(arr)) {
               return sliceIterator(arr, i);
             } else {
-              throw new TypeError('Invalid attempt to destructure non-iterable instance');
+              throw new TypeError(
+                'Invalid attempt to destructure non-iterable instance'
+              );
             }
           };
         })();
@@ -6244,20 +7454,38 @@
 
         function _possibleConstructorReturn(self, call) {
           if (!self) {
-            throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+            throw new ReferenceError(
+              "this hasn't been initialised - super() hasn't been called"
+            );
           }
-          return call && (typeof call === 'object' || typeof call === 'function') ? call : self;
+          return call &&
+            (typeof call === 'object' || typeof call === 'function')
+            ? call
+            : self;
         }
 
         function _inherits(subClass, superClass) {
           if (typeof superClass !== 'function' && superClass !== null) {
-            throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass);
+            throw new TypeError(
+              'Super expression must either be null or a function, not ' +
+                typeof superClass
+            );
           }
-          subClass.prototype = Object.create(superClass && superClass.prototype, {
-            constructor: { value: subClass, enumerable: false, writable: true, configurable: true },
-          });
+          subClass.prototype = Object.create(
+            superClass && superClass.prototype,
+            {
+              constructor: {
+                value: subClass,
+                enumerable: false,
+                writable: true,
+                configurable: true,
+              },
+            }
+          );
           if (superClass)
-            Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : (subClass.__proto__ = superClass);
+            Object.setPrototypeOf
+              ? Object.setPrototypeOf(subClass, superClass)
+              : (subClass.__proto__ = superClass);
         }
 
         var Cursor = (function (_Parchment$Embed) {
@@ -6277,7 +7505,10 @@
 
             var _this = _possibleConstructorReturn(
               this,
-              (Cursor.__proto__ || Object.getPrototypeOf(Cursor)).call(this, domNode)
+              (Cursor.__proto__ || Object.getPrototypeOf(Cursor)).call(
+                this,
+                domNode
+              )
             );
 
             _this.selection = selection;
@@ -6300,14 +7531,18 @@
               value: function format(name, value) {
                 if (this._length !== 0) {
                   return _get(
-                    Cursor.prototype.__proto__ || Object.getPrototypeOf(Cursor.prototype),
+                    Cursor.prototype.__proto__ ||
+                      Object.getPrototypeOf(Cursor.prototype),
                     'format',
                     this
                   ).call(this, name, value);
                 }
                 var target = this,
                   index = 0;
-                while (target != null && target.statics.scope !== _parchment2.default.Scope.BLOCK_BLOT) {
+                while (
+                  target != null &&
+                  target.statics.scope !== _parchment2.default.Scope.BLOCK_BLOT
+                ) {
                   index += target.offset(target.parent);
                   target = target.parent;
                 }
@@ -6323,11 +7558,12 @@
               key: 'index',
               value: function index(node, offset) {
                 if (node === this.textNode) return 0;
-                return _get(Cursor.prototype.__proto__ || Object.getPrototypeOf(Cursor.prototype), 'index', this).call(
-                  this,
-                  node,
-                  offset
-                );
+                return _get(
+                  Cursor.prototype.__proto__ ||
+                    Object.getPrototypeOf(Cursor.prototype),
+                  'index',
+                  this
+                ).call(this, node, offset);
               },
             },
             {
@@ -6345,7 +7581,12 @@
             {
               key: 'remove',
               value: function remove() {
-                _get(Cursor.prototype.__proto__ || Object.getPrototypeOf(Cursor.prototype), 'remove', this).call(this);
+                _get(
+                  Cursor.prototype.__proto__ ||
+                    Object.getPrototypeOf(Cursor.prototype),
+                  'remove',
+                  this
+                ).call(this);
                 this.parent = null;
               },
             },
@@ -6358,15 +7599,25 @@
                 var restoreText = void 0,
                   start = void 0,
                   end = void 0;
-                if (range != null && range.start.node === textNode && range.end.node === textNode) {
+                if (
+                  range != null &&
+                  range.start.node === textNode &&
+                  range.end.node === textNode
+                ) {
                   var _ref = [textNode, range.start.offset, range.end.offset];
                   restoreText = _ref[0];
                   start = _ref[1];
                   end = _ref[2];
                 }
                 // Link format will insert text outside of anchor tag
-                while (this.domNode.lastChild != null && this.domNode.lastChild !== this.textNode) {
-                  this.domNode.parentNode.insertBefore(this.domNode.lastChild, this.domNode);
+                while (
+                  this.domNode.lastChild != null &&
+                  this.domNode.lastChild !== this.textNode
+                ) {
+                  this.domNode.parentNode.insertBefore(
+                    this.domNode.lastChild,
+                    this.domNode
+                  );
                 }
                 if (this.textNode.data !== Cursor.CONTENTS) {
                   var text = this.textNode.data.split(Cursor.CONTENTS).join('');
@@ -6376,7 +7627,10 @@
                     this.textNode.data = Cursor.CONTENTS;
                   } else {
                     this.textNode.data = text;
-                    this.parent.insertBefore(_parchment2.default.create(this.textNode), this);
+                    this.parent.insertBefore(
+                      _parchment2.default.create(this.textNode),
+                      this
+                    );
                     this.textNode = document.createTextNode(Cursor.CONTENTS);
                     this.domNode.appendChild(this.textNode);
                   }
@@ -6384,7 +7638,10 @@
                 this.remove();
                 if (start != null) {
                   var _map = [start, end].map(function (offset) {
-                    return Math.max(0, Math.min(restoreText.data.length, offset - 1));
+                    return Math.max(
+                      0,
+                      Math.min(restoreText.data.length, offset - 1)
+                    );
                   });
 
                   var _map2 = _slicedToArray(_map, 2);
@@ -6408,7 +7665,10 @@
 
                 if (
                   mutations.some(function (mutation) {
-                    return mutation.type === 'characterData' && mutation.target === _this2.textNode;
+                    return (
+                      mutation.type === 'characterData' &&
+                      mutation.target === _this2.textNode
+                    );
                   })
                 ) {
                   var range = this.restore();
@@ -6464,20 +7724,38 @@
 
         function _possibleConstructorReturn(self, call) {
           if (!self) {
-            throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+            throw new ReferenceError(
+              "this hasn't been initialised - super() hasn't been called"
+            );
           }
-          return call && (typeof call === 'object' || typeof call === 'function') ? call : self;
+          return call &&
+            (typeof call === 'object' || typeof call === 'function')
+            ? call
+            : self;
         }
 
         function _inherits(subClass, superClass) {
           if (typeof superClass !== 'function' && superClass !== null) {
-            throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass);
+            throw new TypeError(
+              'Super expression must either be null or a function, not ' +
+                typeof superClass
+            );
           }
-          subClass.prototype = Object.create(superClass && superClass.prototype, {
-            constructor: { value: subClass, enumerable: false, writable: true, configurable: true },
-          });
+          subClass.prototype = Object.create(
+            superClass && superClass.prototype,
+            {
+              constructor: {
+                value: subClass,
+                enumerable: false,
+                writable: true,
+                configurable: true,
+              },
+            }
+          );
           if (superClass)
-            Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : (subClass.__proto__ = superClass);
+            Object.setPrototypeOf
+              ? Object.setPrototypeOf(subClass, superClass)
+              : (subClass.__proto__ = superClass);
         }
 
         var Container = (function (_Parchment$Container) {
@@ -6488,14 +7766,21 @@
 
             return _possibleConstructorReturn(
               this,
-              (Container.__proto__ || Object.getPrototypeOf(Container)).apply(this, arguments)
+              (Container.__proto__ || Object.getPrototypeOf(Container)).apply(
+                this,
+                arguments
+              )
             );
           }
 
           return Container;
         })(_parchment2.default.Container);
 
-        Container.allowedChildren = [_block2.default, _block.BlockEmbed, Container];
+        Container.allowedChildren = [
+          _block2.default,
+          _block.BlockEmbed,
+          Container,
+        ];
 
         exports.default = Container;
 
@@ -6564,20 +7849,38 @@
 
         function _possibleConstructorReturn(self, call) {
           if (!self) {
-            throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+            throw new ReferenceError(
+              "this hasn't been initialised - super() hasn't been called"
+            );
           }
-          return call && (typeof call === 'object' || typeof call === 'function') ? call : self;
+          return call &&
+            (typeof call === 'object' || typeof call === 'function')
+            ? call
+            : self;
         }
 
         function _inherits(subClass, superClass) {
           if (typeof superClass !== 'function' && superClass !== null) {
-            throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass);
+            throw new TypeError(
+              'Super expression must either be null or a function, not ' +
+                typeof superClass
+            );
           }
-          subClass.prototype = Object.create(superClass && superClass.prototype, {
-            constructor: { value: subClass, enumerable: false, writable: true, configurable: true },
-          });
+          subClass.prototype = Object.create(
+            superClass && superClass.prototype,
+            {
+              constructor: {
+                value: subClass,
+                enumerable: false,
+                writable: true,
+                configurable: true,
+              },
+            }
+          );
           if (superClass)
-            Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : (subClass.__proto__ = superClass);
+            Object.setPrototypeOf
+              ? Object.setPrototypeOf(subClass, superClass)
+              : (subClass.__proto__ = superClass);
         }
 
         var ColorAttributor = (function (_Parchment$Attributor) {
@@ -6588,7 +7891,10 @@
 
             return _possibleConstructorReturn(
               this,
-              (ColorAttributor.__proto__ || Object.getPrototypeOf(ColorAttributor)).apply(this, arguments)
+              (
+                ColorAttributor.__proto__ ||
+                Object.getPrototypeOf(ColorAttributor)
+              ).apply(this, arguments)
             );
           }
 
@@ -6597,7 +7903,8 @@
               key: 'value',
               value: function value(domNode) {
                 var value = _get(
-                  ColorAttributor.prototype.__proto__ || Object.getPrototypeOf(ColorAttributor.prototype),
+                  ColorAttributor.prototype.__proto__ ||
+                    Object.getPrototypeOf(ColorAttributor.prototype),
                   'value',
                   this
                 ).call(this, domNode);
@@ -6608,7 +7915,9 @@
                   value
                     .split(',')
                     .map(function (component) {
-                      return ('00' + parseInt(component).toString(16)).slice(-2);
+                      return ('00' + parseInt(component).toString(16)).slice(
+                        -2
+                      );
                     })
                     .join('')
                 );
@@ -6619,9 +7928,13 @@
           return ColorAttributor;
         })(_parchment2.default.Attributor.Style);
 
-        var ColorClass = new _parchment2.default.Attributor.Class('color', 'ql-color', {
-          scope: _parchment2.default.Scope.INLINE,
-        });
+        var ColorClass = new _parchment2.default.Attributor.Class(
+          'color',
+          'ql-color',
+          {
+            scope: _parchment2.default.Scope.INLINE,
+          }
+        );
         var ColorStyle = new ColorAttributor('color', 'color', {
           scope: _parchment2.default.Scope.INLINE,
         });
@@ -6631,11 +7944,10 @@
         exports.ColorStyle = ColorStyle;
 
         /***/
-      },
+      } /* 28 */ /* 29 */,
       ,
       ,
-      /* 27 */ /* 28 */ /* 29 */
-      /***/ function (module, exports, __webpack_require__) {
+      /* 27 */ /***/ function (module, exports, __webpack_require__) {
         'use strict';
 
         Object.defineProperty(exports, '__esModule', {
@@ -6749,7 +8061,9 @@
           });
           ShadowBlot.create = function (value) {
             if (this.tagName == null) {
-              throw new Registry.ParchmentError('Blot definition missing tagName');
+              throw new Registry.ParchmentError(
+                'Blot definition missing tagName'
+              );
             }
             var node;
             if (Array.isArray(this.tagName)) {
@@ -6792,7 +8106,12 @@
             var blot = this.isolate(index, length);
             blot.remove();
           };
-          ShadowBlot.prototype.formatAt = function (index, length, name, value) {
+          ShadowBlot.prototype.formatAt = function (
+            index,
+            length,
+            name,
+            value
+          ) {
             var blot = this.isolate(index, length);
             if (Registry.query(name, Registry.Scope.BLOT) != null && value) {
               blot.wrap(name, value);
@@ -6803,7 +8122,10 @@
             }
           };
           ShadowBlot.prototype.insertAt = function (index, value, def) {
-            var blot = def == null ? Registry.create('text', value) : Registry.create(value, def);
+            var blot =
+              def == null
+                ? Registry.create('text', value)
+                : Registry.create(value, def);
             var ref = this.split(index);
             this.parent.insertBefore(blot, ref);
           };
@@ -6819,7 +8141,10 @@
             if (refBlot != null) {
               refDomNode = refBlot.domNode;
             }
-            if (this.domNode.parentNode != parentBlot.domNode || this.domNode.nextSibling != refDomNode) {
+            if (
+              this.domNode.parentNode != parentBlot.domNode ||
+              this.domNode.nextSibling != refDomNode
+            ) {
               parentBlot.domNode.insertBefore(this.domNode, refDomNode);
             }
             this.parent = parentBlot;
@@ -6860,7 +8185,8 @@
             target.remove();
           };
           ShadowBlot.prototype.replaceWith = function (name, value) {
-            var replacement = typeof name === 'string' ? Registry.create(name, value) : name;
+            var replacement =
+              typeof name === 'string' ? Registry.create(name, value) : name;
             replacement.replace(this);
             return replacement;
           };
@@ -6871,7 +8197,8 @@
             // Nothing to do by default
           };
           ShadowBlot.prototype.wrap = function (name, value) {
-            var wrapper = typeof name === 'string' ? Registry.create(name, value) : name;
+            var wrapper =
+              typeof name === 'string' ? Registry.create(name, value) : name;
             if (this.parent != null) {
               this.parent.insertBefore(wrapper, this.next);
             }
@@ -6948,10 +8275,14 @@
           };
           AttributorStore.prototype.values = function () {
             var _this = this;
-            return Object.keys(this.attributes).reduce(function (attributes, name) {
+            return Object.keys(this.attributes).reduce(function (
+              attributes,
+              name
+            ) {
               attributes[name] = _this.attributes[name].value(_this.domNode);
               return attributes;
-            }, {});
+            },
+            {});
           };
           return AttributorStore;
         })();
@@ -6980,7 +8311,10 @@
               function __() {
                 this.constructor = d;
               }
-              d.prototype = b === null ? Object.create(b) : ((__.prototype = b.prototype), new __());
+              d.prototype =
+                b === null
+                  ? Object.create(b)
+                  : ((__.prototype = b.prototype), new __());
             };
           })();
         Object.defineProperty(exports, '__esModule', { value: true });
@@ -6997,9 +8331,11 @@
             return (_super !== null && _super.apply(this, arguments)) || this;
           }
           ClassAttributor.keys = function (node) {
-            return (node.getAttribute('class') || '').split(/\s+/).map(function (name) {
-              return name.split('-').slice(0, -1).join('-');
-            });
+            return (node.getAttribute('class') || '')
+              .split(/\s+/)
+              .map(function (name) {
+                return name.split('-').slice(0, -1).join('-');
+              });
           };
           ClassAttributor.prototype.add = function (node, value) {
             if (!this.canAdd(node, value)) return false;
@@ -7048,7 +8384,10 @@
               function __() {
                 this.constructor = d;
               }
-              d.prototype = b === null ? Object.create(b) : ((__.prototype = b.prototype), new __());
+              d.prototype =
+                b === null
+                  ? Object.create(b)
+                  : ((__.prototype = b.prototype), new __());
             };
           })();
         Object.defineProperty(exports, '__esModule', { value: true });
@@ -7069,10 +8408,12 @@
             return (_super !== null && _super.apply(this, arguments)) || this;
           }
           StyleAttributor.keys = function (node) {
-            return (node.getAttribute('style') || '').split(';').map(function (value) {
-              var arr = value.split(':');
-              return arr[0].trim();
-            });
+            return (node.getAttribute('style') || '')
+              .split(';')
+              .map(function (value) {
+                var arr = value.split(':');
+                return arr[0].trim();
+              });
           };
           StyleAttributor.prototype.add = function (node, value) {
             if (!this.canAdd(node, value)) return false;
@@ -7154,8 +8495,13 @@
             {
               key: 'addModule',
               value: function addModule(name) {
-                var moduleClass = this.quill.constructor.import('modules/' + name);
-                this.modules[name] = new moduleClass(this.quill, this.options.modules[name] || {});
+                var moduleClass = this.quill.constructor.import(
+                  'modules/' + name
+                );
+                this.modules[name] = new moduleClass(
+                  this.quill,
+                  this.options.modules[name] || {}
+                );
                 return this.modules[name];
               },
             },
@@ -7241,20 +8587,38 @@
 
         function _possibleConstructorReturn(self, call) {
           if (!self) {
-            throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+            throw new ReferenceError(
+              "this hasn't been initialised - super() hasn't been called"
+            );
           }
-          return call && (typeof call === 'object' || typeof call === 'function') ? call : self;
+          return call &&
+            (typeof call === 'object' || typeof call === 'function')
+            ? call
+            : self;
         }
 
         function _inherits(subClass, superClass) {
           if (typeof superClass !== 'function' && superClass !== null) {
-            throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass);
+            throw new TypeError(
+              'Super expression must either be null or a function, not ' +
+                typeof superClass
+            );
           }
-          subClass.prototype = Object.create(superClass && superClass.prototype, {
-            constructor: { value: subClass, enumerable: false, writable: true, configurable: true },
-          });
+          subClass.prototype = Object.create(
+            superClass && superClass.prototype,
+            {
+              constructor: {
+                value: subClass,
+                enumerable: false,
+                writable: true,
+                configurable: true,
+              },
+            }
+          );
           if (superClass)
-            Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : (subClass.__proto__ = superClass);
+            Object.setPrototypeOf
+              ? Object.setPrototypeOf(subClass, superClass)
+              : (subClass.__proto__ = superClass);
         }
 
         var GUARD_TEXT = '\uFEFF';
@@ -7272,9 +8636,11 @@
 
             _this.contentNode = document.createElement('span');
             _this.contentNode.setAttribute('contenteditable', false);
-            [].slice.call(_this.domNode.childNodes).forEach(function (childNode) {
-              _this.contentNode.appendChild(childNode);
-            });
+            [].slice
+              .call(_this.domNode.childNodes)
+              .forEach(function (childNode) {
+                _this.contentNode.appendChild(childNode);
+              });
             _this.leftGuard = document.createTextNode(GUARD_TEXT);
             _this.rightGuard = document.createTextNode(GUARD_TEXT);
             _this.domNode.appendChild(_this.leftGuard);
@@ -7289,11 +8655,12 @@
               value: function index(node, offset) {
                 if (node === this.leftGuard) return 0;
                 if (node === this.rightGuard) return 1;
-                return _get(Embed.prototype.__proto__ || Object.getPrototypeOf(Embed.prototype), 'index', this).call(
-                  this,
-                  node,
-                  offset
-                );
+                return _get(
+                  Embed.prototype.__proto__ ||
+                    Object.getPrototypeOf(Embed.prototype),
+                  'index',
+                  this
+                ).call(this, node, offset);
               },
             },
             {
@@ -7312,7 +8679,10 @@
                     };
                   } else {
                     textNode = document.createTextNode(text);
-                    this.parent.insertBefore(_parchment2.default.create(textNode), this);
+                    this.parent.insertBefore(
+                      _parchment2.default.create(textNode),
+                      this
+                    );
                     range = {
                       startNode: textNode,
                       startOffset: text.length,
@@ -7327,7 +8697,10 @@
                     };
                   } else {
                     textNode = document.createTextNode(text);
-                    this.parent.insertBefore(_parchment2.default.create(textNode), this.next);
+                    this.parent.insertBefore(
+                      _parchment2.default.create(textNode),
+                      this.next
+                    );
                     range = {
                       startNode: textNode,
                       startOffset: text.length,
@@ -7346,7 +8719,8 @@
                 mutations.forEach(function (mutation) {
                   if (
                     mutation.type === 'characterData' &&
-                    (mutation.target === _this2.leftGuard || mutation.target === _this2.rightGuard)
+                    (mutation.target === _this2.leftGuard ||
+                      mutation.target === _this2.rightGuard)
                   ) {
                     var range = _this2.restore(mutation.target);
                     if (range) context.range = range;
@@ -7385,9 +8759,21 @@
           whitelist: ['right', 'center', 'justify'],
         };
 
-        var AlignAttribute = new _parchment2.default.Attributor.Attribute('align', 'align', config);
-        var AlignClass = new _parchment2.default.Attributor.Class('align', 'ql-align', config);
-        var AlignStyle = new _parchment2.default.Attributor.Style('align', 'text-align', config);
+        var AlignAttribute = new _parchment2.default.Attributor.Attribute(
+          'align',
+          'align',
+          config
+        );
+        var AlignClass = new _parchment2.default.Attributor.Class(
+          'align',
+          'ql-align',
+          config
+        );
+        var AlignStyle = new _parchment2.default.Attributor.Style(
+          'align',
+          'text-align',
+          config
+        );
 
         exports.AlignAttribute = AlignAttribute;
         exports.AlignClass = AlignClass;
@@ -7414,12 +8800,20 @@
           return obj && obj.__esModule ? obj : { default: obj };
         }
 
-        var BackgroundClass = new _parchment2.default.Attributor.Class('background', 'ql-bg', {
-          scope: _parchment2.default.Scope.INLINE,
-        });
-        var BackgroundStyle = new _color.ColorAttributor('background', 'background-color', {
-          scope: _parchment2.default.Scope.INLINE,
-        });
+        var BackgroundClass = new _parchment2.default.Attributor.Class(
+          'background',
+          'ql-bg',
+          {
+            scope: _parchment2.default.Scope.INLINE,
+          }
+        );
+        var BackgroundStyle = new _color.ColorAttributor(
+          'background',
+          'background-color',
+          {
+            scope: _parchment2.default.Scope.INLINE,
+          }
+        );
 
         exports.BackgroundClass = BackgroundClass;
         exports.BackgroundStyle = BackgroundStyle;
@@ -7448,9 +8842,21 @@
           whitelist: ['rtl'],
         };
 
-        var DirectionAttribute = new _parchment2.default.Attributor.Attribute('direction', 'dir', config);
-        var DirectionClass = new _parchment2.default.Attributor.Class('direction', 'ql-direction', config);
-        var DirectionStyle = new _parchment2.default.Attributor.Style('direction', 'direction', config);
+        var DirectionAttribute = new _parchment2.default.Attributor.Attribute(
+          'direction',
+          'dir',
+          config
+        );
+        var DirectionClass = new _parchment2.default.Attributor.Class(
+          'direction',
+          'ql-direction',
+          config
+        );
+        var DirectionStyle = new _parchment2.default.Attributor.Style(
+          'direction',
+          'direction',
+          config
+        );
 
         exports.DirectionAttribute = DirectionAttribute;
         exports.DirectionClass = DirectionClass;
@@ -7521,20 +8927,38 @@
 
         function _possibleConstructorReturn(self, call) {
           if (!self) {
-            throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+            throw new ReferenceError(
+              "this hasn't been initialised - super() hasn't been called"
+            );
           }
-          return call && (typeof call === 'object' || typeof call === 'function') ? call : self;
+          return call &&
+            (typeof call === 'object' || typeof call === 'function')
+            ? call
+            : self;
         }
 
         function _inherits(subClass, superClass) {
           if (typeof superClass !== 'function' && superClass !== null) {
-            throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass);
+            throw new TypeError(
+              'Super expression must either be null or a function, not ' +
+                typeof superClass
+            );
           }
-          subClass.prototype = Object.create(superClass && superClass.prototype, {
-            constructor: { value: subClass, enumerable: false, writable: true, configurable: true },
-          });
+          subClass.prototype = Object.create(
+            superClass && superClass.prototype,
+            {
+              constructor: {
+                value: subClass,
+                enumerable: false,
+                writable: true,
+                configurable: true,
+              },
+            }
+          );
           if (superClass)
-            Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : (subClass.__proto__ = superClass);
+            Object.setPrototypeOf
+              ? Object.setPrototypeOf(subClass, superClass)
+              : (subClass.__proto__ = superClass);
         }
 
         var config = {
@@ -7542,7 +8966,11 @@
           whitelist: ['serif', 'monospace'],
         };
 
-        var FontClass = new _parchment2.default.Attributor.Class('font', 'ql-font', config);
+        var FontClass = new _parchment2.default.Attributor.Class(
+          'font',
+          'ql-font',
+          config
+        );
 
         var FontStyleAttributor = (function (_Parchment$Attributor) {
           _inherits(FontStyleAttributor, _Parchment$Attributor);
@@ -7552,7 +8980,10 @@
 
             return _possibleConstructorReturn(
               this,
-              (FontStyleAttributor.__proto__ || Object.getPrototypeOf(FontStyleAttributor)).apply(this, arguments)
+              (
+                FontStyleAttributor.__proto__ ||
+                Object.getPrototypeOf(FontStyleAttributor)
+              ).apply(this, arguments)
             );
           }
 
@@ -7561,7 +8992,8 @@
               key: 'value',
               value: function value(node) {
                 return _get(
-                  FontStyleAttributor.prototype.__proto__ || Object.getPrototypeOf(FontStyleAttributor.prototype),
+                  FontStyleAttributor.prototype.__proto__ ||
+                    Object.getPrototypeOf(FontStyleAttributor.prototype),
                   'value',
                   this
                 )
@@ -7598,23 +9030,30 @@
           return obj && obj.__esModule ? obj : { default: obj };
         }
 
-        var SizeClass = new _parchment2.default.Attributor.Class('size', 'ql-size', {
-          scope: _parchment2.default.Scope.INLINE,
-          whitelist: ['small', 'large', 'huge'],
-        });
-        var SizeStyle = new _parchment2.default.Attributor.Style('size', 'font-size', {
-          scope: _parchment2.default.Scope.INLINE,
-          whitelist: ['10px', '18px', '32px'],
-        });
+        var SizeClass = new _parchment2.default.Attributor.Class(
+          'size',
+          'ql-size',
+          {
+            scope: _parchment2.default.Scope.INLINE,
+            whitelist: ['small', 'large', 'huge'],
+          }
+        );
+        var SizeStyle = new _parchment2.default.Attributor.Style(
+          'size',
+          'font-size',
+          {
+            scope: _parchment2.default.Scope.INLINE,
+            whitelist: ['10px', '18px', '32px'],
+          }
+        );
 
         exports.SizeClass = SizeClass;
         exports.SizeStyle = SizeStyle;
 
         /***/
-      },
+      } /* 42 */,
       ,
-      /* 41 */ /* 42 */
-      /***/ function (module, exports, __webpack_require__) {
+      /* 41 */ /***/ function (module, exports, __webpack_require__) {
         'use strict';
 
         Object.defineProperty(exports, '__esModule', {
@@ -7663,20 +9102,38 @@
 
         function _possibleConstructorReturn(self, call) {
           if (!self) {
-            throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+            throw new ReferenceError(
+              "this hasn't been initialised - super() hasn't been called"
+            );
           }
-          return call && (typeof call === 'object' || typeof call === 'function') ? call : self;
+          return call &&
+            (typeof call === 'object' || typeof call === 'function')
+            ? call
+            : self;
         }
 
         function _inherits(subClass, superClass) {
           if (typeof superClass !== 'function' && superClass !== null) {
-            throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass);
+            throw new TypeError(
+              'Super expression must either be null or a function, not ' +
+                typeof superClass
+            );
           }
-          subClass.prototype = Object.create(superClass && superClass.prototype, {
-            constructor: { value: subClass, enumerable: false, writable: true, configurable: true },
-          });
+          subClass.prototype = Object.create(
+            superClass && superClass.prototype,
+            {
+              constructor: {
+                value: subClass,
+                enumerable: false,
+                writable: true,
+                configurable: true,
+              },
+            }
+          );
           if (superClass)
-            Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : (subClass.__proto__ = superClass);
+            Object.setPrototypeOf
+              ? Object.setPrototypeOf(subClass, superClass)
+              : (subClass.__proto__ = superClass);
         }
 
         var History = (function (_Module) {
@@ -7687,24 +9144,47 @@
 
             var _this = _possibleConstructorReturn(
               this,
-              (History.__proto__ || Object.getPrototypeOf(History)).call(this, quill, options)
+              (History.__proto__ || Object.getPrototypeOf(History)).call(
+                this,
+                quill,
+                options
+              )
             );
 
             _this.lastRecorded = 0;
             _this.ignoreChange = false;
             _this.clear();
-            _this.quill.on(_quill2.default.events.EDITOR_CHANGE, function (eventName, delta, oldDelta, source) {
-              if (eventName !== _quill2.default.events.TEXT_CHANGE || _this.ignoreChange) return;
-              if (!_this.options.userOnly || source === _quill2.default.sources.USER) {
-                _this.record(delta, oldDelta);
-              } else {
-                _this.transform(delta);
+            _this.quill.on(
+              _quill2.default.events.EDITOR_CHANGE,
+              function (eventName, delta, oldDelta, source) {
+                if (
+                  eventName !== _quill2.default.events.TEXT_CHANGE ||
+                  _this.ignoreChange
+                )
+                  return;
+                if (
+                  !_this.options.userOnly ||
+                  source === _quill2.default.sources.USER
+                ) {
+                  _this.record(delta, oldDelta);
+                } else {
+                  _this.transform(delta);
+                }
               }
-            });
-            _this.quill.keyboard.addBinding({ key: 'Z', shortKey: true }, _this.undo.bind(_this));
-            _this.quill.keyboard.addBinding({ key: 'Z', shortKey: true, shiftKey: true }, _this.redo.bind(_this));
+            );
+            _this.quill.keyboard.addBinding(
+              { key: 'Z', shortKey: true },
+              _this.undo.bind(_this)
+            );
+            _this.quill.keyboard.addBinding(
+              { key: 'Z', shortKey: true, shiftKey: true },
+              _this.redo.bind(_this)
+            );
             if (/Win/i.test(navigator.platform)) {
-              _this.quill.keyboard.addBinding({ key: 'Y', shortKey: true }, _this.redo.bind(_this));
+              _this.quill.keyboard.addBinding(
+                { key: 'Y', shortKey: true },
+                _this.redo.bind(_this)
+              );
             }
             return _this;
           }
@@ -7718,7 +9198,10 @@
                 this.stack[dest].push(delta);
                 this.lastRecorded = 0;
                 this.ignoreChange = true;
-                this.quill.updateContents(delta[source], _quill2.default.sources.USER);
+                this.quill.updateContents(
+                  delta[source],
+                  _quill2.default.sources.USER
+                );
                 this.ignoreChange = false;
                 var index = getLastChangeIndex(delta[source]);
                 this.quill.setSelection(index);
@@ -7743,7 +9226,10 @@
                 this.stack.redo = [];
                 var undoDelta = this.quill.getContents().diff(oldDelta);
                 var timestamp = Date.now();
-                if (this.lastRecorded + this.options.delay > timestamp && this.stack.undo.length > 0) {
+                if (
+                  this.lastRecorded + this.options.delay > timestamp &&
+                  this.stack.undo.length > 0
+                ) {
                   var delta = this.stack.undo.pop();
                   undoDelta = undoDelta.compose(delta.undo);
                   changeDelta = delta.redo.compose(changeDelta);
@@ -7799,11 +9285,18 @@
           var lastOp = delta.ops[delta.ops.length - 1];
           if (lastOp == null) return false;
           if (lastOp.insert != null) {
-            return typeof lastOp.insert === 'string' && lastOp.insert.endsWith('\n');
+            return (
+              typeof lastOp.insert === 'string' && lastOp.insert.endsWith('\n')
+            );
           }
           if (lastOp.attributes != null) {
             return Object.keys(lastOp.attributes).some(function (attr) {
-              return _parchment2.default.query(attr, _parchment2.default.Scope.BLOCK) != null;
+              return (
+                _parchment2.default.query(
+                  attr,
+                  _parchment2.default.Scope.BLOCK
+                ) != null
+              );
             });
           }
           return false;
@@ -7825,10 +9318,9 @@
         exports.getLastChangeIndex = getLastChangeIndex;
 
         /***/
-      },
+      } /* 44 */,
       ,
-      /* 43 */ /* 44 */
-      /***/ function (module, exports, __webpack_require__) {
+      /* 43 */ /***/ function (module, exports, __webpack_require__) {
         'use strict';
 
         Object.defineProperty(exports, '__esModule', { value: true });
@@ -7914,7 +9406,12 @@
               next = this.iterator();
             while ((cur = next())) {
               var length = cur.length();
-              if (index < length || (inclusive && index === length && (cur.next == null || cur.next.length() !== 0))) {
+              if (
+                index < length ||
+                (inclusive &&
+                  index === length &&
+                  (cur.next == null || cur.next.length() !== 0))
+              ) {
                 return [cur, index];
               }
               index -= length;
@@ -7939,9 +9436,17 @@
             while ((cur = next()) && curIndex < index + length) {
               var curLength = cur.length();
               if (index > curIndex) {
-                callback(cur, index - curIndex, Math.min(length, curIndex + curLength - index));
+                callback(
+                  cur,
+                  index - curIndex,
+                  Math.min(length, curIndex + curLength - index)
+                );
               } else {
-                callback(cur, 0, Math.min(curLength, index + length - curIndex));
+                callback(
+                  cur,
+                  0,
+                  Math.min(curLength, index + length - curIndex)
+                );
               }
               curIndex += curLength;
             }
@@ -7987,7 +9492,10 @@
               function __() {
                 this.constructor = d;
               }
-              d.prototype = b === null ? Object.create(b) : ((__.prototype = b.prototype), new __());
+              d.prototype =
+                b === null
+                  ? Object.create(b)
+                  : ((__.prototype = b.prototype), new __());
             };
           })();
         Object.defineProperty(exports, '__esModule', { value: true });
@@ -8027,7 +9535,12 @@
               _super.prototype.deleteAt.call(this, index, length);
             }
           };
-          ScrollBlot.prototype.formatAt = function (index, length, name, value) {
+          ScrollBlot.prototype.formatAt = function (
+            index,
+            length,
+            name,
+            value
+          ) {
             this.update();
             _super.prototype.formatAt.call(this, index, length, name, value);
           };
@@ -8081,7 +9594,9 @@
             var remaining = mutations;
             for (var i = 0; remaining.length > 0; i += 1) {
               if (i >= MAX_OPTIMIZE_ITERATIONS) {
-                throw new Error('[Parchment] Maximum optimize iterations reached');
+                throw new Error(
+                  '[Parchment] Maximum optimize iterations reached'
+                );
               }
               remaining.forEach(function (mutation) {
                 var blot = Registry.find(mutation.target, true);
@@ -8141,12 +9656,19 @@
                 )
                   return;
                 // @ts-ignore
-                blot.update(blot.domNode[Registry.DATA_KEY].mutations || [], context);
+                blot.update(
+                  blot.domNode[Registry.DATA_KEY].mutations || [],
+                  context
+                );
               });
             // @ts-ignore
             if (this.domNode[Registry.DATA_KEY].mutations != null) {
               // @ts-ignore
-              _super.prototype.update.call(this, this.domNode[Registry.DATA_KEY].mutations, context);
+              _super.prototype.update.call(
+                this,
+                this.domNode[Registry.DATA_KEY].mutations,
+                context
+              );
             }
             this.optimize(mutations, context);
           };
@@ -8181,7 +9703,10 @@
               function __() {
                 this.constructor = d;
               }
-              d.prototype = b === null ? Object.create(b) : ((__.prototype = b.prototype), new __());
+              d.prototype =
+                b === null
+                  ? Object.create(b)
+                  : ((__.prototype = b.prototype), new __());
             };
           })();
         Object.defineProperty(exports, '__esModule', { value: true });
@@ -8189,7 +9714,8 @@
         var Registry = __webpack_require__(1);
         // Shallow object comparison
         function isEqual(obj1, obj2) {
-          if (Object.keys(obj1).length !== Object.keys(obj2).length) return false;
+          if (Object.keys(obj1).length !== Object.keys(obj2).length)
+            return false;
           // @ts-ignore
           for (var prop in obj1) {
             // @ts-ignore
@@ -8220,8 +9746,16 @@
               _super.prototype.format.call(this, name, value);
             }
           };
-          InlineBlot.prototype.formatAt = function (index, length, name, value) {
-            if (this.formats()[name] != null || Registry.query(name, Registry.Scope.ATTRIBUTE)) {
+          InlineBlot.prototype.formatAt = function (
+            index,
+            length,
+            name,
+            value
+          ) {
+            if (
+              this.formats()[name] != null ||
+              Registry.query(name, Registry.Scope.ATTRIBUTE)
+            ) {
               var blot = this.isolate(index, length);
               blot.format(name, value);
             } else {
@@ -8235,7 +9769,11 @@
               return this.unwrap(); // unformatted span
             }
             var next = this.next;
-            if (next instanceof InlineBlot && next.prev === this && isEqual(formats, next.formats())) {
+            if (
+              next instanceof InlineBlot &&
+              next.prev === this &&
+              isEqual(formats, next.formats())
+            ) {
               next.moveChildren(this);
               next.remove();
             }
@@ -8270,7 +9808,10 @@
               function __() {
                 this.constructor = d;
               }
-              d.prototype = b === null ? Object.create(b) : ((__.prototype = b.prototype), new __());
+              d.prototype =
+                b === null
+                  ? Object.create(b)
+                  : ((__.prototype = b.prototype), new __());
             };
           })();
         Object.defineProperty(exports, '__esModule', { value: true });
@@ -8303,7 +9844,10 @@
             }
           };
           BlockBlot.prototype.insertAt = function (index, value, def) {
-            if (def == null || Registry.query(value, Registry.Scope.INLINE) != null) {
+            if (
+              def == null ||
+              Registry.query(value, Registry.Scope.INLINE) != null
+            ) {
               // Insert text or inline
               _super.prototype.insertAt.call(this, index, value, def);
             } else {
@@ -8349,7 +9893,10 @@
               function __() {
                 this.constructor = d;
               }
-              d.prototype = b === null ? Object.create(b) : ((__.prototype = b.prototype), new __());
+              d.prototype =
+                b === null
+                  ? Object.create(b)
+                  : ((__.prototype = b.prototype), new __());
             };
           })();
         Object.defineProperty(exports, '__esModule', { value: true });
@@ -8405,7 +9952,10 @@
               function __() {
                 this.constructor = d;
               }
-              d.prototype = b === null ? Object.create(b) : ((__.prototype = b.prototype), new __());
+              d.prototype =
+                b === null
+                  ? Object.create(b)
+                  : ((__.prototype = b.prototype), new __());
             };
           })();
         Object.defineProperty(exports, '__esModule', { value: true });
@@ -8428,7 +9978,8 @@
             return text;
           };
           TextBlot.prototype.deleteAt = function (index, length) {
-            this.domNode.data = this.text = this.text.slice(0, index) + this.text.slice(index + length);
+            this.domNode.data = this.text =
+              this.text.slice(0, index) + this.text.slice(index + length);
           };
           TextBlot.prototype.index = function (node, offset) {
             if (this.domNode === node) {
@@ -8438,7 +9989,8 @@
           };
           TextBlot.prototype.insertAt = function (index, value, def) {
             if (def == null) {
-              this.text = this.text.slice(0, index) + value + this.text.slice(index);
+              this.text =
+                this.text.slice(0, index) + value + this.text.slice(index);
               this.domNode.data = this.text;
             } else {
               _super.prototype.insertAt.call(this, index, value, def);
@@ -8452,7 +10004,10 @@
             this.text = this.statics.value(this.domNode);
             if (this.text.length === 0) {
               this.remove();
-            } else if (this.next instanceof TextBlot && this.next.prev === this) {
+            } else if (
+              this.next instanceof TextBlot &&
+              this.next.prev === this
+            ) {
               this.insertAt(this.length(), this.next.value());
               this.next.remove();
             }
@@ -8480,7 +10035,10 @@
             var _this = this;
             if (
               mutations.some(function (mutation) {
-                return mutation.type === 'characterData' && mutation.target === _this.domNode;
+                return (
+                  mutation.type === 'characterData' &&
+                  mutation.target === _this.domNode
+                );
               })
             ) {
               this.text = this.statics.value(this.domNode);
@@ -8542,7 +10100,9 @@
           Object.defineProperty(Array.prototype, 'find', {
             value: function value(predicate) {
               if (this === null) {
-                throw new TypeError('Array.prototype.find called on null or undefined');
+                throw new TypeError(
+                  'Array.prototype.find called on null or undefined'
+                );
               }
               if (typeof predicate !== 'function') {
                 throw new TypeError('predicate must be a function');
@@ -8766,13 +10326,20 @@
             for (var k1 = -d + k1start; k1 <= d - k1end; k1 += 2) {
               var k1_offset = v_offset + k1;
               var x1;
-              if (k1 == -d || (k1 != d && v1[k1_offset - 1] < v1[k1_offset + 1])) {
+              if (
+                k1 == -d ||
+                (k1 != d && v1[k1_offset - 1] < v1[k1_offset + 1])
+              ) {
                 x1 = v1[k1_offset + 1];
               } else {
                 x1 = v1[k1_offset - 1] + 1;
               }
               var y1 = x1 - k1;
-              while (x1 < text1_length && y1 < text2_length && text1.charAt(x1) == text2.charAt(y1)) {
+              while (
+                x1 < text1_length &&
+                y1 < text2_length &&
+                text1.charAt(x1) == text2.charAt(y1)
+              ) {
                 x1++;
                 y1++;
               }
@@ -8785,7 +10352,11 @@
                 k1start += 2;
               } else if (front) {
                 var k2_offset = v_offset + delta - k1;
-                if (k2_offset >= 0 && k2_offset < v_length && v2[k2_offset] != -1) {
+                if (
+                  k2_offset >= 0 &&
+                  k2_offset < v_length &&
+                  v2[k2_offset] != -1
+                ) {
                   // Mirror x2 onto top-left coordinate system.
                   var x2 = text1_length - v2[k2_offset];
                   if (x1 >= x2) {
@@ -8800,7 +10371,10 @@
             for (var k2 = -d + k2start; k2 <= d - k2end; k2 += 2) {
               var k2_offset = v_offset + k2;
               var x2;
-              if (k2 == -d || (k2 != d && v2[k2_offset - 1] < v2[k2_offset + 1])) {
+              if (
+                k2 == -d ||
+                (k2 != d && v2[k2_offset - 1] < v2[k2_offset + 1])
+              ) {
                 x2 = v2[k2_offset + 1];
               } else {
                 x2 = v2[k2_offset - 1] + 1;
@@ -8809,7 +10383,8 @@
               while (
                 x2 < text1_length &&
                 y2 < text2_length &&
-                text1.charAt(text1_length - x2 - 1) == text2.charAt(text2_length - y2 - 1)
+                text1.charAt(text1_length - x2 - 1) ==
+                  text2.charAt(text2_length - y2 - 1)
               ) {
                 x2++;
                 y2++;
@@ -8823,7 +10398,11 @@
                 k2start += 2;
               } else if (!front) {
                 var k1_offset = v_offset + delta - k2;
-                if (k1_offset >= 0 && k1_offset < v_length && v1[k1_offset] != -1) {
+                if (
+                  k1_offset >= 0 &&
+                  k1_offset < v_length &&
+                  v1[k1_offset] != -1
+                ) {
                   var x1 = v1[k1_offset];
                   var y1 = v_offset + x1 - k1_offset;
                   // Mirror x2 onto top-left coordinate system.
@@ -8885,7 +10464,10 @@
           var pointermid = pointermax;
           var pointerstart = 0;
           while (pointermin < pointermid) {
-            if (text1.substring(pointerstart, pointermid) == text2.substring(pointerstart, pointermid)) {
+            if (
+              text1.substring(pointerstart, pointermid) ==
+              text2.substring(pointerstart, pointermid)
+            ) {
               pointermin = pointermid;
               pointerstart = pointermin;
             } else {
@@ -8904,7 +10486,11 @@
          */
         function diff_commonSuffix(text1, text2) {
           // Quick check for common null cases.
-          if (!text1 || !text2 || text1.charAt(text1.length - 1) != text2.charAt(text2.length - 1)) {
+          if (
+            !text1 ||
+            !text2 ||
+            text1.charAt(text1.length - 1) != text2.charAt(text2.length - 1)
+          ) {
             return 0;
           }
           // Binary search.
@@ -8915,8 +10501,14 @@
           var pointerend = 0;
           while (pointermin < pointermid) {
             if (
-              text1.substring(text1.length - pointermid, text1.length - pointerend) ==
-              text2.substring(text2.length - pointermid, text2.length - pointerend)
+              text1.substring(
+                text1.length - pointermid,
+                text1.length - pointerend
+              ) ==
+              text2.substring(
+                text2.length - pointermid,
+                text2.length - pointerend
+              )
             ) {
               pointermin = pointermid;
               pointerend = pointermin;
@@ -8959,15 +10551,29 @@
            */
           function diff_halfMatchI_(longtext, shorttext, i) {
             // Start with a 1/4 length substring at position i as a seed.
-            var seed = longtext.substring(i, i + Math.floor(longtext.length / 4));
+            var seed = longtext.substring(
+              i,
+              i + Math.floor(longtext.length / 4)
+            );
             var j = -1;
             var best_common = '';
-            var best_longtext_a, best_longtext_b, best_shorttext_a, best_shorttext_b;
+            var best_longtext_a,
+              best_longtext_b,
+              best_shorttext_a,
+              best_shorttext_b;
             while ((j = shorttext.indexOf(seed, j + 1)) != -1) {
-              var prefixLength = diff_commonPrefix(longtext.substring(i), shorttext.substring(j));
-              var suffixLength = diff_commonSuffix(longtext.substring(0, i), shorttext.substring(0, j));
+              var prefixLength = diff_commonPrefix(
+                longtext.substring(i),
+                shorttext.substring(j)
+              );
+              var suffixLength = diff_commonSuffix(
+                longtext.substring(0, i),
+                shorttext.substring(0, j)
+              );
               if (best_common.length < suffixLength + prefixLength) {
-                best_common = shorttext.substring(j - suffixLength, j) + shorttext.substring(j, j + prefixLength);
+                best_common =
+                  shorttext.substring(j - suffixLength, j) +
+                  shorttext.substring(j, j + prefixLength);
                 best_longtext_a = longtext.substring(0, i - suffixLength);
                 best_longtext_b = longtext.substring(i + prefixLength);
                 best_shorttext_a = shorttext.substring(0, j - suffixLength);
@@ -8975,16 +10581,30 @@
               }
             }
             if (best_common.length * 2 >= longtext.length) {
-              return [best_longtext_a, best_longtext_b, best_shorttext_a, best_shorttext_b, best_common];
+              return [
+                best_longtext_a,
+                best_longtext_b,
+                best_shorttext_a,
+                best_shorttext_b,
+                best_common,
+              ];
             } else {
               return null;
             }
           }
 
           // First check if the second quarter is the seed for a half-match.
-          var hm1 = diff_halfMatchI_(longtext, shorttext, Math.ceil(longtext.length / 4));
+          var hm1 = diff_halfMatchI_(
+            longtext,
+            shorttext,
+            Math.ceil(longtext.length / 4)
+          );
           // Check again based on the third quarter.
-          var hm2 = diff_halfMatchI_(longtext, shorttext, Math.ceil(longtext.length / 2));
+          var hm2 = diff_halfMatchI_(
+            longtext,
+            shorttext,
+            Math.ceil(longtext.length / 2)
+          );
           var hm;
           if (!hm1 && !hm2) {
             return null;
@@ -9048,11 +10668,17 @@
                     if (commonlength !== 0) {
                       if (
                         pointer - count_delete - count_insert > 0 &&
-                        diffs[pointer - count_delete - count_insert - 1][0] == DIFF_EQUAL
+                        diffs[pointer - count_delete - count_insert - 1][0] ==
+                          DIFF_EQUAL
                       ) {
-                        diffs[pointer - count_delete - count_insert - 1][1] += text_insert.substring(0, commonlength);
+                        diffs[
+                          pointer - count_delete - count_insert - 1
+                        ][1] += text_insert.substring(0, commonlength);
                       } else {
-                        diffs.splice(0, 0, [DIFF_EQUAL, text_insert.substring(0, commonlength)]);
+                        diffs.splice(0, 0, [
+                          DIFF_EQUAL,
+                          text_insert.substring(0, commonlength),
+                        ]);
                         pointer++;
                       }
                       text_insert = text_insert.substring(commonlength);
@@ -9061,16 +10687,33 @@
                     // Factor out any common suffixies.
                     commonlength = diff_commonSuffix(text_insert, text_delete);
                     if (commonlength !== 0) {
-                      diffs[pointer][1] = text_insert.substring(text_insert.length - commonlength) + diffs[pointer][1];
-                      text_insert = text_insert.substring(0, text_insert.length - commonlength);
-                      text_delete = text_delete.substring(0, text_delete.length - commonlength);
+                      diffs[pointer][1] =
+                        text_insert.substring(
+                          text_insert.length - commonlength
+                        ) + diffs[pointer][1];
+                      text_insert = text_insert.substring(
+                        0,
+                        text_insert.length - commonlength
+                      );
+                      text_delete = text_delete.substring(
+                        0,
+                        text_delete.length - commonlength
+                      );
                     }
                   }
                   // Delete the offending records and add the merged ones.
                   if (count_delete === 0) {
-                    diffs.splice(pointer - count_insert, count_delete + count_insert, [DIFF_INSERT, text_insert]);
+                    diffs.splice(
+                      pointer - count_insert,
+                      count_delete + count_insert,
+                      [DIFF_INSERT, text_insert]
+                    );
                   } else if (count_insert === 0) {
-                    diffs.splice(pointer - count_delete, count_delete + count_insert, [DIFF_DELETE, text_delete]);
+                    diffs.splice(
+                      pointer - count_delete,
+                      count_delete + count_insert,
+                      [DIFF_DELETE, text_delete]
+                    );
                   } else {
                     diffs.splice(
                       pointer - count_delete - count_insert,
@@ -9079,8 +10722,17 @@
                       [DIFF_INSERT, text_insert]
                     );
                   }
-                  pointer = pointer - count_delete - count_insert + (count_delete ? 1 : 0) + (count_insert ? 1 : 0) + 1;
-                } else if (pointer !== 0 && diffs[pointer - 1][0] == DIFF_EQUAL) {
+                  pointer =
+                    pointer -
+                    count_delete -
+                    count_insert +
+                    (count_delete ? 1 : 0) +
+                    (count_insert ? 1 : 0) +
+                    1;
+                } else if (
+                  pointer !== 0 &&
+                  diffs[pointer - 1][0] == DIFF_EQUAL
+                ) {
                   // Merge this equality with the previous one.
                   diffs[pointer - 1][1] += diffs[pointer][1];
                   diffs.splice(pointer, 1);
@@ -9105,23 +10757,36 @@
           pointer = 1;
           // Intentionally ignore the first and last element (don't need checking).
           while (pointer < diffs.length - 1) {
-            if (diffs[pointer - 1][0] == DIFF_EQUAL && diffs[pointer + 1][0] == DIFF_EQUAL) {
+            if (
+              diffs[pointer - 1][0] == DIFF_EQUAL &&
+              diffs[pointer + 1][0] == DIFF_EQUAL
+            ) {
               // This is a single edit surrounded by equalities.
               if (
-                diffs[pointer][1].substring(diffs[pointer][1].length - diffs[pointer - 1][1].length) ==
-                diffs[pointer - 1][1]
+                diffs[pointer][1].substring(
+                  diffs[pointer][1].length - diffs[pointer - 1][1].length
+                ) == diffs[pointer - 1][1]
               ) {
                 // Shift the edit over the previous equality.
                 diffs[pointer][1] =
                   diffs[pointer - 1][1] +
-                  diffs[pointer][1].substring(0, diffs[pointer][1].length - diffs[pointer - 1][1].length);
-                diffs[pointer + 1][1] = diffs[pointer - 1][1] + diffs[pointer + 1][1];
+                  diffs[pointer][1].substring(
+                    0,
+                    diffs[pointer][1].length - diffs[pointer - 1][1].length
+                  );
+                diffs[pointer + 1][1] =
+                  diffs[pointer - 1][1] + diffs[pointer + 1][1];
                 diffs.splice(pointer - 1, 1);
                 changes = true;
-              } else if (diffs[pointer][1].substring(0, diffs[pointer + 1][1].length) == diffs[pointer + 1][1]) {
+              } else if (
+                diffs[pointer][1].substring(0, diffs[pointer + 1][1].length) ==
+                diffs[pointer + 1][1]
+              ) {
                 // Shift the edit over the next equality.
                 diffs[pointer - 1][1] += diffs[pointer + 1][1];
-                diffs[pointer][1] = diffs[pointer][1].substring(diffs[pointer + 1][1].length) + diffs[pointer + 1][1];
+                diffs[pointer][1] =
+                  diffs[pointer][1].substring(diffs[pointer + 1][1].length) +
+                  diffs[pointer + 1][1];
                 diffs.splice(pointer + 1, 1);
                 changes = true;
               }
@@ -9251,7 +10916,10 @@
             return str.charCodeAt(0) >= 0xdc00 && str.charCodeAt(0) <= 0xdfff;
           };
           var ends_with_pair_start = function (str) {
-            return str.charCodeAt(str.length - 1) >= 0xd800 && str.charCodeAt(str.length - 1) <= 0xdbff;
+            return (
+              str.charCodeAt(str.length - 1) >= 0xd800 &&
+              str.charCodeAt(str.length - 1) <= 0xdbff
+            );
           };
           for (var i = 2; i < diffs.length; i += 1) {
             if (
@@ -9309,7 +10977,8 @@
       },
       /* 52 */
       /***/ function (module, exports) {
-        exports = module.exports = typeof Object.keys === 'function' ? Object.keys : shim;
+        exports = module.exports =
+          typeof Object.keys === 'function' ? Object.keys : shim;
 
         exports.shim = shim;
         function shim(obj) {
@@ -9327,7 +10996,9 @@
             return Object.prototype.toString.call(arguments);
           })() == '[object Arguments]';
 
-        exports = module.exports = supportsArgumentsClass ? supported : unsupported;
+        exports = module.exports = supportsArgumentsClass
+          ? supported
+          : unsupported;
 
         exports.supported = supported;
         function supported(object) {
@@ -9423,7 +11094,8 @@
           if (this._eventsCount === 0) return names;
 
           for (name in (events = this._events)) {
-            if (has.call(events, name)) names.push(prefix ? name.slice(1) : name);
+            if (has.call(events, name))
+              names.push(prefix ? name.slice(1) : name);
           }
 
           if (Object.getOwnPropertySymbols) {
@@ -9474,7 +11146,8 @@
             i;
 
           if (listeners.fn) {
-            if (listeners.once) this.removeListener(event, listeners.fn, undefined, true);
+            if (listeners.once)
+              this.removeListener(event, listeners.fn, undefined, true);
 
             switch (len) {
               case 1:
@@ -9486,9 +11159,13 @@
               case 4:
                 return listeners.fn.call(listeners.context, a1, a2, a3), true;
               case 5:
-                return listeners.fn.call(listeners.context, a1, a2, a3, a4), true;
+                return (
+                  listeners.fn.call(listeners.context, a1, a2, a3, a4), true
+                );
               case 6:
-                return listeners.fn.call(listeners.context, a1, a2, a3, a4, a5), true;
+                return (
+                  listeners.fn.call(listeners.context, a1, a2, a3, a4, a5), true
+                );
             }
 
             for (i = 1, args = new Array(len - 1); i < len; i++) {
@@ -9501,7 +11178,8 @@
               j;
 
             for (i = 0; i < length; i++) {
-              if (listeners[i].once) this.removeListener(event, listeners[i].fn, undefined, true);
+              if (listeners[i].once)
+                this.removeListener(event, listeners[i].fn, undefined, true);
 
               switch (len) {
                 case 1:
@@ -9543,7 +11221,8 @@
           var listener = new EE(fn, context || this),
             evt = prefix ? prefix + event : event;
 
-          if (!this._events[evt]) (this._events[evt] = listener), this._eventsCount++;
+          if (!this._events[evt])
+            (this._events[evt] = listener), this._eventsCount++;
           else if (!this._events[evt].fn) this._events[evt].push(listener);
           else this._events[evt] = [this._events[evt], listener];
 
@@ -9563,7 +11242,8 @@
           var listener = new EE(fn, context || this, true),
             evt = prefix ? prefix + event : event;
 
-          if (!this._events[evt]) (this._events[evt] = listener), this._eventsCount++;
+          if (!this._events[evt])
+            (this._events[evt] = listener), this._eventsCount++;
           else if (!this._events[evt].fn) this._events[evt].push(listener);
           else this._events[evt] = [this._events[evt], listener];
 
@@ -9580,7 +11260,12 @@
          * @returns {EventEmitter} `this`.
          * @api public
          */
-        EventEmitter.prototype.removeListener = function removeListener(event, fn, context, once) {
+        EventEmitter.prototype.removeListener = function removeListener(
+          event,
+          fn,
+          context,
+          once
+        ) {
           var evt = prefix ? prefix + event : event;
 
           if (!this._events[evt]) return this;
@@ -9593,12 +11278,20 @@
           var listeners = this._events[evt];
 
           if (listeners.fn) {
-            if (listeners.fn === fn && (!once || listeners.once) && (!context || listeners.context === context)) {
+            if (
+              listeners.fn === fn &&
+              (!once || listeners.once) &&
+              (!context || listeners.context === context)
+            ) {
               if (--this._eventsCount === 0) this._events = new Events();
               else delete this._events[evt];
             }
           } else {
-            for (var i = 0, events = [], length = listeners.length; i < length; i++) {
+            for (
+              var i = 0, events = [], length = listeners.length;
+              i < length;
+              i++
+            ) {
               if (
                 listeners[i].fn !== fn ||
                 (once && !listeners[i].once) ||
@@ -9611,7 +11304,8 @@
             //
             // Reset the array, or remove it completely if we have no more listeners.
             //
-            if (events.length) this._events[evt] = events.length === 1 ? events[0] : events;
+            if (events.length)
+              this._events[evt] = events.length === 1 ? events[0] : events;
             else if (--this._eventsCount === 0) this._events = new Events();
             else delete this._events[evt];
           }
@@ -9626,7 +11320,9 @@
          * @returns {EventEmitter} `this`.
          * @api public
          */
-        EventEmitter.prototype.removeAllListeners = function removeAllListeners(event) {
+        EventEmitter.prototype.removeAllListeners = function removeAllListeners(
+          event
+        ) {
           var evt;
 
           if (event) {
@@ -9690,7 +11386,10 @@
                 return typeof obj;
               }
             : function (obj) {
-                return obj && typeof Symbol === 'function' && obj.constructor === Symbol && obj !== Symbol.prototype
+                return obj &&
+                  typeof Symbol === 'function' &&
+                  obj.constructor === Symbol &&
+                  obj !== Symbol.prototype
                   ? 'symbol'
                   : typeof obj;
               };
@@ -9702,7 +11401,11 @@
             var _d = false;
             var _e = undefined;
             try {
-              for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) {
+              for (
+                var _i = arr[Symbol.iterator](), _s;
+                !(_n = (_s = _i.next()).done);
+                _n = true
+              ) {
                 _arr.push(_s.value);
                 if (i && _arr.length === i) break;
               }
@@ -9724,7 +11427,9 @@
             } else if (Symbol.iterator in Object(arr)) {
               return sliceIterator(arr, i);
             } else {
-              throw new TypeError('Invalid attempt to destructure non-iterable instance');
+              throw new TypeError(
+                'Invalid attempt to destructure non-iterable instance'
+              );
             }
           };
         })();
@@ -9792,7 +11497,12 @@
 
         function _defineProperty(obj, key, value) {
           if (key in obj) {
-            Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });
+            Object.defineProperty(obj, key, {
+              value: value,
+              enumerable: true,
+              configurable: true,
+              writable: true,
+            });
           } else {
             obj[key] = value;
           }
@@ -9807,20 +11517,38 @@
 
         function _possibleConstructorReturn(self, call) {
           if (!self) {
-            throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+            throw new ReferenceError(
+              "this hasn't been initialised - super() hasn't been called"
+            );
           }
-          return call && (typeof call === 'object' || typeof call === 'function') ? call : self;
+          return call &&
+            (typeof call === 'object' || typeof call === 'function')
+            ? call
+            : self;
         }
 
         function _inherits(subClass, superClass) {
           if (typeof superClass !== 'function' && superClass !== null) {
-            throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass);
+            throw new TypeError(
+              'Super expression must either be null or a function, not ' +
+                typeof superClass
+            );
           }
-          subClass.prototype = Object.create(superClass && superClass.prototype, {
-            constructor: { value: subClass, enumerable: false, writable: true, configurable: true },
-          });
+          subClass.prototype = Object.create(
+            superClass && superClass.prototype,
+            {
+              constructor: {
+                value: subClass,
+                enumerable: false,
+                writable: true,
+                configurable: true,
+              },
+            }
+          );
           if (superClass)
-            Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : (subClass.__proto__ = superClass);
+            Object.setPrototypeOf
+              ? Object.setPrototypeOf(subClass, superClass)
+              : (subClass.__proto__ = superClass);
         }
 
         var debug = (0, _logger2.default)('quill:clipboard');
@@ -9842,14 +11570,13 @@
           ['style', matchIgnore],
         ];
 
-        var ATTRIBUTE_ATTRIBUTORS = [_align.AlignAttribute, _direction.DirectionAttribute].reduce(function (
-          memo,
-          attr
-        ) {
+        var ATTRIBUTE_ATTRIBUTORS = [
+          _align.AlignAttribute,
+          _direction.DirectionAttribute,
+        ].reduce(function (memo, attr) {
           memo[attr.keyName] = attr;
           return memo;
-        },
-        {});
+        }, {});
 
         var STYLE_ATTRIBUTORS = [
           _align.AlignStyle,
@@ -9871,15 +11598,24 @@
 
             var _this = _possibleConstructorReturn(
               this,
-              (Clipboard.__proto__ || Object.getPrototypeOf(Clipboard)).call(this, quill, options)
+              (Clipboard.__proto__ || Object.getPrototypeOf(Clipboard)).call(
+                this,
+                quill,
+                options
+              )
             );
 
-            _this.quill.root.addEventListener('paste', _this.onPaste.bind(_this));
+            _this.quill.root.addEventListener(
+              'paste',
+              _this.onPaste.bind(_this)
+            );
             _this.container = _this.quill.addContainer('ql-clipboard');
             _this.container.setAttribute('contenteditable', true);
             _this.container.setAttribute('tabindex', -1);
             _this.matchers = [];
-            CLIPBOARD_CONFIG.concat(_this.options.matchers).forEach(function (_ref) {
+            CLIPBOARD_CONFIG.concat(_this.options.matchers).forEach(function (
+              _ref
+            ) {
               var _ref2 = _slicedToArray(_ref, 2),
                 selector = _ref2[0],
                 matcher = _ref2[1];
@@ -9904,13 +11640,19 @@
                   this.container.innerHTML = html.replace(/\>\r?\n +\</g, '><'); // Remove spaces between tags
                   return this.convert();
                 }
-                var formats = this.quill.getFormat(this.quill.selection.savedRange.index);
+                var formats = this.quill.getFormat(
+                  this.quill.selection.savedRange.index
+                );
                 if (formats[_code2.default.blotName]) {
                   var text = this.container.innerText;
                   this.container.innerHTML = '';
                   return new _quillDelta2.default().insert(
                     text,
-                    _defineProperty({}, _code2.default.blotName, formats[_code2.default.blotName])
+                    _defineProperty(
+                      {},
+                      _code2.default.blotName,
+                      formats[_code2.default.blotName]
+                    )
                   );
                 }
 
@@ -9919,10 +11661,21 @@
                   elementMatchers = _prepareMatching2[0],
                   textMatchers = _prepareMatching2[1];
 
-                var delta = traverse(this.container, elementMatchers, textMatchers);
+                var delta = traverse(
+                  this.container,
+                  elementMatchers,
+                  textMatchers
+                );
                 // Remove trailing newline
-                if (deltaEndsWith(delta, '\n') && delta.ops[delta.ops.length - 1].attributes == null) {
-                  delta = delta.compose(new _quillDelta2.default().retain(delta.length() - 1).delete(1));
+                if (
+                  deltaEndsWith(delta, '\n') &&
+                  delta.ops[delta.ops.length - 1].attributes == null
+                ) {
+                  delta = delta.compose(
+                    new _quillDelta2.default()
+                      .retain(delta.length() - 1)
+                      .delete(1)
+                  );
                 }
                 debug.log('convert', this.container.innerHTML, delta);
                 this.container.innerHTML = '';
@@ -9933,15 +11686,23 @@
               key: 'dangerouslyPasteHTML',
               value: function dangerouslyPasteHTML(index, html) {
                 var source =
-                  arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : _quill2.default.sources.API;
+                  arguments.length > 2 && arguments[2] !== undefined
+                    ? arguments[2]
+                    : _quill2.default.sources.API;
 
                 if (typeof index === 'string') {
                   this.quill.setContents(this.convert(index), html);
                   this.quill.setSelection(0, _quill2.default.sources.SILENT);
                 } else {
                   var paste = this.convert(html);
-                  this.quill.updateContents(new _quillDelta2.default().retain(index).concat(paste), source);
-                  this.quill.setSelection(index + paste.length(), _quill2.default.sources.SILENT);
+                  this.quill.updateContents(
+                    new _quillDelta2.default().retain(index).concat(paste),
+                    source
+                  );
+                  this.quill.setSelection(
+                    index + paste.length(),
+                    _quill2.default.sources.SILENT
+                  );
                 }
               },
             },
@@ -9958,9 +11719,15 @@
                 this.quill.selection.update(_quill2.default.sources.SILENT);
                 setTimeout(function () {
                   delta = delta.concat(_this2.convert()).delete(range.length);
-                  _this2.quill.updateContents(delta, _quill2.default.sources.USER);
+                  _this2.quill.updateContents(
+                    delta,
+                    _quill2.default.sources.USER
+                  );
                   // range.length contributes to delta.length()
-                  _this2.quill.setSelection(delta.length() - range.length, _quill2.default.sources.SILENT);
+                  _this2.quill.setSelection(
+                    delta.length() - range.length,
+                    _quill2.default.sources.SILENT
+                  );
                   _this2.quill.scrollingContainer.scrollTop = scrollTop;
                   _this2.quill.focus();
                 }, 1);
@@ -9986,11 +11753,14 @@
                       elementMatchers.push(matcher);
                       break;
                     default:
-                      [].forEach.call(_this3.container.querySelectorAll(selector), function (node) {
-                        // TODO use weakmap
-                        node[DOM_KEY] = node[DOM_KEY] || [];
-                        node[DOM_KEY].push(matcher);
-                      });
+                      [].forEach.call(
+                        _this3.container.querySelectorAll(selector),
+                        function (node) {
+                          // TODO use weakmap
+                          node[DOM_KEY] = node[DOM_KEY] || [];
+                          node[DOM_KEY].push(matcher);
+                        }
+                      );
                       break;
                   }
                 });
@@ -10008,7 +11778,10 @@
         };
 
         function applyFormat(delta, format, value) {
-          if ((typeof format === 'undefined' ? 'undefined' : _typeof(format)) === 'object') {
+          if (
+            (typeof format === 'undefined' ? 'undefined' : _typeof(format)) ===
+            'object'
+          ) {
             return Object.keys(format).reduce(function (delta, key) {
               return applyFormat(delta, key, format[key]);
             }, delta);
@@ -10019,7 +11792,11 @@
               } else {
                 return delta.insert(
                   op.insert,
-                  (0, _extend3.default)({}, _defineProperty({}, format, value), op.attributes)
+                  (0, _extend3.default)(
+                    {},
+                    _defineProperty({}, format, value),
+                    op.attributes
+                  )
                 );
               }
             }, new _quillDelta2.default());
@@ -10029,12 +11806,18 @@
         function computeStyle(node) {
           if (node.nodeType !== Node.ELEMENT_NODE) return {};
           var DOM_KEY = '__ql-computed-style';
-          return node[DOM_KEY] || (node[DOM_KEY] = window.getComputedStyle(node));
+          return (
+            node[DOM_KEY] || (node[DOM_KEY] = window.getComputedStyle(node))
+          );
         }
 
         function deltaEndsWith(delta, text) {
           var endText = '';
-          for (var i = delta.ops.length - 1; i >= 0 && endText.length < text.length; --i) {
+          for (
+            var i = delta.ops.length - 1;
+            i >= 0 && endText.length < text.length;
+            --i
+          ) {
             var op = delta.ops[i];
             if (typeof op.insert !== 'string') break;
             endText = op.insert + endText;
@@ -10058,14 +11841,26 @@
             return [].reduce.call(
               node.childNodes || [],
               function (delta, childNode) {
-                var childrenDelta = traverse(childNode, elementMatchers, textMatchers);
+                var childrenDelta = traverse(
+                  childNode,
+                  elementMatchers,
+                  textMatchers
+                );
                 if (childNode.nodeType === node.ELEMENT_NODE) {
-                  childrenDelta = elementMatchers.reduce(function (childrenDelta, matcher) {
+                  childrenDelta = elementMatchers.reduce(function (
+                    childrenDelta,
+                    matcher
+                  ) {
                     return matcher(childNode, childrenDelta);
-                  }, childrenDelta);
-                  childrenDelta = (childNode[DOM_KEY] || []).reduce(function (childrenDelta, matcher) {
+                  },
+                  childrenDelta);
+                  childrenDelta = (childNode[DOM_KEY] || []).reduce(function (
+                    childrenDelta,
+                    matcher
+                  ) {
                     return matcher(childNode, childrenDelta);
-                  }, childrenDelta);
+                  },
+                  childrenDelta);
                 }
                 return delta.concat(childrenDelta);
               },
@@ -10089,17 +11884,26 @@
             .concat(classes)
             .concat(styles)
             .forEach(function (name) {
-              var attr = _parchment2.default.query(name, _parchment2.default.Scope.ATTRIBUTE);
+              var attr = _parchment2.default.query(
+                name,
+                _parchment2.default.Scope.ATTRIBUTE
+              );
               if (attr != null) {
                 formats[attr.attrName] = attr.value(node);
                 if (formats[attr.attrName]) return;
               }
               attr = ATTRIBUTE_ATTRIBUTORS[name];
-              if (attr != null && (attr.attrName === name || attr.keyName === name)) {
+              if (
+                attr != null &&
+                (attr.attrName === name || attr.keyName === name)
+              ) {
                 formats[attr.attrName] = attr.value(node) || undefined;
               }
               attr = STYLE_ATTRIBUTORS[name];
-              if (attr != null && (attr.attrName === name || attr.keyName === name)) {
+              if (
+                attr != null &&
+                (attr.attrName === name || attr.keyName === name)
+              ) {
                 attr = STYLE_ATTRIBUTORS[name];
                 formats[attr.attrName] = attr.value(node) || undefined;
               }
@@ -10118,7 +11922,10 @@
             var value = match.value(node);
             if (value != null) {
               embed[match.blotName] = value;
-              delta = new _quillDelta2.default().insert(embed, match.formats(node));
+              delta = new _quillDelta2.default().insert(
+                embed,
+                match.formats(node)
+              );
             }
           } else if (typeof match.formats === 'function') {
             delta = applyFormat(delta, match.blotName, match.formats(node));
@@ -10139,7 +11946,11 @@
 
         function matchIndent(node, delta) {
           var match = _parchment2.default.query(node);
-          if (match == null || match.blotName !== 'list-item' || !deltaEndsWith(delta, '\n')) {
+          if (
+            match == null ||
+            match.blotName !== 'list-item' ||
+            !deltaEndsWith(delta, '\n')
+          ) {
             return delta;
           }
           var indent = -1,
@@ -10151,12 +11962,21 @@
             parent = parent.parentNode;
           }
           if (indent <= 0) return delta;
-          return delta.compose(new _quillDelta2.default().retain(delta.length() - 1).retain(1, { indent: indent }));
+          return delta.compose(
+            new _quillDelta2.default()
+              .retain(delta.length() - 1)
+              .retain(1, { indent: indent })
+          );
         }
 
         function matchNewline(node, delta) {
           if (!deltaEndsWith(delta, '\n')) {
-            if (isLine(node) || (delta.length() > 0 && node.nextSibling && isLine(node.nextSibling))) {
+            if (
+              isLine(node) ||
+              (delta.length() > 0 &&
+                node.nextSibling &&
+                isLine(node.nextSibling))
+            ) {
               delta.insert('\n');
             }
           }
@@ -10164,12 +11984,19 @@
         }
 
         function matchSpacing(node, delta) {
-          if (isLine(node) && node.nextElementSibling != null && !deltaEndsWith(delta, '\n\n')) {
+          if (
+            isLine(node) &&
+            node.nextElementSibling != null &&
+            !deltaEndsWith(delta, '\n\n')
+          ) {
             var nodeHeight =
               node.offsetHeight +
               parseFloat(computeStyle(node).marginTop) +
               parseFloat(computeStyle(node).marginBottom);
-            if (node.nextElementSibling.offsetTop > node.offsetTop + nodeHeight * 1.5) {
+            if (
+              node.nextElementSibling.offsetTop >
+              node.offsetTop + nodeHeight * 1.5
+            ) {
               delta.insert('\n');
             }
           }
@@ -10184,7 +12011,8 @@
           }
           if (
             style.fontWeight &&
-            (computeStyle(node).fontWeight.startsWith('bold') || parseInt(computeStyle(node).fontWeight) >= 700)
+            (computeStyle(node).fontWeight.startsWith('bold') ||
+              parseInt(computeStyle(node).fontWeight) >= 700)
           ) {
             formats.bold = true;
           }
@@ -10204,7 +12032,10 @@
           if (node.parentNode.tagName === 'O:P') {
             return delta.insert(text.trim());
           }
-          if (text.trim().length === 0 && node.parentNode.classList.contains('ql-clipboard')) {
+          if (
+            text.trim().length === 0 &&
+            node.parentNode.classList.contains('ql-clipboard')
+          ) {
             return delta;
           }
           if (!computeStyle(node.parentNode).whiteSpace.startsWith('pre')) {
@@ -10239,7 +12070,7 @@
         exports.matchText = matchText;
 
         /***/
-      },
+      } /* 57 */ /* 58 */ /* 59 */ /* 60 */ /* 61 */ /* 62 */ /* 63 */ /* 64 */ /* 65 */ /* 66 */ /* 67 */ /* 68 */ /* 69 */ /* 70 */ /* 71 */ /* 72 */ /* 73 */ /* 74 */ /* 75 */ /* 76 */ /* 77 */ /* 78 */ /* 79 */ /* 80 */ /* 81 */ /* 82 */ /* 83 */ /* 84 */ /* 85 */ /* 86 */ /* 87 */ /* 88 */ /* 89 */ /* 90 */ /* 91 */ /* 92 */ /* 93 */ /* 94 */ /* 95 */ /* 96 */ /* 97 */ /* 98 */ /* 99 */ /* 100 */ /* 101 */ /* 102 */ /* 103 */ /* 104 */ /* 105 */ /* 106 */ /* 107 */ /* 108 */ /* 109 */ /* 110 */,
       ,
       ,
       ,
@@ -10294,8 +12125,7 @@
       ,
       ,
       ,
-      /* 56 */ /* 57 */ /* 58 */ /* 59 */ /* 60 */ /* 61 */ /* 62 */ /* 63 */ /* 64 */ /* 65 */ /* 66 */ /* 67 */ /* 68 */ /* 69 */ /* 70 */ /* 71 */ /* 72 */ /* 73 */ /* 74 */ /* 75 */ /* 76 */ /* 77 */ /* 78 */ /* 79 */ /* 80 */ /* 81 */ /* 82 */ /* 83 */ /* 84 */ /* 85 */ /* 86 */ /* 87 */ /* 88 */ /* 89 */ /* 90 */ /* 91 */ /* 92 */ /* 93 */ /* 94 */ /* 95 */ /* 96 */ /* 97 */ /* 98 */ /* 99 */ /* 100 */ /* 101 */ /* 102 */ /* 103 */ /* 104 */ /* 105 */ /* 106 */ /* 107 */ /* 108 */ /* 109 */ /* 110 */
-      /***/ function (module, exports, __webpack_require__) {
+      /* 56 */ /***/ function (module, exports, __webpack_require__) {
         module.exports = __webpack_require__(29);
 
         /***/

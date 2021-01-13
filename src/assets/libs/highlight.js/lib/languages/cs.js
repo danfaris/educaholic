@@ -17,8 +17,14 @@ module.exports = function (hljs) {
     className: 'number',
     variants: [
       { begin: "\\b(0b[01']+)" },
-      { begin: "(-?)\\b([\\d']+(\\.[\\d']*)?|\\.[\\d']+)(u|U|l|L|ul|UL|f|F|b|B)" },
-      { begin: "(-?)(\\b0[xX][a-fA-F0-9']+|(\\b[\\d']+(\\.[\\d']*)?|\\.[\\d']+)([eE][-+]?[\\d']+)?)" },
+      {
+        begin:
+          "(-?)\\b([\\d']+(\\.[\\d']*)?|\\.[\\d']+)(u|U|l|L|ul|UL|f|F|b|B)",
+      },
+      {
+        begin:
+          "(-?)(\\b0[xX][a-fA-F0-9']+|(\\b[\\d']+(\\.[\\d']*)?|\\.[\\d']+)([eE][-+]?[\\d']+)?)",
+      },
     ],
     relevance: 0,
   };
@@ -41,7 +47,12 @@ module.exports = function (hljs) {
     begin: /\$"/,
     end: '"',
     illegal: /\n/,
-    contains: [{ begin: '{{' }, { begin: '}}' }, hljs.BACKSLASH_ESCAPE, SUBST_NO_LF],
+    contains: [
+      { begin: '{{' },
+      { begin: '}}' },
+      hljs.BACKSLASH_ESCAPE,
+      SUBST_NO_LF,
+    ],
   };
   var INTERPOLATED_VERBATIM_STRING = {
     className: 'string',
@@ -49,10 +60,18 @@ module.exports = function (hljs) {
     end: '"',
     contains: [{ begin: '{{' }, { begin: '}}' }, { begin: '""' }, SUBST],
   };
-  var INTERPOLATED_VERBATIM_STRING_NO_LF = hljs.inherit(INTERPOLATED_VERBATIM_STRING, {
-    illegal: /\n/,
-    contains: [{ begin: '{{' }, { begin: '}}' }, { begin: '""' }, SUBST_NO_LF],
-  });
+  var INTERPOLATED_VERBATIM_STRING_NO_LF = hljs.inherit(
+    INTERPOLATED_VERBATIM_STRING,
+    {
+      illegal: /\n/,
+      contains: [
+        { begin: '{{' },
+        { begin: '}}' },
+        { begin: '""' },
+        SUBST_NO_LF,
+      ],
+    }
+  );
   SUBST.contains = [
     INTERPOLATED_VERBATIM_STRING,
     INTERPOLATED_STRING,
@@ -81,7 +100,13 @@ module.exports = function (hljs) {
     ],
   };
 
-  var TYPE_IDENT_RE = hljs.IDENT_RE + '(<' + hljs.IDENT_RE + '(\\s*,\\s*' + hljs.IDENT_RE + ')*>)?(\\[\\])?';
+  var TYPE_IDENT_RE =
+    hljs.IDENT_RE +
+    '(<' +
+    hljs.IDENT_RE +
+    '(\\s*,\\s*' +
+    hljs.IDENT_RE +
+    ')*>)?(\\[\\])?';
 
   return {
     aliases: ['csharp', 'c#'],
@@ -116,7 +141,8 @@ module.exports = function (hljs) {
         begin: '#',
         end: '$',
         keywords: {
-          'meta-keyword': 'if else elif endif define undef warning error line region endregion pragma checksum',
+          'meta-keyword':
+            'if else elif endif define undef warning error line region endregion pragma checksum',
         },
       },
       STRING,
@@ -125,7 +151,11 @@ module.exports = function (hljs) {
         beginKeywords: 'class interface',
         end: /[{;=]/,
         illegal: /[^\s:,]/,
-        contains: [hljs.TITLE_MODE, hljs.C_LINE_COMMENT_MODE, hljs.C_BLOCK_COMMENT_MODE],
+        contains: [
+          hljs.TITLE_MODE,
+          hljs.C_LINE_COMMENT_MODE,
+          hljs.C_BLOCK_COMMENT_MODE,
+        ],
       },
       {
         beginKeywords: 'namespace',

@@ -26,7 +26,8 @@ module.exports = function (hljs) {
         'sixth some tell tenth that the|0 then third through thru ' +
         'timeout times to transaction try until where while whose with ' +
         'without',
-      literal: 'AppleScript false linefeed return pi quote result space tab true',
+      literal:
+        'AppleScript false linefeed return pi quote result space tab true',
       built_in:
         'alias application boolean class constant date file integer list ' +
         'number real record string text ' +

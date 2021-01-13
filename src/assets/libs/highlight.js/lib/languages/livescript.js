@@ -33,7 +33,8 @@ module.exports = function (hljs) {
     hljs.BINARY_NUMBER_MODE,
     {
       className: 'number',
-      begin: '(\\b0[xX][a-fA-F0-9_]+)|(\\b\\d(\\d|_\\d)*(\\.(\\d(\\d|_\\d)*)?)?(_*[eE]([-+]\\d(_\\d|\\d)*)?)?[_a-z]*)',
+      begin:
+        '(\\b0[xX][a-fA-F0-9_]+)|(\\b\\d(\\d|_\\d)*(\\.(\\d(\\d|_\\d)*)?)?(_*[eE]([-+]\\d(_\\d|\\d)*)?)?[_a-z]*)',
       relevance: 0,
       starts: { end: '(\\s*/)?', relevance: 0 }, // a number tries to eat the following slash to prevent treating it as a regexp
     },
@@ -124,15 +125,24 @@ module.exports = function (hljs) {
         returnBegin: true,
         variants: [
           {
-            begin: '(' + JS_IDENT_RE + '\\s*(?:=|:=)\\s*)?(\\(.*\\))?\\s*\\B\\->\\*?',
+            begin:
+              '(' +
+              JS_IDENT_RE +
+              '\\s*(?:=|:=)\\s*)?(\\(.*\\))?\\s*\\B\\->\\*?',
             end: '\\->\\*?',
           },
           {
-            begin: '(' + JS_IDENT_RE + '\\s*(?:=|:=)\\s*)?!?(\\(.*\\))?\\s*\\B[-~]{1,2}>\\*?',
+            begin:
+              '(' +
+              JS_IDENT_RE +
+              '\\s*(?:=|:=)\\s*)?!?(\\(.*\\))?\\s*\\B[-~]{1,2}>\\*?',
             end: '[-~]{1,2}>\\*?',
           },
           {
-            begin: '(' + JS_IDENT_RE + '\\s*(?:=|:=)\\s*)?(\\(.*\\))?\\s*\\B!?[-~]{1,2}>\\*?',
+            begin:
+              '(' +
+              JS_IDENT_RE +
+              '\\s*(?:=|:=)\\s*)?(\\(.*\\))?\\s*\\B!?[-~]{1,2}>\\*?',
             end: '!?[-~]{1,2}>\\*?',
           },
         ],

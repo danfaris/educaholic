@@ -17,15 +17,23 @@ var Demo = (function () {
   var sidebar = document.querySelector('#sidebar');
   var sidebarUser = document.querySelector('#sidebarUser');
   var containers = document.querySelectorAll('[class^="container"]');
-  var stylesheets = document.querySelectorAll('#stylesheetLight, #stylesheetDark');
+  var stylesheets = document.querySelectorAll(
+    '#stylesheetLight, #stylesheetDark'
+  );
   var stylesheetLight = document.querySelector('#stylesheetLight');
   var stylesheetDark = document.querySelector('#stylesheetDark');
 
   // Config
   var config = {
-    colorScheme: localStorage.getItem('dashkitColorScheme') ? localStorage.getItem('dashkitColorScheme') : 'light',
-    navPosition: localStorage.getItem('dashkitNavPosition') ? localStorage.getItem('dashkitNavPosition') : 'sidenav',
-    sidebarColor: localStorage.getItem('dashkitSidebarColor') ? localStorage.getItem('dashkitSidebarColor') : 'default',
+    colorScheme: localStorage.getItem('dashkitColorScheme')
+      ? localStorage.getItem('dashkitColorScheme')
+      : 'light',
+    navPosition: localStorage.getItem('dashkitNavPosition')
+      ? localStorage.getItem('dashkitNavPosition')
+      : 'sidenav',
+    sidebarColor: localStorage.getItem('dashkitSidebarColor')
+      ? localStorage.getItem('dashkitSidebarColor')
+      : 'default',
   };
 
   //
@@ -41,9 +49,16 @@ var Demo = (function () {
       var prop = arr[0];
       var val = arr[1];
 
-      if (prop == 'colorScheme' || prop == 'navPosition' || prop == 'sidebarColor') {
+      if (
+        prop == 'colorScheme' ||
+        prop == 'navPosition' ||
+        prop == 'sidebarColor'
+      ) {
         // Save to localStorage
-        localStorage.setItem('dashkit' + prop.charAt(0).toUpperCase() + prop.slice(1), val);
+        localStorage.setItem(
+          'dashkit' + prop.charAt(0).toUpperCase() + prop.slice(1),
+          val
+        );
 
         // Update local variables
         config[prop] = val;
@@ -125,7 +140,8 @@ var Demo = (function () {
   function submitForm(form) {
     var colorScheme = form.querySelector('[name="colorScheme"]:checked').value;
     var navPosition = form.querySelector('[name="navPosition"]:checked').value;
-    var sidebarColor = form.querySelector('[name="sidebarColor"]:checked').value;
+    var sidebarColor = form.querySelector('[name="sidebarColor"]:checked')
+      .value;
 
     // Save data to localStorage
     localStorage.setItem('dashkitColorScheme', colorScheme);
@@ -153,7 +169,12 @@ var Demo = (function () {
   toggleSidebarColor(config.sidebarColor);
 
   // Toggle form controls
-  toggleFormControls(form, config.colorScheme, config.navPosition, config.sidebarColor);
+  toggleFormControls(
+    form,
+    config.colorScheme,
+    config.navPosition,
+    config.sidebarColor
+  );
 
   // Enable body
   document.body.style.display = 'block';

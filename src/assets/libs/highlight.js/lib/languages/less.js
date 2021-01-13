@@ -98,7 +98,8 @@ module.exports = function (hljs) {
 
   var AT_RULE_MODE = {
     className: 'keyword',
-    begin: '@(import|media|charset|font-face|(-[a-z]+-)?keyframes|supports|document|namespace|page|viewport|host)\\b',
+    begin:
+      '@(import|media|charset|font-face|(-[a-z]+-)?keyframes|supports|document|namespace|page|viewport|host)\\b',
     starts: { end: '[;{}]', returnEnd: true, contains: VALUE, relevance: 0 },
   };
 

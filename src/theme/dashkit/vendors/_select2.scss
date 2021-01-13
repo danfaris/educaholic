@@ -12,7 +12,8 @@
 }
 
 .select2-container .select2-selection--single,
-.select2-container--default.select2-container--focus .select2-selection--multiple,
+.select2-container--default.select2-container--focus
+  .select2-selection--multiple,
 .select2-container--default .select2-selection--multiple,
 .select2-container--default .select2-search--dropdown .select2-search__field {
   display: block;
@@ -74,7 +75,9 @@
   white-space: inherit;
 }
 
-.select2-container--default .select2-selection--single .select2-selection__rendered {
+.select2-container--default
+  .select2-selection--single
+  .select2-selection__rendered {
   color: inherit;
   line-height: inherit;
 }
@@ -96,7 +99,8 @@
   }
 }
 
-.select2-container--default .select2-results__option--highlighted[aria-selected],
+.select2-container--default
+  .select2-results__option--highlighted[aria-selected],
 .select2-container--default .select2-results__option[aria-selected="true"] {
   background-color: $dropdown-link-active-bg;
   color: $dropdown-link-active-color;
@@ -106,19 +110,24 @@
   color: $dropdown-link-disabled-color;
 }
 
-.select2-container--default.select2-container--focus .select2-selection--multiple,
+.select2-container--default.select2-container--focus
+  .select2-selection--multiple,
 .select2-container--default .select2-selection--multiple {
   height: auto;
   min-height: $input-height;
 }
 
-.select2-container--default .select2-selection--multiple .select2-selection__rendered {
+.select2-container--default
+  .select2-selection--multiple
+  .select2-selection__rendered {
   display: block;
   margin: 0 0 -0.25rem -0.25rem;
   padding: 0;
 }
 
-.select2-container--default .select2-selection--multiple .select2-selection__choice {
+.select2-container--default
+  .select2-selection--multiple
+  .select2-selection__choice {
   display: inline-flex;
   padding: 0 0.5rem;
   margin: 0 0 0.25rem 0.25rem;
@@ -130,7 +139,9 @@
   color: $input-color;
 }
 
-.select2-container--default .select2-selection--multiple .select2-selection__choice__remove {
+.select2-container--default
+  .select2-selection--multiple
+  .select2-selection__choice__remove {
   order: 2;
   margin-left: 0.5rem;
   color: $text-muted;
@@ -168,7 +179,9 @@
 // Makes the select2 containers respect the .form-control-sm and .form-control-lg classes
 
 .form-control-sm + .select2-container .select2-selection--single,
-.form-control-sm + .select2-container--default.select2-container--focus .select2-selection--multiple,
+.form-control-sm
+  + .select2-container--default.select2-container--focus
+  .select2-selection--multiple,
 .form-control-sm + .select2-container--default .select2-selection--multiple {
   height: $input-height-sm;
   padding: $input-padding-y-sm $input-padding-x-sm;
@@ -177,17 +190,24 @@
   @include border-radius($input-border-radius-sm);
 }
 
-.form-control-sm + .select2-container--default.select2-container--focus .select2-selection--multiple,
+.form-control-sm
+  + .select2-container--default.select2-container--focus
+  .select2-selection--multiple,
 .form-control-sm + .select2-container--default .select2-selection--multiple {
   min-height: $input-height-sm;
 }
 
-.form-control-sm + .select2-container--default .select2-selection--multiple .select2-selection__choice {
+.form-control-sm
+  + .select2-container--default
+  .select2-selection--multiple
+  .select2-selection__choice {
   line-height: ($input-line-height-sm * $font-size-sm);
 }
 
 .form-control-lg + .select2-container .select2-selection--single,
-.form-control-lg + .select2-container--default.select2-container--focus .select2-selection--multiple,
+.form-control-lg
+  + .select2-container--default.select2-container--focus
+  .select2-selection--multiple,
 .form-control-lg + .select2-container--default .select2-selection--multiple {
   height: $input-height-lg;
   padding: $input-padding-y-lg $input-padding-x-lg;
@@ -196,11 +216,16 @@
   @include border-radius($input-border-radius-lg);
 }
 
-.form-control-lg + .select2-container--default.select2-container--focus .select2-selection--multiple,
+.form-control-lg
+  + .select2-container--default.select2-container--focus
+  .select2-selection--multiple,
 .form-control-lg + .select2-container--default .select2-selection--multiple {
   min-height: $input-height-lg;
 }
 
-.form-control-lg + .select2-container--default .select2-selection--multiple .select2-selection__choice {
+.form-control-lg
+  + .select2-container--default
+  .select2-selection--multiple
+  .select2-selection__choice {
   line-height: ($input-line-height-lg * $font-size-lg);
 }

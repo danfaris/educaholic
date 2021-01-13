@@ -4,11 +4,21 @@ module.exports = function (hljs) {
   // Decimal literal:
   var INTEGER_RE = '\\d(_|\\d)*';
   var EXPONENT_RE = '[eE][-+]?' + INTEGER_RE;
-  var DECIMAL_LITERAL_RE = INTEGER_RE + '(\\.' + INTEGER_RE + ')?' + '(' + EXPONENT_RE + ')?';
+  var DECIMAL_LITERAL_RE =
+    INTEGER_RE + '(\\.' + INTEGER_RE + ')?' + '(' + EXPONENT_RE + ')?';
   // Based literal:
   var BASED_INTEGER_RE = '\\w+';
   var BASED_LITERAL_RE =
-    INTEGER_RE + '#' + BASED_INTEGER_RE + '(\\.' + BASED_INTEGER_RE + ')?' + '#' + '(' + EXPONENT_RE + ')?';
+    INTEGER_RE +
+    '#' +
+    BASED_INTEGER_RE +
+    '(\\.' +
+    BASED_INTEGER_RE +
+    ')?' +
+    '#' +
+    '(' +
+    EXPONENT_RE +
+    ')?';
 
   var NUMBER_RE = '\\b(' + BASED_LITERAL_RE + '|' + DECIMAL_LITERAL_RE + ')';
 

@@ -17,7 +17,8 @@ module.exports = function (hljs) {
     lexemes: hljs.UNDERSCORE_IDENT_RE,
     keywords: {
       literal: 'true false nil',
-      keyword: 'and break do else elseif end for goto if in local not or repeat return then until while',
+      keyword:
+        'and break do else elseif end for goto if in local not or repeat return then until while',
       built_in:
         //Metatags and globals:
         '_G _ENV _VERSION __index __newindex __mode __call __metatable __tostring __len ' +
@@ -41,7 +42,9 @@ module.exports = function (hljs) {
         beginKeywords: 'function',
         end: '\\)',
         contains: [
-          hljs.inherit(hljs.TITLE_MODE, { begin: '([_a-zA-Z]\\w*\\.)*([_a-zA-Z]\\w*:)?[_a-zA-Z]\\w*' }),
+          hljs.inherit(hljs.TITLE_MODE, {
+            begin: '([_a-zA-Z]\\w*\\.)*([_a-zA-Z]\\w*:)?[_a-zA-Z]\\w*',
+          }),
           {
             className: 'params',
             begin: '\\(',

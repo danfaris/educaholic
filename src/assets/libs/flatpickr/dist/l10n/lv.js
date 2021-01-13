@@ -17,10 +17,31 @@
     firstDayOfWeek: 1,
     weekdays: {
       shorthand: ['Sv', 'Pr', 'Ot', 'Tr', 'Ce', 'Pk', 'Se'],
-      longhand: ['Svētdiena', 'Pirmdiena', 'Otrdiena', 'Trešdiena', 'Ceturtdiena', 'Piektdiena', 'Sestdiena'],
+      longhand: [
+        'Svētdiena',
+        'Pirmdiena',
+        'Otrdiena',
+        'Trešdiena',
+        'Ceturtdiena',
+        'Piektdiena',
+        'Sestdiena',
+      ],
     },
     months: {
-      shorthand: ['Jan', 'Feb', 'Mar', 'Apr', 'Mai', 'Jūn', 'Jūl', 'Aug', 'Sep', 'Okt', 'Nov', 'Dec'],
+      shorthand: [
+        'Jan',
+        'Feb',
+        'Mar',
+        'Apr',
+        'Mai',
+        'Jūn',
+        'Jūl',
+        'Aug',
+        'Sep',
+        'Okt',
+        'Nov',
+        'Dec',
+      ],
       longhand: [
         'Janvāris',
         'Februāris',

@@ -36,6 +36,13 @@ module.exports = function (hljs) {
         'undeploy unset version xa-data-source', // module
       literal: 'true false',
     },
-    contains: [hljs.HASH_COMMENT_MODE, hljs.QUOTE_STRING_MODE, COMMAND_PARAMS, OPERATION, PATH, PARAMSBLOCK],
+    contains: [
+      hljs.HASH_COMMENT_MODE,
+      hljs.QUOTE_STRING_MODE,
+      COMMAND_PARAMS,
+      OPERATION,
+      PATH,
+      PARAMSBLOCK,
+    ],
   };
 };

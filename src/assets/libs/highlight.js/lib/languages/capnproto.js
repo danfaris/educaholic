@@ -2,7 +2,8 @@ module.exports = function (hljs) {
   return {
     aliases: ['capnp'],
     keywords: {
-      keyword: 'struct enum interface union group import using const annotation extends in of on as with from fixed',
+      keyword:
+        'struct enum interface union group import using const annotation extends in of on as with from fixed',
       built_in:
         'Void Bool Int8 Int16 Int32 Int64 UInt8 UInt16 UInt32 UInt64 Float32 Float64 ' +
         'Text Data AnyPointer AnyStruct Capability List',

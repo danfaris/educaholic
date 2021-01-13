@@ -73,7 +73,8 @@ module.exports = function (hljs) {
       LSL_CONSTANTS,
       {
         className: 'type',
-        begin: '\\b(?:integer|float|string|key|vector|quaternion|rotation|list)\\b',
+        begin:
+          '\\b(?:integer|float|string|key|vector|quaternion|rotation|list)\\b',
       },
     ],
   };

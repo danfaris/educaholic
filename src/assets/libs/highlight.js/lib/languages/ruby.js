@@ -1,5 +1,6 @@
 module.exports = function (hljs) {
-  var RUBY_METHOD_RE = '[a-zA-Z_]\\w*[!?=]?|[-+~]\\@|<<|>>|=~|===?|<=>|[<>]=?|\\*\\*|[-/+%^&*~`|]|\\[\\]=?';
+  var RUBY_METHOD_RE =
+    '[a-zA-Z_]\\w*[!?=]?|[-+~]\\@|<<|>>|=~|===?|<=>|[<>]=?|\\*\\*|[-/+%^&*~`|]|\\[\\]=?';
   var RUBY_KEYWORDS = {
     keyword:
       'and then defined module in return redo if BEGIN retry end for self when ' +
@@ -74,7 +75,9 @@ module.exports = function (hljs) {
       end: '$|;',
       illegal: /=/,
       contains: [
-        hljs.inherit(hljs.TITLE_MODE, { begin: '[A-Za-z_]\\w*(::\\w+)*(\\?|\\!)?' }),
+        hljs.inherit(hljs.TITLE_MODE, {
+          begin: '[A-Za-z_]\\w*(::\\w+)*(\\?|\\!)?',
+        }),
         {
           begin: '<\\s*',
           contains: [
@@ -89,7 +92,10 @@ module.exports = function (hljs) {
       className: 'function',
       beginKeywords: 'def',
       end: '$|;',
-      contains: [hljs.inherit(hljs.TITLE_MODE, { begin: RUBY_METHOD_RE }), PARAMS].concat(COMMENT_MODES),
+      contains: [
+        hljs.inherit(hljs.TITLE_MODE, { begin: RUBY_METHOD_RE }),
+        PARAMS,
+      ].concat(COMMENT_MODES),
     },
     {
       // swallow namespace qualifiers before symbols
@@ -108,7 +114,8 @@ module.exports = function (hljs) {
     },
     {
       className: 'number',
-      begin: '(\\b0[0-7_]+)|(\\b0x[0-9a-fA-F_]+)|(\\b[1-9][0-9_]*(\\.[0-9_]+)?)|[0_]\\b',
+      begin:
+        '(\\b0[0-7_]+)|(\\b0x[0-9a-fA-F_]+)|(\\b[1-9][0-9_]*(\\.[0-9_]+)?)|[0_]\\b',
       relevance: 0,
     },
     {
@@ -160,7 +167,8 @@ module.exports = function (hljs) {
     },
     {
       className: 'meta',
-      begin: '^(' + SIMPLE_PROMPT + '|' + DEFAULT_PROMPT + '|' + RVM_PROMPT + ')',
+      begin:
+        '^(' + SIMPLE_PROMPT + '|' + DEFAULT_PROMPT + '|' + RVM_PROMPT + ')',
       starts: {
         end: '$',
         contains: RUBY_DEFAULT_CONTAINS,

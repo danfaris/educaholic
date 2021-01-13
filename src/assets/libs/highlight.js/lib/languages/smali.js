@@ -90,11 +90,17 @@ module.exports = function (hljs) {
             begin: '\\s(' + smali_instr_low_prio.join('|') + ')\\s',
           },
           {
-            begin: '\\s(' + smali_instr_low_prio.join('|') + ')((\\-|/)[a-zA-Z0-9]+)+\\s',
+            begin:
+              '\\s(' +
+              smali_instr_low_prio.join('|') +
+              ')((\\-|/)[a-zA-Z0-9]+)+\\s',
             relevance: 10,
           },
           {
-            begin: '\\s(' + smali_instr_high_prio.join('|') + ')((\\-|/)[a-zA-Z0-9]+)*\\s',
+            begin:
+              '\\s(' +
+              smali_instr_high_prio.join('|') +
+              ')((\\-|/)[a-zA-Z0-9]+)*\\s',
             relevance: 10,
           },
         ],

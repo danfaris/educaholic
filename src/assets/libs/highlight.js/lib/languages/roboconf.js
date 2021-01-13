@@ -39,7 +39,8 @@ module.exports = function (hljs) {
       {
         begin: '^\\s*instance of ' + IDENTIFIER,
         end: '}',
-        keywords: 'name count channels instance-data instance-state instance of',
+        keywords:
+          'name count channels instance-data instance-state instance of',
         illegal: /\S/,
         contains: ['self', PROPERTY, hljs.HASH_COMMENT_MODE],
       },

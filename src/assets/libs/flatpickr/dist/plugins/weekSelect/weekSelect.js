@@ -20,7 +20,8 @@
         for (var i = days.length; i--; ) {
           var day_1 = days[i];
           var date = day_1.dateObj;
-          if (date > weekEndDay || date < weekStartDay) day_1.classList.remove('inRange');
+          if (date > weekEndDay || date < weekStartDay)
+            day_1.classList.remove('inRange');
           else day_1.classList.add('inRange');
         }
       }
@@ -31,13 +32,20 @@
           selDate.getMonth() === fp.currentMonth &&
           selDate.getFullYear() === fp.currentYear
         ) {
-          fp.weekStartDay = fp.days.childNodes[7 * Math.floor(fp.selectedDateElem.$i / 7)].dateObj;
-          fp.weekEndDay = fp.days.childNodes[7 * Math.ceil(fp.selectedDateElem.$i / 7 + 0.01) - 1].dateObj;
+          fp.weekStartDay =
+            fp.days.childNodes[
+              7 * Math.floor(fp.selectedDateElem.$i / 7)
+            ].dateObj;
+          fp.weekEndDay =
+            fp.days.childNodes[
+              7 * Math.ceil(fp.selectedDateElem.$i / 7 + 0.01) - 1
+            ].dateObj;
         }
         var days = fp.days.childNodes;
         for (var i = days.length; i--; ) {
           var date = days[i].dateObj;
-          if (date >= fp.weekStartDay && date <= fp.weekEndDay) days[i].classList.add('week', 'selected');
+          if (date >= fp.weekStartDay && date <= fp.weekEndDay)
+            days[i].classList.add('week', 'selected');
         }
       }
       function clearHover() {
@@ -45,10 +53,12 @@
         for (var i = days.length; i--; ) days[i].classList.remove('inRange');
       }
       function onReady() {
-        if (fp.daysContainer !== undefined) fp.daysContainer.addEventListener('mouseover', onDayHover);
+        if (fp.daysContainer !== undefined)
+          fp.daysContainer.addEventListener('mouseover', onDayHover);
       }
       function onDestroy() {
-        if (fp.daysContainer !== undefined) fp.daysContainer.removeEventListener('mouseover', onDayHover);
+        if (fp.daysContainer !== undefined)
+          fp.daysContainer.removeEventListener('mouseover', onDayHover);
       }
       return {
         onValueUpdate: highlightWeek,
@@ -59,8 +69,12 @@
         onParseConfig: function () {
           fp.config.mode = 'single';
           fp.config.enableTime = false;
-          fp.config.dateFormat = fp.config.dateFormat ? fp.config.dateFormat : '\\W\\e\\e\\k #W, Y';
-          fp.config.altFormat = fp.config.altFormat ? fp.config.altFormat : '\\W\\e\\e\\k #W, Y';
+          fp.config.dateFormat = fp.config.dateFormat
+            ? fp.config.dateFormat
+            : '\\W\\e\\e\\k #W, Y';
+          fp.config.altFormat = fp.config.altFormat
+            ? fp.config.altFormat
+            : '\\W\\e\\e\\k #W, Y';
         },
         onReady: [onReady, highlightWeek],
         onDestroy: onDestroy,

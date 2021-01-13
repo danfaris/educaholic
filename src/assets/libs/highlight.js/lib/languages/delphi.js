@@ -56,10 +56,26 @@ module.exports = function (hljs) {
     ].concat(COMMENT_MODES),
   };
   return {
-    aliases: ['dpr', 'dfm', 'pas', 'pascal', 'freepascal', 'lazarus', 'lpr', 'lfm'],
+    aliases: [
+      'dpr',
+      'dfm',
+      'pas',
+      'pascal',
+      'freepascal',
+      'lazarus',
+      'lpr',
+      'lfm',
+    ],
     case_insensitive: true,
     keywords: KEYWORDS,
     illegal: /"|\$[G-Zg-z]|\/\*|<\/|\|/,
-    contains: [STRING, CHAR_STRING, hljs.NUMBER_MODE, CLASS, FUNCTION, DIRECTIVE].concat(COMMENT_MODES),
+    contains: [
+      STRING,
+      CHAR_STRING,
+      hljs.NUMBER_MODE,
+      CLASS,
+      FUNCTION,
+      DIRECTIVE,
+    ].concat(COMMENT_MODES),
   };
 };

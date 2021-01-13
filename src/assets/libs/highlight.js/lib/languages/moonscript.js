@@ -19,7 +19,9 @@ module.exports = function (hljs) {
     keywords: KEYWORDS,
   };
   var EXPRESSIONS = [
-    hljs.inherit(hljs.C_NUMBER_MODE, { starts: { end: '(\\s*/)?', relevance: 0 } }), // a number tries to eat the following slash to prevent treating it as a regexp
+    hljs.inherit(hljs.C_NUMBER_MODE, {
+      starts: { end: '(\\s*/)?', relevance: 0 },
+    }), // a number tries to eat the following slash to prevent treating it as a regexp
     {
       className: 'string',
       variants: [

@@ -35,7 +35,8 @@ module.exports = function (hljs) {
         excludeEnd: true,
         variants: [
           {
-            begin: '\\$(\\{)?(::)?[a-zA-Z_]((::)?[a-zA-Z0-9_])*\\(([a-zA-Z0-9_])*\\)',
+            begin:
+              '\\$(\\{)?(::)?[a-zA-Z_]((::)?[a-zA-Z0-9_])*\\(([a-zA-Z0-9_])*\\)',
             end: '[^a-zA-Z0-9_\\}\\$]',
           },
           {

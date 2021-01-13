@@ -52,7 +52,8 @@ module.exports = function (hljs) {
 
   var OBJECT = {
     className: 'class',
-    begin: 'OBJECT (Table|Form|Report|Dataport|Codeunit|XMLport|MenuSuite|Page|Query) (\\d+) ([^\\r\\n]+)',
+    begin:
+      'OBJECT (Table|Form|Report|Dataport|Codeunit|XMLport|MenuSuite|Page|Query) (\\d+) ([^\\r\\n]+)',
     returnBegin: true,
     contains: [hljs.TITLE_MODE, PROCEDURE],
   };
@@ -61,6 +62,14 @@ module.exports = function (hljs) {
     case_insensitive: true,
     keywords: { keyword: KEYWORDS, literal: LITERALS },
     illegal: /\/\*/,
-    contains: [STRING, CHAR_STRING, DATE, DBL_QUOTED_VARIABLE, hljs.NUMBER_MODE, OBJECT, PROCEDURE],
+    contains: [
+      STRING,
+      CHAR_STRING,
+      DATE,
+      DBL_QUOTED_VARIABLE,
+      hljs.NUMBER_MODE,
+      OBJECT,
+      PROCEDURE,
+    ],
   };
 };

@@ -16,10 +16,31 @@
   var Estonian = {
     weekdays: {
       shorthand: ['P', 'E', 'T', 'K', 'N', 'R', 'L'],
-      longhand: ['Pühapäev', 'Esmaspäev', 'Teisipäev', 'Kolmapäev', 'Neljapäev', 'Reede', 'Laupäev'],
+      longhand: [
+        'Pühapäev',
+        'Esmaspäev',
+        'Teisipäev',
+        'Kolmapäev',
+        'Neljapäev',
+        'Reede',
+        'Laupäev',
+      ],
     },
     months: {
-      shorthand: ['Jaan', 'Veebr', 'Märts', 'Apr', 'Mai', 'Juuni', 'Juuli', 'Aug', 'Sept', 'Okt', 'Nov', 'Dets'],
+      shorthand: [
+        'Jaan',
+        'Veebr',
+        'Märts',
+        'Apr',
+        'Mai',
+        'Juuni',
+        'Juuli',
+        'Aug',
+        'Sept',
+        'Okt',
+        'Nov',
+        'Dets',
+      ],
       longhand: [
         'Jaanuar',
         'Veebruar',

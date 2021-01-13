@@ -31,13 +31,19 @@ module.exports = function (opts) {
     var id = object[options.idProperty],
       foundObject;
     if (id === undefined || id === null) {
-      return callback(new Error("Object has no '" + options.idProperty + "' property"));
+      return callback(
+        new Error("Object has no '" + options.idProperty + "' property")
+      );
     }
 
     foundObject = findById(id);
 
     if (foundObject === null) {
-      return callback(new Error("No object found with '" + options.idProperty + "' = '" + id + "'"));
+      return callback(
+        new Error(
+          "No object found with '" + options.idProperty + "' = '" + id + "'"
+        )
+      );
     }
 
     return callback(null, foundObject);
@@ -61,10 +67,15 @@ module.exports = function (opts) {
       extendedObject[options.idProperty] = '' + idSeq;
     } else {
       if (findById(extendedObject[options.idProperty]) !== null) {
-        return callback(new Error('Key ' + extendedObject[options.idProperty] + ' already exists'));
+        return callback(
+          new Error(
+            'Key ' + extendedObject[options.idProperty] + ' already exists'
+          )
+        );
       }
       // if an id is provided, cast to string.
-      extendedObject[options.idProperty] = '' + extendedObject[options.idProperty];
+      extendedObject[options.idProperty] =
+        '' + extendedObject[options.idProperty];
     }
     data.push(extend({}, extendedObject));
     self.emit('afterCreate', extendedObject);

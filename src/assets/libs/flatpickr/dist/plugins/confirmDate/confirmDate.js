@@ -28,7 +28,8 @@
       function __assign(t) {
         for (var s, i = 1, n = arguments.length; i < n; i++) {
           s = arguments[i];
-          for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
+          for (var p in s)
+            if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
         }
         return t;
       };
@@ -50,15 +51,24 @@
       return __assign(
         {
           onKeyDown: function (_, __, ___, e) {
-            if (fp.config.enableTime && e.key === 'Tab' && e.target === fp.amPM) {
+            if (
+              fp.config.enableTime &&
+              e.key === 'Tab' &&
+              e.target === fp.amPM
+            ) {
               e.preventDefault();
               confirmContainer.focus();
-            } else if (e.key === 'Enter' && e.target === confirmContainer) fp.close();
+            } else if (e.key === 'Enter' && e.target === confirmContainer)
+              fp.close();
           },
           onReady: function () {
             confirmContainer = fp._createElement(
               'div',
-              'flatpickr-confirm ' + (config.showAlways ? 'visible' : '') + ' ' + config.theme + 'Theme',
+              'flatpickr-confirm ' +
+                (config.showAlways ? 'visible' : '') +
+                ' ' +
+                config.theme +
+                'Theme',
               config.confirmText
             );
             confirmContainer.tabIndex = -1;
@@ -70,8 +80,10 @@
         !config.showAlways
           ? {
               onChange: function (_, dateStr) {
-                var showCondition = fp.config.enableTime || fp.config.mode === 'multiple';
-                if (dateStr && !fp.config.inline && showCondition) return confirmContainer.classList.add('visible');
+                var showCondition =
+                  fp.config.enableTime || fp.config.mode === 'multiple';
+                if (dateStr && !fp.config.inline && showCondition)
+                  return confirmContainer.classList.add('visible');
                 confirmContainer.classList.remove('visible');
               },
             }

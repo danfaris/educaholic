@@ -1,7 +1,8 @@
 /*! Select2 4.0.6-rc.1 | https://github.com/select2/select2/blob/master/LICENSE.md */
 
 (function () {
-  if (jQuery && jQuery.fn && jQuery.fn.select2 && jQuery.fn.select2.amd) var e = jQuery.fn.select2.amd;
+  if (jQuery && jQuery.fn && jQuery.fn.select2 && jQuery.fn.select2.amd)
+    var e = jQuery.fn.select2.amd;
   return (
     e.define('select2/i18n/de', [], function () {
       return {
@@ -21,7 +22,9 @@
         },
         maximumSelected: function (e) {
           var t = 'Sie können nur ' + e.maximum + ' Eintr';
-          return e.maximum === 1 ? (t += 'ag') : (t += 'äge'), (t += ' auswählen'), t;
+          return (
+            e.maximum === 1 ? (t += 'ag') : (t += 'äge'), (t += ' auswählen'), t
+          );
         },
         noResults: function () {
           return 'Keine Übereinstimmungen gefunden';

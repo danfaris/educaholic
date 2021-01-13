@@ -77,7 +77,9 @@ module.exports = function (hljs) {
     aliases: ['sas', 'SAS'],
     case_insensitive: true, // SAS is case-insensitive
     keywords: {
-      literal: 'null missing _all_ _automatic_ _character_ _infile_ ' + '_n_ _name_ _null_ _numeric_ _user_ _webout_',
+      literal:
+        'null missing _all_ _automatic_ _character_ _infile_ ' +
+        '_n_ _name_ _null_ _numeric_ _user_ _webout_',
       meta: SAS_KEYWORDS,
     },
     contains: [

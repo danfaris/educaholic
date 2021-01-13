@@ -99,7 +99,9 @@ module.exports = function (hljs) {
       hljs.APOS_STRING_MODE,
       // Declarations
       {
-        beginKeywords: 'set sets parameter parameters variable variables ' + 'scalar scalars equation equations',
+        beginKeywords:
+          'set sets parameter parameters variable variables ' +
+          'scalar scalars equation equations',
         end: ';',
         contains: [
           hljs.COMMENT('^\\*', '$'),

@@ -3,7 +3,8 @@ module.exports = function (hljs) {
     case_insensitive: true,
     contains: [
       {
-        beginKeywords: 'build create index delete drop explain infer|10 insert merge prepare select update upsert|10',
+        beginKeywords:
+          'build create index delete drop explain infer|10 insert merge prepare select update upsert|10',
         end: /;/,
         endsWithParent: true,
         keywords: {

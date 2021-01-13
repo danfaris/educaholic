@@ -16,7 +16,10 @@ module.exports = function (hljs) {
     className: 'keyword',
     relevance: 10,
     variants: [
-      { begin: '^(test|testing|success|successful|failure|error|skip|xfail|uxsuccess)(:?)\\s+(test)?' },
+      {
+        begin:
+          '^(test|testing|success|successful|failure|error|skip|xfail|uxsuccess)(:?)\\s+(test)?',
+      },
       { begin: '^progress(:?)(\\s+)?(pop|push)?' },
       { begin: '^tags:' },
       { begin: '^time:' },

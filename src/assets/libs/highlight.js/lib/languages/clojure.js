@@ -80,7 +80,18 @@ module.exports = function (hljs) {
     begin: SYMBOL_RE,
     starts: BODY,
   };
-  var DEFAULT_CONTAINS = [LIST, STRING, HINT, HINT_COL, COMMENT, KEY, COLLECTION, NUMBER, LITERAL, SYMBOL];
+  var DEFAULT_CONTAINS = [
+    LIST,
+    STRING,
+    HINT,
+    HINT_COL,
+    COMMENT,
+    KEY,
+    COLLECTION,
+    NUMBER,
+    LITERAL,
+    SYMBOL,
+  ];
 
   LIST.contains = [hljs.COMMENT('comment', ''), NAME, BODY];
   BODY.contains = DEFAULT_CONTAINS;
@@ -90,6 +101,16 @@ module.exports = function (hljs) {
   return {
     aliases: ['clj'],
     illegal: /\S/,
-    contains: [LIST, STRING, HINT, HINT_COL, COMMENT, KEY, COLLECTION, NUMBER, LITERAL],
+    contains: [
+      LIST,
+      STRING,
+      HINT,
+      HINT_COL,
+      COMMENT,
+      KEY,
+      COLLECTION,
+      NUMBER,
+      LITERAL,
+    ],
   };
 };

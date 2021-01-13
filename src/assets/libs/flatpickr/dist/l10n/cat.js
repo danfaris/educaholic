@@ -16,10 +16,31 @@
   var Catalan = {
     weekdays: {
       shorthand: ['Dg', 'Dl', 'Dt', 'Dc', 'Dj', 'Dv', 'Ds'],
-      longhand: ['Diumenge', 'Dilluns', 'Dimarts', 'Dimecres', 'Dijous', 'Divendres', 'Dissabte'],
+      longhand: [
+        'Diumenge',
+        'Dilluns',
+        'Dimarts',
+        'Dimecres',
+        'Dijous',
+        'Divendres',
+        'Dissabte',
+      ],
     },
     months: {
-      shorthand: ['Gen', 'Febr', 'Març', 'Abr', 'Maig', 'Juny', 'Jul', 'Ag', 'Set', 'Oct', 'Nov', 'Des'],
+      shorthand: [
+        'Gen',
+        'Febr',
+        'Març',
+        'Abr',
+        'Maig',
+        'Juny',
+        'Jul',
+        'Ag',
+        'Set',
+        'Oct',
+        'Nov',
+        'Des',
+      ],
       longhand: [
         'Gener',
         'Febrer',

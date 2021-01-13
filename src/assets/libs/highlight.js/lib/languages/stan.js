@@ -31,7 +31,9 @@ module.exports = function (hljs) {
             'row_vector matrix cholesky_factor_corr cholesky_factor_cov ' +
             'corr_matrix cov_matrix',
           // Stan's model blocks
-          title: 'functions model data parameters quantities transformed ' + 'generated',
+          title:
+            'functions model data parameters quantities transformed ' +
+            'generated',
           literal: 'true false',
         },
         relevance: 0,

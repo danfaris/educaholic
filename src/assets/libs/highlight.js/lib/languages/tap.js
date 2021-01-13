@@ -6,7 +6,10 @@ module.exports = function (hljs) {
       // version of format and total amount of testcases
       {
         className: 'meta',
-        variants: [{ begin: '^TAP version (\\d+)$' }, { begin: '^1\\.\\.(\\d+)$' }],
+        variants: [
+          { begin: '^TAP version (\\d+)$' },
+          { begin: '^1\\.\\.(\\d+)$' },
+        ],
       },
       // YAML block
       {

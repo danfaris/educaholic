@@ -77,7 +77,10 @@ module.exports = function (hljs) {
         end: '{',
         excludeEnd: true,
         illegal: /[:\(\$"]/,
-        contains: [{ beginKeywords: 'extends implements' }, hljs.UNDERSCORE_TITLE_MODE],
+        contains: [
+          { beginKeywords: 'extends implements' },
+          hljs.UNDERSCORE_TITLE_MODE,
+        ],
       },
       {
         beginKeywords: 'namespace',

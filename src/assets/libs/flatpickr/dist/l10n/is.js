@@ -16,10 +16,31 @@
   var Icelandic = {
     weekdays: {
       shorthand: ['Sun', 'Mán', 'Þri', 'Mið', 'Fim', 'Fös', 'Lau'],
-      longhand: ['Sunnudagur', 'Mánudagur', 'Þriðjudagur', 'Miðvikudagur', 'Fimmtudagur', 'Föstudagur', 'Laugardagur'],
+      longhand: [
+        'Sunnudagur',
+        'Mánudagur',
+        'Þriðjudagur',
+        'Miðvikudagur',
+        'Fimmtudagur',
+        'Föstudagur',
+        'Laugardagur',
+      ],
     },
     months: {
-      shorthand: ['Jan', 'Feb', 'Mar', 'Apr', 'Maí', 'Jún', 'Júl', 'Ágú', 'Sep', 'Okt', 'Nóv', 'Des'],
+      shorthand: [
+        'Jan',
+        'Feb',
+        'Mar',
+        'Apr',
+        'Maí',
+        'Jún',
+        'Júl',
+        'Ágú',
+        'Sep',
+        'Okt',
+        'Nóv',
+        'Des',
+      ],
       longhand: [
         'Janúar',
         'Febrúar',

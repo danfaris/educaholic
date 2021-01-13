@@ -15,12 +15,22 @@ module.exports = // We try to support full Ada2012
     // Decimal literal:
     var INTEGER_RE = '\\d(_|\\d)*';
     var EXPONENT_RE = '[eE][-+]?' + INTEGER_RE;
-    var DECIMAL_LITERAL_RE = INTEGER_RE + '(\\.' + INTEGER_RE + ')?' + '(' + EXPONENT_RE + ')?';
+    var DECIMAL_LITERAL_RE =
+      INTEGER_RE + '(\\.' + INTEGER_RE + ')?' + '(' + EXPONENT_RE + ')?';
 
     // Based literal:
     var BASED_INTEGER_RE = '\\w+';
     var BASED_LITERAL_RE =
-      INTEGER_RE + '#' + BASED_INTEGER_RE + '(\\.' + BASED_INTEGER_RE + ')?' + '#' + '(' + EXPONENT_RE + ')?';
+      INTEGER_RE +
+      '#' +
+      BASED_INTEGER_RE +
+      '(\\.' +
+      BASED_INTEGER_RE +
+      ')?' +
+      '#' +
+      '(' +
+      EXPONENT_RE +
+      ')?';
 
     var NUMBER_RE = '\\b(' + BASED_LITERAL_RE + '|' + DECIMAL_LITERAL_RE + ')';
 
@@ -55,7 +65,8 @@ module.exports = // We try to support full Ada2012
         {
           // properly highlight all modifiers
           className: 'keyword',
-          beginKeywords: 'not null constant access function procedure in out aliased exception',
+          beginKeywords:
+            'not null constant access function procedure in out aliased exception',
         },
         {
           className: 'type',

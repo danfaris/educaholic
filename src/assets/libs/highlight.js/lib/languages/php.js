@@ -85,7 +85,13 @@ module.exports = function (hljs) {
             className: 'params',
             begin: '\\(',
             end: '\\)',
-            contains: ['self', VARIABLE, hljs.C_BLOCK_COMMENT_MODE, STRING, NUMBER],
+            contains: [
+              'self',
+              VARIABLE,
+              hljs.C_BLOCK_COMMENT_MODE,
+              STRING,
+              NUMBER,
+            ],
           },
         ],
       },
@@ -95,7 +101,10 @@ module.exports = function (hljs) {
         end: '{',
         excludeEnd: true,
         illegal: /[:\(\$"]/,
-        contains: [{ beginKeywords: 'extends implements' }, hljs.UNDERSCORE_TITLE_MODE],
+        contains: [
+          { beginKeywords: 'extends implements' },
+          hljs.UNDERSCORE_TITLE_MODE,
+        ],
       },
       {
         beginKeywords: 'namespace',

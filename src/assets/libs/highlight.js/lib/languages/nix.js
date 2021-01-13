@@ -2,7 +2,9 @@ module.exports = function (hljs) {
   var NIX_KEYWORDS = {
     keyword: 'rec with let in inherit assert if else then',
     literal: 'true false or and null',
-    built_in: 'import abort baseNameOf dirOf isNull builtins map removeAttrs throw ' + 'toString derivation',
+    built_in:
+      'import abort baseNameOf dirOf isNull builtins map removeAttrs throw ' +
+      'toString derivation',
   };
   var ANTIQUOTE = {
     className: 'subst',
@@ -29,7 +31,13 @@ module.exports = function (hljs) {
       { begin: '"', end: '"' },
     ],
   };
-  var EXPRESSIONS = [hljs.NUMBER_MODE, hljs.HASH_COMMENT_MODE, hljs.C_BLOCK_COMMENT_MODE, STRING, ATTRS];
+  var EXPRESSIONS = [
+    hljs.NUMBER_MODE,
+    hljs.HASH_COMMENT_MODE,
+    hljs.C_BLOCK_COMMENT_MODE,
+    STRING,
+    ATTRS,
+  ];
   ANTIQUOTE.contains = EXPRESSIONS;
   return {
     aliases: ['nixos'],

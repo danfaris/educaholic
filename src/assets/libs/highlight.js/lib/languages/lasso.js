@@ -4,7 +4,8 @@ module.exports = function (hljs) {
   var LASSO_CLOSE_RE = '\\]|\\?>';
   var LASSO_KEYWORDS = {
     literal:
-      'true false none minimal full all void and or not ' + 'bw nbw ew new cn ncn lt lte gt gte eq neq rx nrx ft',
+      'true false none minimal full all void and or not ' +
+      'bw nbw ew new cn ncn lt lte gt gte eq neq rx nrx ft',
     built_in:
       'array date decimal duration integer map pair string tag xml null ' +
       'boolean bytes keyword list locale queue set stack staticarray ' +
@@ -51,7 +52,9 @@ module.exports = function (hljs) {
   var LASSO_CODE = [
     hljs.C_LINE_COMMENT_MODE,
     hljs.C_BLOCK_COMMENT_MODE,
-    hljs.inherit(hljs.C_NUMBER_MODE, { begin: hljs.C_NUMBER_RE + '|(-?infinity|NaN)\\b' }),
+    hljs.inherit(hljs.C_NUMBER_MODE, {
+      begin: hljs.C_NUMBER_RE + '|(-?infinity|NaN)\\b',
+    }),
     hljs.inherit(hljs.APOS_STRING_MODE, { illegal: null }),
     hljs.inherit(hljs.QUOTE_STRING_MODE, { illegal: null }),
     {
@@ -100,7 +103,11 @@ module.exports = function (hljs) {
       beginKeywords: 'define',
       returnEnd: true,
       end: '\\(|=>',
-      contains: [hljs.inherit(hljs.TITLE_MODE, { begin: LASSO_IDENT_RE + '(=(?!>))?|[-+*/%](?!>)' })],
+      contains: [
+        hljs.inherit(hljs.TITLE_MODE, {
+          begin: LASSO_IDENT_RE + '(=(?!>))?|[-+*/%](?!>)',
+        }),
+      ],
     },
   ];
   return {

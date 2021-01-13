@@ -18,7 +18,10 @@ module.exports = function (hljs) {
 
   var NUMBERS = {
     className: 'number',
-    variants: [{ begin: '\\b(\\d+(\\.\\d*)?|\\.\\d+)(u|U|l|L|ul|UL|f|F)' }, { begin: hljs.C_NUMBER_RE }],
+    variants: [
+      { begin: '\\b(\\d+(\\.\\d*)?|\\.\\d+)(u|U|l|L|ul|UL|f|F)' },
+      { begin: hljs.C_NUMBER_RE },
+    ],
     relevance: 0,
   };
 
@@ -26,7 +29,9 @@ module.exports = function (hljs) {
     className: 'meta',
     begin: '#',
     end: '$',
-    keywords: { 'meta-keyword': 'if else elif endif define undef ifdef ifndef' },
+    keywords: {
+      'meta-keyword': 'if else elif endif define undef ifdef ifndef',
+    },
     contains: [
       {
         begin: /\\\n/,

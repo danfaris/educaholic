@@ -46,7 +46,8 @@ module.exports =
     var decimal_integer_re = '(0|[1-9][\\d_]*)',
       decimal_integer_nosus_re = '(0|[1-9][\\d_]*|\\d[\\d_]*|[\\d_]+?\\d)',
       binary_integer_re = '0[bB][01_]+',
-      hexadecimal_digits_re = '([\\da-fA-F][\\da-fA-F_]*|_[\\da-fA-F][\\da-fA-F_]*)',
+      hexadecimal_digits_re =
+        '([\\da-fA-F][\\da-fA-F_]*|_[\\da-fA-F][\\da-fA-F_]*)',
       hexadecimal_integer_re = '0[xX]' + hexadecimal_digits_re,
       decimal_exponent_re = '([eE][+-]?' + decimal_integer_nosus_re + ')',
       decimal_float_re =
@@ -75,7 +76,14 @@ module.exports =
         ')[pP][+-]?' +
         decimal_integer_nosus_re +
         ')',
-      integer_re = '(' + decimal_integer_re + '|' + binary_integer_re + '|' + hexadecimal_integer_re + ')',
+      integer_re =
+        '(' +
+        decimal_integer_re +
+        '|' +
+        binary_integer_re +
+        '|' +
+        hexadecimal_integer_re +
+        ')',
       float_re = '(' + hexadecimal_float_re + '|' + decimal_float_re + ')';
 
     /**
@@ -110,7 +118,13 @@ module.exports =
      */
     var D_FLOAT_MODE = {
       className: 'number',
-      begin: '\\b(' + float_re + '([fF]|L|i|[fF]i|Li)?|' + integer_re + '(i|[fF]i|Li)' + ')',
+      begin:
+        '\\b(' +
+        float_re +
+        '([fF]|L|i|[fF]i|Li)?|' +
+        integer_re +
+        '(i|[fF]i|Li)' +
+        ')',
       relevance: 0,
     };
 

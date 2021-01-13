@@ -20,7 +20,12 @@ module.exports = function (hljs) {
     className: 'built_in',
     begin: '(AI|AO|DI|DO|F|RI|RO|UI|UO|GI|GO|SI|SO)\\[',
     end: '\\]',
-    contains: ['self', TPID, hljs.QUOTE_STRING_MODE /* for pos section at bottom */, TPLABEL],
+    contains: [
+      'self',
+      TPID,
+      hljs.QUOTE_STRING_MODE /* for pos section at bottom */,
+      TPLABEL,
+    ],
   };
 
   return {

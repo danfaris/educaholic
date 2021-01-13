@@ -115,7 +115,11 @@ module.exports = function (hljs) {
       hljs.C_BLOCK_COMMENT_MODE,
       {
         className: 'number',
-        variants: [{ begin: '\\b(0[bB][01]+)' }, { begin: '\\b(0[oO][0-7]+)' }, { begin: hljs.C_NUMBER_RE }],
+        variants: [
+          { begin: '\\b(0[bB][01]+)' },
+          { begin: '\\b(0[oO][0-7]+)' },
+          { begin: hljs.C_NUMBER_RE },
+        ],
         relevance: 0,
       },
       {

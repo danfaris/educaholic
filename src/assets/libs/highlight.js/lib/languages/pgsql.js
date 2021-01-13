@@ -299,13 +299,17 @@ module.exports = function (hljs) {
           { begin: /\b(FROM|TO)\s+(PROGRAM|STDIN|STDOUT)\b/ },
           { begin: /\b(SHARE|EXCLUSIVE)\s+MODE\b/ },
           { begin: /\b(LEFT|RIGHT)\s+(OUTER\s+)?JOIN\b/ },
-          { begin: /\b(FETCH|MOVE)\s+(NEXT|PRIOR|FIRST|LAST|ABSOLUTE|RELATIVE|FORWARD|BACKWARD)\b/ },
+          {
+            begin: /\b(FETCH|MOVE)\s+(NEXT|PRIOR|FIRST|LAST|ABSOLUTE|RELATIVE|FORWARD|BACKWARD)\b/,
+          },
           { begin: /\bPRESERVE\s+ROWS\b/ },
           { begin: /\bDISCARD\s+PLANS\b/ },
           { begin: /\bREFERENCING\s+(OLD|NEW)\b/ },
           { begin: /\bSKIP\s+LOCKED\b/ },
           { begin: /\bGROUPING\s+SETS\b/ },
-          { begin: /\b(BINARY|INSENSITIVE|SCROLL|NO\s+SCROLL)\s+(CURSOR|FOR)\b/ },
+          {
+            begin: /\b(BINARY|INSENSITIVE|SCROLL|NO\s+SCROLL)\s+(CURSOR|FOR)\b/,
+          },
           { begin: /\b(WITH|WITHOUT)\s+HOLD\b/ },
           { begin: /\bWITH\s+(CASCADED|LOCAL)\s+CHECK\s+OPTION\b/ },
           { begin: /\bEXCLUDE\s+(TIES|NO\s+OTHERS)\b/ },
@@ -331,7 +335,9 @@ module.exports = function (hljs) {
           {
             begin: /\b(INCLUDING|EXCLUDING)\s+(COMMENTS|CONSTRAINTS|DEFAULTS|IDENTITY|INDEXES|STATISTICS|STORAGE|ALL)\b/,
           },
-          { begin: /\bAS\s+(ASSIGNMENT|IMPLICIT|PERMISSIVE|RESTRICTIVE|ENUM|RANGE)\b/ },
+          {
+            begin: /\bAS\s+(ASSIGNMENT|IMPLICIT|PERMISSIVE|RESTRICTIVE|ENUM|RANGE)\b/,
+          },
         ],
       },
       // functions named as keywords, followed by '('
@@ -412,7 +418,8 @@ module.exports = function (hljs) {
         begin: /\bRETURNS\s+(LANGUAGE_HANDLER|TRIGGER|EVENT_TRIGGER|FDW_HANDLER|INDEX_AM_HANDLER|TSM_HANDLER)\b/,
         keywords: {
           keyword: 'RETURNS',
-          type: 'LANGUAGE_HANDLER TRIGGER EVENT_TRIGGER FDW_HANDLER INDEX_AM_HANDLER TSM_HANDLER',
+          type:
+            'LANGUAGE_HANDLER TRIGGER EVENT_TRIGGER FDW_HANDLER INDEX_AM_HANDLER TSM_HANDLER',
         },
       },
       // Known functions - only when followed by '('

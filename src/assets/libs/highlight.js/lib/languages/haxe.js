@@ -82,9 +82,27 @@ module.exports = function (hljs) {
         beginKeywords: 'abstract',
         end: '[\\{$]',
         contains: [
-          { className: 'type', begin: '\\(', end: '\\)', excludeBegin: true, excludeEnd: true },
-          { className: 'type', begin: 'from +', end: '\\W', excludeBegin: true, excludeEnd: true },
-          { className: 'type', begin: 'to +', end: '\\W', excludeBegin: true, excludeEnd: true },
+          {
+            className: 'type',
+            begin: '\\(',
+            end: '\\)',
+            excludeBegin: true,
+            excludeEnd: true,
+          },
+          {
+            className: 'type',
+            begin: 'from +',
+            end: '\\W',
+            excludeBegin: true,
+            excludeEnd: true,
+          },
+          {
+            className: 'type',
+            begin: 'to +',
+            end: '\\W',
+            excludeBegin: true,
+            excludeEnd: true,
+          },
           hljs.TITLE_MODE,
         ],
         keywords: {

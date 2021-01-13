@@ -178,7 +178,11 @@ define([
           }
 
           // Recurse if we're merging plain objects or arrays
-          if (deep && copy && (jQuery.isPlainObject(copy) || (copyIsArray = Array.isArray(copy)))) {
+          if (
+            deep &&
+            copy &&
+            (jQuery.isPlainObject(copy) || (copyIsArray = Array.isArray(copy)))
+          ) {
             if (copyIsArray) {
               copyIsArray = false;
               clone = src && Array.isArray(src) ? src : [];
@@ -232,7 +236,10 @@ define([
 
       // Objects with prototype are plain iff they were constructed by a global Object function
       Ctor = hasOwn.call(proto, 'constructor') && proto.constructor;
-      return typeof Ctor === 'function' && fnToString.call(Ctor) === ObjectFunctionString;
+      return (
+        typeof Ctor === 'function' &&
+        fnToString.call(Ctor) === ObjectFunctionString
+      );
     },
 
     isEmptyObject: function (obj) {
@@ -378,9 +385,14 @@ define([
   }
 
   // Populate the class2type map
-  jQuery.each('Boolean Number String Function Array Date RegExp Object Error Symbol'.split(' '), function (i, name) {
-    class2type['[object ' + name + ']'] = name.toLowerCase();
-  });
+  jQuery.each(
+    'Boolean Number String Function Array Date RegExp Object Error Symbol'.split(
+      ' '
+    ),
+    function (i, name) {
+      class2type['[object ' + name + ']'] = name.toLowerCase();
+    }
+  );
 
   function isArrayLike(obj) {
     // Support: real iOS 8.2 only (not reproducible in simulator)
@@ -394,7 +406,11 @@ define([
       return false;
     }
 
-    return type === 'array' || length === 0 || (typeof length === 'number' && length > 0 && length - 1 in obj);
+    return (
+      type === 'array' ||
+      length === 0 ||
+      (typeof length === 'number' && length > 0 && length - 1 in obj)
+    );
   }
 
   return jQuery;

@@ -10,9 +10,14 @@ module.exports = function (hljs) {
     hljs.COMMENT('[^:]//', '$'),
   ];
   var TITLE1 = hljs.inherit(hljs.TITLE_MODE, {
-    variants: [{ begin: '\\b_*rig[A-Z]+[A-Za-z0-9_\\-]*' }, { begin: '\\b_[a-z0-9\\-]+' }],
+    variants: [
+      { begin: '\\b_*rig[A-Z]+[A-Za-z0-9_\\-]*' },
+      { begin: '\\b_[a-z0-9\\-]+' },
+    ],
   });
-  var TITLE2 = hljs.inherit(hljs.TITLE_MODE, { begin: '\\b([A-Za-z0-9_\\-]+)\\b' });
+  var TITLE2 = hljs.inherit(hljs.TITLE_MODE, {
+    begin: '\\b([A-Za-z0-9_\\-]+)\\b',
+  });
   return {
     case_insensitive: false,
     keywords: {

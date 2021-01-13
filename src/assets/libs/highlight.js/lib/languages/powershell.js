@@ -39,9 +39,13 @@ module.exports = function (hljs) {
     className: 'doctag',
     variants: [
       /* no paramater help tags */
-      { begin: /\.(synopsis|description|example|inputs|outputs|notes|link|component|role|functionality)/ },
+      {
+        begin: /\.(synopsis|description|example|inputs|outputs|notes|link|component|role|functionality)/,
+      },
       /* one parameter help tags */
-      { begin: /\.(parameter|forwardhelptargetname|forwardhelpcategory|remotehelprunspace|externalhelp)\s+\S+/ },
+      {
+        begin: /\.(parameter|forwardhelptargetname|forwardhelpcategory|remotehelprunspace|externalhelp)\s+\S+/,
+      },
     ],
   };
   var PS_COMMENT = hljs.inherit(hljs.COMMENT(null, null), {
@@ -66,6 +70,14 @@ module.exports = function (hljs) {
       nomarkup:
         '-ne -eq -lt -gt -ge -le -not -like -notlike -match -notmatch -contains -notcontains -in -notin -replace',
     },
-    contains: [BACKTICK_ESCAPE, hljs.NUMBER_MODE, QUOTE_STRING, APOS_STRING, LITERAL, VAR, PS_COMMENT],
+    contains: [
+      BACKTICK_ESCAPE,
+      hljs.NUMBER_MODE,
+      QUOTE_STRING,
+      APOS_STRING,
+      LITERAL,
+      VAR,
+      PS_COMMENT,
+    ],
   };
 };

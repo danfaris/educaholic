@@ -39,7 +39,8 @@ module.exports = function (hljs) {
   var STRING = hljs.inherit(hljs.QUOTE_STRING_MODE, { relevance: 0 });
   var STRING_FMT = {
     className: 'subst',
-    begin: '\\\\[abfnrtv]\\|\\\\x[0-9a-fA-F]*\\\\\\|%[-+# *.0-9]*[dioxXucsfeEgGp]',
+    begin:
+      '\\\\[abfnrtv]\\|\\\\x[0-9a-fA-F]*\\\\\\|%[-+# *.0-9]*[dioxXucsfeEgGp]',
     relevance: 0,
   };
   STRING.contains.push(STRING_FMT);

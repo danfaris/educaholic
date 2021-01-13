@@ -12,7 +12,9 @@ module.exports = function (hljs) {
     case_insensitive: true,
     illegal: /\/\*/,
     keywords: {
-      keyword: 'if else goto for in do call exit not exist errorlevel defined ' + 'equ neq lss leq gtr geq',
+      keyword:
+        'if else goto for in do call exit not exist errorlevel defined ' +
+        'equ neq lss leq gtr geq',
       built_in:
         'prn nul lpt3 lpt2 lpt1 con com4 com3 com2 com1 aux ' +
         'shift cd dir echo setlocal endlocal set pause copy ' +
@@ -34,7 +36,9 @@ module.exports = function (hljs) {
         begin: LABEL.begin,
         end: 'goto:eof',
         contains: [
-          hljs.inherit(hljs.TITLE_MODE, { begin: '([_a-zA-Z]\\w*\\.)*([_a-zA-Z]\\w*:)?[_a-zA-Z]\\w*' }),
+          hljs.inherit(hljs.TITLE_MODE, {
+            begin: '([_a-zA-Z]\\w*\\.)*([_a-zA-Z]\\w*:)?[_a-zA-Z]\\w*',
+          }),
           COMMENT,
         ],
       },

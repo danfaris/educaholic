@@ -1,7 +1,8 @@
 module.exports = function (hljs) {
   var SCHEME_IDENT_RE = '[^\\(\\)\\[\\]\\{\\}",\'`;#|\\\\\\s]+';
   var SCHEME_SIMPLE_NUMBER_RE = '(\\-|\\+)?\\d+([./]\\d+)?';
-  var SCHEME_COMPLEX_NUMBER_RE = SCHEME_SIMPLE_NUMBER_RE + '[+\\-]' + SCHEME_SIMPLE_NUMBER_RE + 'i';
+  var SCHEME_COMPLEX_NUMBER_RE =
+    SCHEME_SIMPLE_NUMBER_RE + '[+\\-]' + SCHEME_SIMPLE_NUMBER_RE + 'i';
   var BUILTINS = {
     'builtin-name':
       'case-lambda call/cc class define-class exit-handler field import ' +
@@ -132,10 +133,20 @@ module.exports = function (hljs) {
     contains: [LAMBDA, NAME, BODY],
   };
 
-  BODY.contains = [LITERAL, NUMBER, STRING, IDENT, QUOTED_IDENT, QUOTED_LIST, LIST].concat(COMMENT_MODES);
+  BODY.contains = [
+    LITERAL,
+    NUMBER,
+    STRING,
+    IDENT,
+    QUOTED_IDENT,
+    QUOTED_LIST,
+    LIST,
+  ].concat(COMMENT_MODES);
 
   return {
     illegal: /\S/,
-    contains: [SHEBANG, NUMBER, STRING, QUOTED_IDENT, QUOTED_LIST, LIST].concat(COMMENT_MODES),
+    contains: [SHEBANG, NUMBER, STRING, QUOTED_IDENT, QUOTED_LIST, LIST].concat(
+      COMMENT_MODES
+    ),
   };
 };

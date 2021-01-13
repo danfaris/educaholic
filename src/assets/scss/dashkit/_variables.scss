@@ -237,7 +237,8 @@ $input-border-color: $gray-400 !default;
 $input-focus-border-color: $primary !default;
 $input-focus-box-shadow: transparent !default;
 $input-placeholder-color: $gray-500 !default;
-$input-height-inner-sm: ($font-size-sm * $input-btn-line-height-sm)+ ($input-btn-padding-y-sm * 2) !default;
+$input-height-inner-sm: ($font-size-sm * $input-btn-line-height-sm)+ ($input-btn-padding-y-sm *
+      2) !default;
 $form-group-margin-bottom: 1.375rem !default;
 $input-group-addon-bg: $input-bg !default;
 $input-group-addon-color: $text-muted !default;
@@ -266,7 +267,8 @@ $nav-tabs-border-radius: 0 !default;
 $nav-tabs-link-hover-border-color: transparent transparent transparent !default;
 $nav-tabs-link-active-color: $body-color !default;
 $nav-tabs-link-active-bg: transparent !default;
-$nav-tabs-link-active-border-color: transparent transparent theme-color("primary") !default;
+$nav-tabs-link-active-border-color: transparent transparent
+  theme-color("primary") !default;
 $nav-pills-link-active-bg: $component-active-bg !default;
 // Navbar
 $navbar-padding-x: 1rem !default;
@@ -297,7 +299,9 @@ $card-spacer-x: $spacer !default;
 $card-border-width: $border-width !default;
 $card-border-radius: $border-radius-lg !default;
 $card-border-color: $gray-200 !default;
-$card-inner-border-radius: calc(#{$card-border-radius} - #{$card-border-width}) !default;
+$card-inner-border-radius: calc(
+  #{$card-border-radius} - #{$card-border-width}
+) !default;
 $card-cap-bg: transparent !default;
 // Tooltips
 $tooltip-color: $black !default;
@@ -404,7 +408,8 @@ $chart-height-sm: 225px !default;
 $chart-legend-margin-top: 2.5rem !default;
 $chart-legend-font-size: $font-size-sm !default;
 $chart-legend-color: $text-muted !default;
-$chart-legend-height: $chart-legend-margin-top + $chart-legend-font-size * $line-height-base !default;
+$chart-legend-height: $chart-legend-margin-top + $chart-legend-font-size *
+  $line-height-base !default;
 // Comment
 $comment-margin-bottom: 1rem !default;
 $comment-body-padding-y: 1rem !default;
@@ -425,7 +430,10 @@ $header-margin-bottom: 2rem !default;
 $header-spacing-y: 1.5rem !default;
 $header-body-border-width: 1px !default;
 $header-body-border-color: $border-color !default;
-$header-body-border-color-dark: fade-out($header-body-border-color, 0.9) !default;
+$header-body-border-color-dark: fade-out(
+  $header-body-border-color,
+  0.9
+) !default;
 // List groups
 $list-group-item-padding-y-lg: $spacer !default;
 // Main content
@@ -464,6 +472,7 @@ $progress-height-sm: 0.25rem !default;
 $path-to-img: "../img/" !default;
 // Forms
 $custom-switch-height: 1.5rem !default;
-$custom-switch-spacing: ($custom-switch-height - $custom-switch-indicator-size) / 2 !default;
+$custom-switch-spacing: ($custom-switch-height - $custom-switch-indicator-size) /
+  2 !default;
 $custom-switch-indicator-bg: $white !default;
 $custom-switch-indicator-active-bg: $white !default;

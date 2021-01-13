@@ -16,10 +16,31 @@
   var Romanian = {
     weekdays: {
       shorthand: ['Dum', 'Lun', 'Mar', 'Mie', 'Joi', 'Vin', 'Sam'],
-      longhand: ['Duminică', 'Luni', 'Marți', 'Miercuri', 'Joi', 'Vineri', 'Sâmbătă'],
+      longhand: [
+        'Duminică',
+        'Luni',
+        'Marți',
+        'Miercuri',
+        'Joi',
+        'Vineri',
+        'Sâmbătă',
+      ],
     },
     months: {
-      shorthand: ['Ian', 'Feb', 'Mar', 'Apr', 'Mai', 'Iun', 'Iul', 'Aug', 'Sep', 'Oct', 'Noi', 'Dec'],
+      shorthand: [
+        'Ian',
+        'Feb',
+        'Mar',
+        'Apr',
+        'Mai',
+        'Iun',
+        'Iul',
+        'Aug',
+        'Sep',
+        'Oct',
+        'Noi',
+        'Dec',
+      ],
       longhand: [
         'Ianuarie',
         'Februarie',

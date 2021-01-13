@@ -37,7 +37,10 @@ var ThemeCharts = (function () {
     transparent: 'transparent',
   };
 
-  var colorScheme = getComputedStyle(document.body).backgroundColor == 'rgb(249, 251, 253)' ? 'light' : 'dark';
+  var colorScheme =
+    getComputedStyle(document.body).backgroundColor == 'rgb(249, 251, 253)'
+      ? 'light'
+      : 'dark';
 
   //
   // Methods
@@ -51,8 +54,10 @@ var ThemeCharts = (function () {
         global: {
           responsive: true,
           maintainAspectRatio: false,
-          defaultColor: colorScheme == 'dark' ? colors.gray[700] : colors.gray[600],
-          defaultFontColor: colorScheme == 'dark' ? colors.gray[700] : colors.gray[600],
+          defaultColor:
+            colorScheme == 'dark' ? colors.gray[700] : colors.gray[600],
+          defaultFontColor:
+            colorScheme == 'dark' ? colors.gray[700] : colors.gray[600],
           defaultFontFamily: fonts.base,
           defaultFontSize: 13,
           layout: {
@@ -83,7 +88,8 @@ var ThemeCharts = (function () {
             },
             arc: {
               backgroundColor: colors.primary[700],
-              borderColor: colorScheme == 'dark' ? colors.gray[800] : colors.white,
+              borderColor:
+                colorScheme == 'dark' ? colors.gray[800] : colors.white,
               borderWidth: 4,
             },
           },
@@ -97,7 +103,9 @@ var ThemeCharts = (function () {
 
               // Create tooltip on first render
               if (!$tooltip.length) {
-                $tooltip = $('<div id="chart-tooltip" class="popover bs-popover-top" role="tooltip"></div>');
+                $tooltip = $(
+                  '<div id="chart-tooltip" class="popover bs-popover-top" role="tooltip"></div>'
+                );
 
                 // Append to body
                 $('body').append($tooltip);
@@ -124,17 +132,29 @@ var ThemeCharts = (function () {
 
                 // Add header
                 titleLines.forEach(function (title) {
-                  html += '<h3 class="popover-header text-center">' + title + '</h3>';
+                  html +=
+                    '<h3 class="popover-header text-center">' + title + '</h3>';
                 });
 
                 // Add body
                 bodyLines.forEach(function (body, i) {
                   var colors = model.labelColors[i];
                   var styles = 'background-color: ' + colors.backgroundColor;
-                  var indicator = '<span class="popover-body-indicator" style="' + styles + '"></span>';
-                  var align = bodyLines.length > 1 ? 'justify-content-left' : 'justify-content-center';
+                  var indicator =
+                    '<span class="popover-body-indicator" style="' +
+                    styles +
+                    '"></span>';
+                  var align =
+                    bodyLines.length > 1
+                      ? 'justify-content-left'
+                      : 'justify-content-center';
                   html +=
-                    '<div class="popover-body d-flex align-items-center ' + align + '">' + indicator + body + '</div>';
+                    '<div class="popover-body d-flex align-items-center ' +
+                    align +
+                    '">' +
+                    indicator +
+                    body +
+                    '</div>';
                 });
 
                 $tooltip.html(html);
@@ -169,10 +189,14 @@ var ThemeCharts = (function () {
                 var content = '';
 
                 if (data.datasets.length > 1) {
-                  content += '<span class="popover-body-label mr-auto">' + label + '</span>';
+                  content +=
+                    '<span class="popover-body-label mr-auto">' +
+                    label +
+                    '</span>';
                 }
 
-                content += '<span class="popover-body-value">' + yLabel + '</span>';
+                content +=
+                  '<span class="popover-body-value">' + yLabel + '</span>';
                 return content;
               },
             },
@@ -190,7 +214,8 @@ var ThemeCharts = (function () {
                 var value = data.datasets[0].data[item.index];
                 var content = '';
 
-                content += '<span class="popover-body-value">' + value + '</span>';
+                content +=
+                  '<span class="popover-body-value">' + value + '</span>';
                 return content;
               },
             },
@@ -203,7 +228,10 @@ var ThemeCharts = (function () {
               var bgColor = data.datasets[0].backgroundColor[index];
 
               content += '<span class="chart-legend-item">';
-              content += '<i class="chart-legend-indicator" style="background-color: ' + bgColor + '"></i>';
+              content +=
+                '<i class="chart-legend-indicator" style="background-color: ' +
+                bgColor +
+                '"></i>';
               content += label;
               content += '</span>';
             });
@@ -224,7 +252,8 @@ var ThemeCharts = (function () {
         drawTicks: false,
         lineWidth: 0,
         zeroLineWidth: 0,
-        zeroLineColor: colorScheme == 'dark' ? colors.gray[900] : colors.gray[300],
+        zeroLineColor:
+          colorScheme == 'dark' ? colors.gray[900] : colors.gray[300],
         zeroLineBorderDash: [2],
         zeroLineBorderDashOffset: [2],
       },
@@ -331,7 +360,10 @@ var ThemeCharts = (function () {
 
   // Toggle ticks
   function toggleTicks(elem, $chart) {
-    if (elem.data('prefix') !== undefined || elem.data('prefix') !== undefined) {
+    if (
+      elem.data('prefix') !== undefined ||
+      elem.data('prefix') !== undefined
+    ) {
       var prefix = elem.data('prefix') ? elem.data('prefix') : '';
       var suffix = elem.data('suffix') ? elem.data('suffix') : '';
 
@@ -349,10 +381,16 @@ var ThemeCharts = (function () {
         var content = '';
 
         if (data.datasets.length > 1) {
-          content += '<span class="popover-body-label mr-auto">' + label + '</span>';
+          content +=
+            '<span class="popover-body-label mr-auto">' + label + '</span>';
         }
 
-        content += '<span class="popover-body-value">' + prefix + yLabel + suffix + '</span>';
+        content +=
+          '<span class="popover-body-value">' +
+          prefix +
+          yLabel +
+          suffix +
+          '</span>';
         return content;
       };
     }

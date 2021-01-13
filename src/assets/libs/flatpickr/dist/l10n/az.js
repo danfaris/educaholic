@@ -16,10 +16,31 @@
   var Azerbaijan = {
     weekdays: {
       shorthand: ['Baz', 'BzE', 'ÇAx', 'Çər', 'CAx', 'Cüm', 'Şən'],
-      longhand: ['Bazar', 'Bazar ertəsi', 'Çərşənbə axşamı', 'Çərşənbə', 'Cümə axşamı', 'Cümə', 'Şənbə'],
+      longhand: [
+        'Bazar',
+        'Bazar ertəsi',
+        'Çərşənbə axşamı',
+        'Çərşənbə',
+        'Cümə axşamı',
+        'Cümə',
+        'Şənbə',
+      ],
     },
     months: {
-      shorthand: ['Yan', 'Fev', 'Mar', 'Apr', 'May', 'İyn', 'İyl', 'Avq', 'Sen', 'Okt', 'Noy', 'Dek'],
+      shorthand: [
+        'Yan',
+        'Fev',
+        'Mar',
+        'Apr',
+        'May',
+        'İyn',
+        'İyl',
+        'Avq',
+        'Sen',
+        'Okt',
+        'Noy',
+        'Dek',
+      ],
       longhand: [
         'Yanvar',
         'Fevral',

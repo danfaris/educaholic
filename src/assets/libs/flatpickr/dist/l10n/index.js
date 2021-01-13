@@ -28,7 +28,8 @@
       function __assign(t) {
         for (var s, i = 1, n = arguments.length; i < n; i++) {
           s = arguments[i];
-          for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
+          for (var p in s)
+            if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
         }
         return t;
       };
@@ -44,10 +45,31 @@
   var Arabic = {
     weekdays: {
       shorthand: ['أحد', 'اثنين', 'ثلاثاء', 'أربعاء', 'خميس', 'جمعة', 'سبت'],
-      longhand: ['الأحد', 'الاثنين', 'الثلاثاء', 'الأربعاء', 'الخميس', 'الجمعة', 'السبت'],
+      longhand: [
+        'الأحد',
+        'الاثنين',
+        'الثلاثاء',
+        'الأربعاء',
+        'الخميس',
+        'الجمعة',
+        'السبت',
+      ],
     },
     months: {
-      shorthand: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12'],
+      shorthand: [
+        '1',
+        '2',
+        '3',
+        '4',
+        '5',
+        '6',
+        '7',
+        '8',
+        '9',
+        '10',
+        '11',
+        '12',
+      ],
       longhand: [
         'يناير',
         'فبراير',
@@ -76,10 +98,31 @@
   var Austria = {
     weekdays: {
       shorthand: ['So', 'Mo', 'Di', 'Mi', 'Do', 'Fr', 'Sa'],
-      longhand: ['Sonntag', 'Montag', 'Dienstag', 'Mittwoch', 'Donnerstag', 'Freitag', 'Samstag'],
+      longhand: [
+        'Sonntag',
+        'Montag',
+        'Dienstag',
+        'Mittwoch',
+        'Donnerstag',
+        'Freitag',
+        'Samstag',
+      ],
     },
     months: {
-      shorthand: ['Jän', 'Feb', 'Mär', 'Apr', 'Mai', 'Jun', 'Jul', 'Aug', 'Sep', 'Okt', 'Nov', 'Dez'],
+      shorthand: [
+        'Jän',
+        'Feb',
+        'Mär',
+        'Apr',
+        'Mai',
+        'Jun',
+        'Jul',
+        'Aug',
+        'Sep',
+        'Okt',
+        'Nov',
+        'Dez',
+      ],
       longhand: [
         'Jänner',
         'Februar',
@@ -113,10 +156,31 @@
   var Azerbaijan = {
     weekdays: {
       shorthand: ['Baz', 'BzE', 'ÇAx', 'Çər', 'CAx', 'Cüm', 'Şən'],
-      longhand: ['Bazar', 'Bazar ertəsi', 'Çərşənbə axşamı', 'Çərşənbə', 'Cümə axşamı', 'Cümə', 'Şənbə'],
+      longhand: [
+        'Bazar',
+        'Bazar ertəsi',
+        'Çərşənbə axşamı',
+        'Çərşənbə',
+        'Cümə axşamı',
+        'Cümə',
+        'Şənbə',
+      ],
     },
     months: {
-      shorthand: ['Yan', 'Fev', 'Mar', 'Apr', 'May', 'İyn', 'İyl', 'Avq', 'Sen', 'Okt', 'Noy', 'Dek'],
+      shorthand: [
+        'Yan',
+        'Fev',
+        'Mar',
+        'Apr',
+        'May',
+        'İyn',
+        'İyl',
+        'Avq',
+        'Sen',
+        'Okt',
+        'Noy',
+        'Dek',
+      ],
       longhand: [
         'Yanvar',
         'Fevral',
@@ -154,10 +218,31 @@
   var Belarusian = {
     weekdays: {
       shorthand: ['Нд', 'Пн', 'Аў', 'Ср', 'Чц', 'Пт', 'Сб'],
-      longhand: ['Нядзеля', 'Панядзелак', 'Аўторак', 'Серада', 'Чацвер', 'Пятніца', 'Субота'],
+      longhand: [
+        'Нядзеля',
+        'Панядзелак',
+        'Аўторак',
+        'Серада',
+        'Чацвер',
+        'Пятніца',
+        'Субота',
+      ],
     },
     months: {
-      shorthand: ['Сту', 'Лют', 'Сак', 'Кра', 'Тра', 'Чэр', 'Ліп', 'Жні', 'Вер', 'Кас', 'Ліс', 'Сне'],
+      shorthand: [
+        'Сту',
+        'Лют',
+        'Сак',
+        'Кра',
+        'Тра',
+        'Чэр',
+        'Ліп',
+        'Жні',
+        'Вер',
+        'Кас',
+        'Ліс',
+        'Сне',
+      ],
       longhand: [
         'Студзень',
         'Люты',
@@ -196,10 +281,31 @@
   var Bulgarian = {
     weekdays: {
       shorthand: ['Нд', 'Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб'],
-      longhand: ['Неделя', 'Понеделник', 'Вторник', 'Сряда', 'Четвъртък', 'Петък', 'Събота'],
+      longhand: [
+        'Неделя',
+        'Понеделник',
+        'Вторник',
+        'Сряда',
+        'Четвъртък',
+        'Петък',
+        'Събота',
+      ],
     },
     months: {
-      shorthand: ['Яну', 'Фев', 'Март', 'Апр', 'Май', 'Юни', 'Юли', 'Авг', 'Сеп', 'Окт', 'Ное', 'Дек'],
+      shorthand: [
+        'Яну',
+        'Фев',
+        'Март',
+        'Апр',
+        'Май',
+        'Юни',
+        'Юли',
+        'Авг',
+        'Сеп',
+        'Окт',
+        'Ное',
+        'Дек',
+      ],
       longhand: [
         'Януари',
         'Февруари',
@@ -228,10 +334,31 @@
   var Bangla = {
     weekdays: {
       shorthand: ['রবি', 'সোম', 'মঙ্গল', 'বুধ', 'বৃহস্পতি', 'শুক্র', 'শনি'],
-      longhand: ['রবিবার', 'সোমবার', 'মঙ্গলবার', 'বুধবার', 'বৃহস্পতিবার', 'শুক্রবার', 'শনিবার'],
+      longhand: [
+        'রবিবার',
+        'সোমবার',
+        'মঙ্গলবার',
+        'বুধবার',
+        'বৃহস্পতিবার',
+        'শুক্রবার',
+        'শনিবার',
+      ],
     },
     months: {
-      shorthand: ['জানু', 'ফেব্রু', 'মার্চ', 'এপ্রিল', 'মে', 'জুন', 'জুলাই', 'আগ', 'সেপ্টে', 'অক্টো', 'নভে', 'ডিসে'],
+      shorthand: [
+        'জানু',
+        'ফেব্রু',
+        'মার্চ',
+        'এপ্রিল',
+        'মে',
+        'জুন',
+        'জুলাই',
+        'আগ',
+        'সেপ্টে',
+        'অক্টো',
+        'নভে',
+        'ডিসে',
+      ],
       longhand: [
         'জানুয়ারী',
         'ফেব্রুয়ারী',
@@ -260,10 +387,31 @@
   var Catalan = {
     weekdays: {
       shorthand: ['Dg', 'Dl', 'Dt', 'Dc', 'Dj', 'Dv', 'Ds'],
-      longhand: ['Diumenge', 'Dilluns', 'Dimarts', 'Dimecres', 'Dijous', 'Divendres', 'Dissabte'],
+      longhand: [
+        'Diumenge',
+        'Dilluns',
+        'Dimarts',
+        'Dimecres',
+        'Dijous',
+        'Divendres',
+        'Dissabte',
+      ],
     },
     months: {
-      shorthand: ['Gen', 'Febr', 'Març', 'Abr', 'Maig', 'Juny', 'Jul', 'Ag', 'Set', 'Oct', 'Nov', 'Des'],
+      shorthand: [
+        'Gen',
+        'Febr',
+        'Març',
+        'Abr',
+        'Maig',
+        'Juny',
+        'Jul',
+        'Ag',
+        'Set',
+        'Oct',
+        'Nov',
+        'Des',
+      ],
       longhand: [
         'Gener',
         'Febrer',
@@ -309,10 +457,31 @@
   var Czech = {
     weekdays: {
       shorthand: ['Ne', 'Po', 'Út', 'St', 'Čt', 'Pá', 'So'],
-      longhand: ['Neděle', 'Pondělí', 'Úterý', 'Středa', 'Čtvrtek', 'Pátek', 'Sobota'],
+      longhand: [
+        'Neděle',
+        'Pondělí',
+        'Úterý',
+        'Středa',
+        'Čtvrtek',
+        'Pátek',
+        'Sobota',
+      ],
     },
     months: {
-      shorthand: ['Led', 'Ún', 'Bře', 'Dub', 'Kvě', 'Čer', 'Čvc', 'Srp', 'Zář', 'Říj', 'Lis', 'Pro'],
+      shorthand: [
+        'Led',
+        'Ún',
+        'Bře',
+        'Dub',
+        'Kvě',
+        'Čer',
+        'Čvc',
+        'Srp',
+        'Zář',
+        'Říj',
+        'Lis',
+        'Pro',
+      ],
       longhand: [
         'Leden',
         'Únor',
@@ -351,10 +520,31 @@
   var Welsh = {
     weekdays: {
       shorthand: ['Sul', 'Llun', 'Maw', 'Mer', 'Iau', 'Gwe', 'Sad'],
-      longhand: ['Dydd Sul', 'Dydd Llun', 'Dydd Mawrth', 'Dydd Mercher', 'Dydd Iau', 'Dydd Gwener', 'Dydd Sadwrn'],
+      longhand: [
+        'Dydd Sul',
+        'Dydd Llun',
+        'Dydd Mawrth',
+        'Dydd Mercher',
+        'Dydd Iau',
+        'Dydd Gwener',
+        'Dydd Sadwrn',
+      ],
     },
     months: {
-      shorthand: ['Ion', 'Chwef', 'Maw', 'Ebr', 'Mai', 'Meh', 'Gorff', 'Awst', 'Medi', 'Hyd', 'Tach', 'Rhag'],
+      shorthand: [
+        'Ion',
+        'Chwef',
+        'Maw',
+        'Ebr',
+        'Mai',
+        'Meh',
+        'Gorff',
+        'Awst',
+        'Medi',
+        'Hyd',
+        'Tach',
+        'Rhag',
+      ],
       longhand: [
         'Ionawr',
         'Chwefror',
@@ -376,8 +566,23 @@
       if (nth === 2) return 'ail';
       if (nth === 3 || nth === 4) return 'ydd';
       if (nth === 5 || nth === 6) return 'ed';
-      if ((nth >= 7 && nth <= 10) || nth == 12 || nth == 15 || nth == 18 || nth == 20) return 'fed';
-      if (nth == 11 || nth == 13 || nth == 14 || nth == 16 || nth == 17 || nth == 19) return 'eg';
+      if (
+        (nth >= 7 && nth <= 10) ||
+        nth == 12 ||
+        nth == 15 ||
+        nth == 18 ||
+        nth == 20
+      )
+        return 'fed';
+      if (
+        nth == 11 ||
+        nth == 13 ||
+        nth == 14 ||
+        nth == 16 ||
+        nth == 17 ||
+        nth == 19
+      )
+        return 'eg';
       if (nth >= 21 && nth <= 39) return 'ain';
       // Inconclusive.
       return '';
@@ -395,10 +600,31 @@
   var Danish = {
     weekdays: {
       shorthand: ['søn', 'man', 'tir', 'ons', 'tors', 'fre', 'lør'],
-      longhand: ['søndag', 'mandag', 'tirsdag', 'onsdag', 'torsdag', 'fredag', 'lørdag'],
+      longhand: [
+        'søndag',
+        'mandag',
+        'tirsdag',
+        'onsdag',
+        'torsdag',
+        'fredag',
+        'lørdag',
+      ],
     },
     months: {
-      shorthand: ['jan', 'feb', 'mar', 'apr', 'maj', 'jun', 'jul', 'aug', 'sep', 'okt', 'nov', 'dec'],
+      shorthand: [
+        'jan',
+        'feb',
+        'mar',
+        'apr',
+        'maj',
+        'jun',
+        'jul',
+        'aug',
+        'sep',
+        'okt',
+        'nov',
+        'dec',
+      ],
       longhand: [
         'januar',
         'februar',
@@ -433,10 +659,31 @@
   var German = {
     weekdays: {
       shorthand: ['So', 'Mo', 'Di', 'Mi', 'Do', 'Fr', 'Sa'],
-      longhand: ['Sonntag', 'Montag', 'Dienstag', 'Mittwoch', 'Donnerstag', 'Freitag', 'Samstag'],
+      longhand: [
+        'Sonntag',
+        'Montag',
+        'Dienstag',
+        'Mittwoch',
+        'Donnerstag',
+        'Freitag',
+        'Samstag',
+      ],
     },
     months: {
-      shorthand: ['Jan', 'Feb', 'Mär', 'Apr', 'Mai', 'Jun', 'Jul', 'Aug', 'Sep', 'Okt', 'Nov', 'Dez'],
+      shorthand: [
+        'Jan',
+        'Feb',
+        'Mär',
+        'Apr',
+        'Mai',
+        'Jun',
+        'Jul',
+        'Aug',
+        'Sep',
+        'Okt',
+        'Nov',
+        'Dez',
+      ],
       longhand: [
         'Januar',
         'Februar',
@@ -464,10 +711,31 @@
   var english = {
     weekdays: {
       shorthand: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
-      longhand: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+      longhand: [
+        'Sunday',
+        'Monday',
+        'Tuesday',
+        'Wednesday',
+        'Thursday',
+        'Friday',
+        'Saturday',
+      ],
     },
     months: {
-      shorthand: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+      shorthand: [
+        'Jan',
+        'Feb',
+        'Mar',
+        'Apr',
+        'May',
+        'Jun',
+        'Jul',
+        'Aug',
+        'Sep',
+        'Oct',
+        'Nov',
+        'Dec',
+      ],
       longhand: [
         'January',
         'February',
@@ -521,10 +789,31 @@
     toggleTitle: 'Klaku por ŝalti',
     weekdays: {
       shorthand: ['Dim', 'Lun', 'Mar', 'Mer', 'Ĵaŭ', 'Ven', 'Sab'],
-      longhand: ['dimanĉo', 'lundo', 'mardo', 'merkredo', 'ĵaŭdo', 'vendredo', 'sabato'],
+      longhand: [
+        'dimanĉo',
+        'lundo',
+        'mardo',
+        'merkredo',
+        'ĵaŭdo',
+        'vendredo',
+        'sabato',
+      ],
     },
     months: {
-      shorthand: ['Jan', 'Feb', 'Mar', 'Apr', 'Maj', 'Jun', 'Jul', 'Aŭg', 'Sep', 'Okt', 'Nov', 'Dec'],
+      shorthand: [
+        'Jan',
+        'Feb',
+        'Mar',
+        'Apr',
+        'Maj',
+        'Jun',
+        'Jul',
+        'Aŭg',
+        'Sep',
+        'Okt',
+        'Nov',
+        'Dec',
+      ],
       longhand: [
         'januaro',
         'februaro',
@@ -556,10 +845,31 @@
   var Spanish = {
     weekdays: {
       shorthand: ['Dom', 'Lun', 'Mar', 'Mié', 'Jue', 'Vie', 'Sáb'],
-      longhand: ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'],
+      longhand: [
+        'Domingo',
+        'Lunes',
+        'Martes',
+        'Miércoles',
+        'Jueves',
+        'Viernes',
+        'Sábado',
+      ],
     },
     months: {
-      shorthand: ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic'],
+      shorthand: [
+        'Ene',
+        'Feb',
+        'Mar',
+        'Abr',
+        'May',
+        'Jun',
+        'Jul',
+        'Ago',
+        'Sep',
+        'Oct',
+        'Nov',
+        'Dic',
+      ],
       longhand: [
         'Enero',
         'Febrero',
@@ -593,10 +903,31 @@
   var Estonian = {
     weekdays: {
       shorthand: ['P', 'E', 'T', 'K', 'N', 'R', 'L'],
-      longhand: ['Pühapäev', 'Esmaspäev', 'Teisipäev', 'Kolmapäev', 'Neljapäev', 'Reede', 'Laupäev'],
+      longhand: [
+        'Pühapäev',
+        'Esmaspäev',
+        'Teisipäev',
+        'Kolmapäev',
+        'Neljapäev',
+        'Reede',
+        'Laupäev',
+      ],
     },
     months: {
-      shorthand: ['Jaan', 'Veebr', 'Märts', 'Apr', 'Mai', 'Juuni', 'Juuli', 'Aug', 'Sept', 'Okt', 'Nov', 'Dets'],
+      shorthand: [
+        'Jaan',
+        'Veebr',
+        'Märts',
+        'Apr',
+        'Mai',
+        'Juuni',
+        'Juuli',
+        'Aug',
+        'Sept',
+        'Okt',
+        'Nov',
+        'Dets',
+      ],
       longhand: [
         'Jaanuar',
         'Veebruar',
@@ -633,7 +964,15 @@
   var Persian = {
     weekdays: {
       shorthand: ['یک', 'دو', 'سه', 'چهار', 'پنج', 'جمعه', 'شنبه'],
-      longhand: ['یک‌شنبه', 'دوشنبه', 'سه‌شنبه', 'چهارشنبه', 'پنچ‌شنبه', 'جمعه', 'شنبه'],
+      longhand: [
+        'یک‌شنبه',
+        'دوشنبه',
+        'سه‌شنبه',
+        'چهارشنبه',
+        'پنچ‌شنبه',
+        'جمعه',
+        'شنبه',
+      ],
     },
     months: {
       shorthand: [
@@ -683,7 +1022,15 @@
     firstDayOfWeek: 1,
     weekdays: {
       shorthand: ['Su', 'Ma', 'Ti', 'Ke', 'To', 'Pe', 'La'],
-      longhand: ['Sunnuntai', 'Maanantai', 'Tiistai', 'Keskiviikko', 'Torstai', 'Perjantai', 'Lauantai'],
+      longhand: [
+        'Sunnuntai',
+        'Maanantai',
+        'Tiistai',
+        'Keskiviikko',
+        'Torstai',
+        'Perjantai',
+        'Lauantai',
+      ],
     },
     months: {
       shorthand: [
@@ -731,10 +1078,31 @@
   var Faroese = {
     weekdays: {
       shorthand: ['Sun', 'Mán', 'Týs', 'Mik', 'Hós', 'Frí', 'Ley'],
-      longhand: ['Sunnudagur', 'Mánadagur', 'Týsdagur', 'Mikudagur', 'Hósdagur', 'Fríggjadagur', 'Leygardagur'],
+      longhand: [
+        'Sunnudagur',
+        'Mánadagur',
+        'Týsdagur',
+        'Mikudagur',
+        'Hósdagur',
+        'Fríggjadagur',
+        'Leygardagur',
+      ],
     },
     months: {
-      shorthand: ['Jan', 'Feb', 'Mar', 'Apr', 'Mai', 'Jun', 'Jul', 'Aug', 'Sep', 'Okt', 'Nov', 'Des'],
+      shorthand: [
+        'Jan',
+        'Feb',
+        'Mar',
+        'Apr',
+        'Mai',
+        'Jun',
+        'Jul',
+        'Aug',
+        'Sep',
+        'Okt',
+        'Nov',
+        'Des',
+      ],
       longhand: [
         'Januar',
         'Februar',
@@ -773,10 +1141,31 @@
     firstDayOfWeek: 1,
     weekdays: {
       shorthand: ['dim', 'lun', 'mar', 'mer', 'jeu', 'ven', 'sam'],
-      longhand: ['dimanche', 'lundi', 'mardi', 'mercredi', 'jeudi', 'vendredi', 'samedi'],
+      longhand: [
+        'dimanche',
+        'lundi',
+        'mardi',
+        'mercredi',
+        'jeudi',
+        'vendredi',
+        'samedi',
+      ],
     },
     months: {
-      shorthand: ['janv', 'févr', 'mars', 'avr', 'mai', 'juin', 'juil', 'août', 'sept', 'oct', 'nov', 'déc'],
+      shorthand: [
+        'janv',
+        'févr',
+        'mars',
+        'avr',
+        'mai',
+        'juin',
+        'juil',
+        'août',
+        'sept',
+        'oct',
+        'nov',
+        'déc',
+      ],
       longhand: [
         'janvier',
         'février',
@@ -813,10 +1202,31 @@
   var Greek = {
     weekdays: {
       shorthand: ['Κυ', 'Δε', 'Τρ', 'Τε', 'Πέ', 'Πα', 'Σά'],
-      longhand: ['Κυριακή', 'Δευτέρα', 'Τρίτη', 'Τετάρτη', 'Πέμπτη', 'Παρασκευή', 'Σάββατο'],
+      longhand: [
+        'Κυριακή',
+        'Δευτέρα',
+        'Τρίτη',
+        'Τετάρτη',
+        'Πέμπτη',
+        'Παρασκευή',
+        'Σάββατο',
+      ],
     },
     months: {
-      shorthand: ['Ιαν', 'Φεβ', 'Μάρ', 'Απρ', 'Μάι', 'Ιού', 'Ιού', 'Αύγ', 'Σεπ', 'Οκτ', 'Νοέ', 'Δεκ'],
+      shorthand: [
+        'Ιαν',
+        'Φεβ',
+        'Μάρ',
+        'Απρ',
+        'Μάι',
+        'Ιού',
+        'Ιού',
+        'Αύγ',
+        'Σεπ',
+        'Οκτ',
+        'Νοέ',
+        'Δεκ',
+      ],
       longhand: [
         'Ιανουάριος',
         'Φεβρουάριος',
@@ -857,7 +1267,20 @@
       longhand: ['ראשון', 'שני', 'שלישי', 'רביעי', 'חמישי', 'שישי', 'שבת'],
     },
     months: {
-      shorthand: ['ינו׳', 'פבר׳', 'מרץ', 'אפר׳', 'מאי', 'יוני', 'יולי', 'אוג׳', 'ספט׳', 'אוק׳', 'נוב׳', 'דצמ׳'],
+      shorthand: [
+        'ינו׳',
+        'פבר׳',
+        'מרץ',
+        'אפר׳',
+        'מאי',
+        'יוני',
+        'יולי',
+        'אוג׳',
+        'ספט׳',
+        'אוק׳',
+        'נוב׳',
+        'דצמ׳',
+      ],
       longhand: [
         'ינואר',
         'פברואר',
@@ -887,10 +1310,31 @@
   var Hindi = {
     weekdays: {
       shorthand: ['रवि', 'सोम', 'मंगल', 'बुध', 'गुरु', 'शुक्र', 'शनि'],
-      longhand: ['रविवार', 'सोमवार', 'मंगलवार', 'बुधवार', 'गुरुवार', 'शुक्रवार', 'शनिवार'],
+      longhand: [
+        'रविवार',
+        'सोमवार',
+        'मंगलवार',
+        'बुधवार',
+        'गुरुवार',
+        'शुक्रवार',
+        'शनिवार',
+      ],
     },
     months: {
-      shorthand: ['जन', 'फर', 'मार्च', 'अप्रेल', 'मई', 'जून', 'जूलाई', 'अग', 'सित', 'अक्ट', 'नव', 'दि'],
+      shorthand: [
+        'जन',
+        'फर',
+        'मार्च',
+        'अप्रेल',
+        'मई',
+        'जून',
+        'जूलाई',
+        'अग',
+        'सित',
+        'अक्ट',
+        'नव',
+        'दि',
+      ],
       longhand: [
         'जनवरी ',
         'फरवरी',
@@ -920,10 +1364,31 @@
     firstDayOfWeek: 1,
     weekdays: {
       shorthand: ['Ned', 'Pon', 'Uto', 'Sri', 'Čet', 'Pet', 'Sub'],
-      longhand: ['Nedjelja', 'Ponedjeljak', 'Utorak', 'Srijeda', 'Četvrtak', 'Petak', 'Subota'],
+      longhand: [
+        'Nedjelja',
+        'Ponedjeljak',
+        'Utorak',
+        'Srijeda',
+        'Četvrtak',
+        'Petak',
+        'Subota',
+      ],
     },
     months: {
-      shorthand: ['Sij', 'Velj', 'Ožu', 'Tra', 'Svi', 'Lip', 'Srp', 'Kol', 'Ruj', 'Lis', 'Stu', 'Pro'],
+      shorthand: [
+        'Sij',
+        'Velj',
+        'Ožu',
+        'Tra',
+        'Svi',
+        'Lip',
+        'Srp',
+        'Kol',
+        'Ruj',
+        'Lis',
+        'Stu',
+        'Pro',
+      ],
       longhand: [
         'Siječanj',
         'Veljača',
@@ -953,10 +1418,31 @@
     firstDayOfWeek: 1,
     weekdays: {
       shorthand: ['V', 'H', 'K', 'Sz', 'Cs', 'P', 'Szo'],
-      longhand: ['Vasárnap', 'Hétfő', 'Kedd', 'Szerda', 'Csütörtök', 'Péntek', 'Szombat'],
+      longhand: [
+        'Vasárnap',
+        'Hétfő',
+        'Kedd',
+        'Szerda',
+        'Csütörtök',
+        'Péntek',
+        'Szombat',
+      ],
     },
     months: {
-      shorthand: ['Jan', 'Feb', 'Már', 'Ápr', 'Máj', 'Jún', 'Júl', 'Aug', 'Szep', 'Okt', 'Nov', 'Dec'],
+      shorthand: [
+        'Jan',
+        'Feb',
+        'Már',
+        'Ápr',
+        'Máj',
+        'Jún',
+        'Júl',
+        'Aug',
+        'Szep',
+        'Okt',
+        'Nov',
+        'Dec',
+      ],
       longhand: [
         'Január',
         'Február',
@@ -992,10 +1478,31 @@
   var Indonesian = {
     weekdays: {
       shorthand: ['Min', 'Sen', 'Sel', 'Rab', 'Kam', 'Jum', 'Sab'],
-      longhand: ['Minggu', 'Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu'],
+      longhand: [
+        'Minggu',
+        'Senin',
+        'Selasa',
+        'Rabu',
+        'Kamis',
+        'Jumat',
+        'Sabtu',
+      ],
     },
     months: {
-      shorthand: ['Jan', 'Feb', 'Mar', 'Apr', 'Mei', 'Jun', 'Jul', 'Agu', 'Sep', 'Okt', 'Nov', 'Des'],
+      shorthand: [
+        'Jan',
+        'Feb',
+        'Mar',
+        'Apr',
+        'Mei',
+        'Jun',
+        'Jul',
+        'Agu',
+        'Sep',
+        'Okt',
+        'Nov',
+        'Des',
+      ],
       longhand: [
         'Januari',
         'Februari',
@@ -1028,10 +1535,31 @@
   var Icelandic = {
     weekdays: {
       shorthand: ['Sun', 'Mán', 'Þri', 'Mið', 'Fim', 'Fös', 'Lau'],
-      longhand: ['Sunnudagur', 'Mánudagur', 'Þriðjudagur', 'Miðvikudagur', 'Fimmtudagur', 'Föstudagur', 'Laugardagur'],
+      longhand: [
+        'Sunnudagur',
+        'Mánudagur',
+        'Þriðjudagur',
+        'Miðvikudagur',
+        'Fimmtudagur',
+        'Föstudagur',
+        'Laugardagur',
+      ],
     },
     months: {
-      shorthand: ['Jan', 'Feb', 'Mar', 'Apr', 'Maí', 'Jún', 'Júl', 'Ágú', 'Sep', 'Okt', 'Nóv', 'Des'],
+      shorthand: [
+        'Jan',
+        'Feb',
+        'Mar',
+        'Apr',
+        'Maí',
+        'Jún',
+        'Júl',
+        'Ágú',
+        'Sep',
+        'Okt',
+        'Nóv',
+        'Des',
+      ],
       longhand: [
         'Janúar',
         'Febrúar',
@@ -1067,10 +1595,31 @@
   var Italian = {
     weekdays: {
       shorthand: ['Dom', 'Lun', 'Mar', 'Mer', 'Gio', 'Ven', 'Sab'],
-      longhand: ['Domenica', 'Lunedì', 'Martedì', 'Mercoledì', 'Giovedì', 'Venerdì', 'Sabato'],
+      longhand: [
+        'Domenica',
+        'Lunedì',
+        'Martedì',
+        'Mercoledì',
+        'Giovedì',
+        'Venerdì',
+        'Sabato',
+      ],
     },
     months: {
-      shorthand: ['Gen', 'Feb', 'Mar', 'Apr', 'Mag', 'Giu', 'Lug', 'Ago', 'Set', 'Ott', 'Nov', 'Dic'],
+      shorthand: [
+        'Gen',
+        'Feb',
+        'Mar',
+        'Apr',
+        'Mag',
+        'Giu',
+        'Lug',
+        'Ago',
+        'Set',
+        'Ott',
+        'Nov',
+        'Dic',
+      ],
       longhand: [
         'Gennaio',
         'Febbraio',
@@ -1107,11 +1656,45 @@
   var Japanese = {
     weekdays: {
       shorthand: ['日', '月', '火', '水', '木', '金', '土'],
-      longhand: ['日曜日', '月曜日', '火曜日', '水曜日', '木曜日', '金曜日', '土曜日'],
+      longhand: [
+        '日曜日',
+        '月曜日',
+        '火曜日',
+        '水曜日',
+        '木曜日',
+        '金曜日',
+        '土曜日',
+      ],
     },
     months: {
-      shorthand: ['1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月', '11月', '12月'],
-      longhand: ['1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月', '11月', '12月'],
+      shorthand: [
+        '1月',
+        '2月',
+        '3月',
+        '4月',
+        '5月',
+        '6月',
+        '7月',
+        '8月',
+        '9月',
+        '10月',
+        '11月',
+        '12月',
+      ],
+      longhand: [
+        '1月',
+        '2月',
+        '3月',
+        '4月',
+        '5月',
+        '6月',
+        '7月',
+        '8月',
+        '9月',
+        '10月',
+        '11月',
+        '12月',
+      ],
     },
   };
   fp$q.l10ns.ja = Japanese;
@@ -1126,11 +1709,45 @@
   var Korean = {
     weekdays: {
       shorthand: ['일', '월', '화', '수', '목', '금', '토'],
-      longhand: ['일요일', '월요일', '화요일', '수요일', '목요일', '금요일', '토요일'],
+      longhand: [
+        '일요일',
+        '월요일',
+        '화요일',
+        '수요일',
+        '목요일',
+        '금요일',
+        '토요일',
+      ],
     },
     months: {
-      shorthand: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'],
-      longhand: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'],
+      shorthand: [
+        '1월',
+        '2월',
+        '3월',
+        '4월',
+        '5월',
+        '6월',
+        '7월',
+        '8월',
+        '9월',
+        '10월',
+        '11월',
+        '12월',
+      ],
+      longhand: [
+        '1월',
+        '2월',
+        '3월',
+        '4월',
+        '5월',
+        '6월',
+        '7월',
+        '8월',
+        '9월',
+        '10월',
+        '11월',
+        '12월',
+      ],
     },
     ordinal: function () {
       return '일';
@@ -1147,8 +1764,24 @@
         };
   var Khmer = {
     weekdays: {
-      shorthand: ['អាទិត្យ', 'ចន្ទ', 'អង្គារ', 'ពុធ', 'ព្រហស.', 'សុក្រ', 'សៅរ៍'],
-      longhand: ['អាទិត្យ', 'ចន្ទ', 'អង្គារ', 'ពុធ', 'ព្រហស្បតិ៍', 'សុក្រ', 'សៅរ៍'],
+      shorthand: [
+        'អាទិត្យ',
+        'ចន្ទ',
+        'អង្គារ',
+        'ពុធ',
+        'ព្រហស.',
+        'សុក្រ',
+        'សៅរ៍',
+      ],
+      longhand: [
+        'អាទិត្យ',
+        'ចន្ទ',
+        'អង្គារ',
+        'ពុធ',
+        'ព្រហស្បតិ៍',
+        'សុក្រ',
+        'សៅរ៍',
+      ],
     },
     months: {
       shorthand: [
@@ -1202,10 +1835,31 @@
   var Kazakh = {
     weekdays: {
       shorthand: ['Жс', 'Дс', 'Сc', 'Ср', 'Бс', 'Жм', 'Сб'],
-      longhand: ['Жексенбi', 'Дүйсенбi', 'Сейсенбi', 'Сәрсенбi', 'Бейсенбi', 'Жұма', 'Сенбi'],
+      longhand: [
+        'Жексенбi',
+        'Дүйсенбi',
+        'Сейсенбi',
+        'Сәрсенбi',
+        'Бейсенбi',
+        'Жұма',
+        'Сенбi',
+      ],
     },
     months: {
-      shorthand: ['Қаң', 'Ақп', 'Нау', 'Сәу', 'Мам', 'Мау', 'Шiл', 'Там', 'Қыр', 'Қаз', 'Қар', 'Жел'],
+      shorthand: [
+        'Қаң',
+        'Ақп',
+        'Нау',
+        'Сәу',
+        'Мам',
+        'Мау',
+        'Шiл',
+        'Там',
+        'Қыр',
+        'Қаз',
+        'Қар',
+        'Жел',
+      ],
       longhand: [
         'Қаңтар',
         'Ақпан',
@@ -1255,7 +1909,20 @@
       ],
     },
     months: {
-      shorthand: ['Sau', 'Vas', 'Kov', 'Bal', 'Geg', 'Bir', 'Lie', 'Rgp', 'Rgs', 'Spl', 'Lap', 'Grd'],
+      shorthand: [
+        'Sau',
+        'Vas',
+        'Kov',
+        'Bal',
+        'Geg',
+        'Bir',
+        'Lie',
+        'Rgp',
+        'Rgs',
+        'Spl',
+        'Lap',
+        'Grd',
+      ],
       longhand: [
         'Sausis',
         'Vasaris',
@@ -1292,10 +1959,31 @@
     firstDayOfWeek: 1,
     weekdays: {
       shorthand: ['Sv', 'Pr', 'Ot', 'Tr', 'Ce', 'Pk', 'Se'],
-      longhand: ['Svētdiena', 'Pirmdiena', 'Otrdiena', 'Trešdiena', 'Ceturtdiena', 'Piektdiena', 'Sestdiena'],
+      longhand: [
+        'Svētdiena',
+        'Pirmdiena',
+        'Otrdiena',
+        'Trešdiena',
+        'Ceturtdiena',
+        'Piektdiena',
+        'Sestdiena',
+      ],
     },
     months: {
-      shorthand: ['Jan', 'Feb', 'Mar', 'Apr', 'Mai', 'Jūn', 'Jūl', 'Aug', 'Sep', 'Okt', 'Nov', 'Dec'],
+      shorthand: [
+        'Jan',
+        'Feb',
+        'Mar',
+        'Apr',
+        'Mai',
+        'Jūn',
+        'Jūl',
+        'Aug',
+        'Sep',
+        'Okt',
+        'Nov',
+        'Dec',
+      ],
       longhand: [
         'Janvāris',
         'Februāris',
@@ -1325,10 +2013,31 @@
   var Macedonian = {
     weekdays: {
       shorthand: ['Не', 'По', 'Вт', 'Ср', 'Че', 'Пе', 'Са'],
-      longhand: ['Недела', 'Понеделник', 'Вторник', 'Среда', 'Четврток', 'Петок', 'Сабота'],
+      longhand: [
+        'Недела',
+        'Понеделник',
+        'Вторник',
+        'Среда',
+        'Четврток',
+        'Петок',
+        'Сабота',
+      ],
     },
     months: {
-      shorthand: ['Јан', 'Фев', 'Мар', 'Апр', 'Мај', 'Јун', 'Јул', 'Авг', 'Сеп', 'Окт', 'Ное', 'Дек'],
+      shorthand: [
+        'Јан',
+        'Фев',
+        'Мар',
+        'Апр',
+        'Мај',
+        'Јун',
+        'Јул',
+        'Авг',
+        'Сеп',
+        'Окт',
+        'Ное',
+        'Дек',
+      ],
       longhand: [
         'Јануари',
         'Февруари',
@@ -1361,7 +2070,15 @@
     firstDayOfWeek: 1,
     weekdays: {
       shorthand: ['Да', 'Мя', 'Лх', 'Пү', 'Ба', 'Бя', 'Ня'],
-      longhand: ['Даваа', 'Мягмар', 'Лхагва', 'Пүрэв', 'Баасан', 'Бямба', 'Ням'],
+      longhand: [
+        'Даваа',
+        'Мягмар',
+        'Лхагва',
+        'Пүрэв',
+        'Баасан',
+        'Бямба',
+        'Ням',
+      ],
     },
     months: {
       shorthand: [
@@ -1407,10 +2124,31 @@
   var Malaysian = {
     weekdays: {
       shorthand: ['Min', 'Isn', 'Sel', 'Rab', 'Kha', 'Jum', 'Sab'],
-      longhand: ['Minggu', 'Isnin', 'Selasa', 'Rabu', 'Khamis', 'Jumaat', 'Sabtu'],
+      longhand: [
+        'Minggu',
+        'Isnin',
+        'Selasa',
+        'Rabu',
+        'Khamis',
+        'Jumaat',
+        'Sabtu',
+      ],
     },
     months: {
-      shorthand: ['Jan', 'Feb', 'Mac', 'Apr', 'Mei', 'Jun', 'Jul', 'Ogo', 'Sep', 'Okt', 'Nov', 'Dis'],
+      shorthand: [
+        'Jan',
+        'Feb',
+        'Mac',
+        'Apr',
+        'Mei',
+        'Jun',
+        'Jul',
+        'Ogo',
+        'Sep',
+        'Okt',
+        'Nov',
+        'Dis',
+      ],
       longhand: [
         'Januari',
         'Februari',
@@ -1442,10 +2180,31 @@
   var Burmese = {
     weekdays: {
       shorthand: ['နွေ', 'လာ', 'ဂါ', 'ဟူး', 'ကြာ', 'သော', 'နေ'],
-      longhand: ['တနင်္ဂနွေ', 'တနင်္လာ', 'အင်္ဂါ', 'ဗုဒ္ဓဟူး', 'ကြာသပတေး', 'သောကြာ', 'စနေ'],
+      longhand: [
+        'တနင်္ဂနွေ',
+        'တနင်္လာ',
+        'အင်္ဂါ',
+        'ဗုဒ္ဓဟူး',
+        'ကြာသပတေး',
+        'သောကြာ',
+        'စနေ',
+      ],
     },
     months: {
-      shorthand: ['ဇန်', 'ဖေ', 'မတ်', 'ပြီ', 'မေ', 'ဇွန်', 'လိုင်', 'သြ', 'စက်', 'အောက်', 'နို', 'ဒီ'],
+      shorthand: [
+        'ဇန်',
+        'ဖေ',
+        'မတ်',
+        'ပြီ',
+        'မေ',
+        'ဇွန်',
+        'လိုင်',
+        'သြ',
+        'စက်',
+        'အောက်',
+        'နို',
+        'ဒီ',
+      ],
       longhand: [
         'ဇန်နဝါရီ',
         'ဖေဖော်ဝါရီ',
@@ -1478,10 +2237,31 @@
   var Dutch = {
     weekdays: {
       shorthand: ['zo', 'ma', 'di', 'wo', 'do', 'vr', 'za'],
-      longhand: ['zondag', 'maandag', 'dinsdag', 'woensdag', 'donderdag', 'vrijdag', 'zaterdag'],
+      longhand: [
+        'zondag',
+        'maandag',
+        'dinsdag',
+        'woensdag',
+        'donderdag',
+        'vrijdag',
+        'zaterdag',
+      ],
     },
     months: {
-      shorthand: ['jan', 'feb', 'mrt', 'apr', 'mei', 'jun', 'jul', 'aug', 'sept', 'okt', 'nov', 'dec'],
+      shorthand: [
+        'jan',
+        'feb',
+        'mrt',
+        'apr',
+        'mei',
+        'jun',
+        'jul',
+        'aug',
+        'sept',
+        'okt',
+        'nov',
+        'dec',
+      ],
       longhand: [
         'januari',
         'februari',
@@ -1519,10 +2299,31 @@
   var Norwegian = {
     weekdays: {
       shorthand: ['Søn', 'Man', 'Tir', 'Ons', 'Tor', 'Fre', 'Lør'],
-      longhand: ['Søndag', 'Mandag', 'Tirsdag', 'Onsdag', 'Torsdag', 'Fredag', 'Lørdag'],
+      longhand: [
+        'Søndag',
+        'Mandag',
+        'Tirsdag',
+        'Onsdag',
+        'Torsdag',
+        'Fredag',
+        'Lørdag',
+      ],
     },
     months: {
-      shorthand: ['Jan', 'Feb', 'Mar', 'Apr', 'Mai', 'Jun', 'Jul', 'Aug', 'Sep', 'Okt', 'Nov', 'Des'],
+      shorthand: [
+        'Jan',
+        'Feb',
+        'Mar',
+        'Apr',
+        'Mai',
+        'Jun',
+        'Jul',
+        'Aug',
+        'Sep',
+        'Okt',
+        'Nov',
+        'Des',
+      ],
       longhand: [
         'Januar',
         'Februar',
@@ -1559,10 +2360,31 @@
   var Punjabi = {
     weekdays: {
       shorthand: ['ਐਤ', 'ਸੋਮ', 'ਮੰਗਲ', 'ਬੁੱਧ', 'ਵੀਰ', 'ਸ਼ੁੱਕਰ', 'ਸ਼ਨਿੱਚਰ'],
-      longhand: ['ਐਤਵਾਰ', 'ਸੋਮਵਾਰ', 'ਮੰਗਲਵਾਰ', 'ਬੁੱਧਵਾਰ', 'ਵੀਰਵਾਰ', 'ਸ਼ੁੱਕਰਵਾਰ', 'ਸ਼ਨਿੱਚਰਵਾਰ'],
+      longhand: [
+        'ਐਤਵਾਰ',
+        'ਸੋਮਵਾਰ',
+        'ਮੰਗਲਵਾਰ',
+        'ਬੁੱਧਵਾਰ',
+        'ਵੀਰਵਾਰ',
+        'ਸ਼ੁੱਕਰਵਾਰ',
+        'ਸ਼ਨਿੱਚਰਵਾਰ',
+      ],
     },
     months: {
-      shorthand: ['ਜਨ', 'ਫ਼ਰ', 'ਮਾਰ', 'ਅਪ੍ਰੈ', 'ਮਈ', 'ਜੂਨ', 'ਜੁਲਾ', 'ਅਗ', 'ਸਤੰ', 'ਅਕ', 'ਨਵੰ', 'ਦਸੰ'],
+      shorthand: [
+        'ਜਨ',
+        'ਫ਼ਰ',
+        'ਮਾਰ',
+        'ਅਪ੍ਰੈ',
+        'ਮਈ',
+        'ਜੂਨ',
+        'ਜੁਲਾ',
+        'ਅਗ',
+        'ਸਤੰ',
+        'ਅਕ',
+        'ਨਵੰ',
+        'ਦਸੰ',
+      ],
       longhand: [
         'ਜਨਵਰੀ',
         'ਫ਼ਰਵਰੀ',
@@ -1591,10 +2413,31 @@
   var Polish = {
     weekdays: {
       shorthand: ['Nd', 'Pn', 'Wt', 'Śr', 'Cz', 'Pt', 'So'],
-      longhand: ['Niedziela', 'Poniedziałek', 'Wtorek', 'Środa', 'Czwartek', 'Piątek', 'Sobota'],
+      longhand: [
+        'Niedziela',
+        'Poniedziałek',
+        'Wtorek',
+        'Środa',
+        'Czwartek',
+        'Piątek',
+        'Sobota',
+      ],
     },
     months: {
-      shorthand: ['Sty', 'Lut', 'Mar', 'Kwi', 'Maj', 'Cze', 'Lip', 'Sie', 'Wrz', 'Paź', 'Lis', 'Gru'],
+      shorthand: [
+        'Sty',
+        'Lut',
+        'Mar',
+        'Kwi',
+        'Maj',
+        'Cze',
+        'Lip',
+        'Sie',
+        'Wrz',
+        'Paź',
+        'Lis',
+        'Gru',
+      ],
       longhand: [
         'Styczeń',
         'Luty',
@@ -1631,10 +2474,31 @@
   var Portuguese = {
     weekdays: {
       shorthand: ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb'],
-      longhand: ['Domingo', 'Segunda-feira', 'Terça-feira', 'Quarta-feira', 'Quinta-feira', 'Sexta-feira', 'Sábado'],
+      longhand: [
+        'Domingo',
+        'Segunda-feira',
+        'Terça-feira',
+        'Quarta-feira',
+        'Quinta-feira',
+        'Sexta-feira',
+        'Sábado',
+      ],
     },
     months: {
-      shorthand: ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez'],
+      shorthand: [
+        'Jan',
+        'Fev',
+        'Mar',
+        'Abr',
+        'Mai',
+        'Jun',
+        'Jul',
+        'Ago',
+        'Set',
+        'Out',
+        'Nov',
+        'Dez',
+      ],
       longhand: [
         'Janeiro',
         'Fevereiro',
@@ -1664,10 +2528,31 @@
   var Romanian = {
     weekdays: {
       shorthand: ['Dum', 'Lun', 'Mar', 'Mie', 'Joi', 'Vin', 'Sam'],
-      longhand: ['Duminică', 'Luni', 'Marți', 'Miercuri', 'Joi', 'Vineri', 'Sâmbătă'],
+      longhand: [
+        'Duminică',
+        'Luni',
+        'Marți',
+        'Miercuri',
+        'Joi',
+        'Vineri',
+        'Sâmbătă',
+      ],
     },
     months: {
-      shorthand: ['Ian', 'Feb', 'Mar', 'Apr', 'Mai', 'Iun', 'Iul', 'Aug', 'Sep', 'Oct', 'Noi', 'Dec'],
+      shorthand: [
+        'Ian',
+        'Feb',
+        'Mar',
+        'Apr',
+        'Mai',
+        'Iun',
+        'Iul',
+        'Aug',
+        'Sep',
+        'Oct',
+        'Noi',
+        'Dec',
+      ],
       longhand: [
         'Ianuarie',
         'Februarie',
@@ -1700,10 +2585,31 @@
   var Russian = {
     weekdays: {
       shorthand: ['Вс', 'Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб'],
-      longhand: ['Воскресенье', 'Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота'],
+      longhand: [
+        'Воскресенье',
+        'Понедельник',
+        'Вторник',
+        'Среда',
+        'Четверг',
+        'Пятница',
+        'Суббота',
+      ],
     },
     months: {
-      shorthand: ['Янв', 'Фев', 'Март', 'Апр', 'Май', 'Июнь', 'Июль', 'Авг', 'Сен', 'Окт', 'Ноя', 'Дек'],
+      shorthand: [
+        'Янв',
+        'Фев',
+        'Март',
+        'Апр',
+        'Май',
+        'Июнь',
+        'Июль',
+        'Авг',
+        'Сен',
+        'Окт',
+        'Ноя',
+        'Дек',
+      ],
       longhand: [
         'Январь',
         'Февраль',
@@ -1742,10 +2648,31 @@
   var Sinhala = {
     weekdays: {
       shorthand: ['ඉ', 'ස', 'අ', 'බ', 'බ්‍ර', 'සි', 'සෙ'],
-      longhand: ['ඉරිදා', 'සඳුදා', 'අඟහරුවාදා', 'බදාදා', 'බ්‍රහස්පතින්දා', 'සිකුරාදා', 'සෙනසුරාදා'],
+      longhand: [
+        'ඉරිදා',
+        'සඳුදා',
+        'අඟහරුවාදා',
+        'බදාදා',
+        'බ්‍රහස්පතින්දා',
+        'සිකුරාදා',
+        'සෙනසුරාදා',
+      ],
     },
     months: {
-      shorthand: ['ජන', 'පෙබ', 'මාර්', 'අප්‍රේ', 'මැයි', 'ජුනි', 'ජූලි', 'අගෝ', 'සැප්', 'ඔක්', 'නොවැ', 'දෙසැ'],
+      shorthand: [
+        'ජන',
+        'පෙබ',
+        'මාර්',
+        'අප්‍රේ',
+        'මැයි',
+        'ජුනි',
+        'ජූලි',
+        'අගෝ',
+        'සැප්',
+        'ඔක්',
+        'නොවැ',
+        'දෙසැ',
+      ],
       longhand: [
         'ජනවාරි',
         'පෙබරවාරි',
@@ -1774,10 +2701,31 @@
   var Slovak = {
     weekdays: {
       shorthand: ['Ned', 'Pon', 'Ut', 'Str', 'Štv', 'Pia', 'Sob'],
-      longhand: ['Nedeľa', 'Pondelok', 'Utorok', 'Streda', 'Štvrtok', 'Piatok', 'Sobota'],
+      longhand: [
+        'Nedeľa',
+        'Pondelok',
+        'Utorok',
+        'Streda',
+        'Štvrtok',
+        'Piatok',
+        'Sobota',
+      ],
     },
     months: {
-      shorthand: ['Jan', 'Feb', 'Mar', 'Apr', 'Máj', 'Jún', 'Júl', 'Aug', 'Sep', 'Okt', 'Nov', 'Dec'],
+      shorthand: [
+        'Jan',
+        'Feb',
+        'Mar',
+        'Apr',
+        'Máj',
+        'Jún',
+        'Júl',
+        'Aug',
+        'Sep',
+        'Okt',
+        'Nov',
+        'Dec',
+      ],
       longhand: [
         'Január',
         'Február',
@@ -1811,10 +2759,31 @@
   var Slovenian = {
     weekdays: {
       shorthand: ['Ned', 'Pon', 'Tor', 'Sre', 'Čet', 'Pet', 'Sob'],
-      longhand: ['Nedelja', 'Ponedeljek', 'Torek', 'Sreda', 'Četrtek', 'Petek', 'Sobota'],
+      longhand: [
+        'Nedelja',
+        'Ponedeljek',
+        'Torek',
+        'Sreda',
+        'Četrtek',
+        'Petek',
+        'Sobota',
+      ],
     },
     months: {
-      shorthand: ['Jan', 'Feb', 'Mar', 'Apr', 'Maj', 'Jun', 'Jul', 'Avg', 'Sep', 'Okt', 'Nov', 'Dec'],
+      shorthand: [
+        'Jan',
+        'Feb',
+        'Mar',
+        'Apr',
+        'Maj',
+        'Jun',
+        'Jul',
+        'Avg',
+        'Sep',
+        'Okt',
+        'Nov',
+        'Dec',
+      ],
       longhand: [
         'Januar',
         'Februar',
@@ -1848,10 +2817,31 @@
   var Albanian = {
     weekdays: {
       shorthand: ['Di', 'Hë', 'Ma', 'Më', 'En', 'Pr', 'Sh'],
-      longhand: ['E Diel', 'E Hënë', 'E Martë', 'E Mërkurë', 'E Enjte', 'E Premte', 'E Shtunë'],
+      longhand: [
+        'E Diel',
+        'E Hënë',
+        'E Martë',
+        'E Mërkurë',
+        'E Enjte',
+        'E Premte',
+        'E Shtunë',
+      ],
     },
     months: {
-      shorthand: ['Jan', 'Shk', 'Mar', 'Pri', 'Maj', 'Qer', 'Kor', 'Gus', 'Sht', 'Tet', 'Nën', 'Dhj'],
+      shorthand: [
+        'Jan',
+        'Shk',
+        'Mar',
+        'Pri',
+        'Maj',
+        'Qer',
+        'Kor',
+        'Gus',
+        'Sht',
+        'Tet',
+        'Nën',
+        'Dhj',
+      ],
       longhand: [
         'Janar',
         'Shkurt',
@@ -1880,10 +2870,31 @@
   var Serbian = {
     weekdays: {
       shorthand: ['Ned', 'Pon', 'Uto', 'Sre', 'Čet', 'Pet', 'Sub'],
-      longhand: ['Nedelja', 'Ponedeljak', 'Utorak', 'Sreda', 'Četvrtak', 'Petak', 'Subota'],
+      longhand: [
+        'Nedelja',
+        'Ponedeljak',
+        'Utorak',
+        'Sreda',
+        'Četvrtak',
+        'Petak',
+        'Subota',
+      ],
     },
     months: {
-      shorthand: ['Jan', 'Feb', 'Mar', 'Apr', 'Maj', 'Jun', 'Jul', 'Avg', 'Sep', 'Okt', 'Nov', 'Dec'],
+      shorthand: [
+        'Jan',
+        'Feb',
+        'Mar',
+        'Apr',
+        'Maj',
+        'Jun',
+        'Jul',
+        'Avg',
+        'Sep',
+        'Okt',
+        'Nov',
+        'Dec',
+      ],
       longhand: [
         'Januar',
         'Februar',
@@ -1917,10 +2928,31 @@
     weekAbbreviation: 'v',
     weekdays: {
       shorthand: ['Sön', 'Mån', 'Tis', 'Ons', 'Tor', 'Fre', 'Lör'],
-      longhand: ['Söndag', 'Måndag', 'Tisdag', 'Onsdag', 'Torsdag', 'Fredag', 'Lördag'],
+      longhand: [
+        'Söndag',
+        'Måndag',
+        'Tisdag',
+        'Onsdag',
+        'Torsdag',
+        'Fredag',
+        'Lördag',
+      ],
     },
     months: {
-      shorthand: ['Jan', 'Feb', 'Mar', 'Apr', 'Maj', 'Jun', 'Jul', 'Aug', 'Sep', 'Okt', 'Nov', 'Dec'],
+      shorthand: [
+        'Jan',
+        'Feb',
+        'Mar',
+        'Apr',
+        'Maj',
+        'Jun',
+        'Jul',
+        'Aug',
+        'Sep',
+        'Okt',
+        'Nov',
+        'Dec',
+      ],
       longhand: [
         'Januari',
         'Februari',
@@ -1952,10 +2984,31 @@
   var Thai = {
     weekdays: {
       shorthand: ['อา', 'จ', 'อ', 'พ', 'พฤ', 'ศ', 'ส'],
-      longhand: ['อาทิตย์', 'จันทร์', 'อังคาร', 'พุธ', 'พฤหัสบดี', 'ศุกร์', 'เสาร์'],
+      longhand: [
+        'อาทิตย์',
+        'จันทร์',
+        'อังคาร',
+        'พุธ',
+        'พฤหัสบดี',
+        'ศุกร์',
+        'เสาร์',
+      ],
     },
     months: {
-      shorthand: ['ม.ค.', 'ก.พ.', 'มี.ค.', 'เม.ย.', 'พ.ค.', 'มิ.ย.', 'ก.ค.', 'ส.ค.', 'ก.ย.', 'ต.ค.', 'พ.ย.', 'ธ.ค.'],
+      shorthand: [
+        'ม.ค.',
+        'ก.พ.',
+        'มี.ค.',
+        'เม.ย.',
+        'พ.ค.',
+        'มิ.ย.',
+        'ก.ค.',
+        'ส.ค.',
+        'ก.ย.',
+        'ต.ค.',
+        'พ.ย.',
+        'ธ.ค.',
+      ],
       longhand: [
         'มกราคม',
         'กุมภาพันธ์',
@@ -1991,10 +3044,31 @@
   var Turkish = {
     weekdays: {
       shorthand: ['Paz', 'Pzt', 'Sal', 'Çar', 'Per', 'Cum', 'Cmt'],
-      longhand: ['Pazar', 'Pazartesi', 'Salı', 'Çarşamba', 'Perşembe', 'Cuma', 'Cumartesi'],
+      longhand: [
+        'Pazar',
+        'Pazartesi',
+        'Salı',
+        'Çarşamba',
+        'Perşembe',
+        'Cuma',
+        'Cumartesi',
+      ],
     },
     months: {
-      shorthand: ['Oca', 'Şub', 'Mar', 'Nis', 'May', 'Haz', 'Tem', 'Ağu', 'Eyl', 'Eki', 'Kas', 'Ara'],
+      shorthand: [
+        'Oca',
+        'Şub',
+        'Mar',
+        'Nis',
+        'May',
+        'Haz',
+        'Tem',
+        'Ağu',
+        'Eyl',
+        'Eki',
+        'Kas',
+        'Ara',
+      ],
       longhand: [
         'Ocak',
         'Şubat',
@@ -2033,10 +3107,31 @@
     firstDayOfWeek: 1,
     weekdays: {
       shorthand: ['Нд', 'Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб'],
-      longhand: ['Неділя', 'Понеділок', 'Вівторок', 'Середа', 'Четвер', "П'ятниця", 'Субота'],
+      longhand: [
+        'Неділя',
+        'Понеділок',
+        'Вівторок',
+        'Середа',
+        'Четвер',
+        "П'ятниця",
+        'Субота',
+      ],
     },
     months: {
-      shorthand: ['Січ', 'Лют', 'Бер', 'Кві', 'Тра', 'Чер', 'Лип', 'Сер', 'Вер', 'Жов', 'Лис', 'Гру'],
+      shorthand: [
+        'Січ',
+        'Лют',
+        'Бер',
+        'Кві',
+        'Тра',
+        'Чер',
+        'Лип',
+        'Сер',
+        'Вер',
+        'Жов',
+        'Лис',
+        'Гру',
+      ],
       longhand: [
         'Січень',
         'Лютий',
@@ -2065,10 +3160,31 @@
   var Vietnamese = {
     weekdays: {
       shorthand: ['CN', 'T2', 'T3', 'T4', 'T5', 'T6', 'T7'],
-      longhand: ['Chủ nhật', 'Thứ hai', 'Thứ ba', 'Thứ tư', 'Thứ năm', 'Thứ sáu', 'Thứ bảy'],
+      longhand: [
+        'Chủ nhật',
+        'Thứ hai',
+        'Thứ ba',
+        'Thứ tư',
+        'Thứ năm',
+        'Thứ sáu',
+        'Thứ bảy',
+      ],
     },
     months: {
-      shorthand: ['Th1', 'Th2', 'Th3', 'Th4', 'Th5', 'Th6', 'Th7', 'Th8', 'Th9', 'Th10', 'Th11', 'Th12'],
+      shorthand: [
+        'Th1',
+        'Th2',
+        'Th3',
+        'Th4',
+        'Th5',
+        'Th6',
+        'Th7',
+        'Th8',
+        'Th9',
+        'Th10',
+        'Th11',
+        'Th12',
+      ],
       longhand: [
         'Tháng một',
         'Tháng hai',
@@ -2098,11 +3214,45 @@
   var Mandarin = {
     weekdays: {
       shorthand: ['周日', '周一', '周二', '周三', '周四', '周五', '周六'],
-      longhand: ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六'],
+      longhand: [
+        '星期日',
+        '星期一',
+        '星期二',
+        '星期三',
+        '星期四',
+        '星期五',
+        '星期六',
+      ],
     },
     months: {
-      shorthand: ['一月', '二月', '三月', '四月', '五月', '六月', '七月', '八月', '九月', '十月', '十一月', '十二月'],
-      longhand: ['一月', '二月', '三月', '四月', '五月', '六月', '七月', '八月', '九月', '十月', '十一月', '十二月'],
+      shorthand: [
+        '一月',
+        '二月',
+        '三月',
+        '四月',
+        '五月',
+        '六月',
+        '七月',
+        '八月',
+        '九月',
+        '十月',
+        '十一月',
+        '十二月',
+      ],
+      longhand: [
+        '一月',
+        '二月',
+        '三月',
+        '四月',
+        '五月',
+        '六月',
+        '七月',
+        '八月',
+        '九月',
+        '十月',
+        '十一月',
+        '十二月',
+      ],
     },
     rangeSeparator: ' 至 ',
     weekAbbreviation: '周',
@@ -2121,11 +3271,45 @@
   var MandarinTraditional = {
     weekdays: {
       shorthand: ['週日', '週一', '週二', '週三', '週四', '週五', '週六'],
-      longhand: ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六'],
+      longhand: [
+        '星期日',
+        '星期一',
+        '星期二',
+        '星期三',
+        '星期四',
+        '星期五',
+        '星期六',
+      ],
     },
     months: {
-      shorthand: ['一月', '二月', '三月', '四月', '五月', '六月', '七月', '八月', '九月', '十月', '十一月', '十二月'],
-      longhand: ['一月', '二月', '三月', '四月', '五月', '六月', '七月', '八月', '九月', '十月', '十一月', '十二月'],
+      shorthand: [
+        '一月',
+        '二月',
+        '三月',
+        '四月',
+        '五月',
+        '六月',
+        '七月',
+        '八月',
+        '九月',
+        '十月',
+        '十一月',
+        '十二月',
+      ],
+      longhand: [
+        '一月',
+        '二月',
+        '三月',
+        '四月',
+        '五月',
+        '六月',
+        '七月',
+        '八月',
+        '九月',
+        '十月',
+        '十一月',
+        '十二月',
+      ],
     },
     rangeSeparator: ' 至 ',
     weekAbbreviation: '週',

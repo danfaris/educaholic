@@ -20,7 +20,10 @@
         _prevDates;
       var createSecondInput = function () {
         if (config.input) {
-          secondInput = config.input instanceof Element ? config.input : window.document.querySelector(config.input);
+          secondInput =
+            config.input instanceof Element
+              ? config.input
+              : window.document.querySelector(config.input);
         } else {
           secondInput = fp._input.cloneNode();
           secondInput.removeAttribute('id');
@@ -50,17 +53,27 @@
         if (fp.config.allowInput)
           fp._bind(secondInput, 'keydown', function (e) {
             if (e.key === 'Enter') {
-              fp.setDate([fp.selectedDates[0], secondInput.value], true, dateFormat);
+              fp.setDate(
+                [fp.selectedDates[0], secondInput.value],
+                true,
+                dateFormat
+              );
               secondInput.click();
             }
           });
         if (!config.input)
-          fp._input.parentNode && fp._input.parentNode.insertBefore(secondInput, fp._input.nextSibling);
+          fp._input.parentNode &&
+            fp._input.parentNode.insertBefore(
+              secondInput,
+              fp._input.nextSibling
+            );
       };
       var plugin = {
         onParseConfig: function () {
           fp.config.mode = 'range';
-          dateFormat = fp.config.altInput ? fp.config.altFormat : fp.config.dateFormat;
+          dateFormat = fp.config.altInput
+            ? fp.config.altFormat
+            : fp.config.dateFormat;
         },
         onReady: function () {
           createSecondInput();
@@ -75,12 +88,19 @@
             var _a;
             fp.latestSelectedDateObj = fp.selectedDates[0];
             fp._setHoursFromDate(fp.selectedDates[0]);
-            (_a = [true, false]), (_firstInputFocused = _a[0]), (_secondInputFocused = _a[1]);
+            (_a = [true, false]),
+              (_firstInputFocused = _a[0]),
+              (_secondInputFocused = _a[1]);
             fp.jumpToDate(fp.selectedDates[0]);
           });
           if (fp.config.allowInput)
             fp._bind(fp._input, 'keydown', function (e) {
-              if (e.key === 'Enter') fp.setDate([fp._input.value, fp.selectedDates[1]], true, dateFormat);
+              if (e.key === 'Enter')
+                fp.setDate(
+                  [fp._input.value, fp.selectedDates[1]],
+                  true,
+                  dateFormat
+                );
             });
           fp.setDate(fp.selectedDates, false);
           plugin.onValueUpdate(fp.selectedDates);
@@ -108,15 +128,22 @@
           }
         },
         onDestroy: function () {
-          if (!config.input) secondInput.parentNode && secondInput.parentNode.removeChild(secondInput);
+          if (!config.input)
+            secondInput.parentNode &&
+              secondInput.parentNode.removeChild(secondInput);
         },
         onValueUpdate: function (selDates) {
           var _a, _b, _c;
           if (!secondInput) return;
-          _prevDates = !_prevDates || selDates.length >= _prevDates.length ? selDates.slice() : _prevDates;
+          _prevDates =
+            !_prevDates || selDates.length >= _prevDates.length
+              ? selDates.slice()
+              : _prevDates;
           if (_prevDates.length > selDates.length) {
             var newSelectedDate = selDates[0];
-            var newDates = _secondInputFocused ? [_prevDates[0], newSelectedDate] : [newSelectedDate, _prevDates[1]];
+            var newDates = _secondInputFocused
+              ? [_prevDates[0], newSelectedDate]
+              : [newSelectedDate, _prevDates[1]];
             fp.setDate(newDates, false);
             _prevDates = newDates.slice();
           }

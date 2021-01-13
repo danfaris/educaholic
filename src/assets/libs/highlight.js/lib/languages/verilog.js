@@ -78,7 +78,10 @@ module.exports = function (hljs) {
       /* parameters to instances */
       {
         className: 'variable',
-        variants: [{ begin: '#\\((?!parameter).+\\)' }, { begin: '\\.\\w+', relevance: 0 }],
+        variants: [
+          { begin: '#\\((?!parameter).+\\)' },
+          { begin: '\\.\\w+', relevance: 0 },
+        ],
       },
       {
         className: 'meta',

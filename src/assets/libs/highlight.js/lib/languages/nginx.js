@@ -1,7 +1,11 @@
 module.exports = function (hljs) {
   var VAR = {
     className: 'variable',
-    variants: [{ begin: /\$\d+/ }, { begin: /\$\{/, end: /}/ }, { begin: '[\\$\\@]' + hljs.UNDERSCORE_IDENT_RE }],
+    variants: [
+      { begin: /\$\d+/ },
+      { begin: /\$\{/, end: /}/ },
+      { begin: '[\\$\\@]' + hljs.UNDERSCORE_IDENT_RE },
+    ],
   };
   var DEFAULT = {
     endsWithParent: true,

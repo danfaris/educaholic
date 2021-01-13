@@ -16,6 +16,11 @@ module.exports = function (hljs) {
       'SubdivisionMesh Surface TextureCoordinates Torus Transform TransformBegin TransformEnd ' +
       'TransformPoints Translate TrimCurve WorldBegin WorldEnd',
     illegal: '</',
-    contains: [hljs.HASH_COMMENT_MODE, hljs.C_NUMBER_MODE, hljs.APOS_STRING_MODE, hljs.QUOTE_STRING_MODE],
+    contains: [
+      hljs.HASH_COMMENT_MODE,
+      hljs.C_NUMBER_MODE,
+      hljs.APOS_STRING_MODE,
+      hljs.QUOTE_STRING_MODE,
+    ],
   };
 };

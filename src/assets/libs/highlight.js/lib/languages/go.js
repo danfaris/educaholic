@@ -6,7 +6,8 @@ module.exports = function (hljs) {
       'bool byte complex64 complex128 float32 float64 int8 int16 int32 int64 string uint8 ' +
       'uint16 uint32 uint64 int uint uintptr rune',
     literal: 'true false iota nil',
-    built_in: 'append cap close complex copy imag len make new panic print println real recover delete',
+    built_in:
+      'append cap close complex copy imag len make new panic print println real recover delete',
   };
   return {
     aliases: ['golang'],
@@ -17,11 +18,18 @@ module.exports = function (hljs) {
       hljs.C_BLOCK_COMMENT_MODE,
       {
         className: 'string',
-        variants: [hljs.QUOTE_STRING_MODE, { begin: "'", end: "[^\\\\]'" }, { begin: '`', end: '`' }],
+        variants: [
+          hljs.QUOTE_STRING_MODE,
+          { begin: "'", end: "[^\\\\]'" },
+          { begin: '`', end: '`' },
+        ],
       },
       {
         className: 'number',
-        variants: [{ begin: hljs.C_NUMBER_RE + '[dflsi]', relevance: 1 }, hljs.C_NUMBER_MODE],
+        variants: [
+          { begin: hljs.C_NUMBER_RE + '[dflsi]', relevance: 1 },
+          hljs.C_NUMBER_MODE,
+        ],
       },
       {
         begin: /:=/, // relevance booster

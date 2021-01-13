@@ -64,7 +64,10 @@ module.exports = function (hljs) {
         beginKeywords: 'class interface trait enum',
         end: '{',
         illegal: ':',
-        contains: [{ beginKeywords: 'extends implements' }, hljs.UNDERSCORE_TITLE_MODE],
+        contains: [
+          { beginKeywords: 'extends implements' },
+          hljs.UNDERSCORE_TITLE_MODE,
+        ],
       },
       hljs.C_NUMBER_MODE,
       {

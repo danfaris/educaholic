@@ -357,21 +357,27 @@ module.exports = function (hljs) {
       {
         begin: '\\.[a-zA-Z][a-zA-Z0-9_-]*' + TAG_END,
         returnBegin: true,
-        contains: [{ className: 'selector-class', begin: '\\.[a-zA-Z][a-zA-Z0-9_-]*' }],
+        contains: [
+          { className: 'selector-class', begin: '\\.[a-zA-Z][a-zA-Z0-9_-]*' },
+        ],
       },
 
       // id tag
       {
         begin: '\\#[a-zA-Z][a-zA-Z0-9_-]*' + TAG_END,
         returnBegin: true,
-        contains: [{ className: 'selector-id', begin: '\\#[a-zA-Z][a-zA-Z0-9_-]*' }],
+        contains: [
+          { className: 'selector-id', begin: '\\#[a-zA-Z][a-zA-Z0-9_-]*' },
+        ],
       },
 
       // tags
       {
         begin: '\\b(' + TAGS.join('|') + ')' + TAG_END,
         returnBegin: true,
-        contains: [{ className: 'selector-tag', begin: '\\b[a-zA-Z][a-zA-Z0-9_-]*' }],
+        contains: [
+          { className: 'selector-tag', begin: '\\b[a-zA-Z][a-zA-Z0-9_-]*' },
+        ],
       },
 
       // psuedo selectors

@@ -80,7 +80,8 @@ module.exports = function (hljs) {
 
   var NUMBER = {
     className: 'number',
-    begin: '(\\b0[0-7_]+)|(\\b0x[0-9a-fA-F_]+)|(\\b[1-9][0-9_]*(\\.[0-9_]+)?)|[0_]\\b',
+    begin:
+      '(\\b0[0-7_]+)|(\\b0x[0-9a-fA-F_]+)|(\\b[1-9][0-9_]*(\\.[0-9_]+)?)|[0_]\\b',
     relevance: 0,
   };
 
@@ -152,7 +153,17 @@ module.exports = function (hljs) {
     ],
   };
 
-  var CONTAINS = [VAR, BUILT_IN, STRING, NUMBER, COMMENT, ANNOTATION, TITLE, COMPUTED, DIRECT];
+  var CONTAINS = [
+    VAR,
+    BUILT_IN,
+    STRING,
+    NUMBER,
+    COMMENT,
+    ANNOTATION,
+    TITLE,
+    COMPUTED,
+    DIRECT,
+  ];
 
   var METHOD = {
     begin: '{',

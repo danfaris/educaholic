@@ -5,7 +5,10 @@ module.exports = function (hljs) {
       // highlight headers
       {
         className: 'section',
-        variants: [{ begin: '^#{1,6}', end: '$' }, { begin: '^.+?\\n[=-]{2,}$' }],
+        variants: [
+          { begin: '^#{1,6}', end: '$' },
+          { begin: '^.+?\\n[=-]{2,}$' },
+        ],
       },
       // inline html
       {

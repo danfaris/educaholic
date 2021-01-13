@@ -52,8 +52,12 @@
 }
 
 .card-header-tabs .nav-link {
-  padding-top: calc((#{$card-header-min-height} - 1em * #{$line-height-base}) / 2) !important;
-  padding-bottom: calc((#{$card-header-min-height} - 1em * #{$line-height-base}) / 2) !important;
+  padding-top: calc(
+    (#{$card-header-min-height} - 1em * #{$line-height-base}) / 2
+  ) !important;
+  padding-bottom: calc(
+    (#{$card-header-min-height} - 1em * #{$line-height-base}) / 2
+  ) !important;
 }
 
 // Card table

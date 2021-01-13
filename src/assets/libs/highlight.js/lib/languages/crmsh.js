@@ -17,7 +17,8 @@ module.exports = function (hljs) {
 
   var TYPES = 'number string';
 
-  var LITERALS = 'Master Started Slave Stopped start promote demote stop monitor true false';
+  var LITERALS =
+    'Master Started Slave Stopped start promote demote stop monitor true false';
 
   return {
     aliases: ['crm', 'pcmk'],

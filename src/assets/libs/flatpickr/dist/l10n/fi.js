@@ -17,7 +17,15 @@
     firstDayOfWeek: 1,
     weekdays: {
       shorthand: ['Su', 'Ma', 'Ti', 'Ke', 'To', 'Pe', 'La'],
-      longhand: ['Sunnuntai', 'Maanantai', 'Tiistai', 'Keskiviikko', 'Torstai', 'Perjantai', 'Lauantai'],
+      longhand: [
+        'Sunnuntai',
+        'Maanantai',
+        'Tiistai',
+        'Keskiviikko',
+        'Torstai',
+        'Perjantai',
+        'Lauantai',
+      ],
     },
     months: {
       shorthand: [

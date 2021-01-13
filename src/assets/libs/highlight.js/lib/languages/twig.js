@@ -6,7 +6,8 @@ module.exports = function (hljs) {
   };
 
   var FUNCTION_NAMES =
-    'attribute block constant cycle date dump include ' + 'max min parent random range source template_from_string';
+    'attribute block constant cycle date dump include ' +
+    'max min parent random range source template_from_string';
 
   var FUNCTIONS = {
     beginKeywords: FUNCTION_NAMES,

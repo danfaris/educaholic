@@ -58,8 +58,14 @@ module.exports = function (hljs) {
     keywords: F_KEYWORDS,
     illegal: /\/\*/,
     contains: [
-      hljs.inherit(hljs.APOS_STRING_MODE, { className: 'string', relevance: 0 }),
-      hljs.inherit(hljs.QUOTE_STRING_MODE, { className: 'string', relevance: 0 }),
+      hljs.inherit(hljs.APOS_STRING_MODE, {
+        className: 'string',
+        relevance: 0,
+      }),
+      hljs.inherit(hljs.QUOTE_STRING_MODE, {
+        className: 'string',
+        relevance: 0,
+      }),
       {
         className: 'function',
         beginKeywords: 'subroutine function program',
@@ -70,7 +76,8 @@ module.exports = function (hljs) {
       hljs.COMMENT('begin_doc', 'end_doc', { relevance: 10 }),
       {
         className: 'number',
-        begin: '(?=\\b|\\+|\\-|\\.)(?=\\.\\d|\\d)(?:\\d+)?(?:\\.?\\d*)(?:[de][+-]?\\d+)?\\b\\.?',
+        begin:
+          '(?=\\b|\\+|\\-|\\.)(?=\\.\\d|\\d)(?:\\d+)?(?:\\.?\\d*)(?:[de][+-]?\\d+)?\\b\\.?',
         relevance: 0,
       },
     ],

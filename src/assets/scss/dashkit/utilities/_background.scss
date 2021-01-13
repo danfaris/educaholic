@@ -42,7 +42,11 @@
   .bg-ellipses.bg-#{$color} {
     background-color: transparent !important;
     background-repeat: no-repeat;
-    background-image: radial-gradient(#{$value}, #{$value} 70%, transparent 70.1%);
+    background-image: radial-gradient(
+      #{$value},
+      #{$value} 70%,
+      transparent 70.1%
+    );
     background-size: 200% 150%;
     background-position: center bottom;
   }
@@ -51,7 +55,11 @@
 // Vibrant
 
 .bg-vibrant {
-  background-image: linear-gradient(to bottom right, fade-out(#126feb, 0.1), fade-out(#7203e1, 0.1)),
+  background-image: linear-gradient(
+      to bottom right,
+      fade-out(#126feb, 0.1),
+      fade-out(#7203e1, 0.1)
+    ),
     url(#{$path-to-img}/covers/sidebar-cover.jpg);
   background-repeat: no-repeat, no-repeat;
   background-position: center center, center center;
@@ -65,7 +73,11 @@
 // Hero
 
 .bg-hero {
-  background-image: linear-gradient(to bottom, fade-out($black, 0.15), fade-out($black, 0.15)),
+  background-image: linear-gradient(
+      to bottom,
+      fade-out($black, 0.15),
+      fade-out($black, 0.15)
+    ),
     url(#{$path-to-img}/covers/header-cover.jpg);
   background-repeat: no-repeat, no-repeat;
   background-position: center center, center center;

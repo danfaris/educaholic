@@ -18,7 +18,10 @@ module.exports = function (hljs) {
     begin: '\\(',
     end: '\\)',
     illegal: '"',
-    contains: [{ className: 'type', begin: '\\b[A-Z][\\w]*(\\((\\.\\.|,|\\w+)\\))?' }, COMMENT],
+    contains: [
+      { className: 'type', begin: '\\b[A-Z][\\w]*(\\((\\.\\.|,|\\w+)\\))?' },
+      COMMENT,
+    ],
   };
 
   var RECORD = {

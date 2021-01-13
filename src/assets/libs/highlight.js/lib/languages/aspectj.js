@@ -39,7 +39,8 @@ module.exports = function (hljs) {
         illegal: /[:;"\[\]]/,
         contains: [
           {
-            beginKeywords: 'extends implements pertypewithin perthis pertarget percflowbelow percflow issingleton',
+            beginKeywords:
+              'extends implements pertypewithin perthis pertarget percflowbelow percflow issingleton',
           },
           hljs.UNDERSCORE_TITLE_MODE,
           {
@@ -58,7 +59,10 @@ module.exports = function (hljs) {
         relevance: 0,
         keywords: 'class interface',
         illegal: /[:"\[\]]/,
-        contains: [{ beginKeywords: 'extends implements' }, hljs.UNDERSCORE_TITLE_MODE],
+        contains: [
+          { beginKeywords: 'extends implements' },
+          hljs.UNDERSCORE_TITLE_MODE,
+        ],
       },
       {
         // AspectJ Constructs
@@ -117,7 +121,12 @@ module.exports = function (hljs) {
             end: /\)/,
             relevance: 0,
             keywords: KEYWORDS,
-            contains: [hljs.APOS_STRING_MODE, hljs.QUOTE_STRING_MODE, hljs.C_NUMBER_MODE, hljs.C_BLOCK_COMMENT_MODE],
+            contains: [
+              hljs.APOS_STRING_MODE,
+              hljs.QUOTE_STRING_MODE,
+              hljs.C_NUMBER_MODE,
+              hljs.C_BLOCK_COMMENT_MODE,
+            ],
           },
           hljs.C_LINE_COMMENT_MODE,
           hljs.C_BLOCK_COMMENT_MODE,

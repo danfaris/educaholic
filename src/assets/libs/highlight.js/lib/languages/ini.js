@@ -55,7 +55,10 @@ module.exports = function (hljs) {
               },
               {
                 className: 'variable',
-                variants: [{ begin: /\$[\w\d"][\w\d_]*/ }, { begin: /\$\{(.*?)}/ }],
+                variants: [
+                  { begin: /\$[\w\d"][\w\d_]*/ },
+                  { begin: /\$\{(.*?)}/ },
+                ],
               },
               STRING,
               {

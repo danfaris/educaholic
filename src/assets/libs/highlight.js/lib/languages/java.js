@@ -1,6 +1,12 @@
 module.exports = function (hljs) {
   var JAVA_IDENT_RE = '[\u00C0-\u02B8a-zA-Z_$][\u00C0-\u02B8a-zA-Z_$0-9]*';
-  var GENERIC_IDENT_RE = JAVA_IDENT_RE + '(<' + JAVA_IDENT_RE + '(\\s*,\\s*' + JAVA_IDENT_RE + ')*>)?';
+  var GENERIC_IDENT_RE =
+    JAVA_IDENT_RE +
+    '(<' +
+    JAVA_IDENT_RE +
+    '(\\s*,\\s*' +
+    JAVA_IDENT_RE +
+    ')*>)?';
   var KEYWORDS =
     'false synchronized int abstract float private char boolean var static null if const ' +
     'for true while long strictfp finally protected import native final void ' +
@@ -60,7 +66,10 @@ module.exports = function (hljs) {
         excludeEnd: true,
         keywords: 'class interface',
         illegal: /[:"\[\]]/,
-        contains: [{ beginKeywords: 'extends implements' }, hljs.UNDERSCORE_TITLE_MODE],
+        contains: [
+          { beginKeywords: 'extends implements' },
+          hljs.UNDERSCORE_TITLE_MODE,
+        ],
       },
       {
         // Expression keywords prevent 'keyword Name(...)' from being
@@ -70,7 +79,12 @@ module.exports = function (hljs) {
       },
       {
         className: 'function',
-        begin: '(' + GENERIC_IDENT_RE + '\\s+)+' + hljs.UNDERSCORE_IDENT_RE + '\\s*\\(',
+        begin:
+          '(' +
+          GENERIC_IDENT_RE +
+          '\\s+)+' +
+          hljs.UNDERSCORE_IDENT_RE +
+          '\\s*\\(',
         returnBegin: true,
         end: /[{;=]/,
         excludeEnd: true,
@@ -88,7 +102,12 @@ module.exports = function (hljs) {
             end: /\)/,
             keywords: KEYWORDS,
             relevance: 0,
-            contains: [hljs.APOS_STRING_MODE, hljs.QUOTE_STRING_MODE, hljs.C_NUMBER_MODE, hljs.C_BLOCK_COMMENT_MODE],
+            contains: [
+              hljs.APOS_STRING_MODE,
+              hljs.QUOTE_STRING_MODE,
+              hljs.C_NUMBER_MODE,
+              hljs.C_BLOCK_COMMENT_MODE,
+            ],
           },
           hljs.C_LINE_COMMENT_MODE,
           hljs.C_BLOCK_COMMENT_MODE,

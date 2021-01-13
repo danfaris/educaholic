@@ -33,7 +33,8 @@ module.exports = function (hljs) {
         begin: '!',
       },
       {
-        begin: "(\\b[a-z'][a-zA-Z0-9_']*:[a-z'][a-zA-Z0-9_']*)|(\\b[a-z'][a-zA-Z0-9_']*)",
+        begin:
+          "(\\b[a-z'][a-zA-Z0-9_']*:[a-z'][a-zA-Z0-9_']*)|(\\b[a-z'][a-zA-Z0-9_']*)",
         relevance: 0,
       },
       {
