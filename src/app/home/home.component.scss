@@ -8,6 +8,8 @@ q {
     quotes: "« " " »";
 }
 
-#sidebar {
-    background-color: rgba(205, 223, 255, 0.644);
+.main-content {
+    padding-left: 249px;
+    // max-width: 1140px;
+    overflow: hidden;
 }

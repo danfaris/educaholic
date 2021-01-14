@@ -43,20 +43,7 @@ $danger: $red !default;
 $light: $gray-200 !default;
 $dark: $black !default;
 $theme-colors: () !default;
-$theme-colors: map-merge(
-  (
-    "primary": $primary,
-    "secondary": $secondary,
-    "success": $success,
-    "info": $info,
-    "warning": $warning,
-    "danger": $danger,
-    "light": $light,
-    "dark": $dark,
-    "white": $white,
-  ),
-  $theme-colors
-);
+$theme-colors: map-merge( ( "primary": $primary, "secondary": $secondary, "success": $success, "info": $info, "warning": $warning, "danger": $danger, "light": $light, "dark": $dark, "white": $white, ), $theme-colors);
 // stylelint-enable
 // Customize the light and dark text colors for use in our YIQ color contrast function.
 $yiq-text-dark: $gray-900 !default;
@@ -72,46 +59,10 @@ $enable-validation-icons: false !default;
 // You can add more entries to the $spacers map, should you need more variation.
 $spacer: 1.5rem !default;
 $spacers: () !default;
-$spacers: map-merge(
-  (
-    0: 0,
-    1: (
-      $spacer * 0.125,
-    ),
-    2: (
-      $spacer * 0.25,
-    ),
-    3: (
-      $spacer * 0.5,
-    ),
-    4: $spacer,
-    5: (
-      $spacer * 1.5,
-    ),
-    6: (
-      $spacer * 3,
-    ),
-    7: (
-      $spacer * 4.5,
-    ),
-    8: (
-      $spacer * 9,
-    ),
-  ),
-  $spacers
-);
+$spacers: map-merge( ( 0: 0, 1: ( $spacer * 0.125, ), 2: ( $spacer * 0.25, ), 3: ( $spacer * 0.5, ), 4: $spacer, 5: ( $spacer * 1.5, ), 6: ( $spacer * 3, ), 7: ( $spacer * 4.5, ), 8: ( $spacer * 9, ), ), $spacers);
 // This variable affects the `.h-*` and `.w-*` classes.
 $sizes: () !default;
-$sizes: map-merge(
-  (
-    15: 15%,
-    25: 25%,
-    50: 50%,
-    75: 75%,
-    100: 100%,
-  ),
-  $sizes
-);
+$sizes: map-merge( ( 15: 15%, 25: 25%, 50: 50%, 75: 75%, 100: 100%, ), $sizes);
 // Body
 //
 // Settings for the `<body>` element.
@@ -143,7 +94,8 @@ $caret-width: 0.25em !default;
 //
 // Font, line-height, and color for body text, headings, and more.
 // stylelint-disable value-keyword-case
-$font-family-sans-serif: "Cerebri Sans", sans-serif !default;
+$font-family-sans-serif: "Cerebri Sans",
+sans-serif !default;
 $font-family-base: $font-family-sans-serif !default;
 // stylelint-enable value-keyword-case
 $font-size-base: 0.9375rem !default; // 15px
@@ -237,14 +189,13 @@ $input-border-color: $gray-400 !default;
 $input-focus-border-color: $primary !default;
 $input-focus-box-shadow: transparent !default;
 $input-placeholder-color: $gray-500 !default;
-$input-height-inner-sm: ($font-size-sm * $input-btn-line-height-sm)+ ($input-btn-padding-y-sm *
-      2) !default;
+$input-height-inner-sm: ($font-size-sm * $input-btn-line-height-sm)+($input-btn-padding-y-sm * 2) !default;
 $form-group-margin-bottom: 1.375rem !default;
 $input-group-addon-bg: $input-bg !default;
 $input-group-addon-color: $text-muted !default;
 $custom-select-focus-border-color: $input-focus-border-color !default;
 $custom-select-focus-box-shadow: inset 0 1px 2px rgba($black, 0.075),
-  0 0 5px rgba($custom-select-focus-border-color, 0.5) !default;
+0 0 5px rgba($custom-select-focus-border-color, 0.5) !default;
 $custom-control-indicator-bg: $border-color !default;
 $custom-control-indicator-border-width: 0 !default;
 $custom-switch-width: 3rem !default;
@@ -267,8 +218,7 @@ $nav-tabs-border-radius: 0 !default;
 $nav-tabs-link-hover-border-color: transparent transparent transparent !default;
 $nav-tabs-link-active-color: $body-color !default;
 $nav-tabs-link-active-bg: transparent !default;
-$nav-tabs-link-active-border-color: transparent transparent
-  theme-color("primary") !default;
+$nav-tabs-link-active-border-color: transparent transparent theme-color("primary") !default;
 $nav-pills-link-active-bg: $component-active-bg !default;
 // Navbar
 $navbar-padding-x: 1rem !default;
@@ -299,9 +249,7 @@ $card-spacer-x: $spacer !default;
 $card-border-width: $border-width !default;
 $card-border-radius: $border-radius-lg !default;
 $card-border-color: $gray-200 !default;
-$card-inner-border-radius: calc(
-  #{$card-border-radius} - #{$card-border-width}
-) !default;
+$card-inner-border-radius: calc( #{$card-border-radius} - #{$card-border-width}) !default;
 $card-cap-bg: transparent !default;
 // Tooltips
 $tooltip-color: $black !default;
@@ -408,8 +356,7 @@ $chart-height-sm: 225px !default;
 $chart-legend-margin-top: 2.5rem !default;
 $chart-legend-font-size: $font-size-sm !default;
 $chart-legend-color: $text-muted !default;
-$chart-legend-height: $chart-legend-margin-top + $chart-legend-font-size *
-  $line-height-base !default;
+$chart-legend-height: $chart-legend-margin-top+$chart-legend-font-size * $line-height-base !default;
 // Comment
 $comment-margin-bottom: 1rem !default;
 $comment-body-padding-y: 1rem !default;
@@ -430,10 +377,7 @@ $header-margin-bottom: 2rem !default;
 $header-spacing-y: 1.5rem !default;
 $header-body-border-width: 1px !default;
 $header-body-border-color: $border-color !default;
-$header-body-border-color-dark: fade-out(
-  $header-body-border-color,
-  0.9
-) !default;
+$header-body-border-color-dark: fade-out( $header-body-border-color, 0.9) !default;
 // List groups
 $list-group-item-padding-y-lg: $spacer !default;
 // Main content
@@ -472,7 +416,6 @@ $progress-height-sm: 0.25rem !default;
 $path-to-img: "" !default;
 // Forms
 $custom-switch-height: 1.5rem !default;
-$custom-switch-spacing: ($custom-switch-height - $custom-switch-indicator-size) /
-  2 !default;
+$custom-switch-spacing: ($custom-switch-height - $custom-switch-indicator-size) / 2 !default;
 $custom-switch-indicator-bg: $white !default;
 $custom-switch-indicator-active-bg: $white !default;

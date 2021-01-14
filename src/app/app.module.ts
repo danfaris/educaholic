@@ -13,6 +13,17 @@ import { HomeModule } from './home/home.module';
 import { ShellModule } from './shell/shell.module';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
+import { ProductsComponent } from './components/products/products.component';
+import { SubscriptionsComponent } from './components/subscriptions/subscriptions.component';
+import { OrdersComponent } from './components/orders/orders.component';
+import { CustomersComponent } from './components/customers/customers.component';
+import { CoursesComponent } from './components/courses/courses.component';
+import { PathComponent } from './components/path/path.component';
+import { AuthorsComponent } from './components/authors/authors.component';
+import { CategoriesComponent } from './components/categories/categories.component';
+import { CommentsComponent } from './components/comments/comments.component';
+import { LoginComponent } from './components/login/login.component';
+import { from } from 'rxjs';
 
 @NgModule({
   imports: [
@@ -30,7 +41,7 @@ import { AppRoutingModule } from './app-routing.module';
     HomeModule,
     AppRoutingModule, // must be imported as the last module as it contains the fallback route
   ],
-  declarations: [AppComponent],
+  declarations: [AppComponent, ProductsComponent, SubscriptionsComponent, OrdersComponent, CustomersComponent, CoursesComponent, PathComponent, AuthorsComponent, CategoriesComponent, CommentsComponent, LoginComponent],
   providers: [],
   bootstrap: [AppComponent],
 })
