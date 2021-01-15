@@ -5522,7 +5522,7 @@ a.badge-dark:focus {
     flex-direction: column;
     -ms-flex-pack: center;
     justify-content: center;
-    color: #fff;
+    color: rgb(236, 84, 84);
     text-align: center;
     white-space: nowrap;
     background-color: #007bff;
