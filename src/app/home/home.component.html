@@ -51,17 +51,21 @@
                                 <div class="col">
                                     <!-- Heading -->
                                     <span class="h2 mb-0">
-        R$25,263.40
-        <!-- Badge -->
-        </span>
+                                        R$25,263.40
+                                        <!-- Badge -->
+                                    </span>
                                 </div>
                                 <div class="col-auto">
                                     <!-- Icon -->
-                                    <span class="fe fe-dollar-sign h2 mb-0 text-muted"></span>
+                                    <i class="fas fa-dollar-sign"></i>
                                 </div>
+
                             </div>
                         </div>
                     </div>
+
+
+
 
                 </div>
                 <div class="col-12 col-lg-6 col-xl-3">
@@ -74,6 +78,45 @@
                                         Total Pago
                                     </h6>
                                 </div>
+                                <div class="chart chart-sparkline">
+                                    <canvas class="chart-canvas" id="sparklineChartSocialOne"></canvas>
+                                </div>
+
+                                <script>
+                                    new Chart(chart, {
+                                        type: 'line',
+                                        options: {
+                                            scales: {
+                                                yAxes: [{
+                                                    display: false
+                                                }],
+                                                xAxes: [{
+                                                    display: false
+                                                }]
+                                            },
+                                            elements: {
+                                                line: {
+                                                    borderWidth: 2,
+                                                    borderColor: '#D2DDEC'
+                                                },
+                                                point: {
+                                                    hoverRadius: 0
+                                                }
+                                            },
+                                            tooltips: {
+                                                custom: function() {
+                                                    return false;
+                                                }
+                                            }
+                                        },
+                                        data: {
+                                            labels: new Array(12),
+                                            datasets: [{
+                                                data: [0, 15, 10, 25, 30, 15, 40, 50, 80, 60, 55, 65]
+                                            }]
+                                        }
+                                    });
+                                </script>
                             </div>
                             <div class="row align-items-center">
                                 <div class="col">

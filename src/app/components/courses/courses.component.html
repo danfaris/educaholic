@@ -1,499 +1,383 @@
 <div class="main-content">
     <div class="header">
         <div class="container-fluid">
-            <div class="row justify-content-center">
-                <div class="container">
-                    <div class="header">
-                        <div class="header-body">
-                            <div class="row align-items-end">
-                                <div class="col">
-                                    <!-- Pretitle -->
-                                    <h6 class="header-pretitle">
-                                        overview
-                                    </h6>
-                                    <!-- Title -->
-                                    <h1 class="header-title">
-                                        Lista de Cursos
-                                    </h1>
-                                </div>
-                                <div class="col-auto">
-                                    <!-- Button -->
-                                    <a class="btn btn-primary" href="/dashboard/courses/new">
-            Criar novo curso
-            </a>
-                                </div>
-                            </div>
-                            <!-- / .row -->
-                            <div class="row align-items-center">
-                                <div class="col">
-                                    <!-- Nav tabs -->
-                                    <ul class="nav nav-tabs nav-overflow header-tabs" id="course-tabs" role="tablist">
-                                        <li class="nav-item">
-                                            <a class="nav-link " href="/dashboard/courses?view=published">Publicado</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link " href="/dashboard/courses?view=unpublished">Não publicado</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link active" href="/dashboard/courses?view=all">Todos</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
+
+            <div class="header">
+                <div class="header-body">
+                    <div class="row align-items-end">
+                        <div class="col">
+                            <!-- Pretitle -->
+                            <h6 class="header-pretitle">
+                                overview
+                            </h6>
+                            <!-- Title -->
+                            <h1 class="header-title">
+                                Lista de Cursos
+                            </h1>
+                        </div>
+                        <div class="col-auto">
+                            <!-- Button -->
+                            <a class="btn btn-outline-primary badge-pill" href="/courses/new">
+                                        Criar novo curso
+                                    </a>
                         </div>
                     </div>
+                    <!-- / .row -->
+                    <div class="row align-items-center">
+                        <div class="col">
+                            <!-- Nav tabs -->
+                            <ul class="nav nav-tabs nav-overflow header-tabs" id="course-tabs" role="tablist">
+                                <li class="nav-item">
+                                    <a class="nav-link " href="/dashboard/courses?view=published">Publicado</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link " href="/dashboard/courses?view=unpublished">Não publicado</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link active" href="/dashboard/courses?view=all">Todos</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-                    <div data-lists-values="[&quot;name&quot;, &quot;item-author&quot;]" data-toggle="lists">
-                        <div data-lists-class="listAlias" data-lists-values="[&quot;name&quot;, &quot;item-author&quot;]" data-toggle="lists">
-                            <div class="row mb-4">
-                                <div class="col">
-                                    <!-- Form -->
-                                    <form>
-                                        <div class="input-group input-group-lg input-group-merge">
-                                            <input class="form-control form-control-prepended search" placeholder="Filtrar" type="text">
-                                            <div class="input-group-prepend">
-                                                <div class="input-group-text">
-                                                    <span class="fe fe-search"></span>
-                                                </div>
-                                            </div>
+            <div data-lists-values="[&quot;name&quot;, &quot;item-author&quot;]" data-toggle="lists">
+                <div data-lists-class="listAlias" data-lists-values="[&quot;name&quot;, &quot;item-author&quot;]" data-toggle="lists">
+                    <div class="row mb-4">
+                        <div class="col">
+                            <!-- Form -->
+                            <form>
+                                <div class="input-group input-group-lg input-group-merge">
+                                    <input class="form-control form-control-prepended search" placeholder="Filtrar" type="text">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text">
+                                            <span class="fe fe-search"></span>
                                         </div>
-                                    </form>
+                                    </div>
+
                                 </div>
+                            </form>
+                        </div>
+                    </div>
+                    <!-- Tab content -->
+
+                    <div class="tab-content">
+                        <div class="tab-pane fade active show" id="tabPaneOne" role="tabpanel">
+                            <div class="row listAlias courses-sortable-grid">
+
+                                <div class="col-12 col-md-6 col-lg-4 col-xl-4 pb-5">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <!-- / .row -->
+                                            <!-- Image -->
+                                            <a class="avatar avatar-xl card-avatar" href="/">
+                                                <img alt="..." class="avatar-img rounded-circle" src="../../../assets/img/covers/profile-cover-3.jpg">
+                                            </a>
+                                            <!-- Body -->
+                                            <div class="text-center mb-5">
+                                                <!-- Heading -->
+                                                <h2 class="card-title">
+                                                    <a class="item-name" href="/dashboard/authors/andre-siqueira">Plano de Engenharia de Software</a>
+                                                </h2>
+                                                <!-- Text -->
+                                                <p class="small text-muted mb-3">
+                                                    <span class="item-title">por Bruno Pinheiro</span>
+
+                                                </p>
+                                                <!-- Buttons -->
+                                                <a class="btn btn-sm btn-success btn-rounded-circle" href="" target="_blank">
+                                                    <i class="fas fa-upload"></i>
+                                                </a>
+
+                                            </div>
+                                            <small>Publicado</small>
+                                            <!-- Divider -->
+
+
+
+
+                                            <!-- Divider -->
+                                            <hr class="card-divider mb-0">
+                                            <!-- List group -->
+                                            <div class="list-group list-group-flush mb-n3">
+                                                <div class="list-group-item">
+                                                    <div class="row">
+                                                        <div class="col">
+                                                            <!-- Text -->
+
+                                                            <small>Alunos</small>
+                                                        </div>
+                                                        <div class="col-auto">
+                                                            <!-- Badge -->
+                                                            <span class="item-score badge badge-info">80</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col">
+                                                            <!-- Text -->
+
+                                                            <small>Aulas</small>
+                                                        </div>
+                                                        <div class="col-auto">
+                                                            <!-- Badge -->
+                                                            <span class="item-score badge badge-info">14</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- / .row -->
+                                            </div>
+
+                                            <hr class="card-divider mb-0">
+
+                                            <div class="list-group list-group-flush mb-n3">
+                                                <div class="list-group-item">
+                                                    <div class="row">
+                                                        <div class="col">
+                                                            <!-- Text -->
+
+                                                            <small>Módulos</small>
+                                                        </div>
+                                                        <div class="col-auto">
+                                                            <!-- Badge -->
+                                                            <span class="item-score badge badge-success">4</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col">
+                                                            <!-- Text -->
+
+                                                            <small>Tempo (h)</small>
+                                                        </div>
+                                                        <div class="col-auto">
+                                                            <!-- Badge -->
+                                                            <span class="item-score badge badge-success">11</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- / .row -->
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="col-12 col-md-6 col-lg-4 col-xl-4 pb-5">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <!-- / .row -->
+                                            <!-- Image -->
+                                            <a class="avatar avatar-xl card-avatar" href="/">
+                                                <img alt="..." class="avatar-img rounded-circle" src="../../../assets/img/covers/profile-cover-6.jpg">
+                                            </a>
+                                            <!-- Body -->
+                                            <div class="text-center mb-5">
+                                                <!-- Heading -->
+                                                <h2 class="card-title">
+                                                    <a class="item-name" href="/dashboard/authors/andre-siqueira">Plano de Retomada do Crescimento</a>
+                                                </h2>
+                                                <!-- Text -->
+                                                <p class="small text-muted mb-3">
+                                                    <span class="item-title">por Bruno Pinheiro</span>
+
+                                                </p>
+                                                <!-- Buttons -->
+                                                <a class="btn btn-sm btn-success btn-rounded-circle" href="" target="_blank">
+                                                    <i class="fas fa-upload"></i>
+                                                </a>
+
+                                            </div>
+                                            <small>Publicado</small>
+                                            <!-- Divider -->
+
+
+
+
+                                            <!-- Divider -->
+                                            <hr class="card-divider mb-0">
+                                            <!-- List group -->
+                                            <div class="list-group list-group-flush mb-n3">
+                                                <div class="list-group-item">
+                                                    <div class="row">
+                                                        <div class="col">
+                                                            <!-- Text -->
+
+                                                            <small>Alunos</small>
+                                                        </div>
+                                                        <div class="col-auto">
+                                                            <!-- Badge -->
+                                                            <span class="item-score badge badge-info">80</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col">
+                                                            <!-- Text -->
+
+                                                            <small>Aulas</small>
+                                                        </div>
+                                                        <div class="col-auto">
+                                                            <!-- Badge -->
+                                                            <span class="item-score badge badge-info">14</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- / .row -->
+                                            </div>
+
+                                            <hr class="card-divider mb-0">
+
+                                            <div class="list-group list-group-flush mb-n3">
+                                                <div class="list-group-item">
+                                                    <div class="row">
+                                                        <div class="col">
+                                                            <!-- Text -->
+
+                                                            <small>Módulos</small>
+                                                        </div>
+                                                        <div class="col-auto">
+                                                            <!-- Badge -->
+                                                            <span class="item-score badge badge-success">4</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col">
+                                                            <!-- Text -->
+
+                                                            <small>Tempo (h)</small>
+                                                        </div>
+                                                        <div class="col-auto">
+                                                            <!-- Badge -->
+                                                            <span class="item-score badge badge-success">11</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- / .row -->
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="col-12 col-md-6 col-lg-4 col-xl-4 pb-5">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <!-- / .row -->
+                                            <!-- Image -->
+                                            <a class="avatar avatar-xl card-avatar" href="/">
+                                                <img alt="..." class="avatar-img rounded-circle" src="../../../assets/img/covers/profile-cover-8.jpg">
+                                            </a>
+                                            <!-- Body -->
+                                            <div class="text-center mb-5">
+                                                <!-- Heading -->
+                                                <h2 class="card-title">
+                                                    <a class="item-name" href="/dashboard/authors/andre-siqueira">Plano de Retomada do Negócio</a>
+                                                </h2>
+                                                <!-- Text -->
+                                                <p class="small text-muted mb-3">
+                                                    <span class="item-title">por Bruno Pinheiro</span>
+
+                                                </p>
+                                                <!-- Buttons -->
+                                                <a class="btn btn-sm btn-success btn-rounded-circle" href="" target="_blank">
+                                                    <i class="fas fa-upload"></i>
+                                                </a>
+
+                                            </div>
+                                            <small>Publicado</small>
+                                            <!-- Divider -->
+
+
+
+
+                                            <!-- Divider -->
+                                            <hr class="card-divider mb-0">
+                                            <!-- List group -->
+                                            <div class="list-group list-group-flush mb-n3">
+                                                <div class="list-group-item">
+                                                    <div class="row">
+                                                        <div class="col">
+                                                            <!-- Text -->
+
+                                                            <small>Alunos</small>
+                                                        </div>
+                                                        <div class="col-auto">
+                                                            <!-- Badge -->
+                                                            <span class="item-score badge badge-info">80</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col">
+                                                            <!-- Text -->
+
+                                                            <small>Aulas</small>
+                                                        </div>
+                                                        <div class="col-auto">
+                                                            <!-- Badge -->
+                                                            <span class="item-score badge badge-info">14</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- / .row -->
+                                            </div>
+
+                                            <hr class="card-divider mb-0">
+
+                                            <div class="list-group list-group-flush mb-n3">
+                                                <div class="list-group-item">
+                                                    <div class="row">
+                                                        <div class="col">
+                                                            <!-- Text -->
+
+                                                            <small>Módulos</small>
+                                                        </div>
+                                                        <div class="col-auto">
+                                                            <!-- Badge -->
+                                                            <span class="item-score badge badge-success">4</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col">
+                                                            <!-- Text -->
+
+                                                            <small>Tempo (h)</small>
+                                                        </div>
+                                                        <div class="col-auto">
+                                                            <!-- Badge -->
+                                                            <span class="item-score badge badge-success">11</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- / .row -->
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+
                             </div>
-                            <!-- Tab content -->
-                            <div class="tab-content">
-                                <div class="tab-pane fade active show" id="tabPaneOne" role="tabpanel">
-                                    <div class="row listAlias courses-sortable-grid">
-                                        <div class="col-12 col-md-6 col-lg-4 col-xl-3 pb-5" data="123" id="123" position="1">
-                                            <!-- Card -->
-                                            <div class="card course h-100 lift cursor-pointer">
-                                                <a class="card-img-top mh-lg-150" href="/dashboard/courses/plano-de-retomada-do-seu-negocio"><img alt="Plano de Retomada do Seu Negócio" src="https://storage.googleapis.com/be-learning-test/thumb_retomada_beplay.png">
-                                                </a>
-                                                <div class="card-body pb-2">
-                                                    <div class="row align-items-center">
-                                                        <div class="col min-h-60">
-                                                            <!-- Title -->
-                                                            <h4 class="card-title mb-2 name">
-                                                                <a href="/dashboard/courses/plano-de-retomada-do-seu-negocio">Plano de Retomada do Seu Negócio</a>
-                                                            </h4>
-                                                        </div>
-                                                    </div>
-                                                    <div class="row align-items-center no-gutters mt-2">
-                                                        <div class="col-auto">
-                                                            <!-- Avatar -->
-                                                            <a class="avatar avatar-xs d-inline-block mr-2" href="/dashboard/authors/bruno-pinheiro"><img alt="Bruno Pinheiro" class="avatar-img rounded-circle" src="http://be-pay-learning.herokuapp.com/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBEUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--f1775ca8334a5250cdb1fc597bb76c747cddaaf5/bp.jpg">
-                                                            </a>
-                                                        </div>
-                                                        <div class="col">
-                                                            <!-- Title -->
-                                                            <span class="small text-muted item-author">Bruno Pinheiro</span>
-                                                        </div>
-                                                    </div>
-                                                    <hr>
-                                                    <div class="row mt-3">
-                                                        <div class="col-12">
-                                                            <span class="badge badge-light badge-pill">
-            <i class="fe fe-users"></i>
-            2 aluno(s)
-            </span>
-                                                            <span class="badge badge-light badge-pill">
-            <i class="fe fe-clock"></i>
-            55 min(s)
-            </span>
-                                                        </div>
-                                                        <div class="col-12 mt-3">
-                                                            <span class="badge badge-light badge-pill icon mr-2">
-            <i class="fe fe-book-open"></i>
-            3 módulo(s)
-            </span>
-                                                            <span class="badge badge-light badge-pill">
-            <i class="fe fe-book"></i>
-            8 aula(s)
-            </span>
-                                                        </div>
-                                                    </div>
-                                                    <!-- / .row -->
-                                                    <!-- Divider -->
-                                                    <hr>
-                                                    <div class="row align-items-center justify-content-between">
-                                                        <div class="col-auto">
-                                                            <!-- Status -->
-                                                            <small>
-            <span class="text-success">●</span>
-            Publicado
-            </small>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
 
-                                        </div>
-                                        <div class="col-12 col-md-6 col-lg-4 col-xl-3 pb-5" data="121" id="121" position="2">
-                                            <!-- Card -->
-                                            <div class="card course h-100 lift cursor-pointer">
-                                                <a class="card-img-top mh-lg-150" href="/dashboard/courses/desafio-wow"><img alt="Desafio WOW" src="https://storage.googleapis.com/be-learning-test/courses_cover/GISELE.jpg">
-                                                </a>
-                                                <div class="card-body pb-2">
-                                                    <div class="row align-items-center">
-                                                        <div class="col min-h-60">
-                                                            <!-- Title -->
-                                                            <h4 class="card-title mb-2 name">
-                                                                <a href="/dashboard/courses/desafio-wow">Desafio WOW</a>
-                                                            </h4>
-                                                        </div>
-                                                    </div>
-                                                    <div class="row align-items-center no-gutters mt-2">
-                                                        <div class="col-auto">
-                                                            <!-- Avatar -->
-                                                            <a class="avatar avatar-xs d-inline-block mr-2" href="/dashboard/authors/gisele-paula"><img alt="Gisele Paula" class="avatar-img rounded-circle" src="https://be-pay-learning.herokuapp.com/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBFdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--a502bc6f3acd5ab819d07772883e765244bc98f8/gisele-new.jpg">
-                                                            </a>
-                                                        </div>
-                                                        <div class="col">
-                                                            <!-- Title -->
-                                                            <span class="small text-muted item-author">Gisele Paula</span>
-                                                        </div>
-                                                    </div>
-                                                    <hr>
-                                                    <div class="row mt-3">
-                                                        <div class="col-12">
-                                                            <span class="badge badge-light badge-pill">
-            <i class="fe fe-users"></i>
-            21 aluno(s)
-            </span>
-                                                            <span class="badge badge-light badge-pill">
-            <i class="fe fe-clock"></i>
-            0 min(s)
-            </span>
-                                                        </div>
-                                                        <div class="col-12 mt-3">
-                                                            <span class="badge badge-light badge-pill icon mr-2">
-            <i class="fe fe-book-open"></i>
-            1 módulo(s)
-            </span>
-                                                            <span class="badge badge-light badge-pill">
-            <i class="fe fe-book"></i>
-            1 aula(s)
-            </span>
-                                                        </div>
-                                                    </div>
-                                                    <!-- / .row -->
-                                                    <!-- Divider -->
-                                                    <hr>
-                                                    <div class="row align-items-center justify-content-between">
-                                                        <div class="col-auto">
-                                                            <!-- Status -->
-                                                            <small>
-            <span class="text-success">●</span>
-            Publicado
-            </small>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                        </div>
-                                        <div class="col-12 col-md-6 col-lg-4 col-xl-3 pb-5" data="1" id="1" position="3">
-                                            <!-- Card -->
-                                            <div class="card course h-100 lift cursor-pointer">
-                                                <a class="card-img-top mh-lg-150" href="/dashboard/courses/resilientes-summit"><img alt="Resilientes Summit" src="https://be-pay-learning.herokuapp.com/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBLdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--6831c2aae997b075343ce3bd351245cdded43641/Resilientes-Summit_h.png">
-                                                </a>
-                                                <div class="card-body pb-2">
-                                                    <div class="row align-items-center">
-                                                        <div class="col min-h-60">
-                                                            <!-- Title -->
-                                                            <h4 class="card-title mb-2 name">
-                                                                <a href="/dashboard/courses/resilientes-summit">Resilientes Summit</a>
-                                                            </h4>
-                                                        </div>
-                                                    </div>
-                                                    <div class="row align-items-center no-gutters mt-2">
-                                                        <div class="col-auto">
-                                                            <!-- Avatar -->
-                                                            <a class="avatar avatar-xs d-inline-block mr-2" href="/dashboard/authors/bruno-pinheiro"><img alt="Bruno Pinheiro" class="avatar-img rounded-circle" src="http://be-pay-learning.herokuapp.com/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBEUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--f1775ca8334a5250cdb1fc597bb76c747cddaaf5/bp.jpg">
-                                                            </a>
-                                                        </div>
-                                                        <div class="col-auto">
-                                                            <!-- Avatar -->
-                                                            <a class="avatar avatar-xs d-inline-block mr-2" href="/dashboard/authors/tania-goes-luz"><img alt="Tania Goes Luz" class="avatar-img rounded-circle" src="http://be-pay-learning.herokuapp.com/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBFQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--c37587fb0b9854d43582728b1721eb46a7324e64/Tania-Gomes-Luz.jpg.png">
-                                                            </a>
-                                                        </div>
-                                                    </div>
-                                                    <hr>
-                                                    <div class="row mt-3">
-                                                        <div class="col-12">
-                                                            <span class="badge badge-light badge-pill">
-            <i class="fe fe-users"></i>
-            16 aluno(s)
-            </span>
-                                                            <span class="badge badge-light badge-pill">
-            <i class="fe fe-clock"></i>
-            654 min(s)
-            </span>
-                                                        </div>
-                                                        <div class="col-12 mt-3">
-                                                            <span class="badge badge-light badge-pill icon mr-2">
-            <i class="fe fe-book-open"></i>
-            4 módulo(s)
-            </span>
-                                                            <span class="badge badge-light badge-pill">
-            <i class="fe fe-book"></i>
-            16 aula(s)
-            </span>
-                                                        </div>
-                                                    </div>
-                                                    <!-- / .row -->
-                                                    <!-- Divider -->
-                                                    <hr>
-                                                    <div class="row align-items-center justify-content-between">
-                                                        <div class="col-auto">
-                                                            <!-- Status -->
-                                                            <small>
-            <span class="text-success">●</span>
-            Publicado
-            </small>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                        </div>
-                                        <div class="col-12 col-md-6 col-lg-4 col-xl-3 pb-5" data="4" id="4" position="4">
-                                            <!-- Card -->
-                                            <div class="card course h-100 lift cursor-pointer">
-                                                <a class="card-img-top mh-lg-150" href="/dashboard/courses/coach-de-negocio"><img alt="Coach de negócio" src="https://be-pay-learning.herokuapp.com/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBNdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--f82eb75b88a5714c8450231b18a6d5cb0b72ed94/carol-gestao%20(1).jpg">
-                                                </a>
-                                                <div class="card-body pb-2">
-                                                    <div class="row align-items-center">
-                                                        <div class="col min-h-60">
-                                                            <!-- Title -->
-                                                            <h4 class="card-title mb-2 name">
-                                                                <a href="/dashboard/courses/coach-de-negocio">Coach de negócio</a>
-                                                            </h4>
-                                                        </div>
-                                                    </div>
-                                                    <div class="row align-items-center no-gutters mt-2">
-                                                        <div class="col-auto">
-                                                            <!-- Avatar -->
-                                                            <a class="avatar avatar-xs d-inline-block mr-2" href="/dashboard/authors/carol-calaca"><img alt="Carol Calaça" class="avatar-img rounded-circle" src="http://be-pay-learning.herokuapp.com/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBEZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--ef6f65429fcbd87223af48042ae5fcb5525be04e/Carol-Calaca.png">
-                                                            </a>
-                                                        </div>
-                                                        <div class="col">
-                                                            <!-- Title -->
-                                                            <span class="small text-muted item-author">Carol Calaça</span>
-                                                        </div>
-                                                    </div>
-                                                    <hr>
-                                                    <div class="row mt-3">
-                                                        <div class="col-12">
-                                                            <span class="badge badge-light badge-pill">
-            <i class="fe fe-users"></i>
-            14 aluno(s)
-            </span>
-                                                            <span class="badge badge-light badge-pill">
-            <i class="fe fe-clock"></i>
-            96 min(s)
-            </span>
-                                                        </div>
-                                                        <div class="col-12 mt-3">
-                                                            <span class="badge badge-light badge-pill icon mr-2">
-            <i class="fe fe-book-open"></i>
-            1 módulo(s)
-            </span>
-                                                            <span class="badge badge-light badge-pill">
-            <i class="fe fe-book"></i>
-            4 aula(s)
-            </span>
-                                                        </div>
-                                                    </div>
-                                                    <!-- / .row -->
-                                                    <!-- Divider -->
-                                                    <hr>
-                                                    <div class="row align-items-center justify-content-between">
-                                                        <div class="col-auto">
-                                                            <!-- Status -->
-                                                            <small>
-            <span class="text-success">●</span>
-            Publicado
-            </small>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                        </div>
-                                        <div class="col-12 col-md-6 col-lg-4 col-xl-3 pb-5" data="123" id="123" position="1">
-                                            <!-- Card -->
-                                            <div class="card course h-100 lift cursor-pointer">
-                                                <a class="card-img-top mh-lg-150" href="/dashboard/courses/plano-de-retomada-do-seu-negocio"><img alt="Plano de Retomada do Seu Negócio" src="https://storage.googleapis.com/be-learning-test/thumb_retomada_beplay.png">
-                                                </a>
-                                                <div class="card-body pb-2">
-                                                    <div class="row align-items-center">
-                                                        <div class="col min-h-60">
-                                                            <!-- Title -->
-                                                            <h4 class="card-title mb-2 name">
-                                                                <a href="/dashboard/courses/plano-de-retomada-do-seu-negocio">Plano de Retomada do Seu Negócio</a>
-                                                            </h4>
-                                                        </div>
-                                                    </div>
-                                                    <div class="row align-items-center no-gutters mt-2">
-                                                        <div class="col-auto">
-                                                            <!-- Avatar -->
-                                                            <a class="avatar avatar-xs d-inline-block mr-2" href="/dashboard/authors/bruno-pinheiro"><img alt="Bruno Pinheiro" class="avatar-img rounded-circle" src="http://be-pay-learning.herokuapp.com/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBEUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--f1775ca8334a5250cdb1fc597bb76c747cddaaf5/bp.jpg">
-                                                            </a>
-                                                        </div>
-                                                        <div class="col">
-                                                            <!-- Title -->
-                                                            <span class="small text-muted item-author">Bruno Pinheiro</span>
-                                                        </div>
-                                                    </div>
-                                                    <hr>
-                                                    <div class="row mt-3">
-                                                        <div class="col-12">
-                                                            <span class="badge badge-light badge-pill">
-            <i class="fe fe-users"></i>
-            2 aluno(s)
-            </span>
-                                                            <span class="badge badge-light badge-pill">
-            <i class="fe fe-clock"></i>
-            55 min(s)
-            </span>
-                                                        </div>
-                                                        <div class="col-12 mt-3">
-                                                            <span class="badge badge-light badge-pill icon mr-2">
-            <i class="fe fe-book-open"></i>
-            3 módulo(s)
-            </span>
-                                                            <span class="badge badge-light badge-pill">
-            <i class="fe fe-book"></i>
-            8 aula(s)
-            </span>
-                                                        </div>
-                                                    </div>
-                                                    <!-- / .row -->
-                                                    <!-- Divider -->
-                                                    <hr>
-                                                    <div class="row align-items-center justify-content-between">
-                                                        <div class="col-auto">
-                                                            <!-- Status -->
-                                                            <small>
-            <span class="text-success">●</span>
-            Publicado
-            </small>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                        </div>
-                                        <div class="col-12 col-md-6 col-lg-4 col-xl-3 pb-5" data="121" id="121" position="2">
-                                            <!-- Card -->
-                                            <div class="card course h-100 lift cursor-pointer">
-                                                <a class="card-img-top mh-lg-150" href="/dashboard/courses/desafio-wow"><img alt="Desafio WOW" src="https://storage.googleapis.com/be-learning-test/courses_cover/GISELE.jpg">
-                                                </a>
-                                                <div class="card-body pb-2">
-                                                    <div class="row align-items-center">
-                                                        <div class="col min-h-60">
-                                                            <!-- Title -->
-                                                            <h4 class="card-title mb-2 name">
-                                                                <a href="/dashboard/courses/desafio-wow">Desafio WOW</a>
-                                                            </h4>
-                                                        </div>
-                                                    </div>
-                                                    <div class="row align-items-center no-gutters mt-2">
-                                                        <div class="col-auto">
-                                                            <!-- Avatar -->
-                                                            <a class="avatar avatar-xs d-inline-block mr-2" href="/dashboard/authors/gisele-paula"><img alt="Gisele Paula" class="avatar-img rounded-circle" src="https://be-pay-learning.herokuapp.com/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBFdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--a502bc6f3acd5ab819d07772883e765244bc98f8/gisele-new.jpg">
-                                                            </a>
-                                                        </div>
-                                                        <div class="col">
-                                                            <!-- Title -->
-                                                            <span class="small text-muted item-author">Gisele Paula</span>
-                                                        </div>
-                                                    </div>
-                                                    <hr>
-                                                    <div class="row mt-3">
-                                                        <div class="col-12">
-                                                            <span class="badge badge-light badge-pill">
-            <i class="fe fe-users"></i>
-            21 aluno(s)
-            </span>
-                                                            <span class="badge badge-light badge-pill">
-            <i class="fe fe-clock"></i>
-            0 min(s)
-            </span>
-                                                        </div>
-                                                        <div class="col-12 mt-3">
-                                                            <span class="badge badge-light badge-pill icon mr-2">
-            <i class="fe fe-book-open"></i>
-            1 módulo(s)
-            </span>
-                                                            <span class="badge badge-light badge-pill">
-            <i class="fe fe-book"></i>
-            1 aula(s)
-            </span>
-                                                        </div>
-                                                    </div>
-                                                    <!-- / .row -->
-                                                    <!-- Divider -->
-                                                    <hr>
-                                                    <div class="row align-items-center justify-content-between">
-                                                        <div class="col-auto">
-                                                            <!-- Status -->
-                                                            <small>
-            <span class="text-success">●</span>
-            Publicado
-            </small>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                        </div>
-
-
-
-                                    </div>
-                                    <div class="row justify-content-center">
-                                        <nav class="pagy-bootstrap-nav" role="navigation" aria-label="pager">
-                                            <ul class="pagination">
-                                                <li class="page-item prev disabled"><a href="#" class="page-link">‹&nbsp;Anterior</a></li>
-                                                <li class="page-item active"><a href="/dashboard/courses?page=1" class="page-link">1</a></li>
-                                                <li class="page-item"><a href="/dashboard/courses?page=2" class="page-link" rel="next">2</a></li>
-                                                <li class="page-item"><a href="/dashboard/courses?page=3" class="page-link">3</a></li>
-                                                <li class="page-item"><a href="/dashboard/courses?page=4" class="page-link">4</a></li>
-                                                <li class="page-item"><a href="/dashboard/courses?page=5" class="page-link">5</a></li>
-                                                <li class="page-item"><a href="/dashboard/courses?page=6" class="page-link">6</a></li>
-                                                <li class="page-item"><a href="/dashboard/courses?page=7" class="page-link">7</a></li>
-                                                <li class="page-item next"><a href="/dashboard/courses?page=2" class="page-link" rel="next" aria-label="next">Próximo&nbsp;›</a></li>
-                                            </ul>
-                                        </nav>
-                                    </div>
-                                    <!-- / .row -->
-                                </div>
-                                <div class="tab-pane fade" id="tabPaneTwo" role="tabpanel">
-                                    <div class="row list courses-sortable-list"></div>
-                                    <div class="row justify-content-center">
-                                        <nav class="pagy-bootstrap-nav" role="navigation" aria-label="pager">
-                                            <ul class="pagination">
-                                                <li class="page-item prev disabled"><a href="#" class="page-link">‹&nbsp;Anterior</a></li>
-                                                <li class="page-item active"><a href="/dashboard/courses?page=1" class="page-link">1</a></li>
-                                                <li class="page-item"><a href="/dashboard/courses?page=2" class="page-link" rel="next">2</a></li>
-                                                <li class="page-item"><a href="/dashboard/courses?page=3" class="page-link">3</a></li>
-                                                <li class="page-item"><a href="/dashboard/courses?page=4" class="page-link">4</a></li>
-                                                <li class="page-item"><a href="/dashboard/courses?page=5" class="page-link">5</a></li>
-                                                <li class="page-item"><a href="/dashboard/courses?page=6" class="page-link">6</a></li>
-                                                <li class="page-item"><a href="/dashboard/courses?page=7" class="page-link">7</a></li>
-                                                <li class="page-item next"><a href="/dashboard/courses?page=2" class="page-link" rel="next" aria-label="next">Próximo&nbsp;›</a></li>
-                                            </ul>
-                                        </nav>
-                                    </div>
-                                </div>
+                            <div class="row justify-content-center">
+                                <nav class="pagy-bootstrap-nav" role="navigation" aria-label="pager">
+                                    <ul class="pagination">
+                                        <li class="page-item prev disabled"><a href="#" class="page-link">‹&nbsp;Anterior</a></li>
+                                        <li class="page-item active"><a href="/dashboard/courses?page=1" class="page-link">1</a></li>
+                                        <li class="page-item"><a href="/dashboard/courses?page=2" class="page-link" rel="next">2</a></li>
+                                        <li class="page-item"><a href="/dashboard/courses?page=3" class="page-link">3</a></li>
+                                        <li class="page-item"><a href="/dashboard/courses?page=4" class="page-link">4</a></li>
+                                        <li class="page-item"><a href="/dashboard/courses?page=5" class="page-link">5</a></li>
+                                        <li class="page-item"><a href="/dashboard/courses?page=6" class="page-link">6</a></li>
+                                        <li class="page-item"><a href="/dashboard/courses?page=7" class="page-link">7</a></li>
+                                        <li class="page-item next"><a href="/dashboard/courses?page=2" class="page-link" rel="next" aria-label="next">Próximo&nbsp;›</a></li>
+                                    </ul>
+                                </nav>
                             </div>
                         </div>
                     </div>
                 </div>
-
             </div>
+
         </div>
     </div>
     <!-- / .header -->
