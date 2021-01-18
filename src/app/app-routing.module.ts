@@ -36,7 +36,6 @@ const routes: Routes = [
   { path: 'products', component: ProductsComponent},
   { path: 'subscriptions', component: SubscriptionsComponent}
 ];
-//const routing: ModuleWithProviders = RouterModule.forChild;
 
 @NgModule({
   imports: [

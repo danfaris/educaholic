@@ -10,16 +10,16 @@ q {
 
 .main-content {
     padding-left: 249px;
-    // max-width: 1140px;
     overflow: hidden;
 }
 
-// .container-fluid {
-//     display: grid;
-//     grid-template-columns: repeat(3, 1fr);
-//     gap: 15px;
+// #neomorph {
+//     border-radius: 59px;
+//     background: #f3f6fb;
+//     box-shadow: 24px 24px 49px #acacac, -24px -24px 49px #ffffff;
 // }
-// .card {
-//     width: 100%;
-//     display: block;
-// }
+@media (max-width: 767px) {
+    .main-content {
+        padding: 20px;
+    }
+}
