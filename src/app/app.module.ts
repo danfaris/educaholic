@@ -25,6 +25,7 @@ import { CommentsComponent } from './components/comments/comments.component';
 import { LoginComponent } from './components/login/login.component';
 import { from } from 'rxjs';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
+import { AddProductComponent } from './components/forms/add-product/add-product.component';
 
 @NgModule({
   imports: [
@@ -42,7 +43,7 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
     HomeModule,
     AppRoutingModule, // must be imported as the last module as it contains the fallback route
   ],
-  declarations: [AppComponent, ProductsComponent, SubscriptionsComponent, OrdersComponent, CustomersComponent, CoursesComponent, PathComponent, AuthorsComponent, CategoriesComponent, CommentsComponent, LoginComponent, SidebarComponent],
+  declarations: [AppComponent, ProductsComponent, SubscriptionsComponent, OrdersComponent, CustomersComponent, CoursesComponent, PathComponent, AuthorsComponent, CategoriesComponent, CommentsComponent, LoginComponent, SidebarComponent, AddProductComponent],
   providers: [],
   bootstrap: [AppComponent],
 })
