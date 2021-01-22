@@ -18,12 +18,7 @@
                         </h1>
 
                     </div>
-                    <div class="col-auto">
-                        <!-- Button -->
-                        <a class="btn btn-outline-dark" href="../../components/forms/add-product/add-product.component.html">
-                            Filtro
-                        </a>
-                    </div>
+
                 </div>
                 <!-- / .row -->
             </div>
@@ -37,15 +32,178 @@
                 <div class="card-header">
 
                     <!-- Title -->
-                    <h4 class="card-header-title">
-                        Performance
-                    </h4>
-
-
                     <!-- Button -->
-                    <a href="#!" class="btn btn-sm btn-outline-dark">
+                    <div class="row align-items-center">
+                        <div class="col">
+                            <form action="/dashboard/subscriptions" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="✓">
+                                <input type="hidden" name="view" id="view">
+                                <!-- Form -->
+
+                                <div class="input-group input-group-flush">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">
+                                            <i class="fas fa-search"></i>
+                        </span>
+                                    </div>
+                                    <input type="text" name="customer_email" id="customer_email-id" class="form-control form-control-prepended search list-search pl-3" placeholder="Pesquise pelo email do aluno">
+                                    <button class="btn btn-sm btn-white mt-2 h-25 pb-1 pl-3 pr-3 mb-2" type="submit">
+                                        <i class="fas fa-search"></i>
                         Pesquisar
-                    </a>
+                        </button>
+                                </div>
+                            </form>
+
+
+                        </div>
+                        <div class="col-auto">
+                            <div id="popoverDemo">
+                                <a class="btn btn-sm btn-white" data-toggle="modal" href="#modalDemo">
+                                    <i class="fas fa-filter"></i> Filtros
+                                </a>
+                            </div>
+                            <div aria-hidden="true" class="modal fade fixed-right" id="modalDemo" style="display: none;" tabindex="-1">
+                                <div class="modal-dialog modal-dialog-vertical" role="document">
+                                    <form class="modal-content" id="demoForm">
+                                        <div class="modal-body">
+                                            <!-- Close -->
+                                            <a aria-label="Close" class="close" data-dismiss="modal">
+                                                <span aria-hidden="true">×</span>
+                                            </a>
+                                            <!-- Heading -->
+                                            <h2 class="text-center mb-2">
+                                                Filtros
+                                            </h2>
+                                            <!-- Text -->
+                                            <p class="mb-4 text-muted">
+                                                Filtre registros baseados em uma ou mais condições. Será utilizado o operador "AND (E)", que mostra um registro se todas as condições forem verdadeiras.
+                                            </p>
+                                            <!-- Divider -->
+                                            <hr class="mb-4">
+                                            <!-- Heading -->
+                                            <h4 class="mb-3">
+                                                Status
+                                            </h4>
+                                            <!-- form group -->
+                                            <div class="form-group">
+                                                <select name="status" id="status" class="form-control custom-select custom-select-sm select2-hidden-accessible" data-toggle="select" data-select2-id="status" tabindex="-1" aria-hidden="true"><option value="" data-select2-id="22">Todos Status</option><option value="active">Ativa</option>
+                        <option value="cancelled">Cancelada</option>
+                        <option value="ended">Encerrada</option>
+                        <option value="lost">Perdida</option>
+                        <option value="paid">Paga</option>
+                        <option value="past_due">Em Atraso</option>
+                        <option value="pending_payment">Pendente</option>
+                        <option value="refused_payment">Pagamento Rejeitado</option>
+                        <option value="trialing">Em Teste</option>
+                        <option value="unpaid">Não Paga</option></select><span class="select2 select2-container select2-container--default" dir="ltr" data-select2-id="21" style="width: 100px;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-labelledby="select2-status-container"><span class="select2-selection__rendered" id="select2-status-container" role="textbox" aria-readonly="true" title="Todos Status">Todos Status</span>
+                                                <span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span>
+                                                </span>
+                                                </span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
+                                            </div>
+                                            <!-- Heading -->
+                                            <h4 class="mb-3">
+                                                Forma de Pagamento
+                                            </h4>
+                                            <!-- Form group -->
+                                            <div class="form-group">
+                                                <select name="payment_method" id="payment_method" class="form-control custom-select custom-select-sm select2-hidden-accessible" data-toggle="select" data-select2-id="payment_method" tabindex="-1" aria-hidden="true"><option value="" data-select2-id="24">Todas Formas</option><option value="boleto">Boleto</option>
+                        <option value="cost_free">Cortesia / Pago Externo</option>
+                        <option value="credit_card">Cartão de Crédito</option></select><span class="select2 select2-container select2-container--default" dir="ltr" data-select2-id="23" style="width: 100px;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-labelledby="select2-payment_method-container"><span class="select2-selection__rendered" id="select2-payment_method-container" role="textbox" aria-readonly="true" title="Todas Formas">Todas Formas</span>
+                                                <span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span>
+                                                </span>
+                                                </span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
+                                            </div>
+                                            <!-- Heading -->
+                                            <h4 class="mb-3">
+                                                Produto
+                                            </h4>
+                                            <!-- form group -->
+                                            <div class="form-group">
+                                                <select name="product" id="product" class="form-control custom-select custom-select-sm select2-hidden-accessible" data-toggle="select" data-select2-id="product" tabindex="-1" aria-hidden="true"><option value="" data-select2-id="26">Todos Produtos</option><option value="AHLxhnThwL3RWvXxsQ63KmND">Be Play</option>
+                        <option value="P7gpsH7kFUv6cYHQNJci9XGd">Desafio WOW</option>
+                        <option value="WSqUeYfpCapovSCF7xH7Ca8A">Desevolvimento de Negócios</option>
+                        <option value="yfwfyr75RDnidPTvFvDNLLNK">Lopes time de HR</option>
+                        <option value="MnhkKqvkxCSCZ22nJNwDSjYG">Marketing Digital E Funil de Vendas</option>
+                        <option value="N4P5j5t7QCHkEFpVKhXjBAJJ">Mentalidade E Cultura Para Inovação</option>
+                        <option value="xaGFSQKYXr1Ybx9V7pjzZyfu">Pacote 3 cursos</option>
+                        <option value="o53Za5jTa9EaeZkCvST8FiYb">Pacote Trilha</option>
+                        <option value="FPqr6XfVAQRvrGLPBmZBDiqN">Produto X</option>
+                        <option value="kWxZVwvi8q9sjtymPEVV3TaK">Resilientes Summit</option>
+                        <option value="v8aCCc1mf4HDZ7q59RHzVGpY">Retomada</option>
+                        <option value="NsukQaRhw1zdUk67cZgvqz7D">Trilha Empreendedorismo</option></select><span class="select2 select2-container select2-container--default" dir="ltr" data-select2-id="25"
+                                                    style="width: 100px;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-labelledby="select2-product-container"><span class="select2-selection__rendered" id="select2-product-container" role="textbox" aria-readonly="true" title="Todos Produtos">Todos Produtos</span>
+                                                <span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span>
+                                                </span>
+                                                </span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
+                                            </div>
+                                            <!-- Heading -->
+                                            <h4 class="mb-3">
+                                                Plano
+                                            </h4>
+                                            <!-- form group -->
+                                            <div class="form-group">
+                                                <select name="plan" id="plan" class="form-control custom-select custom-select-sm select2-hidden-accessible" data-toggle="select" data-select2-id="plan" tabindex="-1" aria-hidden="true"><option value="" data-select2-id="28">Todos Planos</option><option value="3">Be Play - 12x97</option>
+                        <option value="18">Be Play - Cortesia</option>
+                        <option value="13">Be Play - Plano 6x</option>
+                        <option value="8">Be Play - Plano X</option>
+                        <option value="14">Be Play - Unica Pgt 1K</option>
+                        <option value="9">Desafio WOW - GRATUITO</option>
+                        <option value="6">Desevolvimento de Negócios - a vista R$ 297</option>
+                        <option value="19">Lopes time de HR - Acesso ao curso</option>
+                        <option value="4">Marketing Digital E Funil de Vendas - A vista</option>
+                        <option value="5">Mentalidade E Cultura Para Inovação - A vista R$297</option>
+                        <option value="17">Mentalidade E Cultura Para Inovação - Bump Offer</option>
+                        <option value="10">Pacote 3 cursos - plano a vista</option>
+                        <option value="16">Pacote Trilha - plano free</option>
+                        <option value="12">Produto X - Plano 3x</option>
+                        <option value="2">Resilientes Summit - 12x</option>
+                        <option value="15">Retomada - Gratis</option>
+                        <option value="7">Trilha Empreendedorismo - A vista</option>
+                        <option value="11">Trilha Empreendedorismo - GRATIS</option></select><span class="select2 select2-container select2-container--default" dir="ltr" data-select2-id="27" style="width: 100px;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-labelledby="select2-plan-container"><span class="select2-selection__rendered" id="select2-plan-container" role="textbox" aria-readonly="true" title="Todos Planos">Todos Planos</span>
+                                                <span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span>
+                                                </span>
+                                                </span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
+                                            </div>
+                                            <!-- Heading -->
+                                            <h4 class="mb-3">
+                                                Criado em
+                                            </h4>
+                                            <!-- form group -->
+                                            <div class="form-group">
+                                                <input type="hidden" name="created_at" id="created_at" class="form-control flatpickr-input" data-toggle="flatpickr" data-mode="range" data-enable-time="false" data-format="d/m/Y H:i" data-enable-alt-input="true" data-alt-format="j F, Y">
+                                                <input class="form-control flatpickr-input form-control input" placeholder="" tabindex="0" type="text" readonly="readonly">
+                                            </div>
+                                            <!-- Heading -->
+                                            <h4 class="mb-3">
+                                                Email do Aluno
+                                            </h4>
+                                            <!-- form group -->
+                                            <div class="form-group">
+                                                <input type="text" name="customer_email" id="customer_email" class="form-control">
+                                            </div>
+                                            <!-- Heading -->
+                                            <h4 class="mb-3">
+                                                Nome do Aluno
+                                            </h4>
+                                            <!-- form group -->
+                                            <div class="form-group">
+                                                <input type="text" name="customer_name" id="customer_name" class="form-control">
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer border-0">
+                                            <a class="btn btn-link btn-block text-muted" href="/dashboard/subscriptions">
+                        Limpar Filtros
+                        </a>
+                                            <!-- Button -->
+                                            <button class="btn btn-block btn-primary mt-auto" type="submit">
+                        Aplicar Filtros
+                        </button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
 
                 </div>
                 <div class="table-responsive mb-0">

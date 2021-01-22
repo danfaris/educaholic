@@ -12,7 +12,7 @@
 
                         <!-- Title -->
                         <h1 class="header-title">
-                            Adicionar Novo Produto
+                            Adicionar Novo Curso
                         </h1>
 
 
@@ -24,65 +24,86 @@
 
                 <div class="mb-4">
                     <form class="new_product" id="new_product" action="/dashboard/products" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="vBBvGWkpJMZjkAmoraRixJrIEzawdBijHtMBZiq8GhsC0JwOrN73XxeW9k4mgdXYM8SEDggWVzfUy6Yhd68yVA==">
-                        <label for="product-name">Nome</label>
-                        <input class="form-control form-control-prepended search" required="required" type="text">
-                        <hr class="mt-4 mb-5">
-
-                        <div class="form-group">
-                            <label for="product_description">Descrição</label>
-                            <textarea class="form-control" required="required" placeholder="Esse produto vai te ensinar a fazer venda todos os dias, 24/7. Venha conferir!!" name="product[description]" id="product_description"></textarea>
+                        <div class="col-12">
+                            <div class="row align-items-center">
+                                <div class="col">
+                                    <!-- Heading -->
+                                    <h4 class="mb-1">
+                                        Imagem de capa (Horizontal)
+                                    </h4>
+                                    <!-- Text -->
+                                    <small class="text-muted">
+                            PNG or JPG não maior que 367x190px de largura e altura, ou dimensões proporcionais
+                            </small>
+                                </div>
+                                <div class="col-md-5 col-sm-12 mt-3">
+                                    <div class="form-group">
+                                        <div class="custom-file">
+                                            <input class="custom-file-input" type="file" name="course[cover_horizontal]" id="course_cover_horizontal">
+                                            <label class="custom-file-label" for="course_cover_horizontal">Selecione nova imagem</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="row align-items-center">
+                                <div class="col">
+                                    <!-- Heading -->
+                                    <h4 class="mb-1">
+                                        Imagem de capa (Vertical)
+                                    </h4>
+                                    <!-- Text -->
+                                    <small class="text-muted">
+                            PNG or JPG não maior que 367x190px de largura e altura, ou dimensões proporcionais
+                            </small>
+                                </div>
+                                <div class="col-md-5 col-sm-12 mt-3">
+                                    <div class="form-group">
+                                        <div class="custom-file">
+                                            <input class="custom-file-input" type="file" name="course[cover_horizontal]" id="course_cover_horizontal">
+                                            <label class="custom-file-label" for="course_cover_horizontal">Selecione nova imagem</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         <div class="row"></div>
                         <hr class="mt-4 mb-5">
                         <ul class="list-group" id="accordion">
-                            <li aria-controls="collapseIntegrationSettings" aria-expanded="false" class="d-flex justify-content-between align-items-center collapsed" data-target="#collapseIntegrationSettings" data-toggle="collapse">
+                            <li class="d-flex justify-content-between align-items-center">
                                 <div class="list-group col-12">
                                     <div class="row">
                                         <div class="col-11">
                                             <div class="header">
-                                                <h2 class="header-title">Configurações de Tags</h2>
+                                                <h2 class="header-title">Configurações do Curso</h2>
                                             </div>
                                         </div>
-                                        <div class="col-1 text-right">
-                                            <i class="fas fa-expand-alt"></i>
-                                        </div>
+
                                     </div>
                                 </div>
                             </li>
-                            <div aria-labelledby="headingIntegrationSettings" class="collapse" data-parent="" id="collapseIntegrationSettings" style="">
-                                <div class="row">
-                                    <div class="col-12">
-                                        <div class="form-group">
-                                            <label for="product_tag_provider">Plataforma da tag</label>
-                                            <select class="form-control custom-select select2-hidden-accessible" data-toggle="select" name="product[tag_provider]" id="product_tag_provider" data-select2-id="product_tag_provider" tabindex="-1" aria-hidden="true"><option value=""></option>
-                <option selected="selected" value="" data-select2-id="2"></option>
-                <option value="infusionsoft">Infusionsoft</option></select><span class="select2 select2-container select2-container--default" dir="ltr" data-select2-id="1" style="width: 100px;"><span class="selection"><span class="select2-selection__rendered" id="select2-product_tag_provider-container" role="textbox" aria-readonly="true" title=""></span>
-                                            <span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span>
-                                            </span>
-                                            </span><span class="dropdown-wrapper" aria-hidden="true"></span>
-                                        </div>
+                            <div class="row">
+
+                                <div class="col-12 col-lg-6">
+                                    <div class="form-group">
+                                        <label for="product_tag_id_payment_paid">Título</label>
+                                        <input class="form-control" placeholder="1212" type="text" value="" name="product[tag_id_payment_paid]" id="product_tag_id_payment_paid">
                                     </div>
-                                    <div class="col-12 col-lg-6">
-                                        <div class="form-group">
-                                            <label for="product_tag_id_payment_paid">TAG ID: Pagamento Efetuado</label>
-                                            <input class="form-control" placeholder="1212" type="text" value="" name="product[tag_id_payment_paid]" id="product_tag_id_payment_paid">
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="product_tag_id_payment_issue">TAG ID: Problema no Pagamento</label>
-                                            <input class="form-control" placeholder="1213" type="text" value="" name="product[tag_id_payment_issue]" id="product_tag_id_payment_issue">
-                                        </div>
+
+                                </div>
+                                <div class="col-12 col-lg-6">
+                                    <div class="form-group">
+                                        <label for="product_tag_id_payment_pending">TAG ID: Boleto Gerado</label>
+                                        <input class="form-control" placeholder="1214" type="text" value="" name="product[tag_id_payment_pending]" id="product_tag_id_payment_pending">
                                     </div>
-                                    <div class="col-12 col-lg-6">
-                                        <div class="form-group">
-                                            <label for="product_tag_id_payment_pending">TAG ID: Boleto Gerado</label>
-                                            <input class="form-control" placeholder="1214" type="text" value="" name="product[tag_id_payment_pending]" id="product_tag_id_payment_pending">
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="product_tag_id_abandoned_cart">TAG ID: Carrinho Abandonado</label>
-                                            <input class="form-control" placeholder="1215" type="text" value="" name="product[tag_id_abandoned_cart]" id="product_tag_id_abandoned_cart">
-                                        </div>
+                                    <div class="form-group">
+                                        <label for="product_tag_id_abandoned_cart">TAG ID: Carrinho Abandonado</label>
+                                        <input class="form-control" placeholder="1215" type="text" value="" name="product[tag_id_abandoned_cart]" id="product_tag_id_abandoned_cart">
                                     </div>
                                 </div>
+                            </div>
+                            <div class="collapse" data-parent="" id="collapseIntegrationSettings" style="">
                             </div>
                         </ul>
                         <div class="row"></div>
@@ -133,6 +154,8 @@
                         <!-- Divider -->
                     </form>
                 </div>
+
+
 
             </div>
 

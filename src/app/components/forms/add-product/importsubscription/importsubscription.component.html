@@ -1,0 +1,62 @@
+<div class="main-content">
+    <div class="header">
+        <div class="container-fluid">
+
+            <div class="col-12">
+                <div class="header">
+                    <div class="header-body">
+                        <div class="row align-items-end">
+                            <div class="col-11">
+                                <h6 class="header-pretitle">
+                                    Assinaturas
+                                </h6>
+                                <h1 class="header-title">
+                                    Importação de Assinaturas via CSV
+                                </h1>
+                            </div>
+                            <div class="col-auto">
+                                <a class="btn btn-link btn-block text-muted" href="/dashboard/subscriptions">
+    Voltar
+    </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mb-4">
+                    <form class="new_subscription" id="new_subscription" enctype="multipart/form-data" action="/dashboard/subscriptions/import" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="snmG19vyZcoRqWLcJsVxf/S3WoqE+oY/Tt0t6CmYp+iJYL+nPqsWdOj47J8VzZzJGPFe1FZ3bcOttckX/5jtug==">
+                        <div class="form-group">
+                            <label for="subscription_free_offer_id">Oferta de Cortesia</label>
+                            <select class="form-control custom-select select2-hidden-accessible" data-toggle="select" name="subscription[free_offer_id]" id="subscription_free_offer_id" data-select2-id="subscription_free_offer_id" tabindex="-1" aria-hidden="true"><option value="" data-select2-id="30"></option>
+    <option value="20">Be Play: Cortesia - Hup1VhBGwtXzeTZv4oLZqbLV</option>
+    <option value="10">Desafio WOW: GRATUITO - P7WDdKKnNR4Ac6Re1qkEd2bT</option>
+    <option value="21">Lopes time de HR: Acesso ao curso - jpBqe9mTs8rBswr9uKYL7oP2</option>
+    <option value="11">Pacote 3 cursos: plano a vista - RG61GDVXv5sn6JojQbZJguVK</option>
+    <option value="17">Pacote Trilha: plano free - tjkvyGNUKRyTkgZLUj6VCCJP</option>
+    <option value="16">Retomada: Gratis - rFtiB95hiSri5wDuzviEMuKQ</option>
+    <option value="12">Trilha Empreendedorismo: GRATIS - 6vnCoXYGjHjUaqDDnx7N3z7m</option></select><span class="select2 select2-container select2-container--default" dir="ltr" data-select2-id="29" style="width: 660px;"><span class="selection">
+        
+                            </span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
+                            <div class="small text-muted">
+                                <span>São permitidos apenas as ofertas Cortesias</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="custom-file">
+                                <input class="custom-file-input" type="file" name="subscription[file]" id="subscription_file">
+                                <label class="custom-file-label" for="subscription_file">Selecione o arquivo .CSV</label>
+                            </div>
+                            <div class="small text-muted">
+                                <a target="_blank" rel="nofollow" href="https://storage.googleapis.com/be-learning-test/files/subscription_import_template.csv">Clique aqui e baixe aqui o arquivo modelo</a>
+                            </div>
+                        </div>
+                        <!-- Divider -->
+                        <div class="row"></div>
+                        <hr class="mt-4 mb-5">
+                        <input type="submit" name="commit" value="Importar" class="btn btn-outline-dark btn-block" data-disable-with="Importar">
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

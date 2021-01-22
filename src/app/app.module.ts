@@ -26,6 +26,8 @@ import { LoginComponent } from './components/login/login.component';
 import { from } from 'rxjs';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { AddProductComponent } from './components/forms/add-product/add-product.component';
+import { ImportsubscriptionComponent } from '../app/components/forms/add-product/importsubscription/importsubscription.component';
+import { AddcourseComponent } from './components/forms/addcourse/addcourse.component';
 
 @NgModule({
   imports: [
@@ -43,7 +45,7 @@ import { AddProductComponent } from './components/forms/add-product/add-product.
     HomeModule,
     AppRoutingModule, // must be imported as the last module as it contains the fallback route
   ],
-  declarations: [AppComponent, ProductsComponent, SubscriptionsComponent, OrdersComponent, CustomersComponent, CoursesComponent, PathComponent, AuthorsComponent, CategoriesComponent, CommentsComponent, LoginComponent, SidebarComponent, AddProductComponent],
+  declarations: [AppComponent, ProductsComponent, SubscriptionsComponent, OrdersComponent, CustomersComponent, CoursesComponent, PathComponent, AuthorsComponent, CategoriesComponent, CommentsComponent, LoginComponent, SidebarComponent, AddProductComponent, ImportsubscriptionComponent, AddcourseComponent],
   providers: [],
   bootstrap: [AppComponent],
 })

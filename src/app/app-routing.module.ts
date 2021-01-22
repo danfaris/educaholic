@@ -13,6 +13,8 @@ import { OrdersComponent } from './components/orders/orders.component';
 import { PathComponent } from './components/path/path.component';
 import { SubscriptionsComponent } from './components/subscriptions/subscriptions.component';
 import { AddProductComponent } from './components/forms/add-product/add-product.component';
+import { ImportsubscriptionComponent } from './components/forms/add-product/importsubscription/importsubscription.component';
+import { AddcourseComponent } from './components/forms/addcourse/addcourse.component';
 
 
 const routes: Routes = [
@@ -36,7 +38,9 @@ const routes: Routes = [
   { path: 'path', component: PathComponent},
   { path: 'products', component: ProductsComponent},
   { path: 'subscriptions', component: SubscriptionsComponent},
-  { path: 'addproduct', component: AddProductComponent}
+  { path: 'addproduct', component: AddProductComponent},
+  { path: 'importsubscription', component: ImportsubscriptionComponent },
+  { path: 'addcourse', component: AddcourseComponent}
 ];
 
 @NgModule({

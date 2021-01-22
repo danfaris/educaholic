@@ -1,0 +1,13 @@
+.main-content {
+    padding-left: 249px;
+    overflow: hidden;
+}
+
+// #tab-cont {
+//     padding: 40px;
+// }
+@media (max-width: 767px) {
+    .main-content {
+        padding: 20px;
+    }
+}
