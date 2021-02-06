@@ -1,0 +1,95 @@
+<div class="main-content">
+    <div class="header">
+        <div class="container-fluid">
+            <!-- Body -->
+            <div class="header-body">
+                <div class="row align-items-end">
+                    <div class="col">
+
+                        <!-- Pretitle -->
+                        <h6 class="header-pretitle">
+                            overview
+                        </h6>
+
+                        <!-- Title -->
+                        <h1 class="header-title">
+                            Adicionar Novo Facilitador
+                        </h1>
+
+                    </div>
+
+                </div>
+                <!-- / .row -->
+            </div>
+            <!-- / .header-body -->
+            <div class="mb-4 mt-3">
+                <form class="new_author" id="new_author" enctype="multipart/form-data" action="/dashboard/authors" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="TIQZK1bMJyumFWAHEgzKV/yKkYGh7rv59XBOpPrZOgLsd/XHdQC1Lly/S9EvCKO6YhLYLWkbBh3RWPz6DZIITw=="><input value="" type="hidden" name="author[avatar_url]"
+                        id="author_avatar_url">
+
+
+                    <div class="row justify-content-between align-items-center">
+                        <div class="col">
+                            <div class="row align-items-center">
+                                <div class="col ml-n2">
+                                    <!-- Heading -->
+                                    <h4 class="mb-1">
+                                        Image de Perfil
+                                    </h4>
+                                    <!-- Text -->
+                                    <small class="text-muted">
+                PNG or JPG não maior que 1000px de largura e altura.
+                </small>
+                                </div>
+                                <div class="col mt-3">
+                                    <div class="form-group">
+                                        <div class="custom-file">
+                                            <input class="custom-file-input" type="file" name="author[avatar]" id="author_avatar">
+                                            <label class="custom-file-label" for="author_avatar">Escolher imagem</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Divider -->
+                    <hr class="my-5">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="form-group">
+                                <label for="author_Nome">Nome</label>
+                                <input class="form-control" type="text" name="author[name]" id="author_name">
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <div class="form-group">
+                                <label for="author_Titulo">Titulo</label>
+                                <input class="form-control" type="text" name="author[title]" id="author_title">
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <div class="form-group">
+                                <label for="author_Empresa">Empresa</label>
+                                <input class="form-control" type="text" name="author[company]" id="author_company">
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="form-group">
+                                <label for="author_Descrição">Descrição</label>
+                                <textarea class="form-control" rows="10" name="author[description]" id="author_description"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row"></div>
+                    <hr class="mt-4 mb-5">
+                    <input type="submit" name="commit" value="Salvar Facilidator" class="btn btn-outline-dark btn-block" data-disable-with="Salvar Facilidator">
+                    <a class="btn btn-link btn-block text-muted" href="/dashboard/authors">
+                Cancelar
+                </a>
+                    <!-- / .row -->
+                    <!-- Divider -->
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>

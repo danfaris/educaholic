@@ -27,28 +27,25 @@
         </div>
         <div class="col-12" id="tab-alunos">
 
-            <!-- Performance -->
             <div class="card">
                 <div class="card-header">
-
-                    <!-- Title -->
                     <div class="row align-items-center">
                         <div class="col">
-                            <form action="/dashboard/subscriptions" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="✓">
+                            <form action="/dashboard/customers" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="✓">
                                 <input type="hidden" name="view" id="view">
                                 <!-- Form -->
 
                                 <div class="input-group input-group-flush">
                                     <div class="input-group-prepend">
                                         <span class="input-group-text">
-                                            <i class="fas fa-search"></i>
-                        </span>
+                <i class="fe fe-search"></i>
+                </span>
                                     </div>
-                                    <input type="text" name="customer_email" id="customer_email-id" class="form-control form-control-prepended search list-search pl-3" placeholder="Pesquise pelo email do aluno">
+                                    <input type="text" name="customer_email" id="customer_email-id" class="form-control form-control-prepended search list-search pl-3" placeholder="Pesquise por e-mail">
                                     <button class="btn btn-sm btn-white mt-2 h-25 pb-1 pl-3 pr-3 mb-2" type="submit">
-                                        <i class="fas fa-search"></i>
-                        Pesquisar
-                        </button>
+                <i class="fe fe-search"></i>
+                Pesquisar
+                </button>
                                 </div>
                             </form>
 
@@ -57,7 +54,7 @@
                         <div class="col-auto">
                             <div id="popoverDemo">
                                 <a class="btn btn-sm btn-white" data-toggle="modal" href="#modalDemo">
-                                    <i class="fas fa-filter"></i> Filtros
+                                    <i class="fe fe-sliders mr-2"></i> Filtrar
                                 </a>
                             </div>
                             <div aria-hidden="true" class="modal fade fixed-right" id="modalDemo" style="display: none;" tabindex="-1">
@@ -78,90 +75,6 @@
                                             </p>
                                             <!-- Divider -->
                                             <hr class="mb-4">
-                                            <!-- Heading -->
-                                            <h4 class="mb-3">
-                                                Status
-                                            </h4>
-                                            <!-- form group -->
-                                            <div class="form-group">
-                                                <select name="status" id="status" class="form-control custom-select custom-select-sm select2-hidden-accessible" data-toggle="select" data-select2-id="status" tabindex="-1" aria-hidden="true"><option value="" data-select2-id="22">Todos Status</option><option value="active">Ativa</option>
-                        <option value="cancelled">Cancelada</option>
-                        <option value="ended">Encerrada</option>
-                        <option value="lost">Perdida</option>
-                        <option value="paid">Paga</option>
-                        <option value="past_due">Em Atraso</option>
-                        <option value="pending_payment">Pendente</option>
-                        <option value="refused_payment">Pagamento Rejeitado</option>
-                        <option value="trialing">Em Teste</option>
-                        <option value="unpaid">Não Paga</option></select><span class="select2 select2-container select2-container--default" dir="ltr" data-select2-id="21" style="width: 100px;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-labelledby="select2-status-container"><span class="select2-selection__rendered" id="select2-status-container" role="textbox" aria-readonly="true" title="Todos Status">Todos Status</span>
-                                                <span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span>
-                                                </span>
-                                                </span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
-                                            </div>
-                                            <!-- Heading -->
-                                            <h4 class="mb-3">
-                                                Forma de Pagamento
-                                            </h4>
-                                            <!-- Form group -->
-                                            <div class="form-group">
-                                                <select name="payment_method" id="payment_method" class="form-control custom-select custom-select-sm select2-hidden-accessible" data-toggle="select" data-select2-id="payment_method" tabindex="-1" aria-hidden="true"><option value="" data-select2-id="24">Todas Formas</option><option value="boleto">Boleto</option>
-                        <option value="cost_free">Cortesia / Pago Externo</option>
-                        <option value="credit_card">Cartão de Crédito</option></select><span class="select2 select2-container select2-container--default" dir="ltr" data-select2-id="23" style="width: 100px;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-labelledby="select2-payment_method-container"><span class="select2-selection__rendered" id="select2-payment_method-container" role="textbox" aria-readonly="true" title="Todas Formas">Todas Formas</span>
-                                                <span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span>
-                                                </span>
-                                                </span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
-                                            </div>
-                                            <!-- Heading -->
-                                            <h4 class="mb-3">
-                                                Produto
-                                            </h4>
-                                            <!-- form group -->
-                                            <div class="form-group">
-                                                <select name="product" id="product" class="form-control custom-select custom-select-sm select2-hidden-accessible" data-toggle="select" data-select2-id="product" tabindex="-1" aria-hidden="true"><option value="" data-select2-id="26">Todos Produtos</option><option value="AHLxhnThwL3RWvXxsQ63KmND">Be Play</option>
-                        <option value="P7gpsH7kFUv6cYHQNJci9XGd">Desafio WOW</option>
-                        <option value="WSqUeYfpCapovSCF7xH7Ca8A">Desevolvimento de Negócios</option>
-                        <option value="yfwfyr75RDnidPTvFvDNLLNK">Lopes time de HR</option>
-                        <option value="MnhkKqvkxCSCZ22nJNwDSjYG">Marketing Digital E Funil de Vendas</option>
-                        <option value="N4P5j5t7QCHkEFpVKhXjBAJJ">Mentalidade E Cultura Para Inovação</option>
-                        <option value="xaGFSQKYXr1Ybx9V7pjzZyfu">Pacote 3 cursos</option>
-                        <option value="o53Za5jTa9EaeZkCvST8FiYb">Pacote Trilha</option>
-                        <option value="FPqr6XfVAQRvrGLPBmZBDiqN">Produto X</option>
-                        <option value="kWxZVwvi8q9sjtymPEVV3TaK">Resilientes Summit</option>
-                        <option value="v8aCCc1mf4HDZ7q59RHzVGpY">Retomada</option>
-                        <option value="NsukQaRhw1zdUk67cZgvqz7D">Trilha Empreendedorismo</option></select><span class="select2 select2-container select2-container--default" dir="ltr" data-select2-id="25"
-                                                    style="width: 100px;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-labelledby="select2-product-container"><span class="select2-selection__rendered" id="select2-product-container" role="textbox" aria-readonly="true" title="Todos Produtos">Todos Produtos</span>
-                                                <span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span>
-                                                </span>
-                                                </span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
-                                            </div>
-                                            <!-- Heading -->
-                                            <h4 class="mb-3">
-                                                Plano
-                                            </h4>
-                                            <!-- form group -->
-                                            <div class="form-group">
-                                                <select name="plan" id="plan" class="form-control custom-select custom-select-sm select2-hidden-accessible" data-toggle="select" data-select2-id="plan" tabindex="-1" aria-hidden="true"><option value="" data-select2-id="28">Todos Planos</option><option value="3">Be Play - 12x97</option>
-                        <option value="18">Be Play - Cortesia</option>
-                        <option value="13">Be Play - Plano 6x</option>
-                        <option value="8">Be Play - Plano X</option>
-                        <option value="14">Be Play - Unica Pgt 1K</option>
-                        <option value="9">Desafio WOW - GRATUITO</option>
-                        <option value="6">Desevolvimento de Negócios - a vista R$ 297</option>
-                        <option value="19">Lopes time de HR - Acesso ao curso</option>
-                        <option value="4">Marketing Digital E Funil de Vendas - A vista</option>
-                        <option value="5">Mentalidade E Cultura Para Inovação - A vista R$297</option>
-                        <option value="17">Mentalidade E Cultura Para Inovação - Bump Offer</option>
-                        <option value="10">Pacote 3 cursos - plano a vista</option>
-                        <option value="16">Pacote Trilha - plano free</option>
-                        <option value="12">Produto X - Plano 3x</option>
-                        <option value="2">Resilientes Summit - 12x</option>
-                        <option value="15">Retomada - Gratis</option>
-                        <option value="7">Trilha Empreendedorismo - A vista</option>
-                        <option value="11">Trilha Empreendedorismo - GRATIS</option></select><span class="select2 select2-container select2-container--default" dir="ltr" data-select2-id="27" style="width: 100px;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-labelledby="select2-plan-container"><span class="select2-selection__rendered" id="select2-plan-container" role="textbox" aria-readonly="true" title="Todos Planos">Todos Planos</span>
-                                                <span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span>
-                                                </span>
-                                                </span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
-                                            </div>
                                             <!-- Heading -->
                                             <h4 class="mb-3">
                                                 Criado em
@@ -189,13 +102,13 @@
                                             </div>
                                         </div>
                                         <div class="modal-footer border-0">
-                                            <a class="btn btn-link btn-block text-muted" href="/dashboard/subscriptions">
-                        Limpar Filtros
-                        </a>
+                                            <a class="btn btn-link btn-block text-muted" href="/dashboard/customers">
+                Limpar Filtros
+                </a>
                                             <!-- Button -->
                                             <button class="btn btn-block btn-primary mt-auto" type="submit">
-                        Aplicar Filtros
-                        </button>
+                Aplicar Filtros
+                </button>
                                         </div>
                                     </form>
                                 </div>
@@ -203,238 +116,59 @@
 
                         </div>
                     </div>
-
                 </div>
+
                 <div class="table-responsive mb-0">
-                    <table class="table table-sm table-nowrap card-table">
+                    <table class="table table-sm table-nowrap card-table table-hover">
                         <thead>
                             <tr>
-                                <th>
-                                    Member
-                                </th>
-                                <th>
-                                    Schedule
-                                </th>
-                                <th>
-                                    Hours Billed
-                                </th>
-                                <th>
-                                    Completion
-                                </th>
-                                <th>
-                                    Effective Rate
-                                </th>
+                                <th class="item-name">Nome</th>
+                                <th class="item-email">E-mail</th>
+                                <th>Criado em</th>
+                                <th></th>
                             </tr>
                         </thead>
-                        <tbody>
+                        <tbody class="list font-size-base">
                             <tr>
-                                <td>
-
-                                    <!-- Avatar -->
-                                    <a href="profile-posts.htmL" class="avatar avatar-xs d-inline-block mr-2">
-                                        <img src="assets/img/avatars/profiles/avatar-1.jpg" alt="..." class="avatar-img rounded-circle">
-                                    </a>
-
-                                    <!-- Title -->
-                                    <span>Dianna Smiley</span>
-
-                                </td>
-                                <td>
-                                    <span class="text-success">●</span> On Schedule
-                                </td>
-                                <td>
-                                    271
-                                </td>
-                                <td>
-                                    <div class="row align-items-center no-gutters">
+                                <td class="item-name">
+                                    <div class="row align-items-center">
                                         <div class="col-auto">
-
-                                            <!-- Value -->
-                                            <span class="mr-2">55%</span>
-
+                                            <!-- Avatar -->
+                                            <a class="avatar avatar-xs" href="/dashboard/customers/25">
+                                                <img alt="0 0" class="avatar-img rounded-circle" src="../../../assets/img/avatars/profiles/avatar-3.jpg">
+                                            </a>
                                         </div>
-                                        <div class="col">
-
-                                            <!-- Progress -->
-                                            <div class="progress progress-sm">
-                                                <div class="progress-bar bg-secondary" role="progressbar" style="width: 55%" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100"></div>
-                                            </div>
-
+                                        <div class="col ml-n2">
+                                            <a href="/dashboard/customers/25">Carlos Augusto</a>
                                         </div>
                                     </div>
-                                    <!-- / .row -->
                                 </td>
+                                <td class="item-email">ca@educaholic.com.br</td>
+                                <td>10/07/20 12:04</td>
                                 <td>
-                                    $55.25%
-                                </td>
+                                    <a class="" href="/dashboard/customers/25"><i class="far fa-eye"></i>
+                Ver
+                </a></td>
                             </tr>
-                            <tr>
-                                <td>
 
-                                    <!-- Avatar -->
-                                    <a href="profile-posts.html" class="avatar avatar-xs d-inline-block mr-2">
-                                        <img src="assets/img/avatars/profiles/avatar-2.jpg" alt="..." class="avatar-img rounded-circle">
-                                    </a>
 
-                                    <!-- Title -->
-                                    <span>Ab Hadley</span>
 
-                                </td>
-                                <td>
-                                    <span class="text-warning">●</span> Delayed
-                                </td>
-                                <td>
-                                    44
-                                </td>
-                                <td>
-                                    <div class="row align-items-center no-gutters">
-                                        <div class="col-auto">
-
-                                            <!-- Value -->
-                                            <span class="mr-2">25%</span>
-
-                                        </div>
-                                        <div class="col">
-
-                                            <!-- Progress -->
-                                            <div class="progress progress-sm">
-                                                <div class="progress-bar bg-secondary" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                    <!-- / .row -->
-                                </td>
-                                <td>
-                                    $122.52%
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-
-                                    <!-- Avatar -->
-                                    <a href="profile-posts.html" class="avatar avatar-xs d-inline-block mr-2">
-                                        <img src="assets/img/avatars/profiles/avatar-3.jpg" alt="..." class="avatar-img rounded-circle">
-                                    </a>
-
-                                    <!-- Title -->
-                                    <span>Adolfo Hess</span>
-
-                                </td>
-                                <td>
-                                    <span class="text-success">●</span> On Schedule
-                                </td>
-                                <td>
-                                    271
-                                </td>
-                                <td>
-                                    <div class="row align-items-center no-gutters">
-                                        <div class="col-auto">
-
-                                            <!-- Value -->
-                                            <span class="mr-2">55%</span>
-
-                                        </div>
-                                        <div class="col">
-
-                                            <!-- Progress -->
-                                            <div class="progress progress-sm">
-                                                <div class="progress-bar bg-secondary" role="progressbar" style="width: 55%" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100"></div>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                    <!-- / .row -->
-                                </td>
-                                <td>
-                                    $55.25%
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-
-                                    <!-- Avatar -->
-                                    <a href="profile-posts.html" class="avatar avatar-xs d-inline-block mr-2">
-                                        <img src="assets/img/avatars/profiles/avatar-4.jpg" alt="..." class="avatar-img rounded-circle">
-                                    </a>
-
-                                    <!-- Title -->
-                                    <span>Daniela Dewitt</span>
-
-                                </td>
-                                <td>
-                                    <span class="text-warning">●</span> Delayed
-                                </td>
-                                <td>
-                                    44
-                                </td>
-                                <td>
-                                    <div class="row align-items-center no-gutters">
-                                        <div class="col-auto">
-
-                                            <!-- Value -->
-                                            <span class="mr-2">25%</span>
-
-                                        </div>
-                                        <div class="col">
-
-                                            <!-- Progress -->
-                                            <div class="progress progress-sm">
-                                                <div class="progress-bar bg-secondary" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                    <!-- / .row -->
-                                </td>
-                                <td>
-                                    $122.52%
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-
-                                    <!-- Avatar -->
-                                    <a href="profile-posts.html" class="avatar avatar-xs d-inline-block mr-2">
-                                        <img src="assets/img/avatars/profiles/avatar-5.jpg" alt="..." class="avatar-img rounded-circle">
-                                    </a>
-
-                                    <!-- Title -->
-                                    <span>Miyah Myles</span>
-
-                                </td>
-                                <td>
-                                    <span class="text-success">●</span> On Schedule
-                                </td>
-                                <td>
-                                    271
-                                </td>
-                                <td>
-                                    <div class="row align-items-center no-gutters">
-                                        <div class="col-auto">
-
-                                            <!-- Value -->
-                                            <span class="mr-2">55%</span>
-
-                                        </div>
-                                        <div class="col">
-
-                                            <!-- Progress -->
-                                            <div class="progress progress-sm">
-                                                <div class="progress-bar bg-secondary" role="progressbar" style="width: 55%" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100"></div>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                    <!-- / .row -->
-                                </td>
-                                <td>
-                                    $55.25%
-                                </td>
-                            </tr>
                         </tbody>
                     </table>
                 </div>
+                <div class="card-footer">
+                    <div class="row justify-content-center">
+                        <nav class="pagy-bootstrap-nav" role="navigation" aria-label="pager">
+                            <ul class="pagination">
+                                <li class="page-item prev disabled"><a href="#" class="page-link">‹&nbsp;Anterior</a></li>
+                                <li class="page-item active"><a href="/dashboard/customers?page=1" class="page-link">1</a></li>
+                                <li class="page-item"><a href="/dashboard/customers?page=2" class="page-link" rel="next">2</a></li>
+                                <li class="page-item next"><a href="/dashboard/customers?page=2" class="page-link" rel="next" aria-label="next">Próximo&nbsp;›</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+
             </div>
 
         </div>

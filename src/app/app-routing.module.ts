@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
-//import { Shell } from '@app/shell/shell.service';
 import { LoginComponent } from './components/login/login.component';
 import { HomeComponent } from './home/home.component';
 import { ProductsComponent} from './components/products/products.component';
@@ -15,18 +14,12 @@ import { SubscriptionsComponent } from './components/subscriptions/subscriptions
 import { AddProductComponent } from './components/forms/add-product/add-product.component';
 import { ImportsubscriptionComponent } from './components/forms/add-product/importsubscription/importsubscription.component';
 import { AddcourseComponent } from './components/forms/addcourse/addcourse.component';
+import { AddpathComponent } from './components/forms/addpath/addpath.component';
+import { AddauthorComponent } from './components/forms/addauthor/addauthor.component';
+import { AddcategoryComponent } from './components/forms/addcategory/addcategory.component';
 
 
 const routes: Routes = [
-  // Shell.childRoutes([
-  //   {
-  //     path: 'about',
-  //     loadChildren: () =>
-  //       import('./about/about.module').then((m) => m.AboutModule),
-  //   },
-  // ]),
-  // // Fallback when no prior route is matched
-  // { path: '**', redirectTo: '', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
   { path: 'home', component: HomeComponent},
   { path: 'authors', component: AuthorsComponent},
@@ -40,7 +33,11 @@ const routes: Routes = [
   { path: 'subscriptions', component: SubscriptionsComponent},
   { path: 'addproduct', component: AddProductComponent},
   { path: 'importsubscription', component: ImportsubscriptionComponent },
-  { path: 'addcourse', component: AddcourseComponent}
+  { path: 'addcourse', component: AddcourseComponent},
+  { path: 'addpath', component: AddpathComponent},
+  { path: 'addauthor', component: AddauthorComponent},
+  { path: 'addcategory', component: AddcategoryComponent},
+  { path: 'importsubscription', component: ImportsubscriptionComponent}
 ];
 
 @NgModule({

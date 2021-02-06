@@ -14,13 +14,12 @@
                         <h1 class="header-title">
                             Adicionar Novo Curso
                         </h1>
-
-
                     </div>
                 </div>
                 <!-- / .row -->
             </div>
-            <div class="col-12 ">
+            <br>
+            <div class="col-12">
 
                 <div class="mb-4">
                     <form class="new_product" id="new_product" action="/dashboard/products" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="vBBvGWkpJMZjkAmoraRixJrIEzawdBijHtMBZiq8GhsC0JwOrN73XxeW9k4mgdXYM8SEDggWVzfUy6Yhd68yVA==">
@@ -85,23 +84,51 @@
                             </li>
                             <div class="row">
 
-                                <div class="col-12 col-lg-6">
+                                <div class="col-12">
                                     <div class="form-group">
-                                        <label for="product_tag_id_payment_paid">Título</label>
-                                        <input class="form-control" placeholder="1212" type="text" value="" name="product[tag_id_payment_paid]" id="product_tag_id_payment_paid">
+                                        <label for="product_tag_id_payment_paid">Título do Curso</label>
+                                        <input class="form-control" placeholder="" type="text" value="" name="product[tag_id_payment_paid]" id="product_tag_id_payment_paid">
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6 col-sm-12">
+                                    <div class="form-group">
+                                        <label for="product_tag_id_payment_pending">Facilitadores</label>
+                                        <input class="form-control" placeholder="" type="text" value="" name="product[tag_id_payment_pending]" id="product_tag_id_payment_pending">
+                                        <select class="form-control custom-select select2-hidden-accessible" data-toggle="select" multiple="" name="course[author_ids][]" id="course_author_ids" data-select2-id="course_author_ids" tabindex="-1" aria-hidden="true"><option value="" data-select2-id="31"></option>
+                                    <option data-avatar-url="https://www.beacademy.com.br/wp-content/uploads/2019/12/andre-siq.jpg" value="6" data-select2-id="32">André Siqueira</option>
+                                    <option data-avatar-url="http://be-pay-learning.herokuapp.com/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBEUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--f1775ca8334a5250cdb1fc597bb76c747cddaaf5/bp.jpg" value="1" data-select2-id="33">Bruno Pinheiro</option>
+                                    <option data-avatar-url="http://be-pay-learning.herokuapp.com/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBEZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--ef6f65429fcbd87223af48042ae5fcb5525be04e/Carol-Calaca.png" value="2" data-select2-id="34">Carol Calaça</option>
+                                    <option data-avatar-url="https://be-pay-learning.herokuapp.com/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBFdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--a502bc6f3acd5ab819d07772883e765244bc98f8/gisele-new.jpg" value="10" data-select2-id="35">Gisele Paula</option>
+                                    <option data-avatar-url="http://be-pay-learning.herokuapp.com/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBEdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--ed8ecdd97877615b08cc46e806c7904229998da8/Janguie-Diniz.png" value="4" data-select2-id="36">Janguiê Diniz</option>
+                                    <option data-avatar-url="https://lp.beacademy.com.br/wp-content/uploads/2019/11/Marcos1-e1566336319779.png" value="3" data-select2-id="37">Marcos Batista</option>
+                                    <option data-avatar-url="https://www.beacademy.com.br/wp-content/uploads/2019/12/maxresdefault-11-640x640.jpg" value="8" data-select2-id="38">Nélio Bilate</option>
+                                    <option data-avatar-url="https://www.beacademy.com.br/wp-content/uploads/2019/12/maxresdefault-12-640x640.jpg" value="5" data-select2-id="39">Roman Romancini</option>
+                                    <option data-avatar-url="http://be-pay-learning.herokuapp.com/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBFQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--c37587fb0b9854d43582728b1721eb46a7324e64/Tania-Gomes-Luz.jpg.png" value="7" data-select2-id="40">Tania Goes Luz</option></select>
+                                    </div>
+                                </div>
+
+
+                                <div class="col-md-6 col-sm-12">
+                                    <div class="form-group">
+                                        <label for="product_tag_id_abandoned_cart">Categorias</label>
+                                        <input class="form-control" placeholder="" type="text" value="" name="product[tag_id_abandoned_cart]" id="product_tag_id_abandoned_cart">
+                                    </div>
+                                </div>
+
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <label for="course_description">Headline do Curso</label>
+                                        <textarea class="form-control" required="required" name="course[description]" id="course_description"></textarea>
                                     </div>
 
-                                </div>
-                                <div class="col-12 col-lg-6">
                                     <div class="form-group">
-                                        <label for="product_tag_id_payment_pending">TAG ID: Boleto Gerado</label>
-                                        <input class="form-control" placeholder="1214" type="text" value="" name="product[tag_id_payment_pending]" id="product_tag_id_payment_pending">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="product_tag_id_abandoned_cart">TAG ID: Carrinho Abandonado</label>
-                                        <input class="form-control" placeholder="1215" type="text" value="" name="product[tag_id_abandoned_cart]" id="product_tag_id_abandoned_cart">
+                                        <label for="course_description">Descrição Completa do Curso</label>
+
+                                        <textarea class="form-control" rows="10" style="height:100%;" aria-label="With textarea"></textarea>
                                     </div>
                                 </div>
+
                             </div>
                             <div class="collapse" data-parent="" id="collapseIntegrationSettings">
                             </div>
@@ -114,7 +141,7 @@
                                     <div class="row">
                                         <div class="col-11">
                                             <div class="header">
-                                                <h2 class="header-title">Configurações de Páginas</h2>
+                                                <h2 class="header-title">Precificação</h2>
                                             </div>
                                         </div>
                                         <div class="col-1 text-right">
@@ -127,23 +154,83 @@
                                 <div class="row">
                                     <div class="col-12 col-lg-6">
                                         <div class="form-group">
-                                            <label for="product_sales_page_url">URL: Página de vendas</label>
+                                            <label for="product_sales_page_url">Preço Base</label>
                                             <input class="form-control" type="url" value="" name="product[sales_page_url]" id="product_sales_page_url">
                                         </div>
                                         <div class="form-group">
-                                            <label for="product_thank_you_page_url">URL: Página de obrigado</label>
+                                            <label for="product_thank_you_page_url">URL do Checkout</label>
                                             <input class="form-control" type="url" value="" name="product[thank_you_page_url]" id="product_thank_you_page_url">
                                         </div>
                                     </div>
                                     <div class="col-12 col-lg-6">
                                         <div class="form-group">
-                                            <label for="product_error_page_url">URL: Página de erro</label>
+                                            <label for="product_error_page_url">Preço de Venda</label>
                                             <input class="form-control" type="url" value="" name="product[error_page_url]" id="product_error_page_url">
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </ul>
+
+                        <div class="row"></div>
+                        <hr class="mt-4 mb-5">
+
+                        <ul class="list-group" id="accordion-2">
+                            <li aria-controls="collapsePageIntegrationSettings" aria-expanded="false" class="d-flex justify-content-between align-items-center collapsed" data-target="#collapsePageIntegrationSettings" data-toggle="collapse">
+                                <div class="list-group col-12">
+                                    <div class="row">
+                                        <div class="col-11">
+                                            <div class="header">
+                                                <h2 class="header-title">Configuração de Tags</h2>
+                                            </div>
+                                        </div>
+                                        <div class="col-1 text-right">
+                                            <i class="fas fa-expand-alt"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <div aria-labelledby="headingIntegrationSettings" class="collapse show" data-parent="" id="collapseIntegrationSettings">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="form-group">
+                                            <label for="course_tag_provider">Provedor da tag</label>
+                                            <select class="form-control custom-select select2-hidden-accessible" data-toggle="select" name="course[tag_provider]" id="course_tag_provider" data-select2-id="course_tag_provider" tabindex="-1" aria-hidden="true"><option value=""></option>
+                                <option selected="selected" value="" data-select2-id="16"></option>
+                                <option value="infusionsoft">Infusionsoft</option></select>
+
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="form-group">
+                                            <label for="course_tag_id_started_course">TAG ID: Curso Iniciado</label>
+                                            <input class="form-control" type="text" value="" name="course[tag_id_started_course]" id="course_tag_id_started_course">
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="form-group">
+                                            <label for="course_tag_id_finished_first_content">TAG ID: Finalizou Primeira Aula</label>
+                                            <input class="form-control" type="text" value="" name="course[tag_id_finished_first_content]" id="course_tag_id_finished_first_content">
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="form-group">
+                                            <label for="course_tag_id_finished_first_lecture">TAG ID: Finalizou Primeiro Modulo</label>
+                                            <input class="form-control" type="text" value="" name="course[tag_id_finished_first_lecture]" id="course_tag_id_finished_first_lecture">
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="form-group">
+                                            <label for="course_tag_id_finished_course">TAG ID: Finalizou Curso</label>
+                                            <input class="form-control" type="text" value="" name="course[tag_id_finished_course]" id="course_tag_id_finished_course">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </ul>
+
+
+
                         <!-- Divider -->
                         <div class="row"></div>
                         <hr class="mt-4 mb-5">
@@ -158,6 +245,6 @@
 
 
             </div>
-
         </div>
     </div>
+</div>

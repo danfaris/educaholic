@@ -1,0 +1,52 @@
+<div class="main-content">
+    <div class="header">
+        <div class="container-fluid">
+            <!-- Body -->
+            <div class="header-body">
+                <!-- Header -->
+                <div class="row align-items-end">
+                    <div class="col">
+                        <!-- Pretitle -->
+                        <h6 class="header-pretitle">
+                            Categorias
+                        </h6>
+                        <!-- Title -->
+                        <h1 class="header-title">
+                            Adicionar Nova Categoria
+                        </h1>
+                    </div>
+                    <div class="col-auto">
+                        <!-- Button -->
+                        <a class="btn btn-link btn-block text-muted" href="/categories">
+                            Voltar
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="mb-4">
+                <form class="new_category" id="new_category" action="/dashboard/categories" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="t6FJa17njseDPP76tVKz1MManAAEoUHVr86Fv0jyX9HAhB6BPLa21ECailCnROPe95ZHfsDt2U7G/cuIv47e9g==">
+                    <div class="form-group">
+                        <label for="category_Titulo">Titulo</label>
+                        <input class="form-control" type="text" name="category[title]" id="category_title">
+                    </div>
+                    <div class="form-group">
+                        <label for="category_Posição">Posição</label>
+                        <input class="form-control" type="text" name="category[position]" id="category_position">
+                    </div>
+                    <div class="form-group">
+                        <label for="category_Curta Descrição">Curta descrição</label>
+                        <textarea class="form-control" name="category[description]" id="category_description"></textarea>
+                    </div>
+                    <!-- Divider -->
+                    <div class="row"></div>
+                    <hr class="mt-4 mb-5">
+                    <input type="submit" name="commit" value="Salvar Categoria" class="btn btn-outline-dark btn-block" data-disable-with="Salvar Categoria">
+                    <a class="btn btn-link btn-block text-muted" href="/dashboard/categories">
+                Cancelar
+                </a>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

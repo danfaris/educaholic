@@ -1,0 +1,86 @@
+<div class="main-content">
+    <div class="header">
+        <div class="container-fluid">
+
+
+            <!-- Body -->
+            <div class="header-body">
+                <div class="row align-items-end">
+                    <div class="col">
+
+                        <!-- Pretitle -->
+                        <h6 class="header-pretitle">
+                            overview
+                        </h6>
+
+                        <!-- Title -->
+                        <h1 class="header-title">
+                            Pedidos
+                        </h1>
+
+                    </div>
+
+                </div>
+                <!-- / .row -->
+            </div>
+            <!-- / .header-body -->
+            <div class="mb-4 mt-4">
+                <form class="new_path" id="new_path" action="/dashboard/paths" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="OIIXd1NMVvLGVfwCcfPmJtGztzJ2utJaromB1RHts4zm62TM0PdWLDEXFeF7maCGXc4YIG62D4dQmgxv6Fdu4Q==">
+                    <div class="form-group">
+                        <label for="path_Titulo">Titulo</label>
+                        <input class="form-control" type="text" name="path[title]" id="path_title">
+                    </div>
+                    <div class="form-group">
+                        <label for="path_Posição (ordem de listagem)">Posição (ordem de listagem)</label>
+                        <input class="form-control" type="text" name="path[position]" id="path_position">
+                    </div>
+                    <div class="form-group">
+                        <label for="path_Headline (breve descrição de até 2 parágrafos)">Headline (breve descrição de até 2 parágrafos)</label>
+                        <textarea class="form-control" name="path[description]" id="path_description"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="path_Descrição">Descrição</label>
+                        <input type="hidden" name="path[html_description]" id="path_html_description_trix_input_path">
+                    </div>
+                    <div class="form-group">
+                        <label for="path_URL da Imagem de Capa Vertical (dimensões 300 x 400 pixels)">Url da imagem de capa vertical (dimensões 300 x 400 pixels)</label>
+                        <input class="form-control" type="text" name="path[cover_url]" id="path_cover_url">
+                    </div>
+                    <div class="form-group">
+                        <label for="path_URL da Imagem de Capa Horizontal (dimensões 367 x 190 pixels)">Url da imagem de capa horizontal (dimensões 367 x 190 pixels)</label>
+                        <input class="form-control" type="text" name="path[banner_url]" id="path_banner_url">
+                    </div>
+                    <div class="form-group">
+                        <label for="path_Categorias (selecione uma ou mais)">Categorias (selecione uma ou mais)</label>
+                        <input name="path[category_ids][]" type="hidden" value=""><select required="required" class="form-control custom-select select2-hidden-accessible" data-toggle="select" multiple="" name="path[category_ids][]" id="path_category_ids"
+                            data-select2-id="path_category_ids" tabindex="-1" aria-hidden="true"><option value="11">MBA</option>
+                <option value="1">Materiais Gratuitos</option>
+                <option value="2">Programas Executivos</option>
+                <option value="3">Marketing</option>
+                <option value="4">Growth</option>
+                <option value="5">Negócios</option>
+                <option value="6">Cultura</option>
+                <option value="7">Gestão</option>
+                <option value="8">Empreendedorismo</option>
+                <option value="9">Rede Sociais</option>
+                <option value="10">Conteúdo E Copywhiting</option></select><span class="select2 select2-container select2-container--default" dir="ltr" data-select2-id="356" style="width: 688px;"><span class="selection"><span class="select2-selection select2-selection--multiple" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="-1"><ul class="select2-selection__rendered"><li class="select2-search select2-search--inline"><input class="select2-search__field" type="search" tabindex="0" autocomplete="off" autocorrect="off" autocapitalize="none" spellcheck="false" role="textbox" aria-autocomplete="list" placeholder="" style="width: 0.75em;"></li></ul></span></span>
+                        <span class="dropdown-wrapper" aria-hidden="true"></span>
+                        </span>
+                    </div>
+                    <!-- Divider -->
+                    <div class="row"></div>
+                    <hr class="mt-4 mb-5">
+                    <input type="submit" name="commit" value="Salvar Trilha" class="btn btn-outline-dark btn-block" data-disable-with="Salvar Trilha">
+                    <a class="btn btn-link btn-block text-muted" href="/dashboard/paths">
+                Cancelar
+                </a>
+                </form>
+            </div>
+        </div>
+
+
+
+
+
+    </div>
+</div>

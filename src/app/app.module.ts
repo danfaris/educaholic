@@ -28,6 +28,9 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { AddProductComponent } from './components/forms/add-product/add-product.component';
 import { ImportsubscriptionComponent } from '../app/components/forms/add-product/importsubscription/importsubscription.component';
 import { AddcourseComponent } from './components/forms/addcourse/addcourse.component';
+import { AddpathComponent } from './components/forms/addpath/addpath.component';
+import { AddauthorComponent } from './components/forms/addauthor/addauthor.component';
+import { AddcategoryComponent } from './components/forms/addcategory/addcategory.component';
 
 @NgModule({
   imports: [
@@ -45,7 +48,22 @@ import { AddcourseComponent } from './components/forms/addcourse/addcourse.compo
     HomeModule,
     AppRoutingModule, // must be imported as the last module as it contains the fallback route
   ],
-  declarations: [AppComponent, ProductsComponent, SubscriptionsComponent, OrdersComponent, CustomersComponent, CoursesComponent, PathComponent, AuthorsComponent, CategoriesComponent, CommentsComponent, LoginComponent, SidebarComponent, AddProductComponent, ImportsubscriptionComponent, AddcourseComponent],
+  declarations: [
+    AppComponent, 
+    ProductsComponent, 
+    SubscriptionsComponent, 
+    OrdersComponent, 
+    CustomersComponent, 
+    CoursesComponent, 
+    PathComponent, 
+    AuthorsComponent, 
+    CategoriesComponent, 
+    CommentsComponent, 
+    LoginComponent, 
+    SidebarComponent, 
+    AddProductComponent, 
+    ImportsubscriptionComponent, 
+    AddcourseComponent, AddpathComponent, AddauthorComponent, AddcategoryComponent],
   providers: [],
   bootstrap: [AppComponent],
 })
