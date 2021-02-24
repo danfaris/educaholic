@@ -20,6 +20,7 @@ import { AddcategoryComponent } from './components/forms/addcategory/addcategory
 
 
 const routes: Routes = [
+  { path: '', redirectTo: 'index', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
   { path: 'home', component: HomeComponent},
   { path: 'authors', component: AuthorsComponent},
