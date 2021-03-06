@@ -1,0 +1,10 @@
+[
+    {
+        "groupName": "educdashpool3",
+        "precedence": 1
+    },
+    {
+        "groupName": "dasheducmypool2",
+        "precedence": 2
+    }
+]

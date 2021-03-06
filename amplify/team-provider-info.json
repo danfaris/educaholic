@@ -16,5 +16,24 @@
         "educaholic0ac4229b": {}
       }
     }
+  },
+  "staging": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-educaholic-staging-141009-authRole",
+      "UnauthRoleArn": "arn:aws:iam::934780306557:role/amplify-educaholic-staging-141009-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::934780306557:role/amplify-educaholic-staging-141009-authRole",
+      "Region": "eu-west-1",
+      "DeploymentBucketName": "amplify-educaholic-staging-141009-deployment",
+      "UnauthRoleName": "amplify-educaholic-staging-141009-unauthRole",
+      "StackName": "amplify-educaholic-staging-141009",
+      "StackId": "arn:aws:cloudformation:eu-west-1:934780306557:stack/amplify-educaholic-staging-141009/a9894d70-7e85-11eb-998d-0610fe338635",
+      "AmplifyAppId": "dsezt56f29pop"
+    },
+    "categories": {
+      "auth": {
+        "educaholic0ac4229b": {},
+        "userPoolGroups": {}
+      }
+    }
   }
 }
