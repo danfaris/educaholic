@@ -10,6 +10,11 @@
       "StackName": "amplify-educaholic-dev-230010",
       "StackId": "arn:aws:cloudformation:eu-west-1:934780306557:stack/amplify-educaholic-dev-230010/910b2fc0-6b2a-11eb-a9cc-027144e8a80b",
       "AmplifyAppId": "dmpotifergi3w"
+    },
+    "categories": {
+      "auth": {
+        "educaholic0ac4229b": {}
+      }
     }
   }
 }

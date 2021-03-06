@@ -1,1 +1,10 @@
-{}
+{
+  "auth": {
+    "educaholic0ac4229b": {
+      "service": "Cognito",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "customAuth": false
+    }
+  }
+}
